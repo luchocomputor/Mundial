@@ -1,6 +1,12 @@
 api_football:
   base_url: https://api-football-v1.p.rapidapi.com/v3
   key: TON_API_KEY_ICI
+
+odds_api:
+  key: "12c1738e94e0ec40c857aea8203ced57"
+  base_url: "https://api.the-odds-api.com/v4"
+  sport: "soccer_fifa_world_cup"
+  regions: "eu"
 bankroll:
   initial: 200
 blend:
