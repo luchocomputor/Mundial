@@ -28,7 +28,7 @@ def fetch_odds(cfg: dict) -> list[dict]:
     params = {
         "apiKey": api_cfg["key"],
         "regions": api_cfg["regions"],
-        "markets": "h2h,totals",
+        "markets": "h2h,totals,spreads",
         "oddsFormat": "decimal",
         "bookmakers": "betclic_fr,pinnacle",
     }
@@ -83,6 +83,18 @@ def parse_match(match: dict) -> dict | None:
                 result[slot]["under_2.5"] = under
                 result[slot]["totals_line"] = point
 
+            elif mkt["key"] == "spreads":
+                for o in mkt["outcomes"]:
+                    pt = o.get("point")
+                    price = o["price"]
+                    name = o["name"]
+                    if name == home:
+                        result[slot]["spread_home_point"] = pt
+                        result[slot]["spread_home_cote"] = price
+                    elif name == away:
+                        result[slot]["spread_away_point"] = pt
+                        result[slot]["spread_away_cote"] = price
+
     return result
 
 
@@ -100,8 +112,10 @@ def fetch_and_save() -> list[dict]:
     # Stats de couverture
     betclic_h2h = sum(1 for m in matches if m["betclic"].get("home_win"))
     pinnacle_ou = sum(1 for m in matches if m["pinnacle"].get("over_2.5"))
+    pinnacle_ah = sum(1 for m in matches if m["pinnacle"].get("spread_home_point") is not None)
     print(f"  {betclic_h2h}/{len(matches)} matchs avec Betclic 1X2")
     print(f"  {pinnacle_ou}/{len(matches)} matchs avec Pinnacle O/U")
+    print(f"  {pinnacle_ah}/{len(matches)} matchs avec Pinnacle Asian Handicap")
 
     DATA_RAW.mkdir(parents=True, exist_ok=True)
     OUTPUT_PATH.write_text(json.dumps(matches, indent=2, ensure_ascii=False))

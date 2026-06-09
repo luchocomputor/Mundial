@@ -61,6 +61,11 @@ def get_model_prob(preds: dict, market: str, side: str) -> float | None:
     return None
 
 
+def ah_effective_prob(ev: float, cote: float) -> float:
+    """Converts AH EV to an equivalent binary probability for display."""
+    return (ev + 1) / cote
+
+
 def scan(show_all: bool = False):
     cfg = load_config()
     threshold = cfg["model"]["min_edge_threshold"]
@@ -147,6 +152,43 @@ def scan(show_all: bool = False):
         if pin.get("under_2.5"):
             markets_to_check.append(("over_2.5", "under", pin["under_2.5"], "pinnacle"))
 
+        # Asian Handicap — Pinnacle spreads
+        ah_bets = []
+        home_pt = pin.get("spread_home_point")
+        home_ah_cote = pin.get("spread_home_cote")
+        away_pt = pin.get("spread_away_point")
+        away_ah_cote = pin.get("spread_away_cote")
+
+        if home_pt is not None and home_ah_cote:
+            try:
+                ev_home = model.asian_handicap_ev(home, away, home_pt, home_ah_cote,
+                                                   bet_on_home=True, altitude_adj=altitude_adj)
+                p_eff_home = ah_effective_prob(ev_home, home_ah_cote)
+                ah_bets.append({
+                    "market": "AH", "side": f"home {home_pt:+.2f}",
+                    "cote": home_ah_cote, "source": "pinnacle",
+                    "ev": ev_home, "p_eff": p_eff_home,
+                    "home_point": home_pt, "bet_on_home": True,
+                })
+            except Exception:
+                pass
+
+        if away_pt is not None and away_ah_cote:
+            home_pt_for_away = -away_pt if away_pt is not None else None
+            if home_pt_for_away is not None:
+                try:
+                    ev_away = model.asian_handicap_ev(home, away, home_pt_for_away, away_ah_cote,
+                                                       bet_on_home=False, altitude_adj=altitude_adj)
+                    p_eff_away = ah_effective_prob(ev_away, away_ah_cote)
+                    ah_bets.append({
+                        "market": "AH", "side": f"away {away_pt:+.2f}",
+                        "cote": away_ah_cote, "source": "pinnacle",
+                        "ev": ev_away, "p_eff": p_eff_away,
+                        "home_point": home_pt_for_away, "bet_on_home": False,
+                    })
+                except Exception:
+                    pass
+
         for market, side, cote, source in markets_to_check:
             if not cote or cote <= 1.0:
                 continue
@@ -205,6 +247,40 @@ def scan(show_all: bool = False):
                                                 "over_2.5": bzzo_row.get("prob_over_25",0),
                                                 "btts": bzzo_row.get("prob_btts",0)},
                                                market, side) or 0, 4) if bzzo_row else 0,
+                "altitude_adj": altitude_adj,
+            })
+
+        # --- Asian Handicap bets ---
+        for ah in ah_bets:
+            ev = ah["ev"]
+            edge = ev  # EV per unit IS the edge
+            if edge < threshold or edge > 0.25:
+                continue
+            if ah["cote"] > 10.0:
+                continue
+
+            # Consensus filter: compare DC p_eff vs bzzoiro 1X2 (pas de signal AH dans bzzoiro)
+            # On utilise uniquement le modèle DC pour AH → pas de filtre bzzoiro
+
+            kelly = min(kelly_size(ah["p_eff"], ah["cote"], kelly_fraction), max_kelly)
+            stake = round(bankroll * kelly, 2)
+
+            value_bets.append({
+                "date": date_str,
+                "home_team": home,
+                "away_team": away,
+                "market": ah["market"],
+                "side": ah["side"],
+                "source": ah["source"],
+                "p_model": round(ah["p_eff"], 4),
+                "p_implicit": round(1 / ah["cote"], 4),
+                "edge": round(edge, 4),
+                "cote": ah["cote"],
+                "kelly_pct": round(kelly * 100, 2),
+                "stake_eur": stake,
+                "bankroll": bankroll,
+                "p_dc": round(ah["p_eff"], 4),
+                "p_bzzo": 0,
                 "altitude_adj": altitude_adj,
             })
 

@@ -223,6 +223,90 @@ class DixonColesModel:
             "expected_away": nu,
         }
 
+    def _margin_distribution(self, home: str, away: str, altitude_adj: float = 0) -> dict:
+        """Returns {margin: probability} where margin = home_goals - away_goals."""
+        matrix = self.predict_score_matrix(home, away, altitude_adj=altitude_adj)
+        max_g = matrix.shape[0] - 1
+        dist = {}
+        for i in range(max_g + 1):
+            for j in range(max_g + 1):
+                k = i - j
+                dist[k] = dist.get(k, 0.0) + float(matrix[i, j])
+        return dist
+
+    def asian_handicap_ev(
+        self,
+        home: str,
+        away: str,
+        home_point: float,
+        cote: float,
+        bet_on_home: bool = True,
+        altitude_adj: float = 0,
+    ) -> float:
+        """
+        EV per unit staked for an Asian handicap bet.
+
+        home_point : handicap on home team (negative = home favored, e.g. -1.25)
+        bet_on_home: True  → bet on home covering home_point
+                     False → bet on away covering -home_point
+        """
+        dist = self._margin_distribution(home, away, altitude_adj)
+
+        p_wf = p_wh = p_push = p_lh = p_lf = 0.0
+
+        for margin, prob in dist.items():
+            if bet_on_home:
+                H = -home_point            # e.g. 1.25 for home_point=-1.25
+                frac = round(H % 1, 2)
+
+                if frac == 0.0:
+                    if margin > H:         p_wf += prob
+                    elif margin == H:      p_push += prob
+                    else:                  p_lf += prob
+                elif frac == 0.5:
+                    if margin > H:         p_wf += prob
+                    else:                  p_lf += prob
+                elif frac == 0.25:
+                    fh = int(H)
+                    if margin > fh:        p_wf += prob   # margin ≥ fh+1
+                    elif margin == fh:     p_lh += prob   # half loss
+                    else:                  p_lf += prob
+                elif frac == 0.75:
+                    ch = int(H) + 1
+                    if margin > ch:        p_wf += prob
+                    elif margin == ch:     p_wh += prob   # half win
+                    else:                  p_lf += prob
+            else:
+                H = -home_point            # away's handicap, e.g. 1.25 for home_point=-1.25
+                frac = round(H % 1, 2)
+
+                if frac == 0.0:
+                    if margin < H:         p_wf += prob
+                    elif margin == H:      p_push += prob
+                    else:                  p_lf += prob
+                elif frac == 0.5:
+                    if margin < H:         p_wf += prob
+                    else:                  p_lf += prob
+                elif frac == 0.25:
+                    fh = int(H)
+                    if margin < fh:        p_wf += prob   # margin ≤ fh-1
+                    elif margin == fh:     p_wh += prob   # half win
+                    else:                  p_lf += prob
+                elif frac == 0.75:
+                    fh = int(H)
+                    if margin <= fh:       p_wf += prob
+                    elif margin == fh + 1: p_lh += prob   # half loss
+                    else:                  p_lf += prob
+
+        ev = (
+            p_wf * (cote - 1)
+            + p_wh * 0.5 * (cote - 1)
+            + p_push * 0.0
+            - p_lh * 0.5
+            - p_lf * 1.0
+        )
+        return ev
+
     def fit_corners(self, matches: pd.DataFrame) -> None:
         if "home_corners" not in matches.columns:
             print("Pas de données corners disponibles.")
