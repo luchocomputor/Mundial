@@ -1,0 +1,34 @@
+bzzoiro:
+  token: "77767139efb5ef981bb229963c8c6e0e89c2b703"
+  base_url: "https://sports.bzzoiro.com/api/v2"
+
+# API-Football conservé en fallback si besoin de données historiques supplémentaires
+api_football:
+  key: "TON_API_KEY_ICI"
+  base_url: "https://api-football-v1.p.rapidapi.com/v3"
+
+telegram:
+  token: "TON_BOT_TOKEN_ICI"
+  chat_id: "TON_CHAT_ID_ICI"
+
+model:
+  min_edge_threshold: 0.05
+  kelly_fraction: 0.25
+  max_kelly_bet: 0.05
+  decay: 0.0065
+  friendly_weight: 0.5
+
+bankroll:
+  initial: 200
+
+leagues:
+  world_cup: 27       # bzzoiro league_id pour WC (2014/2018/2022/2026)
+  friendlies: 31      # bzzoiro league_id pour International Friendly Games
+
+blend:
+  dc_weight: 0.6      # Poids Dixon-Coles vs bzzoiro CatBoost
+
+seasons:
+  training: [2018, 2019, 2020, 2021, 2022]
+  backtest: 2022
+  live: 2026

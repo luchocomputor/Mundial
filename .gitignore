@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Data (trop lourd pour git, re-fetchable)
+data/raw/*.parquet
+data/processed/
+data/bets_log.csv
+
+# Modèle entraîné (re-générable)
+models/*.pkl
+
+# Config avec secrets — copier config.yaml.example
+# config.yaml  ← gardé intentionnellement pour les thresholds (token bzzoiro dedans)
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
