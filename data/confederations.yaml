@@ -1,0 +1,50 @@
+# Mapping équipe → confédération (extrait CDM 2026)
+teams:
+  France: UEFA
+  Spain: UEFA
+  England: UEFA
+  Germany: UEFA
+  Portugal: UEFA
+  Netherlands: UEFA
+  Belgium: UEFA
+  Italy: UEFA
+  Croatia: UEFA
+  Austria: UEFA
+  Switzerland: UEFA
+  Denmark: UEFA
+  Poland: UEFA
+  Serbia: UEFA
+  Turkey: UEFA
+  Bosnia and Herzegovina: UEFA
+  Sweden: UEFA
+  Czech Republic: UEFA
+  Argentina: CONMEBOL
+  Brazil: CONMEBOL
+  Colombia: CONMEBOL
+  Uruguay: CONMEBOL
+  Ecuador: CONMEBOL
+  Paraguay: CONMEBOL
+  Japan: AFC
+  South Korea: AFC
+  Australia: AFC
+  Iran: AFC
+  Saudi Arabia: AFC
+  Qatar: AFC
+  Jordan: AFC
+  Uzbekistan: AFC
+  Iraq: AFC
+  Morocco: CAF
+  Senegal: CAF
+  Egypt: CAF
+  Algeria: CAF
+  Ghana: CAF
+  Ivory Coast: CAF
+  Tunisia: CAF
+  South Africa: CAF
+  Cabo Verde: CAF
+  DR Congo: CAF
+  USA: CONCACAF
+  Mexico: CONCACAF
+  Canada: CONCACAF
+  Haiti: CONCACAF
+  New Zealand: OFC

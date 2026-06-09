@@ -15,11 +15,6 @@ model:
   decay: 0.0065
   friendly_weight: 0.5
   devig_method: "shin"
-  max_market_divergence: 0.15
-  market_anchor_weight: 0.3
-  sparse_match_threshold: 5
-  sparse_anchor_weight: 0.5
-  production_mode: paper_only
 
 bankroll:
   initial: 200

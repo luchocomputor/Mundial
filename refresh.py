@@ -1,8 +1,9 @@
 """
-Mise à jour quotidienne : cotes + prédictions + scan value bets.
-Usage : python3 refresh.py
-        python3 refresh.py --telegram   (envoie les alertes)
+Mise à jour quotidienne : fetch → build → train → scan paper → CLV.
+Usage : python refresh.py [--telegram] [--full]
 """
+
+from __future__ import annotations
 
 import argparse
 import asyncio
@@ -13,33 +14,34 @@ from pathlib import Path
 
 import pandas as pd
 import requests
-import yaml
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from models.dixon_coles import DixonColesModel
-from pipeline.features import get_altitude_adjustment
-from pipeline.fetch_predictions import blend_predictions
+from pipeline.build_dataset import build_master_dataset
+from pipeline.config import load_config
+from pipeline.fetch_data import fetch_and_save_all
+from pipeline.fetch_odds import backfill_odds_history, save_odds_history
+from pipeline.production import alerts_allowed
 
 ROOT = Path(__file__).parent
-TOKEN = None
-
-
-def cfg():
-    with open(ROOT / "config.yaml") as f:
-        return yaml.safe_load(f)
-
-
-def headers():
-    return {"Authorization": f"Token {cfg()['bzzoiro']['token']}"}
 
 
 def refresh_odds():
-    """Re-fetch les cotes pour tous les matchs CDM 2026 à venir."""
     print("Rafraîchissement des cotes...")
-    wc = pd.read_parquet(ROOT / "data" / "raw" / "wc_all.parquet")
-    wc2026 = wc[(wc["date"].dt.year == 2026) & (wc["status"] == "notstarted")]
-    real = wc2026[~wc2026["home_team"].str.match(r"^[W|L|R|Q|H|G|1|2|3]")]
+    cfg = load_config()
+    wc_path = ROOT / "data" / "raw" / "wc_all.parquet"
+    all_path = ROOT / "data" / "raw" / "all_matches.parquet"
+    path = wc_path if wc_path.exists() else all_path
+    if not path.exists():
+        print("  Pas de matchs — skip odds")
+        return
+
+    from pipeline.config import bzzoiro_headers
+    from pipeline.placeholder import filter_real_teams
+
+    wc = pd.read_parquet(path)
+    wc2026 = wc[(wc["date"].dt.year == 2026) & (wc["status"] == "upcoming")]
+    real = filter_real_teams(wc2026)
 
     existing_path = ROOT / "data" / "raw" / "odds_wc2026.json"
     odds = json.loads(existing_path.read_text()) if existing_path.exists() else {}
@@ -48,8 +50,9 @@ def refresh_odds():
     for _, row in real.iterrows():
         fid = int(row["fixture_id"])
         r = requests.get(
-            f"https://sports.bzzoiro.com/api/v2/events/{fid}/odds/",
-            headers=headers(), timeout=10,
+            f"{cfg.bzzoiro_base_url}/events/{fid}/odds/",
+            headers=bzzoiro_headers(cfg),
+            timeout=10,
         )
         o = r.json().get("odds", {})
         non_null = {k: v for k, v in o.items() if v is not None}
@@ -59,17 +62,20 @@ def refresh_odds():
         time.sleep(0.1)
 
     existing_path.write_text(json.dumps(odds, indent=2))
-    print(f"  Cotes: {updated} matchs mis à jour, {len(odds)} total")
+    print(f"  Cotes: {updated} mis à jour, {len(odds)} total")
 
 
 def refresh_predictions():
-    """Re-fetch les prédictions bzzoiro pour WC 2026."""
     print("Rafraîchissement des prédictions...")
+    from pipeline.config import bzzoiro_headers
+    cfg = load_config()
     rows, offset = [], 0
     while True:
         r = requests.get(
-            "https://sports.bzzoiro.com/api/v2/predictions/",
-            headers=headers(), params={"league_id": 27, "limit": 100, "offset": offset}, timeout=15,
+            f"{cfg.bzzoiro_base_url}/predictions/",
+            headers=bzzoiro_headers(cfg),
+            params={"league_id": 27, "limit": 100, "offset": offset},
+            timeout=15,
         )
         data = r.json()
         rows.extend(data.get("results", []))
@@ -87,37 +93,36 @@ def refresh_predictions():
         bt = m.get("btts", {})
         xg = m.get("expected_goals", {})
         preds.append({
-            "event_id": ev["id"], "home_team": ev["home_team"], "away_team": ev["away_team"],
+            "event_id": ev["id"],
+            "home_team": ev["home_team"],
+            "away_team": ev["away_team"],
             "date": ev["event_date"],
-            "prob_home":   (mr.get("prob_home") or 0) / 100,
-            "prob_draw":   (mr.get("prob_draw") or 0) / 100,
-            "prob_away":   (mr.get("prob_away") or 0) / 100,
-            "prob_over_25":(ou.get("prob_over_25") or 0) / 100,
-            "prob_btts":   (bt.get("prob_yes") or 0) / 100,
-            "xg_home": xg.get("home"), "xg_away": xg.get("away"),
+            "prob_home": (mr.get("prob_home") or 0) / 100,
+            "prob_draw": (mr.get("prob_draw") or 0) / 100,
+            "prob_away": (mr.get("prob_away") or 0) / 100,
+            "prob_over_25": (ou.get("prob_over_25") or 0) / 100,
+            "prob_btts": (bt.get("prob_yes") or 0) / 100,
+            "xg_home": xg.get("home"),
+            "xg_away": xg.get("away"),
         })
 
-    pd.DataFrame(preds).to_parquet(ROOT / "data" / "raw" / "predictions_wc2026.parquet", index=False)
+    out = ROOT / "data" / "raw" / "predictions_wc2026.parquet"
+    pd.DataFrame(preds).to_parquet(out, index=False)
     print(f"  Prédictions: {len(preds)} matchs")
-
-
-def scan_and_print(send_telegram: bool = False):
-    from scan_now import scan
-    bets = scan()
-    if send_telegram and bets:
-        asyncio.run(_send_alerts(bets))
-    return bets
 
 
 async def _send_alerts(bets):
     from telegram import Bot
     from pipeline.value_detector import format_alert
-    c = cfg()
-    bot = Bot(token=c["telegram"]["token"])
-    chat_id = c["telegram"]["chat_id"]
+
+    cfg = load_config()
+    if not cfg.telegram_token or not alerts_allowed(cfg):
+        print("  Alertes désactivées (paper_only ou NO_GO)")
+        return
+    bot = Bot(token=cfg.telegram_token)
     for bet in bets:
         try:
-            await bot.send_message(chat_id=chat_id, text=format_alert(bet))
+            await bot.send_message(chat_id=cfg.telegram_chat_id, text=format_alert(bet))
             await asyncio.sleep(0.5)
         except Exception as e:
             print(f"  Telegram error: {e}")
@@ -126,13 +131,36 @@ async def _send_alerts(bets):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--telegram", action="store_true")
+    parser.add_argument("--full", action="store_true", help="Fetch complet + build dataset")
+    parser.add_argument("--train", action="store_true", help="Entraînement hebdomadaire")
     parser.add_argument("--odds-only", action="store_true")
     args = parser.parse_args()
+
+    if args.full:
+        fetch_and_save_all()
+        matches_path = ROOT / "data" / "raw" / "all_matches.parquet"
+        if matches_path.exists():
+            matches = pd.read_parquet(matches_path)
+            odds_df = backfill_odds_history(matches, max_events=500, resume=True)
+            if not odds_df.empty:
+                save_odds_history(odds_df)
+        build_master_dataset()
+
+    if args.train:
+        from scripts.train_pipeline import run_train_pipeline
+        run_train_pipeline()
 
     refresh_odds()
     if not args.odds_only:
         refresh_predictions()
-        scan_and_print(send_telegram=args.telegram)
+        from scan_now import scan
+        bets = scan(paper=True)
+        from monitoring.paper_trading import fetch_and_update_clv
+        n_clv = fetch_and_update_clv()
+        if n_clv:
+            print(f"  CLV mis à jour pour {n_clv} paris")
+        if args.telegram and bets:
+            asyncio.run(_send_alerts(bets))
 
 
 if __name__ == "__main__":

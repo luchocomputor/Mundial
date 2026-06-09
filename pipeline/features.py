@@ -3,11 +3,14 @@ Feature engineering à partir des données brutes.
 Produit un DataFrame enrichi pour l'entraînement Dixon-Coles.
 """
 
+from __future__ import annotations
+
+import math
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
-
+import yaml
 
 ROOT = Path(__file__).parent.parent
 DATA_RAW = ROOT / "data" / "raw"
@@ -34,68 +37,74 @@ STADIUM_ALTITUDE = {
     "BC Place": 3,
 }
 
-FIFA_RANKING_2026 = {
-    "Argentina": 1,
-    "France": 2,
-    "Spain": 3,
-    "England": 4,
-    "Brazil": 5,
-    "Portugal": 6,
-    "Belgium": 7,
-    "Netherlands": 8,
-    "Germany": 9,
-    "Colombia": 10,
-    "Italy": 11,
-    "Croatia": 12,
-    "Uruguay": 13,
-    "Morocco": 14,
-    "Japan": 15,
-    "Senegal": 16,
-    "USA": 17,
-    "Mexico": 18,
-    "Switzerland": 19,
-    "Denmark": 20,
-    "South Korea": 21,
-    "Austria": 22,
-    "Australia": 23,
-    "Ecuador": 24,
-    "Turkey": 25,
-    "Canada": 26,
-    "Serbia": 27,
-    "Poland": 28,
-    "Iran": 29,
-    "Algeria": 30,
-    "Egypt": 31,
-    "Ghana": 32,
-    "Ivory Coast": 33,
-    "Saudi Arabia": 34,
-    "Tunisia": 35,
-    "Paraguay": 36,
-    "Sweden": 37,
-    "Bosnia and Herzegovina": 38,
-    "Czech Republic": 39,
-    "New Zealand": 40,
-    "Jordan": 41,
-    "Uzbekistan": 42,
-    "Iraq": 43,
-    "Qatar": 44,
-    "South Africa": 45,
-    "Cabo Verde": 46,
-    "DR Congo": 47,
-}
+# Coefficient altitude estimé (placeholder — remplacé par régression si assez de données)
+ALTITUDE_COEF = -0.15
 
 
 def get_altitude_adjustment(venue: str) -> float:
     altitude = STADIUM_ALTITUDE.get(venue, 0)
-    return -0.3 * (altitude / 1000)
+    return ALTITUDE_COEF * (altitude / 1000)
 
 
-def get_fifa_ranking(team: str) -> int:
-    return FIFA_RANKING_2026.get(team, 50)
+def add_confederations(df: pd.DataFrame, conf_map: dict[str, str]) -> pd.DataFrame:
+    out = df.copy()
+    out["home_confederation"] = out["home_team"].map(conf_map).fillna("")
+    out["away_confederation"] = out["away_team"].map(conf_map).fillna("")
+    return out
+
+
+def add_rest_features(df: pd.DataFrame) -> pd.DataFrame:
+    """Jours depuis dernier match et congestion — sans fuite temporelle."""
+    out = df.copy()
+    out["date"] = pd.to_datetime(out["date"], utc=True)
+    out = out.sort_values("date").reset_index(drop=True)
+
+    last_match: dict[str, pd.Timestamp] = {}
+    matches_14d: dict[str, list[pd.Timestamp]] = {}
+
+    days_home, days_away = [], []
+    m14_home, m14_away = [], []
+
+    for _, row in out.iterrows():
+        home, away, dt = row["home_team"], row["away_team"], row["date"]
+
+        days_home.append(
+            (dt - last_match[home]).days if home in last_match else np.nan
+        )
+        days_away.append(
+            (dt - last_match[away]).days if away in last_match else np.nan
+        )
+
+        cutoff = dt - pd.Timedelta(days=14)
+        m14_home.append(
+            sum(1 for d in matches_14d.get(home, []) if d >= cutoff)
+        )
+        m14_away.append(
+            sum(1 for d in matches_14d.get(away, []) if d >= cutoff)
+        )
+
+        last_match[home] = dt
+        last_match[away] = dt
+        matches_14d.setdefault(home, []).append(dt)
+        matches_14d.setdefault(away, []).append(dt)
+
+    out["days_since_last_match_home"] = days_home
+    out["days_since_last_match_away"] = days_away
+    out["matches_last_14d_home"] = m14_home
+    out["matches_last_14d_away"] = m14_away
+    return out
+
+
+def haversine(lat1, lon1, lat2, lon2) -> float:
+    R = 6371
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    dphi = math.radians(lat2 - lat1)
+    dlambda = math.radians(lon2 - lon1)
+    a = math.sin(dphi / 2) ** 2 + math.cos(phi1) * math.cos(phi2) * math.sin(dlambda / 2) ** 2
+    return 2 * R * math.asin(math.sqrt(a))
 
 
 def load_venue_names() -> dict[int, str]:
-    """Retourne {venue_id: venue_name} depuis le parquet des stades."""
     path = DATA_RAW / "venues.parquet"
     if not path.exists():
         return {}
@@ -109,12 +118,9 @@ def load_raw_matches() -> pd.DataFrame:
         raise FileNotFoundError(f"Pas de données à {path}. Lance fetch_data.py d'abord.")
     df = pd.read_parquet(path)
     df["date"] = pd.to_datetime(df["date"], utc=True)
-
-    # Résoudre venue_id → nom du stade si disponible
     if "venue_id" in df.columns and "venue" not in df.columns:
         venue_map = load_venue_names()
         df["venue"] = df["venue_id"].map(venue_map).fillna("")
-
     return df
 
 
@@ -125,8 +131,9 @@ def build_training_data(
     decay: float = 0.0065,
 ) -> pd.DataFrame:
     if reference_date is None:
-        reference_date = pd.Timestamp.now(tz="UTC")
-    elif reference_date.tzinfo is None:
+        raise ValueError("reference_date obligatoire pour éviter decay dégénéré")
+
+    if reference_date.tzinfo is None:
         reference_date = reference_date.tz_localize("UTC")
 
     df = df.dropna(subset=["home_goals", "away_goals"]).copy()
@@ -137,11 +144,8 @@ def build_training_data(
 
     df["days_ago"] = (reference_date - df["date"]).dt.days.clip(lower=0)
     df["time_weight"] = np.exp(-decay * df["days_ago"])
-    df.loc[df["is_friendly"] == True, "time_weight"] *= friendly_weight
-
-    df["home_ranking"] = df["home_team"].map(get_fifa_ranking)
-    df["away_ranking"] = df["away_team"].map(get_fifa_ranking)
-    df["ranking_diff"] = df["home_ranking"] - df["away_ranking"]
+    if "is_friendly" in df.columns:
+        df.loc[df["is_friendly"] == True, "time_weight"] *= friendly_weight
 
     if "venue" not in df.columns:
         df["venue"] = ""
@@ -150,23 +154,8 @@ def build_training_data(
     return df
 
 
-def build_corner_training_data(df: pd.DataFrame) -> pd.DataFrame:
-    """Sous-ensemble avec statistiques de corners si disponibles."""
-    if "home_corners" not in df.columns or "away_corners" not in df.columns:
-        return pd.DataFrame()
-    return df.dropna(subset=["home_corners", "away_corners"]).copy()
-
-
 def save_processed(df: pd.DataFrame, filename: str = "training_data.parquet"):
     DATA_PROCESSED.mkdir(parents=True, exist_ok=True)
     path = DATA_PROCESSED / filename
     df.to_parquet(path, index=False)
     print(f"Sauvegardé : {path} ({len(df)} lignes)")
-
-
-if __name__ == "__main__":
-    df = load_raw_matches()
-    print(f"{len(df)} matchs bruts chargés.")
-    training = build_training_data(df)
-    save_processed(training)
-    print("Feature engineering terminé.")

@@ -10,16 +10,19 @@ build/
 venv/
 env/
 
+# Secrets
+.env
+config.local.yaml
+
 # Data (trop lourd pour git, re-fetchable)
 data/raw/*.parquet
 data/processed/
 data/bets_log.csv
+data/paper_trading.json
 
 # Modèle entraîné (re-générable)
 models/*.pkl
-
-# Config avec secrets — copier config.yaml.example
-# config.yaml  ← gardé intentionnellement pour les thresholds (token bzzoiro dedans)
+models/artifacts/
 
 # macOS
 .DS_Store

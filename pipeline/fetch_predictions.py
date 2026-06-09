@@ -1,44 +1,32 @@
 """
-Récupère les prédictions CatBoost de bzzoiro pour les matchs CDM/amicaux.
-
-Ces prédictions servent de second signal aux côtés de Dixon-Coles.
-Stratégie de combinaison : moyenne pondérée (Dixon-Coles 60%, bzzoiro 40%)
-— ajustable si le backtest montre une meilleure performance bzzoiro.
+Récupère les prédictions CatBoost de bzzoiro.
+Utilisées comme features dans StackingEnsemble (plus de blend 60/40 fixe).
 """
+
+from __future__ import annotations
 
 import time
 from pathlib import Path
 
 import pandas as pd
 import requests
-import yaml
 
+from pipeline.config import bzzoiro_headers, load_config
 
 ROOT = Path(__file__).parent.parent
 DATA_RAW = ROOT / "data" / "raw"
-CONFIG_PATH = ROOT / "config.yaml"
-BASE_URL = "https://sports.bzzoiro.com/api/v2"
 LEAGUE_WC = 27
 LEAGUE_FRIENDLY = 31
 
 
-def load_config() -> dict:
-    with open(CONFIG_PATH) as f:
-        return yaml.safe_load(f)
-
-
-def _headers(cfg: dict) -> dict:
-    return {"Authorization": f"Token {cfg['bzzoiro']['token']}"}
-
-
-def _get_all_pages(path: str, params: dict, cfg: dict, sleep: float = 0.2) -> list:
+def _get_all_pages(path: str, params: dict, cfg, sleep: float = 0.2) -> list:
     results = []
     offset = 0
     limit = 100
     while True:
         resp = requests.get(
-            BASE_URL + path,
-            headers=_headers(cfg),
+            cfg.bzzoiro_base_url + path,
+            headers=bzzoiro_headers(cfg),
             params={**params, "limit": limit, "offset": offset},
             timeout=30,
         )
@@ -90,8 +78,7 @@ def _parse_prediction(p: dict) -> dict | None:
     }
 
 
-def fetch_all_predictions(cfg: dict | None = None) -> pd.DataFrame:
-    """Toutes les prédictions disponibles (toutes ligues)."""
+def fetch_all_predictions(cfg=None) -> pd.DataFrame:
     if cfg is None:
         cfg = load_config()
     raw = _get_all_pages("/predictions/", {}, cfg)
@@ -103,16 +90,14 @@ def fetch_all_predictions(cfg: dict | None = None) -> pd.DataFrame:
     return df
 
 
-def fetch_international_predictions(cfg: dict | None = None) -> pd.DataFrame:
-    """Prédictions filtrées sur WC + amicaux internationaux uniquement."""
+def fetch_international_predictions(cfg=None) -> pd.DataFrame:
     df = fetch_all_predictions(cfg)
     if df.empty:
         return df
     return df[df["league_id"].isin([LEAGUE_WC, LEAGUE_FRIENDLY])].copy()
 
 
-def fetch_prediction_for_event(event_id: int, cfg: dict | None = None) -> dict | None:
-    """Prédiction pour un event_id précis (recherche dans le flux global)."""
+def fetch_prediction_for_event(event_id: int, cfg=None) -> dict | None:
     if cfg is None:
         cfg = load_config()
     raw = _get_all_pages("/predictions/", {}, cfg)
@@ -122,39 +107,25 @@ def fetch_prediction_for_event(event_id: int, cfg: dict | None = None) -> dict |
     return None
 
 
-def blend_predictions(
-    dc_probs: dict,
-    bzzo_probs: dict | None,
-    dc_weight: float = 0.6,
-) -> dict:
-    """
-    Combine Dixon-Coles et bzzoiro CatBoost par moyenne pondérée.
-
-    dc_probs   : {"home_win": p, "draw": p, "away_win": p, "over_2.5": p, "btts": p}
-    bzzo_probs : {"prob_home": p, "prob_draw": p, "prob_away": p, "prob_over_25": p, "prob_btts": p}
-    """
+def blend_predictions(dc_probs: dict, bzzo_probs: dict | None, dc_weight: float = 0.6) -> dict:
+    """DEPRECATED — utiliser StackingEnsemble. Conservé pour rétrocompatibilité."""
     if bzzo_probs is None:
         return dc_probs
-
     bzzo_w = 1 - dc_weight
-
     blended = {
         "home_win": dc_weight * dc_probs["home_win"] + bzzo_w * bzzo_probs.get("prob_home", dc_probs["home_win"]),
-        "draw":     dc_weight * dc_probs["draw"]     + bzzo_w * bzzo_probs.get("prob_draw", dc_probs["draw"]),
+        "draw": dc_weight * dc_probs["draw"] + bzzo_w * bzzo_probs.get("prob_draw", dc_probs["draw"]),
         "away_win": dc_weight * dc_probs["away_win"] + bzzo_w * bzzo_probs.get("prob_away", dc_probs["away_win"]),
         "over_2.5": dc_weight * dc_probs["over_2.5"] + bzzo_w * bzzo_probs.get("prob_over_25", dc_probs["over_2.5"]),
-        "btts":     dc_weight * dc_probs["btts"]     + bzzo_w * bzzo_probs.get("prob_btts", dc_probs["btts"]),
+        "btts": dc_weight * dc_probs["btts"] + bzzo_w * bzzo_probs.get("prob_btts", dc_probs["btts"]),
         "expected_home": dc_probs.get("expected_home", bzzo_probs.get("xg_home", 1.3)),
         "expected_away": dc_probs.get("expected_away", bzzo_probs.get("xg_away", 1.0)),
-        "source": "blended",
+        "source": "blended_deprecated",
     }
-
-    # Renormaliser 1X2
     total = blended["home_win"] + blended["draw"] + blended["away_win"]
     if total > 0:
         for k in ["home_win", "draw", "away_win"]:
             blended[k] /= total
-
     return blended
 
 
@@ -171,5 +142,4 @@ if __name__ == "__main__":
     df = fetch_international_predictions(cfg)
     print(f"  {len(df)} prédictions récupérées")
     if not df.empty:
-        print(df[["event_date", "home_team", "away_team", "prob_home", "prob_draw", "prob_away", "xg_home", "xg_away"]].head(10).to_string(index=False))
         save_predictions(df)

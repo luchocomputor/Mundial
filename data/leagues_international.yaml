@@ -1,0 +1,46 @@
+leagues:
+- id: 30
+  name: Africa Cup of Nations 2023
+  competition_type: can
+- id: 60
+  name: World Cup Qualification CAF
+  competition_type: wc
+- id: 68
+  name: AFC Asian Cup 2023
+  competition_type: asian_cup
+- id: 61
+  name: World Cup Qualification AFC
+  competition_type: wc
+- id: 66
+  name: UEFA Euro 2024
+  competition_type: euro
+- id: 64
+  name: UEFA Nations League
+  competition_type: nations_league
+- id: 58
+  name: World Cup Qualification UEFA
+  competition_type: wc
+- id: 31
+  name: International Friendly Games
+  competition_type: friendly
+- id: 27
+  name: World Cup 2026
+  competition_type: wc
+- id: 69
+  name: CONCACAF Gold Cup 2025
+  competition_type: gold_cup
+- id: 65
+  name: CONCACAF Nations League
+  competition_type: nations_league
+- id: 62
+  name: World Cup Qualification CONCACAF
+  competition_type: wc
+- id: 63
+  name: World Cup Qualification OFC
+  competition_type: wc
+- id: 67
+  name: Copa America 2024
+  competition_type: copa
+- id: 59
+  name: World Cup Qualification CONMEBOL
+  competition_type: wc
