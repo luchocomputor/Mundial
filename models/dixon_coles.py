@@ -40,45 +40,49 @@ def _tau(x: int, y: int, mu: float, nu: float, rho: float) -> float:
     return max(val, 1e-6)
 
 
-def _neg_log_likelihood(params: np.ndarray, teams: list[str], matches: pd.DataFrame) -> float:
-    n = len(teams)
-    team_idx = {t: i for i, t in enumerate(teams)}
+def _neg_log_likelihood(params: np.ndarray, teams: list[str], matches_arrays: tuple, l2_reg: float = 0.05) -> float:
+    """Calcul vectorisé de la log-vraisemblance négative Dixon-Coles avec régularisation L2.
 
+    La régularisation L2 (ridge) tire les alpha/beta vers 0 quand les données sont rares,
+    évitant des estimations extrêmes pour les équipes peu observées entre confédérations.
+    """
+    n = len(teams)
     alphas = params[:n]
-    betas = params[n : 2 * n]
+    betas = params[n: 2 * n]
     gamma = params[2 * n]
     rho = params[2 * n + 1]
 
-    log_lik = 0.0
-    for _, row in matches.iterrows():
-        hi = team_idx.get(row["home_team"])
-        ai = team_idx.get(row["away_team"])
-        if hi is None or ai is None:
-            continue
+    hi_arr, ai_arr, hg_arr, ag_arr, w_arr = matches_arrays
 
-        mu = np.exp(alphas[hi] + betas[ai] + gamma)
-        nu = np.exp(alphas[ai] + betas[hi])
-        hg = int(row["home_goals"])
-        ag = int(row["away_goals"])
-        w = float(row.get("time_weight", 1.0))
+    mu = np.exp(alphas[hi_arr] + betas[ai_arr] + gamma)
+    nu = np.exp(alphas[ai_arr] + betas[hi_arr])
 
-        tau_val = _tau(hg, ag, mu, nu, rho)
-        if tau_val <= 0:
-            tau_val = 1e-10
+    from scipy.special import gammaln
+    log_pmf_h = hg_arr * np.log(np.maximum(mu, 1e-10)) - mu - gammaln(hg_arr + 1)
+    log_pmf_a = ag_arr * np.log(np.maximum(nu, 1e-10)) - nu - gammaln(ag_arr + 1)
 
-        log_lik += w * (
-            np.log(tau_val)
-            + poisson.logpmf(hg, mu)
-            + poisson.logpmf(ag, nu)
-        )
+    log_tau = np.zeros(len(hi_arr))
+    mask_00 = (hg_arr == 0) & (ag_arr == 0)
+    mask_10 = (hg_arr == 1) & (ag_arr == 0)
+    mask_01 = (hg_arr == 0) & (ag_arr == 1)
+    mask_11 = (hg_arr == 1) & (ag_arr == 1)
 
-    return -log_lik
+    log_tau[mask_00] = np.log(np.maximum(1 - mu[mask_00] * nu[mask_00] * rho, 1e-10))
+    log_tau[mask_10] = np.log(np.maximum(1 + nu[mask_10] * rho, 1e-10))
+    log_tau[mask_01] = np.log(np.maximum(1 + mu[mask_01] * rho, 1e-10))
+    log_tau[mask_11] = np.log(np.maximum(1 - rho, 1e-10))
+
+    log_lik = w_arr * (log_tau + log_pmf_h + log_pmf_a)
+
+    penalty = l2_reg * (np.sum(alphas ** 2) + np.sum(betas ** 2))
+    return -log_lik.sum() + penalty
 
 
 class DixonColesModel:
-    def __init__(self, decay: float = 0.0065, friendly_weight: float = 0.5):
+    def __init__(self, decay: float = 0.0065, friendly_weight: float = 0.5, l2_reg: float = 0.05):
         self.decay = decay
         self.friendly_weight = friendly_weight
+        self.l2_reg = l2_reg
         self.teams: list[str] = []
         self.alphas: dict[str, float] = {}
         self.betas: dict[str, float] = {}
@@ -109,8 +113,29 @@ class DixonColesModel:
             set(df["home_team"].unique()) | set(df["away_team"].unique())
         )
         n = len(self.teams)
+        team_idx = {t: i for i, t in enumerate(self.teams)}
 
+        # Pré-compiler les arrays numpy — évite de passer le DataFrame à chaque éval
+        valid = df[df["home_team"].isin(team_idx) & df["away_team"].isin(team_idx)]
+        matches_arrays = (
+            np.array([team_idx[t] for t in valid["home_team"]], dtype=np.int32),
+            np.array([team_idx[t] for t in valid["away_team"]], dtype=np.int32),
+            valid["home_goals"].to_numpy(dtype=np.float64),
+            valid["away_goals"].to_numpy(dtype=np.float64),
+            valid["time_weight"].to_numpy(dtype=np.float64),
+        )
+
+        # Initialiser alpha/beta à partir du classement FIFA comme prior informatif.
+        # Sans prior, l'optimiseur ne distingue pas Spain de Cabo Verde sans
+        # observations directes — il converge vers des valeurs arbitraires.
+        from pipeline.features import get_fifa_ranking
         x0 = np.zeros(2 * n + 2)
+        for i, team in enumerate(self.teams):
+            rank = get_fifa_ranking(team)  # 1 = meilleur, 50 = faible
+            # alpha (attaque) : top 5 ~ +0.6, rank 50 ~ -0.6
+            x0[i] = np.clip(0.6 * (1 - (rank - 1) / 25), -0.8, 0.8)
+            # beta (défense) : top 5 ~ -0.6 (peu de buts encaissés), rank 50 ~ 0
+            x0[n + i] = np.clip(-0.6 * (1 - (rank - 1) / 25), -0.8, 0.0)
         x0[2 * n] = 0.1
         x0[2 * n + 1] = 0.01
 
@@ -118,16 +143,16 @@ class DixonColesModel:
             [(-3, 3)] * n
             + [(-3, 3)] * n
             + [(0, 1)]
-            + [(-0.4, 0.4)]   # rho borné loin des extrema pour éviter tau<0
+            + [(-0.4, 0.4)]
         )
 
         result = minimize(
             _neg_log_likelihood,
             x0,
-            args=(self.teams, df),
+            args=(self.teams, matches_arrays, self.l2_reg),
             method="L-BFGS-B",
             bounds=bounds,
-            options={"maxiter": 1000, "ftol": 1e-9},
+            options={"maxiter": 2000, "ftol": 1e-10},
         )
 
         params = result.x

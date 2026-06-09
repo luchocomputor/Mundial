@@ -115,6 +115,35 @@ def scan():
             if edge < threshold:
                 continue
 
+            # --- Filtres de sanité ---
+
+            # 1. Edge > 25% : probablement une erreur de modèle sur mismatch extrême
+            if edge > 0.25:
+                continue
+
+            # 2. Cote > 10 (prob < 10%) : pas assez de données pour calibrer ces extrêmes
+            if cote > 10.0:
+                continue
+
+            # 3. Consensus DC / bzzoiro obligatoire.
+            #    Les deux modèles doivent estimer la même probabilité à ±15% près.
+            #    Divergence > 15% = signal contradictoire → skip.
+            if bzzo_row is not None:
+                dc_bzzo_pairs = {
+                    ("1X2",    "home"):  (dc_preds.get("home_win", 0),   bzzo_row.get("prob_home", -1)),
+                    ("1X2",    "draw"):  (dc_preds.get("draw", 0),       bzzo_row.get("prob_draw", -1)),
+                    ("1X2",    "away"):  (dc_preds.get("away_win", 0),   bzzo_row.get("prob_away", -1)),
+                    ("over_2.5","over"): (dc_preds.get("over_2.5", 0),   bzzo_row.get("prob_over_25", -1)),
+                    ("over_2.5","under"):(1-dc_preds.get("over_2.5",0),  1-bzzo_row.get("prob_over_25", -1) if bzzo_row.get("prob_over_25") is not None else -1),
+                    ("btts",   "yes"):   (dc_preds.get("btts", 0),       bzzo_row.get("prob_btts", -1)),
+                    ("btts",   "no"):    (1-dc_preds.get("btts", 0),     1-bzzo_row.get("prob_btts", -1) if bzzo_row.get("prob_btts") is not None else -1),
+                }
+                pair = dc_bzzo_pairs.get((market, side))
+                if pair is not None:
+                    p_dc_direct, p_bzzo_direct = pair
+                    if p_bzzo_direct >= 0 and abs(p_dc_direct - p_bzzo_direct) > 0.15:
+                        continue  # Les deux modèles divergent trop → signal non fiable
+
             kelly = min(kelly_size(p_model, cote, kelly_fraction), max_kelly)
             stake = round(bankroll * kelly, 2)
 

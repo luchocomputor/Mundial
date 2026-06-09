@@ -33,30 +33,41 @@ REPORT_DIR = DATA_PROCESSED / "backtest_wc2022"
 
 
 def load_wc2022_matches() -> pd.DataFrame:
-    path = DATA_RAW / "wc_2022.parquet"
-    if not path.exists():
-        raise FileNotFoundError(f"Données CDM 2022 manquantes : {path}")
-    df = pd.read_parquet(path)
-    df["date"] = pd.to_datetime(df["date"])
-    return df[df["status"] == "FT"].copy()
+    df = pd.read_parquet(DATA_RAW / "wc_all.parquet")
+    df["date"] = pd.to_datetime(df["date"], utc=True)
+    wc2022 = df[(df["date"].dt.year == 2022) & (df["status"] == "finished")]
+    wc2022 = wc2022.dropna(subset=["home_goals", "away_goals"])
+    if wc2022.empty:
+        raise FileNotFoundError("Données CDM 2022 introuvables dans wc_all.parquet")
+    return wc2022.copy()
 
 
 def load_pre2022_matches() -> pd.DataFrame:
-    """Toutes les données hors CDM 2022 pour l'entraînement."""
+    """Matchs terminés avant CDM 2022 : WC 2014/2018 + qualifications + amicaux."""
     parts = []
-    for y in [2018, 2019, 2020, 2021]:
-        path = DATA_RAW / f"wc_{y}.parquet"
-        if path.exists():
-            parts.append(pd.read_parquet(path))
-    friendly = DATA_RAW / "friendly_2026.parquet"
-    if friendly.exists():
-        df_f = pd.read_parquet(friendly)
-        parts.append(df_f[df_f["date"].dt.year < 2022])
+
+    wc = pd.read_parquet(DATA_RAW / "wc_all.parquet")
+    wc["date"] = pd.to_datetime(wc["date"], utc=True)
+    pre_wc = wc[(wc["date"].dt.year < 2022) & (wc["status"] == "finished")]
+    if not pre_wc.empty:
+        parts.append(pre_wc)
+
+    qual = DATA_RAW / "qualifications.parquet"
+    if qual.exists():
+        df_q = pd.read_parquet(qual)
+        df_q["date"] = pd.to_datetime(df_q["date"], utc=True)
+        parts.append(df_q[(df_q["date"].dt.year < 2022) & (df_q["status"] == "finished")])
+
+    fr = DATA_RAW / "friendly_all.parquet"
+    if fr.exists():
+        df_f = pd.read_parquet(fr)
+        df_f["date"] = pd.to_datetime(df_f["date"], utc=True)
+        parts.append(df_f[(df_f["date"].dt.year < 2022) & (df_f["status"] == "finished")])
+
     if not parts:
         raise FileNotFoundError("Aucune donnée d'entraînement trouvée.")
     df = pd.concat(parts, ignore_index=True)
-    df["date"] = pd.to_datetime(df["date"])
-    return df[df["status"] == "FT"].copy()
+    return df.dropna(subset=["home_goals", "away_goals"]).drop_duplicates(subset=["fixture_id"])
 
 
 def simulate_bets(
@@ -147,9 +158,10 @@ def run_backtest():
     print(f"  Train : {len(df_train)} matchs | Test : {len(df_test)} matchs CDM 2022")
 
     print("Entraînement Dixon-Coles sur 2018-2021...")
-    training = build_training_data(df_train, reference_date=pd.Timestamp("2022-11-20"))
-    model = DixonColesModel()
-    model.fit(training, reference_date=pd.Timestamp("2022-11-20"))
+    ref = pd.Timestamp("2022-11-20", tz="UTC")
+    training = build_training_data(df_train, reference_date=ref, decay=0.001, friendly_weight=0.3)
+    model = DixonColesModel(decay=0.001, friendly_weight=0.3, l2_reg=0.05)
+    model.fit(training, reference_date=ref)
 
     print("Génération des prédictions CDM 2022...")
     predictions = []
@@ -226,8 +238,10 @@ def run_backtest():
         except Exception:
             pass
 
-    model.save()
-    print("\nModèle sauvegardé. Lance telegram_bot.py pour le mode live.")
+    # Sauvegarder le modèle de backtest séparément pour ne pas écraser la production
+    backtest_model_path = ROOT / "models" / "dixon_coles_backtest2022.pkl"
+    model.save(backtest_model_path)
+    print(f"\nModèle backtest sauvegardé dans {backtest_model_path}")
 
 
 if __name__ == "__main__":

@@ -103,12 +103,23 @@ def load_venue_names() -> dict[int, str]:
     return dict(zip(df["venue_id"], df["name"]))
 
 
-def load_raw_matches() -> pd.DataFrame:
+# Leagues de qualifications confédérales exclues du training — les niveaux entre zones
+# sont incomparables (Japan vs Kyrgyzstan ≠ France vs Portugal) et biaiseraient les
+# paramètres des équipes asiatiques / africaines / CONCACAF vers l'haut.
+QUALIFICATION_LEAGUE_IDS = {58, 59, 60, 61, 62, 63}
+
+
+def load_raw_matches(exclude_qualifications: bool = True) -> pd.DataFrame:
     path = DATA_RAW / "all_matches.parquet"
     if not path.exists():
         raise FileNotFoundError(f"Pas de données à {path}. Lance fetch_data.py d'abord.")
     df = pd.read_parquet(path)
     df["date"] = pd.to_datetime(df["date"], utc=True)
+
+    if exclude_qualifications and "league_id" in df.columns:
+        before = len(df)
+        df = df[~df["league_id"].isin(QUALIFICATION_LEAGUE_IDS)]
+        print(f"  Qualifications exclues: {before - len(df)} matchs retirés ({len(df)} restants)")
 
     # Résoudre venue_id → nom du stade si disponible
     if "venue_id" in df.columns and "venue" not in df.columns:
