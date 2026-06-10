@@ -1,44 +1,35 @@
 """
 Fetching data from bzzoiro Sports Data API.
 Docs : https://sports.bzzoiro.com
-Token dans config.yaml → bzzoiro.token
-
-League IDs :
-  27  = World Cup (2014, 2018, 2022, 2026)
-  31  = International Friendly Games
 """
+
+from __future__ import annotations
 
 import argparse
 import time
 from pathlib import Path
 
 import pandas as pd
-import requests
 import yaml
 
+from pipeline.config import bzzoiro_headers, load_config
+from pipeline.placeholder import filter_real_teams
+from pipeline.schemas import validate_matches_df
+from pipeline.status import normalize_status
 
 ROOT = Path(__file__).parent.parent
 DATA_RAW = ROOT / "data" / "raw"
-CONFIG_PATH = ROOT / "config.yaml"
 
-BASE_URL = "https://sports.bzzoiro.com/api/v2"
 LEAGUE_WC = 27
 LEAGUE_FRIENDLY = 31
 
 
-def load_config() -> dict:
-    with open(CONFIG_PATH) as f:
-        return yaml.safe_load(f)
+def _get(path: str, params: dict, cfg) -> dict:
+    import requests
 
-
-def _headers(cfg: dict) -> dict:
-    return {"Authorization": f"Token {cfg['bzzoiro']['token']}"}
-
-
-def _get(path: str, params: dict, cfg: dict) -> dict:
     resp = requests.get(
-        BASE_URL + path,
-        headers=_headers(cfg),
+        cfg.bzzoiro_base_url + path,
+        headers=bzzoiro_headers(cfg),
         params=params,
         timeout=30,
     )
@@ -46,8 +37,7 @@ def _get(path: str, params: dict, cfg: dict) -> dict:
     return resp.json()
 
 
-def _get_all_pages(path: str, params: dict, cfg: dict, sleep: float = 0.2) -> list:
-    """Récupère toutes les pages d'un endpoint paginé."""
+def _get_all_pages(path: str, params: dict, cfg, sleep: float = 0.2) -> list:
     results = []
     offset = 0
     limit = 100
@@ -62,76 +52,111 @@ def _get_all_pages(path: str, params: dict, cfg: dict, sleep: float = 0.2) -> li
     return results
 
 
-def _parse_event(e: dict, is_friendly: bool) -> dict:
+def _load_league_config() -> list[dict]:
+    path = ROOT / "data" / "leagues_international.yaml"
+    if not path.exists():
+        return [
+            {"id": LEAGUE_WC, "name": "World Cup", "competition_type": "wc"},
+            {"id": LEAGUE_FRIENDLY, "name": "Friendlies", "competition_type": "friendly"},
+        ]
+    with open(path) as f:
+        data = yaml.safe_load(f) or {}
+    return data.get("leagues", [])
+
+
+def _parse_event(e: dict, competition_type: str, is_friendly: bool) -> dict:
     return {
         "fixture_id": e["id"],
         "date": e["event_date"],
         "league_id": e["league_id"],
+        "league_name": e.get("league_name", ""),
         "season_id": e.get("season_id"),
+        "competition_type": competition_type,
         "is_friendly": is_friendly,
         "home_team": e["home_team"],
         "away_team": e["away_team"],
-        "home_team_id": e["home_team_id"],
-        "away_team_id": e["away_team_id"],
+        "home_team_id": e.get("home_team_id"),
+        "away_team_id": e.get("away_team_id"),
         "home_goals": e.get("home_score"),
         "away_goals": e.get("away_score"),
         "home_goals_ht": e.get("home_score_ht"),
         "away_goals_ht": e.get("away_score_ht"),
         "venue_id": e.get("venue_id"),
+        "venue": e.get("venue_name", ""),
+        "city": e.get("city", ""),
         "group_name": e.get("group_name", ""),
         "round_name": e.get("round_name", ""),
-        "status": e.get("status", ""),
+        "status": normalize_status(e.get("status", "")),
         "is_neutral": e.get("is_neutral_ground", False),
         "home_coach_id": e.get("home_coach_id"),
         "away_coach_id": e.get("away_coach_id"),
+        "xg_home": e.get("xg_home"),
+        "xg_away": e.get("xg_away"),
     }
 
 
-def fetch_world_cup_matches(cfg: dict | None = None) -> pd.DataFrame:
-    """Tous les matchs CDM (2014, 2018, 2022, 2026) depuis bzzoiro."""
+def fetch_league_matches(league_id: int, competition_type: str, is_friendly: bool, cfg=None) -> pd.DataFrame:
     if cfg is None:
         cfg = load_config()
-    events = _get_all_pages("/events/", {"league_id": LEAGUE_WC}, cfg)
-    rows = [_parse_event(e, is_friendly=False) for e in events]
+    events = _get_all_pages("/events/", {"league_id": league_id}, cfg)
+    rows = [_parse_event(e, competition_type, is_friendly) for e in events]
     df = pd.DataFrame(rows)
     if not df.empty:
         df["date"] = pd.to_datetime(df["date"], utc=True)
     return df
 
 
-def fetch_friendly_matches(cfg: dict | None = None) -> pd.DataFrame:
-    """Tous les amicaux internationaux disponibles."""
+def fetch_international_matches(cfg=None) -> pd.DataFrame:
     if cfg is None:
         cfg = load_config()
-    events = _get_all_pages("/events/", {"league_id": LEAGUE_FRIENDLY}, cfg)
-    rows = [_parse_event(e, is_friendly=True) for e in events]
-    df = pd.DataFrame(rows)
-    if not df.empty:
-        df["date"] = pd.to_datetime(df["date"], utc=True)
-    return df
+    leagues = _load_league_config()
+    parts = []
+    for league in leagues:
+        lid = league["id"]
+        ctype = league.get("competition_type", "other")
+        is_friendly = ctype == "friendly"
+        print(f"  Fetching league {lid} ({league.get('name', '?')})...")
+        df = fetch_league_matches(lid, ctype, is_friendly, cfg)
+        if not df.empty:
+            parts.append(df)
+    if not parts:
+        return pd.DataFrame()
+    combined = pd.concat(parts, ignore_index=True)
+    combined = combined.drop_duplicates(subset=["fixture_id"])
+    return validate_matches_df(combined)
 
 
-def fetch_upcoming_fixtures(cfg: dict | None = None) -> pd.DataFrame:
-    """Matchs CDM 2026 et amicaux à venir (non joués)."""
+def fetch_world_cup_matches(cfg=None) -> pd.DataFrame:
+    return fetch_league_matches(LEAGUE_WC, "wc", False, cfg)
+
+
+def fetch_friendly_matches(cfg=None) -> pd.DataFrame:
+    return fetch_league_matches(LEAGUE_FRIENDLY, "friendly", True, cfg)
+
+
+def fetch_upcoming_fixtures(cfg=None) -> pd.DataFrame:
     if cfg is None:
         cfg = load_config()
-
-    wc_events = _get_all_pages("/events/", {"league_id": LEAGUE_WC, "status": "notstarted"}, cfg)
-    fr_events = _get_all_pages("/events/", {"league_id": LEAGUE_FRIENDLY, "status": "notstarted"}, cfg)
-
-    rows = (
-        [_parse_event(e, False) for e in wc_events]
-        + [_parse_event(e, True) for e in fr_events]
-    )
-    df = pd.DataFrame(rows)
+    leagues = _load_league_config()
+    parts = []
+    for league in leagues:
+        events = _get_all_pages(
+            "/events/",
+            {"league_id": league["id"], "status": "notstarted"},
+            cfg,
+        )
+        ctype = league.get("competition_type", "other")
+        parts.extend(
+            [_parse_event(e, ctype, ctype == "friendly") for e in events]
+        )
+    df = pd.DataFrame(parts)
     if not df.empty:
         df["date"] = pd.to_datetime(df["date"], utc=True)
         df = df.sort_values("date").reset_index(drop=True)
     return df
 
 
-def fetch_event_odds(event_id: int, cfg: dict | None = None) -> dict:
-    """Cotes 1X2/over-under/BTTS pour un match (nulles si pas encore ouvertes)."""
+def fetch_event_odds(event_id: int, cfg=None) -> dict:
     if cfg is None:
         cfg = load_config()
     try:
@@ -141,8 +166,7 @@ def fetch_event_odds(event_id: int, cfg: dict | None = None) -> dict:
         return {}
 
 
-def fetch_odds_batch(event_ids: list[int], cfg: dict | None = None) -> dict[int, dict]:
-    """Cotes pour une liste de matchs. Retourne {event_id: odds_dict}."""
+def fetch_odds_batch(event_ids: list[int], cfg=None) -> dict[int, dict]:
     if cfg is None:
         cfg = load_config()
     result = {}
@@ -155,14 +179,11 @@ def fetch_odds_batch(event_ids: list[int], cfg: dict | None = None) -> dict[int,
     return result
 
 
-def fetch_venues(cfg: dict | None = None) -> pd.DataFrame:
-    """Tous les stades CDM 2026 avec noms et villes."""
+def fetch_venues(cfg=None) -> pd.DataFrame:
     if cfg is None:
         cfg = load_config()
-
     wc_events = _get_all_pages("/events/", {"league_id": LEAGUE_WC}, cfg)
     venue_ids = {e["venue_id"] for e in wc_events if e.get("venue_id")}
-
     rows = []
     for vid in venue_ids:
         try:
@@ -179,51 +200,41 @@ def fetch_venues(cfg: dict | None = None) -> pd.DataFrame:
             time.sleep(0.1)
         except Exception:
             pass
-
     return pd.DataFrame(rows)
 
 
-def fetch_wc2026_group_stage(cfg: dict | None = None) -> pd.DataFrame:
-    """Matchs de phase de groupes CDM 2026 uniquement (avec noms d'équipes réels)."""
+def fetch_wc2026_group_stage(cfg=None) -> pd.DataFrame:
     df = fetch_world_cup_matches(cfg)
     if df.empty:
         return df
-    # Garder uniquement 2026 avec group renseigné et équipes nommées
     mask = (
         (df["date"].dt.year == 2026)
         & (df["group_name"].notna())
         & (df["group_name"] != "")
-        & (~df["home_team"].str.startswith(("W", "L", "R", "Q", "H", "G", "1", "2", "3")))
     )
-    return df[mask].copy()
+    return filter_real_teams(df[mask])
 
 
 def fetch_and_save_all():
     cfg = load_config()
     DATA_RAW.mkdir(parents=True, exist_ok=True)
 
-    print("Fetching tous les matchs CDM (2014-2026)...")
-    df_wc = fetch_world_cup_matches(cfg)
-    if not df_wc.empty:
-        df_wc.to_parquet(DATA_RAW / "wc_all.parquet", index=False)
-        print(f"  {len(df_wc)} matchs WC ({df_wc['date'].dt.year.min()}–{df_wc['date'].dt.year.max()})")
+    print("Fetching matchs internationaux...")
+    df_all = fetch_international_matches(cfg)
+    if not df_all.empty:
+        df_all.to_parquet(DATA_RAW / "all_matches.parquet", index=False)
+        finished = (df_all["status"] == "finished").sum()
+        print(f"  {len(df_all)} matchs ({finished} terminés)")
 
-    print("Fetching amicaux internationaux...")
-    df_fr = fetch_friendly_matches(cfg)
-    if not df_fr.empty:
-        df_fr.to_parquet(DATA_RAW / "friendly_all.parquet", index=False)
-        print(f"  {len(df_fr)} amicaux")
+        df_wc = df_all[df_all["competition_type"] == "wc"]
+        if not df_wc.empty:
+            df_wc.to_parquet(DATA_RAW / "wc_all.parquet", index=False)
 
-    print("Combinaison de toutes les données...")
-    all_parts = [df for df in [df_wc, df_fr] if not df.empty]
-    if all_parts:
-        combined = pd.concat(all_parts, ignore_index=True)
-        combined = combined.drop_duplicates(subset=["fixture_id"])
-        combined.to_parquet(DATA_RAW / "all_matches.parquet", index=False)
-        finished = combined[combined["status"] == "finished"]
-        print(f"  Total : {len(combined)} matchs dont {len(finished)} terminés")
+        df_fr = df_all[df_all["competition_type"] == "friendly"]
+        if not df_fr.empty:
+            df_fr.to_parquet(DATA_RAW / "friendly_all.parquet", index=False)
 
-    print("Fetching stades CDM 2026...")
+    print("Fetching stades...")
     df_venues = fetch_venues(cfg)
     if not df_venues.empty:
         df_venues.to_parquet(DATA_RAW / "venues.parquet", index=False)
@@ -234,9 +245,6 @@ def fetch_and_save_all():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--all", action="store_true", help="Fetche tout et sauvegarde")
+    parser.add_argument("--all", action="store_true")
     args = parser.parse_args()
-    if args.all:
-        fetch_and_save_all()
-    else:
-        fetch_and_save_all()
+    fetch_and_save_all()

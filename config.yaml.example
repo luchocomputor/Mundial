@@ -1,5 +1,4 @@
 bzzoiro:
-  token: "77767139efb5ef981bb229963c8c6e0e89c2b703"
   base_url: "https://sports.bzzoiro.com/api/v2"
 
 api_football:
@@ -16,17 +15,7 @@ model:
   decay: 0.0065
   friendly_weight: 0.5
   devig_method: "shin"
-  max_market_divergence: 0.15
-  market_anchor_weight: 0.3
-  sparse_match_threshold: 5
-  sparse_anchor_weight: 0.5
-  production_mode: paper_only
 
-odds_api:
-  key: "12c1738e94e0ec40c857aea8203ced57"
-  base_url: "https://api.the-odds-api.com/v4"
-  sport: "soccer_fifa_world_cup"
-  regions: "eu"
 bankroll:
   initial: 200
 
@@ -38,9 +27,6 @@ seasons:
   training: [2018, 2019, 2020, 2021, 2022]
   backtest: 2022
   live: 2026
-
-blend:
-  dc_weight: 0.3
 
 risk:
   max_daily_exposure: 0.15

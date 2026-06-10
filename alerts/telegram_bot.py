@@ -1,173 +1,164 @@
 """
-Bot Telegram pour les alertes value bets CDM 2026.
-Envoie une alerte immédiate à chaque value bet détectée.
-Envoie un récapitulatif quotidien des matchs à 9h00.
+Bot Telegram pour alertes value bets + récap quotidien 9h.
+En mode paper_only : récap sans incitation à parier, pas d'alertes value bets.
 """
+
+from __future__ import annotations
 
 import asyncio
 import logging
-from datetime import datetime, time
+import sys
+from datetime import datetime
 from pathlib import Path
 
-import yaml
 from telegram import Bot
 from telegram.error import TelegramError
 
-from pipeline.fetch_data import fetch_upcoming_fixtures, fetch_odds_batch
+sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from pipeline.config import load_config
+from pipeline.fetch_data import fetch_odds_batch, fetch_upcoming_fixtures
 from pipeline.fetch_predictions import fetch_international_predictions
-from pipeline.value_detector import compute_roi_from_log, format_alert, scan_value_bets, log_bets
-from models.dixon_coles import DixonColesModel
-
-
-ROOT = Path(__file__).parent.parent
-CONFIG_PATH = ROOT / "config.yaml"
+from pipeline.model_loader import load_production_model
+from pipeline.production import alerts_allowed, load_latest_go_nogo
+from pipeline.value_detector import compute_roi_from_log, format_alert, log_bets, scan_value_bets
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 
 
-def load_config() -> dict:
-    with open(CONFIG_PATH) as f:
-        return yaml.safe_load(f)
-
-
 async def send_message(bot: Bot, chat_id: str, text: str) -> None:
     try:
-        await bot.send_message(chat_id=chat_id, text=text, parse_mode="HTML")
+        await bot.send_message(chat_id=chat_id, text=text)
     except TelegramError as e:
         logger.error(f"Erreur Telegram: {e}")
 
 
-async def send_value_bets(bets: list[dict], cfg: dict) -> None:
-    if not bets:
+async def send_value_bets(bets: list[dict], cfg) -> None:
+    if not bets or not cfg.telegram_token:
         return
-    bot = Bot(token=cfg["telegram"]["token"])
-    chat_id = cfg["telegram"]["chat_id"]
+    if not alerts_allowed(cfg):
+        logger.info("Alertes value bets désactivées (paper_only ou NO_GO)")
+        return
+    bot = Bot(token=cfg.telegram_token)
     for bet in bets:
-        text = format_alert(bet)
-        await send_message(bot, chat_id, text)
+        await send_message(bot, cfg.telegram_chat_id, format_alert(bet))
         await asyncio.sleep(0.5)
 
 
-async def send_daily_summary(cfg: dict, model: DixonColesModel) -> None:
-    """Résumé matinal : matchs du jour + ROI courant."""
+async def send_daily_summary(cfg, model) -> None:
     today = datetime.now().date()
-    bot = Bot(token=cfg["telegram"]["token"])
-    chat_id = cfg["telegram"]["chat_id"]
+    if not cfg.telegram_token:
+        return
+    bot = Bot(token=cfg.telegram_token)
+
+    go = load_latest_go_nogo()
+    mode = cfg.model.production_mode
+    header = f"Récap CDM 2026 — {today.strftime('%d %B %Y')}\n"
+    if mode == "paper_only":
+        header += "📋 Mode observation (paper only) — pas de mise recommandée\n"
+    header += f"Validation : {go.value}\n\n"
 
     try:
-        df = fetch_upcoming_fixtures(cfg=cfg)
+        df = fetch_upcoming_fixtures()
     except Exception as e:
-        logger.error(f"Erreur fetch fixtures: {e}")
+        logger.error(f"Erreur fetch: {e}")
         df = None
 
+    bzzo_map = {}
     try:
-        preds_df = fetch_international_predictions(cfg=cfg)
-        bzzo_map = {
-            row["event_id"]: row.to_dict()
-            for _, row in preds_df.iterrows()
-        }
+        preds_df = fetch_international_predictions()
+        bzzo_map = {row["event_id"]: row.to_dict() for _, row in preds_df.iterrows()}
     except Exception:
-        bzzo_map = {}
+        pass
 
-    lines = [f"☀️ <b>Récap CDM 2026 — {today.strftime('%d %B %Y')}</b>\n"]
+    lines = [header]
 
     if df is not None and not df.empty:
         today_matches = df[df["date"].dt.date == today]
         if today_matches.empty:
             lines.append("Aucun match aujourd'hui.")
         else:
-            lines.append(f"<b>{len(today_matches)} match(s) aujourd'hui :</b>")
+            lines.append(f"{len(today_matches)} match(s) aujourd'hui :")
             for _, row in today_matches.iterrows():
-                home = row["home_team"]
-                away = row["away_team"]
+                home, away = row["home_team"], row["away_team"]
                 kickoff = row["date"].strftime("%H:%M")
-                fid = row["fixture_id"]
                 try:
-                    from pipeline.fetch_predictions import blend_predictions
-                    dc = model.predict_outcomes(home, away)
-                    bz = bzzo_map.get(fid)
-                    preds = blend_predictions(dc, bz)
+                    from models.base import MatchContext
+                    ctx = MatchContext(is_neutral=bool(row.get("is_neutral", False)))
+                    bz = bzzo_map.get(row["fixture_id"])
+                    pred = model.predict_outcomes(home, away, context=ctx)
+                    if bz and hasattr(model, "predict_outcomes"):
+                        try:
+                            pred = model.predict_outcomes(home, away, context=ctx, bzzoiro_features=bz)
+                        except TypeError:
+                            pass
+                    d = pred.to_dict() if hasattr(pred, "to_dict") else pred
                     lines.append(
-                        f"⚽ {home} vs {away} — {kickoff}\n"
-                        f"   Win: {preds['home_win']*100:.0f}% / Draw: {preds['draw']*100:.0f}% / {preds['away_win']*100:.0f}%\n"
-                        f"   Over 2.5: {preds['over_2.5']*100:.0f}% | BTTS: {preds['btts']*100:.0f}%"
+                        f"{home} vs {away} — {kickoff}\n"
+                        f"  Win: {d['home_win']*100:.0f}% / Draw: {d['draw']*100:.0f}% / {d['away_win']*100:.0f}%\n"
+                        f"  Over 2.5: {d['over_2.5']*100:.0f}% | BTTS: {d['btts']*100:.0f}%"
                     )
                 except Exception:
-                    lines.append(f"⚽ {home} vs {away} — {kickoff} (prédiction indispo)")
+                    lines.append(f"{home} vs {away} — {kickoff}")
     else:
-        lines.append("Données matchs non disponibles.")
+        lines.append("Données non disponibles.")
 
     roi_stats = compute_roi_from_log()
     if roi_stats["n_bets"] > 0:
         lines.append(
-            f"\n📊 <b>ROI suivi</b> : {roi_stats['roi']:+.1f}% sur {roi_stats['n_bets']} bets\n"
-            f"   Profit : {roi_stats['profit']:+.2f}€ (misé : {roi_stats['total_staked']:.2f}€)"
+            f"\nROI paper: {roi_stats['roi']:+.1f}% ({roi_stats['n_bets']} bets) | "
+            f"CLV moy: {roi_stats.get('clv_mean', 0):+.1f}%"
         )
+        if roi_stats.get("clv_mean", 0) < 0:
+            lines.append("⚠ CLV 7j glissant négatif — prudence")
 
-    text = "\n".join(lines)
-    await send_message(bot, chat_id, text)
-    logger.info("Récapitulatif quotidien envoyé.")
+    await send_message(bot, cfg.telegram_chat_id, "\n".join(lines))
 
 
-async def run_scanner_loop(cfg: dict, model: DixonColesModel, interval_minutes: int = 30):
-    """Boucle principale : scanne les value bets toutes les N minutes."""
-    bankroll = cfg["bankroll"]["initial"]
-    logger.info(f"Scanner démarré. Vérification toutes les {interval_minutes} min.")
+async def run_scanner_loop(cfg, model, interval_minutes: int = 30):
+    logger.info(f"Scanner démarré (intervalle {interval_minutes} min, mode={cfg.model.production_mode})")
 
     while True:
         now = datetime.now()
-
         if now.hour == 9 and now.minute < interval_minutes:
-            logger.info("Envoi du récapitulatif quotidien...")
             await send_daily_summary(cfg, model)
 
         try:
-            df = fetch_upcoming_fixtures(cfg=cfg)
-            if not df.empty:
-                matches = df.to_dict("records")
-                logger.info(f"{len(matches)} matchs à venir (WC+amicaux)")
-            else:
-                matches = []
+            df = fetch_upcoming_fixtures()
+            matches = df.to_dict("records") if not df.empty else []
         except Exception as e:
             logger.error(f"Erreur fetch: {e}")
             matches = []
 
-        if matches:
+        if matches and alerts_allowed(cfg):
             event_ids = [m["fixture_id"] for m in matches[:20]]
-            bookmaker_odds = fetch_odds_batch(event_ids, cfg)
+            bookmaker_odds = fetch_odds_batch(event_ids)
             has_odds = sum(1 for o in bookmaker_odds.values() if o)
-            logger.info(f"Cotes disponibles pour {has_odds}/{len(event_ids)} matchs")
 
             if has_odds > 0:
                 try:
-                    preds_df = fetch_international_predictions(cfg=cfg)
+                    preds_df = fetch_international_predictions()
                     bzzo_map = {row["event_id"]: row.to_dict() for _, row in preds_df.iterrows()}
                 except Exception:
                     bzzo_map = {}
 
-                bk = cfg["bankroll"]["initial"]
-                bets = scan_value_bets(matches[:20], model, bookmaker_odds, cfg, bk, bzzo_map)
+                bets, stats = scan_value_bets(
+                    matches[:20], model, bookmaker_odds, cfg, cfg.bankroll_initial, bzzo_map
+                )
+                logger.info(f"Garde-fous: {stats.accepted} acceptés, {stats.rejected_divergence} rejetés")
                 if bets:
-                    logger.info(f"{len(bets)} value bets détectés!")
                     log_bets(bets)
                     await send_value_bets(bets, cfg)
-                else:
-                    logger.info("Aucun value bet pour l'instant.")
+        elif matches:
+            logger.debug("Scan sans alertes (paper_only ou NO_GO)")
 
         await asyncio.sleep(interval_minutes * 60)
 
 
 def main():
     cfg = load_config()
-
-    try:
-        model = DixonColesModel.load()
-        logger.info("Modèle chargé.")
-    except FileNotFoundError:
-        logger.error("Modèle non trouvé. Lance d'abord : python models/dixon_coles.py --train")
-        return
-
+    model = load_production_model(prefer_elo=True)
     asyncio.run(run_scanner_loop(cfg, model))
 
 
