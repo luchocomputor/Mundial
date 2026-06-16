@@ -1,10 +1,10 @@
 bzzoiro:
-  token: "77767139efb5ef981bb229963c8c6e0e89c2b703"
+  token: ""   # déplacé vers .env
   base_url: "https://sports.bzzoiro.com/api/v2"
 
 api_football:
   key: ""
-  base_url: "https://api-football-v1.p.rapidapi.com/v3"
+  base_url: "https://v3.football.api-sports.io"   # API-Sports direct (header x-apisports-key) · clé dans .env
 
 telegram:
   chat_id: ""
@@ -23,7 +23,7 @@ model:
   production_mode: paper_only
 
 odds_api:
-  key: "12c1738e94e0ec40c857aea8203ced57"
+  key: ""   # déplacé vers .env
   base_url: "https://api.the-odds-api.com/v4"
   sport: "soccer_fifa_world_cup"
   regions: "eu"

@@ -50,8 +50,12 @@ def _bzzoiro_to_market_odds(raw: dict) -> dict[str, dict[str, float]]:
         "home_win": ("1X2", "home"),
         "draw": ("1X2", "draw"),
         "away_win": ("1X2", "away"),
+        "over_15_goals": ("over_1.5", "over"),
+        "under_15_goals": ("over_1.5", "under"),
         "over_25_goals": ("over_2.5", "over"),
         "under_25_goals": ("over_2.5", "under"),
+        "over_35_goals": ("over_3.5", "over"),
+        "under_35_goals": ("over_3.5", "under"),
         "btts_yes": ("btts", "yes"),
         "btts_no": ("btts", "no"),
     }
@@ -97,6 +101,7 @@ def scan_value_bets(
     bzzoiro_predictions: dict | None = None,
     calibrator=None,
     team_match_counts: dict[str, int] | None = None,
+    sharp_odds: dict | None = None,
 ) -> tuple[list[dict], GuardStats]:
     if calibrator is None:
         calibrator = load_calibrator()
@@ -144,6 +149,7 @@ def scan_value_bets(
 
         raw_odds = bookmaker_odds.get(fid, {})
         odds_nested = _bzzoiro_to_market_odds(raw_odds) if "1X2" not in raw_odds else raw_odds
+        sharp_nested = (sharp_odds or {}).get(fid, {})
 
         min_matches = min(
             team_match_counts.get(home, 0),
@@ -154,7 +160,12 @@ def scan_value_bets(
             ("1X2", "home", "home_win", preds.get("home_win", 0)),
             ("1X2", "draw", "draw", preds.get("draw", 0)),
             ("1X2", "away", "away_win", preds.get("away_win", 0)),
+            ("over_1.5", "over", "over_1.5", preds.get("over_1.5", 0)),
+            ("over_1.5", "under", "under_1.5", 1 - preds.get("over_1.5", 0)),
             ("over_2.5", "over", "over_2.5", preds.get("over_2.5", 0)),
+            ("over_2.5", "under", "under_2.5", 1 - preds.get("over_2.5", 0)),
+            ("over_3.5", "over", "over_3.5", preds.get("over_3.5", 0)),
+            ("over_3.5", "under", "under_3.5", 1 - preds.get("over_3.5", 0)),
             ("btts", "yes", "btts", preds.get("btts", 0)),
         ]
 
@@ -164,7 +175,11 @@ def scan_value_bets(
             if not cote or cote <= 1:
                 continue
 
-            novig_probs = devig(market_odds, devig_method)
+            # Ancre no-vig : Pinnacle (sharp) si le marché complet est dispo,
+            # sinon le book de mise lui-même.
+            anchor_market = sharp_nested.get(market)
+            sharp_used = bool(anchor_market) and len(anchor_market) >= 2
+            novig_probs = devig(anchor_market if sharp_used else market_odds, devig_method)
             p_novig = novig_probs.get(side, 1 / cote)
 
             guard = evaluate_signal(
@@ -228,6 +243,7 @@ def scan_value_bets(
                 "altitude_adj": altitude_adj,
                 "model_version": preds.get("source", "unknown"),
                 "anchor_weight": round(guard.anchor_weight, 3),
+                "anchor": "pinnacle" if sharp_used else "book",
                 "paper_trade": True,
             })
 
