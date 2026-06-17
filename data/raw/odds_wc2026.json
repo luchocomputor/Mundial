@@ -51,6 +51,19 @@
     "btts_yes": 1.98,
     "btts_no": 1.76
   },
+  "8292": {
+    "home_win": 12.12,
+    "draw": 6.07,
+    "away_win": 1.24,
+    "over_15_goals": 1.2,
+    "over_25_goals": 1.65,
+    "over_35_goals": 2.6,
+    "under_15_goals": 4.35,
+    "under_25_goals": 2.22,
+    "under_35_goals": 1.47,
+    "btts_yes": 2.28,
+    "btts_no": 1.58
+  },
   "8293": {
     "home_win": 1.61,
     "draw": 3.87,
@@ -64,6 +77,19 @@
     "btts_yes": 1.99,
     "btts_no": 1.76
   },
+  "8294": {
+    "home_win": 7.02,
+    "draw": 4.53,
+    "away_win": 1.44,
+    "over_15_goals": 1.28,
+    "over_25_goals": 1.86,
+    "over_35_goals": 3.18,
+    "under_15_goals": 3.58,
+    "under_25_goals": 1.91,
+    "under_35_goals": 1.33,
+    "btts_yes": 2.07,
+    "btts_no": 1.7
+  },
   "8291": {
     "home_win": 4.49,
     "draw": 3.6,
@@ -76,6 +102,19 @@
     "under_35_goals": 1.29,
     "btts_yes": 1.89,
     "btts_no": 1.85
+  },
+  "8295": {
+    "home_win": 1.04,
+    "draw": 16.52,
+    "away_win": 52.58,
+    "over_15_goals": 1.05,
+    "over_25_goals": 1.18,
+    "over_35_goals": 1.47,
+    "under_15_goals": 10.32,
+    "under_25_goals": 4.5,
+    "under_35_goals": 2.55,
+    "btts_yes": 2.93,
+    "btts_no": 1.36
   },
   "8296": {
     "home_win": 1.97,
@@ -246,6 +285,19 @@
     "btts_yes": 1.97,
     "btts_no": 1.78
   },
+  "8309": {
+    "home_win": 2.0,
+    "draw": 3.56,
+    "away_win": 3.65,
+    "over_15_goals": 1.37,
+    "over_25_goals": 2.16,
+    "over_35_goals": 3.93,
+    "under_15_goals": 2.97,
+    "under_25_goals": 1.67,
+    "under_35_goals": 1.23,
+    "btts_yes": 1.95,
+    "btts_no": 1.79
+  },
   "8310": {
     "home_win": 7.95,
     "draw": 4.51,
@@ -375,6 +427,19 @@
     "under_35_goals": 1.32,
     "btts_yes": 1.9,
     "btts_no": 1.82
+  },
+  "8321": {
+    "home_win": 1.54,
+    "draw": 4.18,
+    "away_win": 5.6,
+    "over_15_goals": 1.24,
+    "over_25_goals": 1.78,
+    "over_35_goals": 2.95,
+    "under_15_goals": 3.83,
+    "under_25_goals": 2.0,
+    "under_35_goals": 1.38,
+    "btts_yes": 1.86,
+    "btts_no": 1.87
   },
   "8322": {
     "home_win": 1.27,
@@ -558,19 +623,6 @@
     "btts_yes": 2.33,
     "btts_no": 1.54
   },
-  "8335": {
-    "home_win": 2.08,
-    "draw": 3.24,
-    "away_win": 3.43,
-    "over_15_goals": 1.35,
-    "over_25_goals": 2.1,
-    "over_35_goals": 3.72,
-    "under_15_goals": 3.06,
-    "under_25_goals": 1.71,
-    "under_35_goals": 1.25,
-    "btts_yes": 1.84,
-    "btts_no": 1.88
-  },
   "8336": {
     "home_win": 1.59,
     "draw": 3.78,
@@ -583,6 +635,19 @@
     "under_35_goals": 1.28,
     "btts_yes": 2.0,
     "btts_no": 1.73
+  },
+  "8335": {
+    "home_win": 2.08,
+    "draw": 3.24,
+    "away_win": 3.43,
+    "over_15_goals": 1.35,
+    "over_25_goals": 2.1,
+    "over_35_goals": 3.72,
+    "under_15_goals": 3.06,
+    "under_25_goals": 1.71,
+    "under_35_goals": 1.25,
+    "btts_yes": 1.84,
+    "btts_no": 1.88
   },
   "8338": {
     "home_win": 7.85,
@@ -714,19 +779,6 @@
     "btts_yes": 1.74,
     "btts_no": 1.99
   },
-  "8348": {
-    "home_win": 1.43,
-    "draw": 4.26,
-    "away_win": 6.96,
-    "over_15_goals": 1.28,
-    "over_25_goals": 1.88,
-    "over_35_goals": 3.23,
-    "under_15_goals": 3.55,
-    "under_25_goals": 1.88,
-    "under_35_goals": 1.32,
-    "btts_yes": 2.09,
-    "btts_no": 1.68
-  },
   "8347": {
     "home_win": 4.28,
     "draw": 3.51,
@@ -739,6 +791,19 @@
     "under_35_goals": 1.29,
     "btts_yes": 1.84,
     "btts_no": 1.88
+  },
+  "8348": {
+    "home_win": 1.43,
+    "draw": 4.26,
+    "away_win": 6.96,
+    "over_15_goals": 1.28,
+    "over_25_goals": 1.88,
+    "over_35_goals": 3.23,
+    "under_15_goals": 3.55,
+    "under_25_goals": 1.88,
+    "under_35_goals": 1.32,
+    "btts_yes": 2.09,
+    "btts_no": 1.68
   },
   "8349": {
     "home_win": 2.49,
@@ -792,19 +857,6 @@
     "btts_yes": 2.08,
     "btts_no": 1.68
   },
-  "8354": {
-    "home_win": 10.99,
-    "draw": 5.87,
-    "away_win": 1.24,
-    "over_15_goals": 1.18,
-    "over_25_goals": 1.62,
-    "over_35_goals": 2.58,
-    "under_15_goals": 4.43,
-    "under_25_goals": 2.21,
-    "under_35_goals": 1.49,
-    "btts_yes": 2.2,
-    "btts_no": 1.61
-  },
   "8353": {
     "home_win": 1.7,
     "draw": 3.58,
@@ -817,6 +869,19 @@
     "under_35_goals": 1.25,
     "btts_yes": 1.98,
     "btts_no": 1.75
+  },
+  "8354": {
+    "home_win": 10.99,
+    "draw": 5.87,
+    "away_win": 1.24,
+    "over_15_goals": 1.18,
+    "over_25_goals": 1.62,
+    "over_35_goals": 2.58,
+    "under_15_goals": 4.43,
+    "under_25_goals": 2.21,
+    "under_35_goals": 1.49,
+    "btts_yes": 2.2,
+    "btts_no": 1.61
   },
   "8355": {
     "home_win": 3.38,
@@ -844,19 +909,6 @@
     "btts_yes": 1.91,
     "btts_no": 1.81
   },
-  "8358": {
-    "home_win": 14.52,
-    "draw": 6.8,
-    "away_win": 1.18,
-    "over_15_goals": 1.16,
-    "over_25_goals": 1.55,
-    "over_35_goals": 2.38,
-    "under_15_goals": 4.76,
-    "under_25_goals": 2.36,
-    "under_35_goals": 1.56,
-    "btts_yes": 2.37,
-    "btts_no": 1.53
-  },
   "8357": {
     "home_win": 3.27,
     "draw": 3.04,
@@ -869,5 +921,18 @@
     "under_35_goals": 1.23,
     "btts_yes": 1.87,
     "btts_no": 1.85
+  },
+  "8358": {
+    "home_win": 14.52,
+    "draw": 6.8,
+    "away_win": 1.18,
+    "over_15_goals": 1.16,
+    "over_25_goals": 1.55,
+    "over_35_goals": 2.38,
+    "under_15_goals": 4.76,
+    "under_25_goals": 2.36,
+    "under_35_goals": 1.56,
+    "btts_yes": 2.37,
+    "btts_no": 1.53
   }
 }

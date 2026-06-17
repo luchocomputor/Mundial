@@ -1,0 +1,833 @@
+team,player,age,position,appearances,minutes,goals,assists,shots_total,shots_on,penalties
+Belgium,T. Courtois,33,Goalkeeper,3,270,0,0,0,0,0
+Belgium,L. Dendoncker,30,Defender,2,162,0,0,1,0,0
+Belgium,T. Alderweireld,36,Defender,3,270,0,1,0,0,0
+Belgium,J. Vertonghen,38,Defender,3,270,0,0,1,0,0
+Belgium,T. Castagne,30,Midfielder,3,270,0,0,0,0,0
+Belgium,Y. Tielemans,28,Midfielder,3,93,0,0,0,0,0
+Belgium,A. Witsel,36,Midfielder,3,270,0,0,0,0,0
+Belgium,Y. Carrasco,32,Midfielder,2,117,0,0,1,0,0
+Belgium,K. De Bruyne,34,Attacker,3,270,0,0,5,2,0
+Belgium,E. Hazard,32,Attacker,3,130,0,0,1,1,0
+Belgium,M. Batshuayi,32,Attacker,2,153,1,0,4,2,0
+Belgium,S. Mignolet,37,Goalkeeper,0,0,0,0,0,0,0
+Belgium,K. Casteels,33,Goalkeeper,0,0,0,0,0,0,0
+Belgium,W. Faes,27,Defender,0,0,0,0,0,0,0
+Belgium,T. Meunier,34,Defender,3,213,0,0,2,1,0
+Belgium,Z. Debast,22,Defender,0,0,0,0,0,0,0
+Belgium,A. Theate,25,Defender,0,0,0,0,0,0,0
+Belgium,A. Onana,24,Midfielder,2,105,0,0,2,0,0
+Belgium,H. Vanaken,33,Midfielder,0,0,0,0,0,0,0
+Belgium,T. Hazard,32,Midfielder,2,106,0,0,0,0,0
+Belgium,L. Openda,25,Attacker,1,12,0,0,0,0,0
+Belgium,C. De Ketelaere,24,Midfielder,1,15,0,0,0,0,0
+Belgium,D. Mertens,38,Attacker,2,75,0,0,3,1,0
+Belgium,L. Trossard,31,Attacker,3,102,0,0,0,0,0
+Belgium,J. Doku,23,Attacker,1,18,0,0,0,0,0
+Belgium,R. Lukaku,32,Attacker,2,54,0,0,5,2,0
+France,H. Lloris,39,Goalkeeper,6,570,0,0,0,0,0
+France,J. Koundé,27,Defender,6,487,0,0,2,2,0
+France,R. Varane,31,Defender,6,521,0,0,3,0,0
+France,D. Upamecano,27,Midfielder,5,480,0,0,0,0,0
+France,T. Hernández,28,Defender,6,508,1,2,5,2,0
+France,A. Tchouaméni,25,Midfielder,7,623,1,0,2,2,0
+France,A. Rabiot,30,Defender,6,483,1,1,7,4,0
+France,O. Dembélé,28,Midfielder,7,438,0,2,3,2,0
+France,A. Griezmann,34,Midfielder,7,537,0,3,5,3,0
+France,Kylian Mbappé,27,Midfielder,7,597,8,2,21,14,2
+France,O. Giroud,39,Attacker,6,423,4,0,15,6,0
+France,S. Mandanda,40,Goalkeeper,1,90,0,0,0,0,0
+France,A. Areola,32,Goalkeeper,0,0,0,0,0,0,0
+France,B. Pavard,29,Defender,1,89,0,0,0,0,0
+France,I. Konaté,26,Defender,5,296,0,0,2,1,0
+France,W. Saliba,24,Defender,1,27,0,0,0,0,0
+France,A. Disasi,27,Defender,3,99,0,0,0,0,0
+France,J. Veretout,32,Midfielder,1,63,0,0,0,0,0
+France,M. Guendouzi,26,Midfielder,1,79,0,0,0,0,0
+France,E. Camavinga,23,Midfielder,2,139,0,0,0,0,0
+France,K. Coman,29,Attacker,6,165,0,0,1,0,0
+France,Y. Fofana,26,Midfielder,6,225,0,0,2,0,0
+France,R. Kolo Muani,27,Attacker,3,180,1,0,3,2,0
+France,M. Thuram,28,Attacker,5,180,1,0,3,2,0
+France,L. Hernández,29,Defender,1,13,0,0,0,0,0
+Croatia,D. Livaković,31,Goalkeeper,7,690,0,0,0,0,0
+Croatia,J. Juranović,30,Defender,6,600,0,1,1,0,0
+Croatia,D. Lovren,36,Defender,6,600,0,1,3,1,0
+Croatia,J. Gvardiol,23,Defender,7,690,1,0,2,1,0
+Croatia,B. Sosa,27,Defender,5,425,0,0,2,0,0
+Croatia,L. Modrić,40,Midfielder,7,656,0,0,5,4,0
+Croatia,M. Brozović,33,Midfielder,6,554,0,0,3,2,0
+Croatia,M. Kovačić,31,Midfielder,7,638,0,0,3,1,0
+Croatia,N. Vlašić,28,Attacker,6,205,0,0,3,1,0
+Croatia,A. Kramarić,34,Attacker,7,481,2,0,6,4,0
+Croatia,I. Perišić,36,Attacker,7,670,1,3,13,4,0
+Croatia,I. Grbić,30,Goalkeeper,0,0,0,0,0,0,0
+Croatia,I. Ivušić,30,Goalkeeper,0,0,0,0,0,0,0
+Croatia,J. Šutalo,25,Defender,1,90,0,0,0,0,0
+Croatia,M. Erlić,27,Defender,0,0,0,0,0,0,0
+Croatia,B. Barišić,33,Defender,1,120,0,0,0,0,0
+Croatia,D. Vida,36,Defender,0,0,0,0,0,0,0
+Croatia,J. Stanišić,25,Defender,1,90,0,0,1,0,0
+Croatia,L. Sučić,23,Midfielder,0,0,0,0,0,0,0
+Croatia,L. Majer,27,Midfielder,7,135,1,0,4,2,0
+Croatia,M. Oršić,33,Attacker,6,169,1,2,5,2,0
+Croatia,K. Jakić,28,Midfielder,1,1,0,0,0,0,0
+Croatia,A. Budimir,34,Attacker,2,53,0,0,1,0,0
+Croatia,B. Petković,31,Attacker,6,230,1,0,1,1,0
+Croatia,M. Pašalić,30,Midfielder,7,274,0,0,3,0,0
+Croatia,M. Livaja,32,Attacker,6,242,1,1,5,4,0
+Brazil,Alisson Becker,33,Goalkeeper,4,380,0,0,0,0,0
+Brazil,Danilo,34,Defender,3,282,0,0,2,0,0
+Brazil,Marquinhos,31,Defender,5,426,0,0,1,0,0
+Brazil,Thiago Silva,41,Defender,4,390,0,1,0,0,0
+Brazil,Alex Sandro,34,Defender,3,191,0,0,1,0,0
+Brazil,Lucas Paquetá,28,Midfielder,4,315,1,1,4,4,0
+Brazil,Casemiro,33,Midfielder,4,390,1,0,6,3,0
+Brazil,Raphinha,29,Midfielder,5,317,0,0,7,6,0
+Brazil,Neymar,33,Midfielder,3,281,2,1,9,6,1
+Brazil,Vinícius Júnior,25,Midfielder,4,302,1,2,8,4,0
+Brazil,Richarlison,28,Attacker,4,326,3,0,5,4,0
+Brazil,Ederson,32,Goalkeeper,1,90,0,0,0,0,0
+Brazil,Weverton,38,Goalkeeper,1,10,0,0,0,0,0
+Brazil,Bremer,28,Defender,2,108,0,0,1,0,0
+Brazil,Éder Militão,27,Defender,4,348,0,0,1,1,0
+Brazil,Dani Alves,42,Defender,2,117,0,0,2,0,0
+Brazil,Alex Telles,33,Defender,2,64,0,0,0,0,0
+Brazil,Fred,32,Midfielder,4,143,0,0,2,1,0
+Brazil,Fabinho,32,Midfielder,1,90,0,0,0,0,0
+Brazil,Gabriel Martinelli,24,Attacker,3,119,0,0,4,3,0
+Brazil,Bruno Guimarães,28,Midfielder,2,67,0,0,4,2,0
+Brazil,Éverton Ribeiro,36,Midfielder,1,35,0,0,0,0,0
+Brazil,Antony,25,Attacker,4,170,0,0,6,2,0
+Brazil,Rodrygo,24,Attacker,5,179,0,1,4,2,0
+Brazil,Pedro,28,Attacker,2,62,0,0,4,1,0
+Brazil,Gabriel Jesus,28,Attacker,3,92,0,0,2,1,0
+Uruguay,R. Araújo,26,Defender,0,0,0,0,0,0,0
+Uruguay,S. Rochet,32,Goalkeeper,3,270,0,0,0,0,0
+Uruguay,M. Cáceres,38,Defender,1,90,0,0,0,0,0
+Uruguay,D. Godín,39,Defender,2,152,0,0,1,0,0
+Uruguay,J. Giménez,30,Defender,3,270,0,0,3,0,0
+Uruguay,M. Olivera,28,Defender,3,255,0,0,1,0,0
+Uruguay,F. Valverde,27,Midfielder,3,270,0,0,7,1,0
+Uruguay,R. Bentancur,28,Midfielder,3,214,0,0,1,1,0
+Uruguay,M. Vecino,34,Midfielder,3,196,0,0,1,1,0
+Uruguay,F. Pellistri,24,Attacker,3,182,0,0,1,0,0
+Uruguay,L. Suárez,38,Attacker,3,147,0,1,2,1,0
+Uruguay,D. Núñez,26,Attacker,3,242,0,0,3,2,0
+Uruguay,F. Muslera,39,Goalkeeper,0,0,0,0,0,0,0
+Uruguay,S. Sosa,39,Goalkeeper,0,0,0,0,0,0,0
+Uruguay,G. Varela,32,Defender,3,190,0,0,0,0,0
+Uruguay,S. Coates,35,Defender,2,180,0,0,1,0,0
+Uruguay,M. Viña,28,Defender,2,26,0,0,0,0,0
+Uruguay,J. Rodríguez,28,Defender,0,0,0,0,0,0,0
+Uruguay,G. de Arrascaeta,31,Midfielder,2,108,2,0,3,3,0
+Uruguay,M. Ugarte,24,Midfielder,0,0,0,0,0,0,0
+Uruguay,A. Canobbio,27,Attacker,1,10,0,0,0,0,0
+Uruguay,N. de la Cruz,28,Midfielder,2,36,0,0,1,1,0
+Uruguay,F. Torres,25,Midfielder,0,0,0,0,0,0,0
+Uruguay,L. Torreira,29,Midfielder,0,0,0,0,0,0,0
+Uruguay,M. Gómez,29,Attacker,2,28,0,0,2,1,0
+Uruguay,E. Cavani,38,Attacker,3,123,0,0,2,0,0
+Spain,Unai Simón,28,Goalkeeper,4,390,0,0,0,0,0
+Spain,Dani Carvajal,33,Defender,2,135,0,0,0,0,0
+Spain,Rodri,29,Defender,4,390,0,0,1,0,0
+Spain,Aymeric Laporte,31,Midfielder,3,300,0,0,0,0,0
+Spain,Jordi Alba,36,Defender,4,266,0,2,1,0,0
+Spain,Gavi,21,Midfielder,4,287,1,0,1,1,0
+Spain,Sergio Busquets,37,Defender,4,364,0,0,1,0,0
+Spain,Pedri,23,Midfielder,4,357,0,0,0,0,0
+Spain,Ferran Torres,25,Attacker,4,219,2,0,2,2,1
+Spain,Marco Asensio,30,Attacker,4,231,1,0,7,2,0
+Spain,Dani Olmo,27,Attacker,4,368,1,1,10,6,0
+Spain,Robert Sánchez,28,Goalkeeper,0,0,0,0,0,0,0
+Spain,David Raya,30,Goalkeeper,0,0,0,0,0,0,0
+Spain,César Azpilicueta,36,Defender,2,135,0,1,0,0,0
+Spain,Pau Torres,28,Defender,1,90,0,0,0,0,0
+Spain,Alejandro Balde,22,Defender,4,124,0,0,0,0,0
+Spain,Eric García,24,Defender,0,0,0,0,0,0,0
+Spain,Yeremy Pino,23,Midfielder,0,0,0,0,0,0,0
+Spain,Koke,33,Midfielder,2,50,0,0,0,0,0
+Spain,Marcos Llorente,30,Midfielder,1,120,0,0,0,0,0
+Spain,Hugo Guillamón,25,Defender,0,0,0,0,0,0,0
+Spain,Carlos Soler,28,Midfielder,2,90,1,0,2,1,0
+Spain,Nico Williams,23,Attacker,4,145,0,0,1,0,0
+Spain,Pablo Sarabia,33,Midfielder,1,2,0,0,1,0,0
+Spain,Álvaro Morata,33,Attacker,4,183,3,1,8,5,0
+Spain,Ansu Fati,23,Attacker,2,44,0,0,0,0,0
+England,J. Pickford,31,Goalkeeper,5,450,0,0,0,0,0
+England,K. Trippier,35,Defender,3,205,0,0,0,0,0
+England,J. Stones,31,Defender,5,436,0,0,4,1,0
+England,H. Maguire,32,Defender,5,430,0,1,4,2,0
+England,L. Shaw,30,Defender,5,425,0,1,1,1,0
+England,J. Bellingham,22,Midfielder,5,415,1,1,4,3,0
+England,D. Rice,26,Midfielder,5,418,0,0,0,0,0
+England,B. Saka,24,Midfielder,4,293,3,0,7,5,0
+England,M. Mount,26,Midfielder,4,186,0,0,4,1,0
+England,R. Sterling,31,Midfielder,3,150,1,1,1,1,0
+England,H. Kane,32,Attacker,5,404,2,3,9,6,1
+England,A. Ramsdale,27,Goalkeeper,0,0,0,0,0,0,0
+England,N. Pope,33,Goalkeeper,0,0,0,0,0,0,0
+England,B. White,28,Defender,0,0,0,0,0,0,0
+England,T. Alexander-Arnold,27,Defender,1,33,0,0,0,0,0
+England,C. Coady,32,Defender,0,0,0,0,0,0,0
+England,K. Walker,35,Defender,3,237,0,0,0,0,0
+England,E. Dier,31,Defender,2,33,0,0,0,0,0
+England,K. Phillips,30,Midfielder,2,40,0,1,0,0,0
+England,C. Gallagher,25,Midfielder,0,0,0,0,0,0,0
+England,J. Henderson,35,Midfielder,4,272,1,0,1,1,0
+England,M. Rashford,28,Attacker,5,148,3,0,9,6,0
+England,C. Wilson,33,Attacker,2,46,0,1,0,0,0
+England,J. Grealish,30,Midfielder,5,81,1,0,1,1,0
+England,P. Foden,25,Midfielder,4,259,1,2,4,1,0
+England,J. Maddison,29,Midfielder,0,0,0,0,0,0,0
+Japan,Y. Nakayama,28,Defender,0,0,0,0,0,0,0
+Japan,S. Gonda,36,Goalkeeper,4,390,0,0,0,0,0
+Japan,H. Sakai,35,Defender,2,119,0,0,1,0,0
+Japan,K. Itakura,28,Defender,3,270,0,1,1,1,0
+Japan,M. Yoshida,37,Defender,4,390,0,1,0,0,0
+Japan,Y. Nagatomo,39,Defender,4,211,0,0,0,0,0
+Japan,W. Endo,32,Midfielder,4,311,0,0,1,1,0
+Japan,A. Tanaka,27,Midfielder,3,173,1,0,1,1,0
+Japan,J. Ito,32,Midfielder,4,323,0,1,2,1,0
+Japan,D. Kamada,29,Midfielder,4,324,0,0,3,1,0
+Japan,T. Kubo,24,Midfielder,2,90,0,0,0,0,0
+Japan,D. Maeda,28,Attacker,3,183,1,0,2,1,0
+Japan,E. Kawashima,42,Goalkeeper,0,0,0,0,0,0,0
+Japan,D. Schmidt,33,Goalkeeper,0,0,0,0,0,0,0
+Japan,S. Taniguchi,34,Defender,2,210,0,0,2,0,0
+Japan,M. Yamane,32,Defender,1,62,0,0,0,0,0
+Japan,T. Tomiyasu,27,Defender,3,186,0,0,0,0,0
+Japan,H. Ito,26,Defender,1,45,0,0,0,0,0
+Japan,K. Mitoma,28,Midfielder,4,162,0,1,1,1,0
+Japan,Y. Soma,28,Attacker,1,82,0,0,2,0,0
+Japan,R. Dōan,27,Attacker,4,218,2,0,4,3,0
+Japan,G. Shibasaki,33,Midfielder,0,0,0,0,0,0,0
+Japan,H. Morita,30,Midfielder,3,285,0,0,2,1,0
+Japan,S. Machino,26,Attacker,0,0,0,0,0,0,0
+Japan,A. Ueda,27,Attacker,1,45,0,0,0,0,0
+Japan,T. Asano,31,Attacker,4,162,1,0,5,2,0
+Japan,T. Minamino,30,Midfielder,3,57,0,0,1,1,0
+Senegal,É. Mendy,33,Goalkeeper,4,360,0,0,0,0,0
+Senegal,Y. Sabaly,32,Defender,4,360,0,0,1,1,0
+Senegal,K. Koulibaly,34,Defender,4,360,1,0,2,1,0
+Senegal,P. Cissé,30,Defender,3,104,0,0,0,0,0
+Senegal,A. Diallo,29,Defender,4,332,0,0,1,0,0
+Senegal,C. Kouyaté,35,Midfielder,1,73,0,0,0,0,0
+Senegal,N. Mendy,33,Midfielder,4,273,0,0,2,0,0
+Senegal,K. Diatta,26,Midfielder,3,182,0,0,3,1,0
+Senegal,I. Gueye,36,Midfielder,3,270,0,0,3,1,0
+Senegal,I. Sarr,27,Midfielder,4,344,1,0,7,2,1
+Senegal,B. Dia,29,Attacker,4,320,1,0,6,3,0
+Senegal,S. Dieng,31,Goalkeeper,0,0,0,0,0,0,0
+Senegal,A. Gomis,32,Goalkeeper,0,0,0,0,0,0,0
+Senegal,F. Ballo-Touré,28,Defender,1,11,0,0,0,0,0
+Senegal,F. Mendy,24,Defender,0,0,0,0,0,0,0
+Senegal,M. N&apos;Diaye,23,Defender,0,0,0,0,0,0,0
+Senegal,P. Ciss,31,Midfielder,3,145,0,0,1,0,0
+Senegal,M. Loum,29,Midfielder,0,0,0,0,0,0,0
+Senegal,P. Gueye,26,Midfielder,3,152,0,0,2,2,0
+Senegal,M. Name,30,Midfielder,0,0,0,0,0,0,0
+Senegal,I. Jakobs,26,Defender,4,279,0,1,1,0,0
+Senegal,P. Sarr,23,Midfielder,2,58,0,0,3,0,0
+Senegal,N. Jackson,24,Attacker,1,17,0,0,0,0,0
+Senegal,F. Diédhiou,33,Attacker,2,92,1,0,2,1,0
+Senegal,B. Dieng,25,Attacker,4,97,1,0,3,1,0
+Senegal,I. Ndiaye,25,Midfielder,3,136,0,1,1,0,0
+Serbia,V. Milinković-Savić,28,Goalkeeper,3,270,0,0,0,0,0
+Serbia,N. Milenković,28,Defender,3,270,0,0,2,0,0
+Serbia,M. Veljković,30,Defender,3,223,0,0,0,0,0
+Serbia,S. Pavlović,24,Defender,3,236,1,0,2,1,0
+Serbia,A. Živković,29,Midfielder,3,213,0,2,1,0,0
+Serbia,S. Lukić,29,Midfielder,3,246,0,0,0,0,0
+Serbia,N. Gudelj,34,Midfielder,2,92,0,0,0,0,0
+Serbia,F. Mladenović,34,Midfielder,1,66,0,0,1,0,0
+Serbia,D. Tadić,37,Attacker,3,258,0,2,1,0,0
+Serbia,S. Milinković-Savić,30,Attacker,3,236,1,0,3,1,0
+Serbia,A. Mitrović,31,Attacker,3,263,2,0,8,3,0
+Serbia,M. Dmitrović,33,Goalkeeper,0,0,0,0,0,0,0
+Serbia,P. Rajković,30,Goalkeeper,0,0,0,0,0,0,0
+Serbia,S. Mitrović,35,Defender,1,34,0,0,0,0,0
+Serbia,S. Eraković,24,Defender,0,0,0,0,0,0,0
+Serbia,S. Babić,29,Defender,1,12,0,0,0,0,0
+Serbia,I. Ilić,24,Midfielder,1,33,0,0,0,0,0
+Serbia,U. Račić,27,Midfielder,0,0,0,0,0,0,0
+Serbia,N. Maksimović,30,Midfielder,3,128,0,0,0,0,0
+Serbia,F. Kostić,33,Midfielder,2,179,0,0,1,0,0
+Serbia,N. Radonjić,29,Midfielder,3,57,0,0,1,0,0
+Serbia,F. Đuričić,33,Midfielder,2,13,0,0,0,0,0
+Serbia,M. Grujić,29,Midfielder,1,11,0,0,1,1,0
+Serbia,D. Lazović,35,Midfielder,1,24,0,0,1,0,0
+Serbia,L. Jović,28,Attacker,1,35,0,0,1,0,0
+Serbia,D. Vlahović,25,Attacker,2,79,1,0,3,3,0
+Switzerland,Y. Sommer,37,Goalkeeper,3,270,0,0,0,0,0
+Switzerland,S. Widmer,32,Defender,3,266,0,1,1,0,0
+Switzerland,M. Akanji,30,Defender,4,360,1,0,4,1,0
+Switzerland,N. Elvedi,29,Defender,2,180,0,0,1,0,0
+Switzerland,R. Rodríguez,33,Defender,4,359,0,0,0,0,0
+Switzerland,R. Freuler,33,Midfielder,4,324,1,0,3,2,0
+Switzerland,G. Xhaka,33,Midfielder,4,360,0,0,5,3,0
+Switzerland,X. Shaqiri,34,Midfielder,3,231,1,1,4,2,0
+Switzerland,D. Sow,28,Midfielder,4,269,0,1,0,0,0
+Switzerland,R. Vargas,27,Midfielder,4,289,0,1,1,1,0
+Switzerland,B. Embolo,28,Attacker,4,326,2,0,4,3,0
+Switzerland,P. Köhn,27,Goalkeeper,0,0,0,0,0,0,0
+Switzerland,J. Omlin,31,Goalkeeper,0,0,0,0,0,0,0
+Switzerland,G. Kobel,28,Goalkeeper,1,90,0,0,0,0,0
+Switzerland,E. Cömert,27,Defender,2,46,0,0,0,0,0
+Switzerland,F. Schär,34,Defender,2,135,0,0,1,0,0
+Switzerland,C. Fassnacht,32,Midfielder,1,18,0,0,1,1,0
+Switzerland,E. Fernandes,29,Midfielder,3,143,0,0,0,0,0
+Switzerland,F. Rieder,23,Midfielder,2,68,0,0,0,0,0
+Switzerland,F. Frei,36,Midfielder,2,29,0,0,0,0,0
+Switzerland,D. Zakaria,29,Midfielder,2,57,0,0,0,0,0
+Switzerland,M. Aebischer,28,Midfielder,1,14,0,0,0,0,0
+Switzerland,A. Jashari,23,Midfielder,1,1,0,0,0,0,0
+Switzerland,N. Okafor,25,Attacker,3,43,0,0,0,0,0
+Switzerland,H. Seferović,33,Attacker,3,68,0,0,0,0,0
+Switzerland,R. Steffen,34,Midfielder,1,31,0,0,0,0,0
+Mexico,G. Ochoa,40,Goalkeeper,3,270,0,0,0,0,0
+Mexico,J. Sánchez,28,Defender,2,176,0,0,1,1,0
+Mexico,C. Montes,28,Defender,3,270,0,1,1,0,0
+Mexico,H. Moreno,37,Midfielder,3,270,0,0,1,0,0
+Mexico,J. Gallardo,31,Defender,3,270,0,0,1,0,0
+Mexico,H. Herrera,35,Midfielder,2,161,0,0,0,0,0
+Mexico,E. Álvarez,28,Defender,2,176,0,0,1,1,0
+Mexico,L. Chávez,29,Midfielder,3,270,1,0,5,4,0
+Mexico,H. Lozano,30,Attacker,3,253,0,0,4,3,0
+Mexico,H. Martín,33,Attacker,2,148,1,0,4,2,0
+Mexico,A. Vega,28,Attacker,3,195,0,0,6,2,0
+Mexico,A. Talavera,41,Goalkeeper,0,0,0,0,0,0,0
+Mexico,R. Cota,38,Goalkeeper,0,0,0,0,0,0,0
+Mexico,N. Araújo,34,Defender,1,90,0,0,0,0,0
+Mexico,J. Vásquez,27,Defender,0,0,0,0,0,0,0
+Mexico,K. Álvarez,26,Defender,2,78,0,0,0,0,0
+Mexico,G. Arteaga,27,Defender,0,0,0,0,0,0,0
+Mexico,C. Rodríguez,28,Midfielder,2,32,0,0,0,0,0
+Mexico,A. Guardado,39,Midfielder,1,42,0,0,0,0,0
+Mexico,O. Pineda,29,Midfielder,1,77,0,0,3,1,0
+Mexico,U. Antuna,28,Attacker,3,83,0,0,2,2,0
+Mexico,L. Romo,30,Midfielder,0,0,0,0,0,0,0
+Mexico,É. Gutiérrez,30,Midfielder,1,48,0,0,0,0,0
+Mexico,R. Alvarado,27,Attacker,1,17,0,0,0,0,0
+Mexico,R. Funes Mori,34,Attacker,1,12,0,0,0,0,0
+Mexico,R. Jiménez,34,Attacker,3,56,0,0,0,0,0
+South Korea,Kim Seung-Gyu,35,Goalkeeper,4,360,0,0,0,0,0
+South Korea,Kim Moon-Hwan,30,Defender,4,360,0,0,0,0,0
+South Korea,Kim Min-Jae,29,Defender,3,269,0,0,2,0,0
+South Korea,Kim Young-Gwon,35,Defender,4,351,1,0,1,1,0
+South Korea,Kim Jin-Su,33,Defender,4,315,0,1,3,1,0
+South Korea,Hwang In-Beom,29,Midfielder,4,335,0,0,4,1,0
+South Korea,Jung Woo-Young,36,Midfielder,4,304,0,0,1,0,0
+South Korea,Na Sang-Ho,29,Midfielder,2,120,0,0,1,1,0
+South Korea,Lee Jae-Sung,33,Midfielder,3,214,0,0,1,0,0
+South Korea,Son Heung-Min,33,Midfielder,4,360,0,1,4,3,0
+South Korea,Hwang Ui-Jo,33,Attacker,4,104,0,0,1,0,0
+South Korea,Jo Hyeon-Woo,34,Goalkeeper,0,0,0,0,0,0,0
+South Korea,Song Bum-Keun,28,Goalkeeper,0,0,0,0,0,0,0
+South Korea,Kim Tae-Hwan,36,Defender,0,0,0,0,0,0,0
+South Korea,Kwon Kyung-Won,33,Defender,2,99,0,0,0,0,0
+South Korea,Yoon Jong-Gyu,27,Defender,0,0,0,0,0,0,0
+South Korea,Cho Yu-Min,29,Defender,1,1,0,0,0,0,0
+South Korea,Jeong Woo-Yeong,26,Midfielder,1,45,0,0,0,0,0
+South Korea,Kwon Chang-Hoon,31,Midfielder,1,57,0,0,0,0,0
+South Korea,Song Min-Kyu,26,Attacker,0,0,0,0,0,0,0
+South Korea,Lee Kang-In,24,Midfielder,4,145,0,1,3,1,0
+South Korea,Paik Seung-Ho,28,Midfielder,1,25,1,0,1,1,0
+South Korea,Son Jun-Ho,33,Midfielder,3,70,0,0,0,0,0
+South Korea,Hong Chul,35,Defender,1,45,0,0,0,0,0
+South Korea,Hwang Hee-Chan,29,Attacker,2,114,1,0,6,5,0
+South Korea,Cho Gue-Sung,28,Attacker,4,275,2,0,6,5,0
+Australia,M. Boyle,32,Attacker,0,0,0,0,0,0,0
+Australia,M. Ryan,33,Goalkeeper,4,360,0,0,0,0,0
+Australia,N. Atkinson,26,Defender,1,85,0,0,0,0,0
+Australia,H. Souttar,27,Defender,4,360,0,0,0,0,0
+Australia,K. Rowles,27,Midfielder,4,360,0,0,0,0,0
+Australia,A. Behich,35,Defender,4,360,0,0,1,0,0
+Australia,A. Mooy,33,Defender,4,360,0,0,1,0,0
+Australia,C. Goodwin,34,Midfielder,4,235,1,0,2,1,0
+Australia,R. McGree,27,Midfielder,4,269,0,1,2,1,0
+Australia,J. Irvine,32,Midfielder,4,355,0,0,3,0,0
+Australia,M. Leckie,34,Midfielder,4,336,1,1,1,1,0
+Australia,M. Duke,34,Attacker,4,274,1,0,6,4,0
+Australia,D. Vukovic,38,Goalkeeper,0,0,0,0,0,0,0
+Australia,A. Redmayne,36,Goalkeeper,0,0,0,0,0,0,0
+Australia,B. Wright,33,Defender,1,16,0,0,0,0,0
+Australia,T. Deng,28,Defender,0,0,0,0,0,0,0
+Australia,J. King,25,Defender,0,0,0,0,0,0,0
+Australia,F. Karačić,29,Defender,2,93,0,0,2,0,0
+Australia,M. Degenek,31,Defender,4,190,0,0,0,0,0
+Australia,A. Mabil,30,Attacker,2,29,0,0,0,0,0
+Australia,A. Hrustić,29,Midfielder,3,66,0,0,1,0,0
+Australia,K. Baccus,27,Midfielder,4,128,0,0,0,0,0
+Australia,C. Devlin,27,Midfielder,0,0,0,0,0,0,0
+Australia,G. Kuol,21,Attacker,2,35,0,0,1,1,0
+Australia,M. Tilio,24,Attacker,0,0,0,0,0,0,0
+Australia,J. Cummings,30,Attacker,1,34,0,0,0,0,0
+Australia,J. Maclaren,32,Attacker,3,52,0,0,0,0,0
+Denmark,K. Schmeichel,39,Goalkeeper,3,270,0,0,0,0,0
+Denmark,J. Andersen,29,Defender,3,270,0,1,3,1,0
+Denmark,S. Kjær,35,Defender,1,65,0,0,0,0,0
+Denmark,A. Christensen,29,Defender,3,270,1,0,1,1,0
+Denmark,R. Kristensen,28,Midfielder,3,224,0,0,0,0,0
+Denmark,P. Højbjerg,30,Midfielder,3,270,0,0,2,1,0
+Denmark,T. Delaney,34,Midfielder,1,45,0,0,0,0,0
+Denmark,C. Eriksen,33,Midfielder,3,270,0,0,3,1,0
+Denmark,J. Mæhle,28,Midfielder,3,250,0,0,1,0,0
+Denmark,A. Skov Olsen,26,Attacker,2,134,0,0,2,1,0
+Denmark,K. Dolberg,28,Attacker,3,113,0,0,2,1,0
+Denmark,O. Christensen,26,Goalkeeper,0,0,0,0,0,0,0
+Denmark,F. Rønnow,33,Goalkeeper,0,0,0,0,0,0,0
+Denmark,V. Nelsson,27,Defender,1,90,0,0,0,0,0
+Denmark,A. Bah,28,Defender,2,46,0,0,1,0,0
+Denmark,J. Stryger Larsen,34,Defender,0,0,0,0,0,0,0
+Denmark,C. Nørgaard,31,Midfielder,1,13,0,0,0,0,0
+Denmark,M. Jensen,29,Midfielder,2,84,0,0,2,1,0
+Denmark,R. Skov,29,Attacker,1,21,0,0,0,0,0
+Denmark,M. Damsgaard,25,Midfielder,3,149,0,0,0,0,0
+Denmark,D. Wass,36,Midfielder,0,0,0,0,0,0,0
+Denmark,Y. Poulsen,31,Attacker,0,0,0,0,0,0,0
+Denmark,J. Wind,26,Attacker,0,0,0,0,0,0,0
+Denmark,M. Braithwaite,34,Attacker,2,104,0,0,1,0,0
+Denmark,J. Lindstrøm,25,Midfielder,3,200,0,0,1,1,0
+Denmark,A. Cornelius,32,Attacker,3,90,0,0,5,2,0
+Iran,A. Beiranvand,33,Goalkeeper,2,110,0,0,0,0,0
+Iran,S. Moharrami,29,Defender,1,90,0,0,0,0,0
+Iran,M. Pouraliganji,33,Defender,3,270,0,0,1,0,0
+Iran,R. Cheshmi,32,Defender,2,57,1,0,1,1,0
+Iran,M. Hosseini,29,Defender,3,270,0,0,0,0,0
+Iran,M. Mohammadi,32,Defender,3,198,0,0,0,0,0
+Iran,A. Jahanbakhsh,32,Midfielder,2,58,0,0,1,0,0
+Iran,A. Noorollahi,32,Midfielder,3,226,0,0,2,1,0
+Iran,A. Karimi,31,Midfielder,3,110,0,0,0,0,0
+Iran,E. Hajisafi,35,Midfielder,3,239,0,0,0,0,0
+Iran,M. Taremi,33,Attacker,3,270,2,1,5,3,1
+Iran,A. Abedzadeh,32,Goalkeeper,0,0,0,0,0,0,0
+Iran,P. Niazmand,30,Goalkeeper,0,0,0,0,0,0,0
+Iran,H. Hosseini,33,Goalkeeper,2,160,0,0,0,0,0
+Iran,H. Kanani,31,Defender,1,45,0,0,0,0,0
+Iran,S. Khalilzadeh,36,Defender,0,0,0,0,0,0,0
+Iran,A. Jalali,27,Defender,1,18,0,0,0,0,0
+Iran,R. Rezaeian,35,Defender,2,180,1,0,1,1,0
+Iran,V. Amiri,37,Midfielder,0,0,0,0,0,0,0
+Iran,M. Torabi,31,Midfielder,3,59,0,0,1,0,0
+Iran,A. Gholizadeh,29,Midfielder,3,199,0,1,1,0,0
+Iran,S. Ezatolahi,29,Midfielder,3,218,0,0,3,1,0
+Iran,S. Ghoddos,32,Attacker,1,45,0,0,1,0,0
+Iran,K. Ansarifard,35,Attacker,2,35,0,0,1,0,0
+Iran,S. Azmoun,30,Attacker,3,126,0,0,5,3,0
+Saudi Arabia,Mohammed Al Owais,34,Goalkeeper,3,270,0,0,0,0,0
+Saudi Arabia,Saud Abdulhamid,26,Defender,3,270,0,0,0,0,0
+Saudi Arabia,Hassan Tambakti,26,Defender,2,180,0,0,0,0,0
+Saudi Arabia,Ali Al Bulayhi,36,Defender,3,217,0,0,0,0,0
+Saudi Arabia,Yasir Al Shahrani,33,Defender,1,89,0,0,0,0,0
+Saudi Arabia,Abdulelah Al Malki,31,Midfielder,2,175,0,0,2,0,0
+Saudi Arabia,Feras Al Brikan,25,Midfielder,3,269,0,1,1,0,0
+Saudi Arabia,Salman Al Faraj,36,Midfielder,1,45,0,0,0,0,0
+Saudi Arabia,Mohamed Kanno,31,Midfielder,3,270,0,0,6,1,0
+Saudi Arabia,Salem Al Dawsari,34,Midfielder,3,270,2,0,7,5,0
+Saudi Arabia,Saleh Al Shehri,32,Attacker,3,226,1,0,2,2,0
+Saudi Arabia,Mohammed Al Yami,28,Goalkeeper,0,0,0,0,0,0,0
+Saudi Arabia,Nawaf Al Aqidi,25,Goalkeeper,0,0,0,0,0,0,0
+Saudi Arabia,Abdulelah Al Amri,28,Defender,3,196,0,0,1,0,0
+Saudi Arabia,Sultan Al Ghannam,31,Defender,3,125,0,0,2,0,0
+Saudi Arabia,Nasser Al Dawsari,27,Midfielder,1,12,0,0,0,0,0
+Saudi Arabia,Abdullah Madu,32,Defender,1,45,0,0,0,0,0
+Saudi Arabia,Mohammed Al Burayk,33,Defender,2,66,0,0,1,1,0
+Saudi Arabia,Sami Al Naji,28,Midfielder,1,45,0,0,0,0,0
+Saudi Arabia,Hattan Bahbri,33,Midfielder,2,11,0,1,0,0,0
+Saudi Arabia,Nawaf Al Abid,35,Midfielder,2,87,0,0,0,0,0
+Saudi Arabia,Abdullah Otayf,32,Midfielder,0,0,0,0,0,0,0
+Saudi Arabia,Abdulrahman Al Obud,30,Attacker,2,41,0,0,1,0,0
+Saudi Arabia,Ali Al Hassan,28,Midfielder,1,45,0,0,1,0,0
+Saudi Arabia,Haitham Asiri,24,Attacker,1,15,0,0,0,0,0
+Saudi Arabia,Riyadh Sharahili,32,Midfielder,1,53,0,0,0,0,0
+Poland,W. Szczęsny,35,Goalkeeper,4,360,0,0,0,0,0
+Poland,B. Bereszyński,33,Defender,4,342,0,0,0,0,0
+Poland,K. Glik,37,Midfielder,4,360,0,0,3,0,0
+Poland,J. Kiwior,25,Midfielder,4,356,0,0,1,0,0
+Poland,M. Cash,28,Defender,4,360,0,0,1,0,0
+Poland,J. Kamiński,23,Midfielder,4,233,0,0,2,2,0
+Poland,G. Krychowiak,35,Defender,4,334,0,0,1,0,0
+Poland,S. Szymański,26,Midfielder,2,136,0,0,0,0,0
+Poland,N. Zalewski,23,Midfielder,2,64,0,0,0,0,0
+Poland,P. Zieliński,31,Midfielder,4,330,1,0,2,2,0
+Poland,R. Lewandowski,37,Attacker,4,360,2,1,9,4,1
+Poland,Ł. Skorupski,34,Goalkeeper,0,0,0,0,0,0,0
+Poland,K. Grabara,26,Goalkeeper,0,0,0,0,0,0,0
+Poland,J. Bednarek,29,Defender,1,13,0,0,0,0,0
+Poland,A. Jędrzejczyk,38,Defender,1,18,0,0,0,0,0
+Poland,R. Gumny,27,Defender,0,0,0,0,0,0,0
+Poland,M. Wieteska,28,Defender,0,0,0,0,0,0,0
+Poland,P. Frankowski,30,Midfielder,4,240,0,0,0,0,0
+Poland,M. Skóraś,25,Midfielder,1,45,0,0,0,0,0
+Poland,K. Grosicki,37,Midfielder,1,13,0,0,0,0,0
+Poland,D. Szymański,30,Midfielder,1,28,0,0,0,0,0
+Poland,S. Żurkowski,28,Midfielder,0,0,0,0,0,0,0
+Poland,K. Bielik,27,Midfielder,4,216,0,0,0,0,0
+Poland,K. Świderski,28,Attacker,1,45,0,0,0,0,0
+Poland,A. Milik,31,Attacker,3,107,0,0,1,0,0
+Poland,K. Piątek,30,Attacker,2,33,0,0,1,0,0
+Germany,M. Neuer,39,Goalkeeper,3,270,0,0,0,0,0
+Germany,N. Süle,30,Defender,3,269,0,0,0,0,0
+Germany,A. Rüdiger,32,Defender,3,270,0,0,6,1,0
+Germany,N. Schlotterbeck,26,Defender,2,99,0,0,0,0,0
+Germany,D. Raum,27,Defender,3,244,0,1,0,0,0
+Germany,J. Kimmich,30,Midfielder,3,270,0,0,5,4,0
+Germany,İ. Gündoğan,35,Midfielder,3,192,1,0,4,3,1
+Germany,S. Gnabry,30,Midfielder,3,264,1,1,8,4,0
+Germany,T. Müller,36,Midfielder,3,203,0,0,2,0,0
+Germany,J. Musiala,22,Midfielder,3,259,0,1,10,3,0
+Germany,K. Havertz,26,Attacker,2,103,2,0,5,3,0
+Germany,K. Trapp,35,Goalkeeper,0,0,0,0,0,0,0
+Germany,M. ter Stegen,33,Goalkeeper,0,0,0,0,0,0,0
+Germany,T. Kehrer,29,Defender,1,70,0,0,0,0,0
+Germany,C. Günter,32,Defender,0,0,0,0,0,0,0
+Germany,A. Bella-Kotchap,24,Defender,0,0,0,0,0,0,0
+Germany,M. Ginter,31,Defender,1,8,0,0,0,0,0
+Germany,L. Klostermann,29,Defender,2,65,0,0,0,0,0
+Germany,J. Brandt,29,Midfielder,0,0,0,0,0,0,0
+Germany,J. Hofmann,33,Midfielder,2,34,0,0,1,1,0
+Germany,L. Goretzka,30,Midfielder,3,158,0,0,3,1,0
+Germany,M. Götze,33,Midfielder,2,34,0,0,1,1,0
+Germany,L. Sané,30,Attacker,2,110,0,1,2,0,0
+Germany,K. Adeyemi,23,Attacker,0,0,0,0,0,0,0
+Germany,N. Füllkrug,32,Attacker,3,66,2,1,7,3,0
+Germany,Y. Moukoko,21,Attacker,1,9,0,0,0,0,0
+Argentina,E. Martínez,33,Goalkeeper,7,690,0,0,0,0,0
+Argentina,N. Molina,27,Defender,7,568,1,1,2,1,0
+Argentina,C. Romero,27,Defender,7,548,0,0,0,0,0
+Argentina,N. Otamendi,37,Defender,7,690,0,1,1,0,0
+Argentina,N. Tagliafico,33,Defender,6,371,0,0,3,2,0
+Argentina,Á. Di María,37,Midfielder,5,290,1,1,4,3,0
+Argentina,R. De Paul,31,Midfielder,7,602,0,0,5,3,0
+Argentina,L. Paredes,31,Midfielder,5,224,0,0,1,1,0
+Argentina,P. Gómez,37,Midfielder,2,109,0,0,2,0,0
+Argentina,L. Messi,38,Attacker,7,690,7,3,29,18,4
+Argentina,Lautaro Martínez,28,Attacker,6,238,0,0,11,4,0
+Argentina,G. Rulli,33,Goalkeeper,0,0,0,0,0,0,0
+Argentina,F. Armani,39,Goalkeeper,0,0,0,0,0,0,0
+Argentina,Lisandro Martínez,27,Defender,5,301,0,0,0,0,0
+Argentina,J. Foyth,27,Defender,1,9,0,0,0,0,0
+Argentina,G. Montiel,28,Defender,4,118,0,0,0,0,0
+Argentina,G. Pezzella,34,Defender,3,61,0,0,1,0,0
+Argentina,M. Acuña,34,Defender,6,374,0,0,2,0,0
+Argentina,A. Mac Allister,27,Midfielder,6,555,1,1,7,4,0
+Argentina,E. Palacios,27,Midfielder,3,47,0,0,0,0,0
+Argentina,E. Fernández,24,Midfielder,7,563,1,1,6,3,0
+Argentina,G. Rodríguez,31,Midfielder,1,57,0,0,0,0,0
+Argentina,T. Almada,24,Midfielder,1,13,0,0,0,0,0
+Argentina,Á. Correa,30,Attacker,1,9,0,0,0,0,0
+Argentina,P. Dybala,32,Attacker,2,17,0,0,0,0,0
+Argentina,J. Álvarez,25,Attacker,7,467,4,0,9,8,0
+Portugal,Diogo Costa,26,Goalkeeper,5,450,0,0,0,0,0
+Portugal,João Cancelo,31,Defender,4,309,0,0,1,1,0
+Portugal,Rúben Dias,28,Defender,4,360,0,0,0,0,0
+Portugal,Danilo Pereira,34,Defender,1,90,0,0,0,0,0
+Portugal,Raphaël Guerreiro,32,Defender,4,279,1,2,2,1,0
+Portugal,Bernardo Silva,31,Midfielder,5,358,0,0,1,0,0
+Portugal,Rúben Neves,28,Midfielder,5,271,0,0,0,0,0
+Portugal,Otávio,30,Midfielder,3,199,0,0,3,2,0
+Portugal,Bruno Fernandes,31,Attacker,4,357,2,3,7,3,1
+Portugal,Cristiano Ronaldo,40,Attacker,5,291,1,0,6,3,1
+Portugal,João Félix,26,Attacker,4,333,1,2,6,3,0
+Portugal,José Sá,32,Goalkeeper,0,0,0,0,0,0,0
+Portugal,Rui Patrício,37,Goalkeeper,0,0,0,0,0,0,0
+Portugal,Pepe,41,Defender,4,360,1,0,3,1,0
+Portugal,Diogo Dalot,26,Defender,3,259,0,1,1,1,0
+Portugal,António Silva,22,Defender,1,90,0,0,0,0,0
+Portugal,João Palhinha,30,Midfielder,3,46,0,0,0,0,0
+Portugal,Vitinha,25,Midfielder,3,118,0,0,2,2,0
+Portugal,Matheus Nunes,27,Midfielder,2,73,0,0,1,0,0
+Portugal,João Mário,33,Midfielder,2,95,0,0,0,0,0
+Portugal,William Carvalho,33,Midfielder,4,214,0,0,1,0,0
+Portugal,Rafael Leão,26,Attacker,5,88,2,0,4,2,0
+Portugal,Ricardo Horta,31,Attacker,3,117,1,0,2,2,0
+Portugal,André Silva,30,Attacker,1,25,0,0,0,0,0
+Portugal,Gonçalo Ramos,24,Attacker,4,164,3,1,7,5,0
+Portugal,Nuno Mendes,23,Defender,1,42,0,0,0,0,0
+Tunisia,A. Dahmen,28,Goalkeeper,3,270,0,0,0,0,0
+Tunisia,D. Bronn,30,Defender,2,163,0,0,0,0,0
+Tunisia,Y. Meriah,32,Defender,3,270,0,0,0,0,0
+Tunisia,M. Talbi,27,Defender,3,270,0,0,1,1,0
+Tunisia,M. Dräger,29,Midfielder,2,133,0,0,1,0,0
+Tunisia,E. Skhiri,30,Midfielder,3,270,0,0,1,0,0
+Tunisia,A. Laïdouni,29,Midfielder,3,245,0,1,2,0,0
+Tunisia,A. Abdi,32,Midfielder,3,200,0,0,0,0,0
+Tunisia,A. Ben Slimane,24,Attacker,2,150,0,0,1,1,0
+Tunisia,Y. Msakni,35,Attacker,2,170,0,0,6,2,0
+Tunisia,I. Jebali,34,Attacker,3,184,0,0,2,1,0
+Tunisia,A. Balbouli,41,Goalkeeper,0,0,0,0,0,0,0
+Tunisia,B. Ben Saïd,33,Goalkeeper,0,0,0,0,0,0,0
+Tunisia,M. Hassen,30,Goalkeeper,0,0,0,0,0,0,0
+Tunisia,W. Kechrida,30,Defender,3,117,0,0,0,0,0
+Tunisia,A. Maâloul,35,Defender,1,90,0,0,0,0,0
+Tunisia,B. Ifa,35,Defender,0,0,0,0,0,0,0
+Tunisia,H. Mejbri,22,Midfielder,1,10,0,0,0,0,0
+Tunisia,N. Sliti,33,Midfielder,2,113,0,0,0,0,0
+Tunisia,M. Ben Romdhane,26,Midfielder,1,74,0,0,0,0,0
+Tunisia,N. Ghandri,30,Midfielder,1,90,0,0,0,0,0
+Tunisia,F. Sassi,33,Midfielder,2,55,0,0,1,0,0
+Tunisia,G. Chaalali,31,Midfielder,1,16,0,0,0,0,0
+Tunisia,S. Jaziri,32,Attacker,0,0,0,0,0,0,0
+Tunisia,T. Khenissi,33,Attacker,2,27,0,0,0,0,0
+Tunisia,W. Khazri,34,Attacker,2,82,1,0,4,3,0
+Costa Rica,K. Navas,39,Goalkeeper,3,270,0,0,0,0,0
+Costa Rica,C. Martínez,26,Defender,1,45,0,0,0,0,0
+Costa Rica,Ó. Duarte,36,Defender,3,270,0,0,0,0,0
+Costa Rica,F. Calvo,33,Defender,2,180,0,0,1,0,0
+Costa Rica,B. Oviedo,35,Defender,3,261,0,0,0,0,0
+Costa Rica,K. Fuller,31,Midfielder,3,254,1,0,2,2,0
+Costa Rica,C. Borges,37,Midfielder,3,251,0,0,0,0,0
+Costa Rica,Y. Tejeda,33,Midfielder,3,269,1,1,2,2,0
+Costa Rica,J. Bennette,21,Midfielder,3,102,0,0,1,0,0
+Costa Rica,J. Campbell,33,Attacker,3,269,0,0,1,0,0
+Costa Rica,A. Contreras,25,Attacker,3,134,0,0,0,0,0
+Costa Rica,P. Sequeira,26,Goalkeeper,0,0,0,0,0,0,0
+Costa Rica,E. Alvarado,36,Goalkeeper,0,0,0,0,0,0,0
+Costa Rica,J. Vargas,30,Defender,1,90,0,0,1,1,0
+Costa Rica,D. López,27,Defender,0,0,0,0,0,0,0
+Costa Rica,R. Matarrita,31,Defender,2,24,0,0,0,0,0
+Costa Rica,K. Waston,37,Defender,3,225,0,0,1,1,0
+Costa Rica,Y. Salas,29,Midfielder,2,53,0,0,0,0,0
+Costa Rica,B. Aguilera,22,Midfielder,3,88,0,0,0,0,0
+Costa Rica,D. Chacón,24,Midfielder,1,1,0,0,0,0,0
+Costa Rica,Bryan Jafet Ruiz González,37,Attacker,1,29,0,0,0,0,0
+Costa Rica,Á. Zamora,23,Midfielder,1,29,0,0,0,0,0
+Costa Rica,G. Torres,28,Midfielder,1,65,0,0,0,0,0
+Costa Rica,R. Wilson,23,Attacker,1,8,0,0,0,0,0
+Costa Rica,J. Venegas,37,Midfielder,1,74,0,0,0,0,0
+Costa Rica,A. Hernández,24,Attacker,0,0,0,0,0,0,0
+Morocco,A. Harit,28,Midfielder,0,0,0,0,0,0,0
+Morocco,Y. Bounou,34,Goalkeeper,6,570,0,0,0,0,0
+Morocco,A. Hakimi,27,Defender,7,633,0,1,3,1,0
+Morocco,N. Aguerd,29,Defender,4,354,0,0,1,0,0
+Morocco,R. Saïss,35,Defender,6,468,1,0,1,1,0
+Morocco,N. Mazraoui,28,Defender,5,367,0,0,3,2,0
+Morocco,A. Ounahi,25,Midfielder,7,570,0,0,3,1,0
+Morocco,S. Amrabat,29,Midfielder,7,660,0,0,1,0,0
+Morocco,S. Amallah,29,Midfielder,7,409,0,0,2,0,0
+Morocco,H. Ziyech,32,Attacker,7,638,1,1,8,2,0
+Morocco,Y. En-Nesyri,28,Attacker,7,547,2,0,7,3,0
+Morocco,S. Boufal,32,Attacker,7,482,0,0,5,1,0
+Morocco,M. Mohamedi,36,Goalkeeper,1,90,0,0,0,0,0
+Morocco,A. Tagnaouti,29,Goalkeeper,0,0,0,0,0,0,0
+Morocco,Y. Attiat-Allah,30,Defender,6,316,0,1,2,0,0
+Morocco,J. El Yamiq,33,Defender,6,308,0,0,1,1,0
+Morocco,B. Benoun,32,Defender,3,52,0,0,0,0,0
+Morocco,A. Dari,26,Defender,3,187,1,0,1,1,0
+Morocco,B. El Khannouss,21,Midfielder,1,56,0,0,0,0,0
+Morocco,Y. Jabrane,34,Midfielder,2,17,0,0,0,0,0
+Morocco,A. Sabiri,29,Midfielder,5,178,0,1,1,0,0
+Morocco,A. Hamed Allah,35,Attacker,4,64,0,0,2,2,0
+Morocco,Z. Aboukhlal,25,Attacker,4,73,1,0,3,2,0
+Morocco,I. Chair,28,Midfielder,1,45,0,0,0,0,0
+Morocco,A. Ezzalzouli,24,Attacker,3,91,0,0,0,0,0
+Morocco,W. Cheddira,27,Attacker,2,66,0,0,2,1,0
+Morocco,A. Zaroury,25,Attacker,1,26,0,0,0,0,0
+Wales,W. Hennessey,38,Goalkeeper,2,176,0,0,0,0,0
+Wales,C. Mepham,28,Midfielder,3,270,0,0,0,0,0
+Wales,J. Rodon,28,Midfielder,3,270,0,0,0,0,0
+Wales,B. Davies,32,Defender,3,239,0,0,3,2,0
+Wales,C. Roberts,30,Defender,3,201,0,0,0,0,0
+Wales,A. Ramsey,35,Midfielder,3,267,0,0,1,0,0
+Wales,E. Ampadu,25,Midfielder,3,256,0,0,1,0,0
+Wales,H. Wilson,28,Midfielder,3,160,0,0,0,0,0
+Wales,N. Williams,24,Defender,3,205,0,0,2,0,0
+Wales,G. Bale,34,Attacker,3,225,1,0,2,2,1
+Wales,D. James,28,Attacker,3,154,0,0,0,0,0
+Wales,D. Ward,32,Goalkeeper,2,106,0,0,0,0,0
+Wales,A. Davies,33,Goalkeeper,0,0,0,0,0,0,0
+Wales,C. Gunter,34,Defender,0,0,0,0,0,0,0
+Wales,B. Cabango,25,Defender,0,0,0,0,0,0,0
+Wales,T. Lockyer,31,Defender,0,0,0,0,0,0,0
+Wales,D. Levitt,25,Midfielder,0,0,0,0,0,0,0
+Wales,R. Colwill,23,Midfielder,1,9,0,0,1,0,0
+Wales,J. Morrell,27,Midfielder,2,32,0,0,0,0,0
+Wales,M. Smith,26,Midfielder,0,0,0,0,0,0,0
+Wales,J. Williams,32,Midfielder,0,0,0,0,0,0,0
+Wales,J. Allen,35,Midfielder,2,94,0,0,1,0,0
+Wales,S. Thomas,26,Midfielder,1,8,0,0,0,0,0
+Wales,K. Moore,33,Attacker,3,225,0,0,5,2,0
+Wales,B. Johnson,24,Attacker,3,89,0,0,2,1,0
+Wales,M. Harris,27,Attacker,0,0,0,0,0,0,0
+Netherlands,A. Noppert,31,Goalkeeper,5,480,0,0,0,0,0
+Netherlands,M. de Ligt,26,Defender,2,91,0,0,0,0,0
+Netherlands,V. van Dijk,34,Defender,5,480,0,0,3,0,0
+Netherlands,N. Aké,30,Defender,5,479,0,0,0,0,0
+Netherlands,D. Dumfries,29,Midfielder,5,480,1,2,1,1,0
+Netherlands,S. Berghuis,34,Midfielder,4,199,0,1,2,0,0
+Netherlands,F. de Jong,28,Midfielder,5,476,1,1,1,1,0
+Netherlands,D. Blind,35,Midfielder,5,424,1,1,5,2,0
+Netherlands,C. Gakpo,26,Attacker,5,453,3,0,3,3,0
+Netherlands,V. Janssen,31,Attacker,2,86,0,0,0,0,0
+Netherlands,S. Bergwijn,28,Attacker,4,214,0,0,2,0,0
+Netherlands,R. Pasveer,42,Goalkeeper,0,0,0,0,0,0,0
+Netherlands,J. Bijlow,27,Goalkeeper,0,0,0,0,0,0,0
+Netherlands,J. Timber,24,Defender,4,390,0,0,0,0,0
+Netherlands,J. Frimpong,25,Defender,0,0,0,0,0,0,0
+Netherlands,T. Malacia,26,Defender,0,0,0,0,0,0,0
+Netherlands,S. de Vrij,33,Defender,0,0,0,0,0,0,0
+Netherlands,M. de Roon,34,Midfielder,5,185,0,0,0,0,0
+Netherlands,X. Simons,22,Midfielder,1,14,0,0,0,0,0
+Netherlands,K. Taylor,23,Midfielder,1,11,0,0,0,0,0
+Netherlands,D. Klaassen,32,Midfielder,4,191,1,2,2,1,0
+Netherlands,T. Koopmeiners,27,Midfielder,5,224,0,1,2,1,0
+Netherlands,W. Weghorst,33,Attacker,4,61,2,0,2,2,0
+Netherlands,L. de Jong,35,Attacker,1,56,0,0,0,0,0
+Netherlands,N. Lang,26,Attacker,1,9,0,0,0,0,0
+Netherlands,M. Depay,31,Attacker,5,300,1,0,9,5,0
+Ghana,L. Zigi,29,Goalkeeper,3,270,0,0,0,0,0
+Ghana,A. Seidu,25,Defender,2,156,0,0,1,0,0
+Ghana,D. Amartey,31,Defender,3,270,0,0,0,0,0
+Ghana,A. Djiku,31,Defender,2,107,0,0,0,0,0
+Ghana,M. Salisu,26,Defender,3,270,1,0,2,1,0
+Ghana,A. Baba,31,Defender,3,193,0,0,0,0,0
+Ghana,T. Partey,32,Midfielder,3,270,0,0,2,0,0
+Ghana,M. Kudus,25,Midfielder,3,249,2,0,6,4,0
+Ghana,S. Abdul Samed,25,Midfielder,3,251,0,0,1,0,0
+Ghana,A. Ayew,36,Attacker,3,200,1,0,2,2,0
+Ghana,I. Williams,31,Attacker,3,252,0,1,1,0,0
+Ghana,I. Danlad,23,Goalkeeper,0,0,0,0,0,0,0
+Ghana,A. Nurudeen,26,Goalkeeper,0,0,0,0,0,0,0
+Ghana,G. Mensah,27,Defender,1,88,0,0,0,0,0
+Ghana,J. Aidoo,30,Defender,0,0,0,0,0,0,0
+Ghana,D. Odoi,37,Defender,1,12,0,0,0,0,0
+Ghana,T. Lamptey,25,Defender,2,102,0,0,1,0,0
+Ghana,O. Bukari,27,Attacker,2,58,1,0,3,1,0
+Ghana,D. Kyereh,29,Midfielder,3,39,0,0,0,0,0
+Ghana,K. Sulemana,23,Midfielder,2,57,0,0,1,1,0
+Ghana,E. Owusu,28,Midfielder,0,0,0,0,0,0,0
+Ghana,D. Afriyie,24,Attacker,0,0,0,0,0,0,0
+Ghana,A. Fatawu,21,Attacker,1,1,0,0,0,0,0
+Ghana,A. Semenyo,25,Attacker,2,27,0,0,1,0,0
+Ghana,K. Sowah,25,Attacker,0,0,0,0,0,0,0
+Ghana,J. Ayew,34,Attacker,3,136,0,1,1,1,0
+Cameroon,A. Onana,29,Goalkeeper,1,90,0,0,0,0,0
+Cameroon,C. Fai,33,Defender,3,270,0,0,1,0,0
+Cameroon,J. Castelletto,30,Defender,2,180,1,1,1,1,0
+Cameroon,N. Nkoulou,35,Defender,2,180,0,0,2,1,0
+Cameroon,N. Tolo,28,Defender,3,270,0,0,0,0,0
+Cameroon,A. Zambo Anguissa,30,Midfielder,3,261,0,0,1,1,0
+Cameroon,S. Gouet,28,Midfielder,2,99,0,0,0,0,0
+Cameroon,M. Hongla,27,Midfielder,2,123,0,0,1,1,0
+Cameroon,B. Mbeumo,26,Attacker,3,226,0,0,2,2,0
+Cameroon,E. Choupo-Moting,36,Attacker,3,254,1,0,2,2,0
+Cameroon,K. Toko Ekambi,33,Attacker,3,167,0,0,2,1,0
+Cameroon,S. Ngapandouetnbu,22,Goalkeeper,0,0,0,0,0,0,0
+Cameroon,D. Epassy,32,Goalkeeper,2,180,0,0,0,0,0
+Cameroon,C. Wooh,24,Defender,1,90,0,0,1,0,0
+Cameroon,O. Mbaïzo,28,Defender,0,0,0,0,0,0,0
+Cameroon,E. Ebosse,26,Defender,1,90,0,0,0,0,0
+Cameroon,N. Moumi Ngamaleu,31,Midfielder,2,95,0,0,0,0,0
+Cameroon,P. Kunde,30,Midfielder,2,135,0,0,4,2,0
+Cameroon,J. Mbekeli,27,Midfielder,1,14,0,1,0,0,0
+Cameroon,G. Nkoudou,30,Midfielder,2,25,0,0,1,1,0
+Cameroon,G. Ondoua,30,Midfielder,2,45,0,0,0,0,0
+Cameroon,O. Ntcham,29,Midfielder,1,22,0,0,1,1,0
+Cameroon,C. Bassogog,30,Attacker,1,23,0,0,0,0,0
+Cameroon,J. Nsame,32,Attacker,0,0,0,0,0,0,0
+Cameroon,S. Marou,25,Attacker,0,0,0,0,0,0,0
+Cameroon,V. Aboubakar,34,Attacker,3,141,2,1,4,3,0
+Qatar,Saad Al Sheeb,35,Goalkeeper,1,90,0,0,0,0,0
+Qatar,Pedro Miguel,35,Defender,3,263,0,0,2,0,0
+Qatar,Bassam Al Rawi,28,Defender,1,90,0,0,0,0,0
+Qatar,Boualem Khoukhi,35,Defender,3,270,0,0,0,0,0
+Qatar,Abdelkarim Hassan,32,Defender,3,270,0,0,5,0,0
+Qatar,Homam Ahmed,26,Defender,3,263,0,0,0,0,0
+Qatar,Hassan Al Haydos,35,Midfielder,3,209,0,0,1,1,0
+Qatar,Karim Boudiaf,35,Midfielder,3,185,0,0,0,0,0
+Qatar,Abdulaziz Hatem,35,Midfielder,3,196,0,0,1,1,0
+Qatar,Almoez Ali,29,Attacker,3,226,0,0,3,1,0
+Qatar,Akram Afif,29,Attacker,3,270,0,0,2,0,0
+Qatar,Yousef Hassan,29,Goalkeeper,0,0,0,0,0,0,0
+Qatar,Meshaal Barsham,27,Goalkeeper,2,180,0,0,0,0,0
+Qatar,Salem Al Hajri,29,Defender,0,0,0,0,0,0,0
+Qatar,Musaab Khidir,32,Defender,1,12,0,0,0,0,0
+Qatar,Tarek Salman,28,Defender,1,14,0,0,0,0,0
+Qatar,Jassem Gaber,23,Defender,0,0,0,0,0,0,0
+Qatar,Mostafa Meshaal,24,Midfielder,0,0,0,0,0,0,0
+Qatar,Mohammed Waad,26,Midfielder,2,33,0,0,0,0,0
+Qatar,Naif Al Hadhrami,24,Midfielder,0,0,0,0,0,0,0
+Qatar,Assim Madibo,29,Midfielder,2,154,0,0,0,0,0
+Qatar,Ali Asad,32,Midfielder,1,26,0,0,0,0,0
+Qatar,Ismaeel Mohammad,35,Defender,2,175,0,1,2,2,0
+Qatar,Khalid Muneer,27,Attacker,0,0,0,0,0,0,0
+Qatar,Ahmed Alaa,32,Attacker,1,12,0,0,0,0,0
+Qatar,Mohammed Muntari,32,Attacker,3,60,1,0,2,1,0
+Ecuador,H. Galíndez,38,Goalkeeper,3,270,0,0,0,0,0
+Ecuador,A. Preciado,27,Defender,3,265,0,1,2,0,0
+Ecuador,F. Torres,28,Defender,3,270,0,1,1,0,0
+Ecuador,P. Hincapié,23,Defender,3,270,0,0,0,0,0
+Ecuador,P. Estupiñán,27,Defender,3,270,0,0,1,1,0
+Ecuador,G. Plata,25,Midfielder,3,269,0,0,2,1,0
+Ecuador,J. Méndez,28,Midfielder,2,180,0,0,0,0,0
+Ecuador,M. Caicedo,24,Midfielder,3,269,1,0,1,1,0
+Ecuador,R. Ibarra,31,Midfielder,2,69,0,0,2,1,0
+Ecuador,E. Valencia,36,Attacker,3,256,3,0,4,4,1
+Ecuador,M. Estrada,29,Attacker,3,227,0,0,3,0,0
+Ecuador,M. Ramírez,25,Goalkeeper,0,0,0,0,0,0,0
+Ecuador,Alexander Domínguez Carabalí,38,Goalkeeper,0,0,0,0,0,0,0
+Ecuador,W. Pacho,24,Defender,0,0,0,0,0,0,0
+Ecuador,J. Porozo,25,Defender,2,102,0,0,1,0,0
+Ecuador,R. Arboleda,34,Defender,0,0,0,0,0,0,0
+Ecuador,D. Palacios,26,Defender,0,0,0,0,0,0,0
+Ecuador,X. Arreaga,31,Defender,0,0,0,0,0,0,0
+Ecuador,A. Franco,27,Midfielder,2,46,0,0,0,0,0
+Ecuador,D. Reasco,26,Attacker,1,26,0,0,0,0,0
+Ecuador,J. Cifuentes,26,Midfielder,2,58,0,0,1,1,0
+Ecuador,C. Gruezo,30,Midfielder,1,45,0,0,0,0,0
+Ecuador,Á. Mena,37,Attacker,0,0,0,0,0,0,0
+Ecuador,J. Sarmiento,23,Attacker,3,83,0,0,1,1,0
+Ecuador,K. Rodríguez,25,Midfielder,2,2,0,0,2,1,0
+USA,M. Turner,31,Goalkeeper,4,360,0,0,0,0,0
+USA,S. Dest,25,Defender,4,309,0,1,2,0,0
+USA,W. Zimmerman,32,Defender,4,278,0,0,1,0,0
+USA,T. Ream,38,Defender,4,360,0,0,1,1,0
+USA,A. Robinson,28,Defender,4,359,0,0,0,0,0
+USA,W. McKennie,27,Midfielder,4,275,0,0,5,1,0
+USA,T. Adams,26,Midfielder,4,360,0,0,0,0,0
+USA,Y. Musah,23,Midfielder,4,345,0,0,3,1,0
+USA,C. Pulišić,27,Midfielder,4,315,1,2,7,5,0
+USA,T. Weah,25,Attacker,4,320,1,0,4,3,0
+USA,H. Wright,27,Attacker,4,135,1,0,5,3,0
+USA,S. Johnson,36,Goalkeeper,0,0,0,0,0,0,0
+USA,E. Horvath,30,Goalkeeper,0,0,0,0,0,0,0
+USA,J. Scally,23,Defender,0,0,0,0,0,0,0
+USA,C. Carter-Vickers,28,Defender,1,90,0,0,0,0,0
+USA,D. Yedlin,32,Defender,2,31,0,0,0,0,0
+USA,A. Long,33,Defender,0,0,0,0,0,0,0
+USA,S. Moore,29,Defender,2,20,0,0,0,0,0
+USA,B. Aaronson,25,Midfielder,4,105,0,0,1,0,0
+USA,G. Reyna,23,Midfielder,2,57,0,0,1,0,0
+USA,K. Acosta,30,Midfielder,2,40,0,0,0,0,0
+USA,J. Morris,31,Attacker,2,14,0,0,0,0,0
+USA,L. de la Torre,27,Midfielder,0,0,0,0,0,0,0
+USA,C. Roldan,30,Midfielder,0,0,0,0,0,0,0
+USA,J. Ferreira,25,Attacker,1,45,0,0,0,0,0
+USA,J. Sargent,25,Attacker,3,163,0,0,3,1,0
+Canada,M. Borjan,38,Goalkeeper,3,270,0,0,0,0,0
+Canada,A. Johnston,27,Defender,3,270,0,0,2,1,0
+Canada,S. Vitória,38,Defender,3,270,0,0,0,0,0
+Canada,K. Miller,28,Defender,3,270,0,0,0,0,0
+Canada,R. Laryea,30,Midfielder,3,161,0,0,2,0,0
+Canada,A. Hutchinson,42,Midfielder,3,161,0,0,2,0,0
+Canada,S. Eustáquio,29,Midfielder,2,126,0,0,1,0,0
+Canada,A. Davies,25,Midfielder,3,270,1,0,3,2,0
+Canada,T. Buchanan,26,Attacker,3,261,0,1,3,0,0
+Canada,J. Hoilett,35,Attacker,3,162,0,0,3,0,0
+Canada,J. David,25,Attacker,3,192,0,0,4,1,0
+Canada,J. Pantemis,28,Goalkeeper,0,0,0,0,0,0,0
+Canada,D. St. Clair,28,Goalkeeper,0,0,0,0,0,0,0
+Canada,D. Cornelius,28,Defender,0,0,0,0,0,0,0
+Canada,J. Waterman,29,Defender,0,0,0,0,0,0,0
+Canada,S. Adekugbe,30,Defender,3,94,0,0,0,0,0
+Canada,L. Millar,26,Attacker,1,9,0,0,0,0,0
+Canada,S. Piette,31,Midfielder,0,0,0,0,0,0,0
+Canada,L. Fraser,27,Midfielder,0,0,0,0,0,0,0
+Canada,I. Koné,23,Midfielder,3,106,0,0,0,0,0
+Canada,M. Kaye,31,Midfielder,1,60,0,0,0,0,0
+Canada,D. Wotherspoon,35,Midfielder,1,14,0,0,0,0,0
+Canada,J. Osorio,33,Midfielder,3,119,0,0,1,0,0
+Canada,I. Ugbo,27,Attacker,0,0,0,0,0,0,0
+Canada,L. Cavallini,33,Attacker,1,18,0,0,0,0,0
+Canada,C. Larin,30,Attacker,3,137,0,0,2,1,0

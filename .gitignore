@@ -20,6 +20,10 @@ data/processed/
 data/bets_log.csv
 data/paper_trading.json
 
+# Caches de scraping/API (re-fetchables ; on garde les CSV/JSON produits)
+data/raw/transfermarkt/*.html
+data/raw/apifootball/
+
 # Modèle entraîné (re-générable)
 models/*.pkl
 models/artifacts/

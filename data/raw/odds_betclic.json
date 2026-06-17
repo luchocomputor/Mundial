@@ -5,20 +5,20 @@
     "away_team": "South Africa",
     "date": "2026-06-11T19:00:00Z",
     "betclic": {
-      "home_win": 1.4,
-      "draw": 4.55,
-      "away_win": 8.75
+      "home_win": 1.42,
+      "draw": 4.35,
+      "away_win": 8.5
     },
     "pinnacle": {
-      "home_win": 1.41,
-      "draw": 4.62,
-      "away_win": 8.77,
+      "home_win": 1.43,
+      "draw": 4.4,
+      "away_win": 8.85,
       "spread_home_point": -1.25,
-      "spread_home_cote": 2.04,
+      "spread_home_cote": 2.08,
       "spread_away_point": 1.25,
-      "spread_away_cote": 1.87,
-      "over_2.5": 1.93,
-      "under_2.5": 1.95,
+      "spread_away_cote": 1.84,
+      "over_2.5": 2.0,
+      "under_2.5": 1.89,
       "totals_line": 2.25
     }
   },
@@ -28,20 +28,20 @@
     "away_team": "Czech Republic",
     "date": "2026-06-12T02:00:00Z",
     "betclic": {
-      "home_win": 2.58,
-      "draw": 3.15,
-      "away_win": 2.9
+      "home_win": 2.67,
+      "draw": 3.13,
+      "away_win": 2.82
     },
     "pinnacle": {
-      "home_win": 2.68,
+      "home_win": 2.7,
       "draw": 3.14,
-      "away_win": 2.94,
+      "away_win": 2.9,
       "spread_away_point": -0.0,
-      "spread_away_cote": 2.05,
+      "spread_away_cote": 2.03,
       "spread_home_point": 0.0,
-      "spread_home_cote": 1.86,
-      "over_2.5": 2.01,
-      "under_2.5": 1.88,
+      "spread_home_cote": 1.88,
+      "over_2.5": 2.02,
+      "under_2.5": 1.87,
       "totals_line": 2.25
     }
   },
@@ -52,17 +52,17 @@
     "date": "2026-06-12T19:00:00Z",
     "betclic": {
       "home_win": 1.79,
-      "draw": 3.7,
-      "away_win": 4.55
+      "draw": 3.6,
+      "away_win": 4.7
     },
     "pinnacle": {
-      "home_win": 1.83,
-      "draw": 3.71,
-      "away_win": 4.56,
-      "spread_away_point": 0.5,
-      "spread_away_cote": 2.08,
-      "spread_home_point": -0.5,
-      "spread_home_cote": 1.84,
+      "home_win": 1.81,
+      "draw": 3.62,
+      "away_win": 4.8,
+      "spread_away_point": 0.75,
+      "spread_away_cote": 1.83,
+      "spread_home_point": -0.75,
+      "spread_home_cote": 2.09,
       "over_2.5": 1.94,
       "under_2.5": 1.94,
       "totals_line": 2.25
@@ -74,18 +74,18 @@
     "away_team": "Paraguay",
     "date": "2026-06-13T01:00:00Z",
     "betclic": {
-      "home_win": 2.0,
-      "draw": 3.4,
-      "away_win": 3.93
+      "home_win": 1.94,
+      "draw": 3.38,
+      "away_win": 4.2
     },
     "pinnacle": {
-      "home_win": 2.0,
-      "draw": 3.5,
-      "away_win": 4.0,
+      "home_win": 1.94,
+      "draw": 3.49,
+      "away_win": 4.28,
       "spread_away_point": 0.5,
-      "spread_away_cote": 1.89,
+      "spread_away_cote": 1.95,
       "spread_home_point": -0.5,
-      "spread_home_cote": 2.01,
+      "spread_home_cote": 1.95,
       "over_2.5": 2.07,
       "under_2.5": 1.83,
       "totals_line": 2.25
@@ -97,9 +97,9 @@
     "away_team": "Switzerland",
     "date": "2026-06-13T19:00:00Z",
     "betclic": {
-      "home_win": 13.25,
-      "draw": 6.5,
-      "away_win": 1.22
+      "home_win": 14.0,
+      "draw": 6.9,
+      "away_win": 1.2
     },
     "pinnacle": {
       "home_win": 12.82,
@@ -120,20 +120,20 @@
     "away_team": "Morocco",
     "date": "2026-06-13T22:00:00Z",
     "betclic": {
-      "home_win": 1.64,
-      "draw": 3.85,
+      "home_win": 1.65,
+      "draw": 3.83,
       "away_win": 5.5
     },
     "pinnacle": {
-      "home_win": 1.7,
-      "draw": 3.73,
-      "away_win": 5.57,
+      "home_win": 1.68,
+      "draw": 3.77,
+      "away_win": 5.6,
       "spread_home_point": -0.75,
-      "spread_home_cote": 1.91,
+      "spread_home_cote": 1.89,
       "spread_away_point": 0.75,
-      "spread_away_cote": 2.0,
-      "over_2.5": 1.85,
-      "under_2.5": 2.04,
+      "spread_away_cote": 2.02,
+      "over_2.5": 1.83,
+      "under_2.5": 2.08,
       "totals_line": 2.25
     }
   },
@@ -148,13 +148,13 @@
       "away_win": 1.53
     },
     "pinnacle": {
-      "home_win": 6.06,
+      "home_win": 6.07,
       "draw": 4.29,
       "away_win": 1.56,
       "spread_home_point": 1.0,
       "spread_home_cote": 1.91,
       "spread_away_point": -1.0,
-      "spread_away_cote": 1.99,
+      "spread_away_cote": 2.0,
       "over_2.5": 1.92,
       "under_2.5": 1.97,
       "totals_line": 2.5
@@ -167,19 +167,19 @@
     "date": "2026-06-14T04:00:00Z",
     "betclic": {
       "home_win": 5.1,
-      "draw": 3.78,
-      "away_win": 1.7
+      "draw": 3.8,
+      "away_win": 1.69
     },
     "pinnacle": {
-      "home_win": 5.15,
-      "draw": 3.86,
-      "away_win": 1.71,
+      "home_win": 5.27,
+      "draw": 3.89,
+      "away_win": 1.69,
       "spread_home_point": 0.75,
-      "spread_home_cote": 1.96,
+      "spread_home_cote": 2.0,
       "spread_away_point": -0.75,
-      "spread_away_cote": 1.94,
-      "over_2.5": 2.04,
-      "under_2.5": 1.85,
+      "spread_away_cote": 1.91,
+      "over_2.5": 2.03,
+      "under_2.5": 1.86,
       "totals_line": 2.5
     }
   },
@@ -189,17 +189,17 @@
     "away_team": "Curaçao",
     "date": "2026-06-14T17:00:00Z",
     "betclic": {
-      "home_win": 1.02,
-      "draw": 20.0,
-      "away_win": 48.0
+      "home_win": 1.03,
+      "draw": 18.5,
+      "away_win": 38.0
     },
     "pinnacle": {
       "spread_away_point": 3.5,
-      "spread_away_cote": 1.85,
+      "spread_away_cote": 1.87,
       "spread_home_point": -3.5,
-      "spread_home_cote": 2.0,
-      "over_2.5": 1.97,
-      "under_2.5": 1.87,
+      "spread_home_cote": 1.99,
+      "over_2.5": 1.95,
+      "under_2.5": 1.88,
       "totals_line": 4.25
     }
   },
@@ -209,20 +209,20 @@
     "away_team": "Japan",
     "date": "2026-06-14T20:00:00Z",
     "betclic": {
-      "home_win": 1.98,
-      "draw": 3.65,
-      "away_win": 3.7
+      "home_win": 2.03,
+      "draw": 3.55,
+      "away_win": 3.6
     },
     "pinnacle": {
-      "home_win": 2.08,
-      "draw": 3.57,
-      "away_win": 3.65,
+      "home_win": 2.03,
+      "draw": 3.61,
+      "away_win": 3.77,
       "spread_away_point": 0.5,
-      "spread_away_cote": 1.83,
+      "spread_away_cote": 1.87,
       "spread_home_point": -0.5,
-      "spread_home_cote": 2.09,
-      "over_2.5": 2.0,
-      "under_2.5": 1.89,
+      "spread_home_cote": 2.04,
+      "over_2.5": 1.99,
+      "under_2.5": 1.9,
       "totals_line": 2.5
     }
   },
@@ -232,14 +232,14 @@
     "away_team": "Ecuador",
     "date": "2026-06-14T23:00:00Z",
     "betclic": {
-      "home_win": 3.65,
-      "draw": 2.8,
-      "away_win": 2.38
+      "home_win": 3.55,
+      "draw": 2.83,
+      "away_win": 2.4
     },
     "pinnacle": {
-      "home_win": 3.65,
-      "draw": 2.83,
-      "away_win": 2.47,
+      "home_win": 3.64,
+      "draw": 2.82,
+      "away_win": 2.48,
       "spread_away_point": -0.25,
       "spread_away_cote": 2.06,
       "spread_home_point": 0.25,
@@ -256,19 +256,19 @@
     "date": "2026-06-15T02:00:00Z",
     "betclic": {
       "home_win": 1.91,
-      "draw": 3.33,
-      "away_win": 4.2
+      "draw": 3.4,
+      "away_win": 4.3
     },
     "pinnacle": {
-      "home_win": 1.93,
-      "draw": 3.49,
-      "away_win": 4.36,
+      "home_win": 1.88,
+      "draw": 3.54,
+      "away_win": 4.55,
       "spread_home_point": -0.5,
-      "spread_home_cote": 1.93,
+      "spread_home_cote": 1.88,
       "spread_away_point": 0.5,
-      "spread_away_cote": 1.97,
-      "over_2.5": 2.02,
-      "under_2.5": 1.87,
+      "spread_away_cote": 2.03,
+      "over_2.5": 2.01,
+      "under_2.5": 1.88,
       "totals_line": 2.25
     }
   },
@@ -280,18 +280,18 @@
     "betclic": {
       "home_win": 1.08,
       "draw": 11.75,
-      "away_win": 22.0
+      "away_win": 24.0
     },
     "pinnacle": {
-      "home_win": 1.08,
-      "draw": 11.68,
-      "away_win": 28.45,
+      "home_win": 1.07,
+      "draw": 11.89,
+      "away_win": 29.19,
       "spread_away_point": 2.5,
-      "spread_away_cote": 1.94,
+      "spread_away_cote": 1.97,
       "spread_home_point": -2.5,
-      "spread_home_cote": 1.91,
-      "over_2.5": 1.94,
-      "under_2.5": 1.89,
+      "spread_home_cote": 1.88,
+      "over_2.5": 1.93,
+      "under_2.5": 1.91,
       "totals_line": 3.5
     }
   },
@@ -301,20 +301,20 @@
     "away_team": "Egypt",
     "date": "2026-06-15T19:00:00Z",
     "betclic": {
-      "home_win": 1.64,
-      "draw": 3.83,
-      "away_win": 5.25
+      "home_win": 1.65,
+      "draw": 3.88,
+      "away_win": 5.4
     },
     "pinnacle": {
-      "home_win": 1.67,
-      "draw": 3.94,
-      "away_win": 5.4,
+      "home_win": 1.66,
+      "draw": 3.96,
+      "away_win": 5.46,
       "spread_home_point": -0.75,
-      "spread_home_cote": 1.89,
+      "spread_home_cote": 1.88,
       "spread_away_point": 0.75,
-      "spread_away_cote": 2.02,
-      "over_2.5": 2.04,
-      "under_2.5": 1.85,
+      "spread_away_cote": 2.03,
+      "over_2.5": 2.03,
+      "under_2.5": 1.86,
       "totals_line": 2.5
     }
   },
@@ -325,19 +325,19 @@
     "date": "2026-06-15T22:00:00Z",
     "betclic": {
       "home_win": 7.75,
-      "draw": 4.5,
-      "away_win": 1.41
+      "draw": 4.55,
+      "away_win": 1.42
     },
     "pinnacle": {
-      "home_win": 8.03,
-      "draw": 4.55,
-      "away_win": 1.44,
+      "home_win": 7.75,
+      "draw": 4.47,
+      "away_win": 1.46,
       "spread_home_point": 1.25,
-      "spread_home_cote": 1.88,
+      "spread_home_cote": 1.83,
       "spread_away_point": -1.25,
-      "spread_away_cote": 2.04,
-      "over_2.5": 2.02,
-      "under_2.5": 1.87,
+      "spread_away_cote": 2.08,
+      "over_2.5": 2.04,
+      "under_2.5": 1.85,
       "totals_line": 2.5
     }
   },
@@ -352,15 +352,15 @@
       "away_win": 4.3
     },
     "pinnacle": {
-      "home_win": 1.9,
-      "draw": 3.49,
-      "away_win": 4.5,
+      "home_win": 1.88,
+      "draw": 3.52,
+      "away_win": 4.59,
       "spread_home_point": -0.5,
-      "spread_home_cote": 1.91,
+      "spread_home_cote": 1.88,
       "spread_away_point": 0.5,
-      "spread_away_cote": 2.0,
-      "over_2.5": 2.09,
-      "under_2.5": 1.82,
+      "spread_away_cote": 2.03,
+      "over_2.5": 2.08,
+      "under_2.5": 1.83,
       "totals_line": 2.25
     }
   },
@@ -370,20 +370,20 @@
     "away_team": "Senegal",
     "date": "2026-06-16T19:00:00Z",
     "betclic": {
-      "home_win": 1.46,
+      "home_win": 1.47,
       "draw": 4.7,
-      "away_win": 7.5
+      "away_win": 7.25
     },
     "pinnacle": {
-      "home_win": 1.48,
-      "draw": 4.46,
-      "away_win": 7.29,
+      "home_win": 1.49,
+      "draw": 4.4,
+      "away_win": 7.09,
       "spread_home_point": -1.0,
-      "spread_home_cote": 1.83,
+      "spread_home_cote": 1.85,
       "spread_away_point": 1.0,
-      "spread_away_cote": 2.1,
-      "over_2.5": 2.01,
-      "under_2.5": 1.88,
+      "spread_away_cote": 2.06,
+      "over_2.5": 2.02,
+      "under_2.5": 1.87,
       "totals_line": 2.5
     }
   },
@@ -398,8 +398,8 @@
       "away_win": 1.19
     },
     "pinnacle": {
-      "home_win": 14.16,
-      "draw": 7.24,
+      "home_win": 14.26,
+      "draw": 7.27,
       "away_win": 1.21,
       "spread_home_point": 1.75,
       "spread_home_cote": 2.09,
@@ -416,9 +416,9 @@
     "away_team": "Algeria",
     "date": "2026-06-17T01:00:00Z",
     "betclic": {
-      "home_win": 1.38,
+      "home_win": 1.37,
       "draw": 4.7,
-      "away_win": 8.25
+      "away_win": 8.5
     },
     "pinnacle": {
       "home_win": 1.41,
@@ -445,14 +445,14 @@
     },
     "pinnacle": {
       "home_win": 1.33,
-      "draw": 5.6,
-      "away_win": 9.44,
+      "draw": 5.53,
+      "away_win": 9.27,
       "spread_home_point": -1.5,
-      "spread_home_cote": 1.95,
+      "spread_home_cote": 1.97,
       "spread_away_point": 1.5,
-      "spread_away_cote": 1.95,
-      "over_2.5": 1.85,
-      "under_2.5": 2.05,
+      "spread_away_cote": 1.93,
+      "over_2.5": 1.86,
+      "under_2.5": 2.03,
       "totals_line": 2.75
     }
   },
@@ -468,14 +468,14 @@
     },
     "pinnacle": {
       "home_win": 1.29,
-      "draw": 5.71,
-      "away_win": 11.2,
+      "draw": 5.69,
+      "away_win": 11.23,
       "spread_away_point": 1.5,
       "spread_away_cote": 2.07,
       "spread_home_point": -1.5,
       "spread_home_cote": 1.85,
-      "over_2.5": 1.91,
-      "under_2.5": 1.98,
+      "over_2.5": 1.92,
+      "under_2.5": 1.97,
       "totals_line": 2.75
     }
   },
@@ -513,15 +513,15 @@
       "away_win": 3.63
     },
     "pinnacle": {
-      "home_win": 2.08,
-      "draw": 3.58,
-      "away_win": 3.65,
-      "spread_home_point": -0.5,
-      "spread_home_cote": 2.09,
-      "spread_away_point": 0.5,
-      "spread_away_cote": 1.83,
-      "over_2.5": 2.02,
-      "under_2.5": 1.87,
+      "home_win": 2.13,
+      "draw": 3.53,
+      "away_win": 3.55,
+      "spread_home_point": -0.25,
+      "spread_home_cote": 1.85,
+      "spread_away_point": 0.25,
+      "spread_away_cote": 2.07,
+      "over_2.5": 2.03,
+      "under_2.5": 1.86,
       "totals_line": 2.25
     }
   },
@@ -531,20 +531,20 @@
     "away_team": "Colombia",
     "date": "2026-06-18T02:00:00Z",
     "betclic": {
-      "home_win": 8.0,
-      "draw": 4.6,
+      "home_win": 8.25,
+      "draw": 4.55,
       "away_win": 1.39
     },
     "pinnacle": {
-      "home_win": 8.57,
-      "draw": 4.56,
-      "away_win": 1.42,
+      "home_win": 9.17,
+      "draw": 4.74,
+      "away_win": 1.39,
       "spread_away_point": -1.25,
-      "spread_away_cote": 2.01,
+      "spread_away_cote": 1.93,
       "spread_home_point": 1.25,
-      "spread_home_cote": 1.9,
-      "over_2.5": 2.0,
-      "under_2.5": 1.88,
+      "spread_home_cote": 1.98,
+      "over_2.5": 1.97,
+      "under_2.5": 1.92,
       "totals_line": 2.5
     }
   },
@@ -560,12 +560,12 @@
     },
     "pinnacle": {
       "home_win": 1.93,
-      "draw": 3.29,
-      "away_win": 4.06,
+      "draw": 3.3,
+      "away_win": 4.07,
       "spread_home_point": -0.5,
       "spread_home_cote": 1.93,
       "spread_away_point": 0.5,
-      "spread_away_cote": 1.86,
+      "spread_away_cote": 1.87,
       "over_2.5": 1.98,
       "under_2.5": 1.81,
       "totals_line": 2.25
@@ -583,12 +583,12 @@
     },
     "pinnacle": {
       "home_win": 1.6,
-      "draw": 3.94,
-      "away_win": 5.15,
-      "spread_away_point": 0.75,
-      "spread_away_cote": 2.05,
-      "spread_home_point": -0.75,
-      "spread_home_cote": 1.77,
+      "draw": 3.95,
+      "away_win": 5.18,
+      "spread_away_point": 1.0,
+      "spread_away_cote": 1.78,
+      "spread_home_point": -1.0,
+      "spread_home_cote": 2.04,
       "over_2.5": 1.78,
       "under_2.5": 2.02,
       "totals_line": 2.25
@@ -600,18 +600,18 @@
     "away_team": "Qatar",
     "date": "2026-06-18T22:00:00Z",
     "betclic": {
-      "home_win": 1.3,
-      "draw": 5.25,
-      "away_win": 10.5
+      "home_win": 1.27,
+      "draw": 5.4,
+      "away_win": 11.0
     },
     "pinnacle": {
       "home_win": 1.29,
-      "draw": 5.06,
+      "draw": 5.05,
       "away_win": 9.68,
       "spread_home_point": -1.5,
       "spread_home_cote": 1.96,
       "spread_away_point": 1.5,
-      "spread_away_cote": 1.85,
+      "spread_away_cote": 1.84,
       "over_2.5": 1.93,
       "under_2.5": 1.85,
       "totals_line": 2.5
@@ -623,20 +623,20 @@
     "away_team": "South Korea",
     "date": "2026-06-19T01:00:00Z",
     "betclic": {
-      "home_win": 1.81,
-      "draw": 3.45,
-      "away_win": 4.6
+      "home_win": 1.79,
+      "draw": 3.48,
+      "away_win": 4.65
     },
     "pinnacle": {
-      "home_win": 1.77,
-      "draw": 3.57,
-      "away_win": 4.44,
-      "spread_home_point": -0.5,
-      "spread_home_cote": 1.78,
-      "spread_away_point": 0.5,
-      "spread_away_cote": 2.04,
+      "home_win": 1.75,
+      "draw": 3.6,
+      "away_win": 4.49,
+      "spread_home_point": -0.75,
+      "spread_home_cote": 2.04,
+      "spread_away_point": 0.75,
+      "spread_away_cote": 1.78,
       "over_2.5": 1.93,
-      "under_2.5": 1.85,
+      "under_2.5": 1.86,
       "totals_line": 2.25
     }
   },
@@ -652,12 +652,12 @@
     },
     "pinnacle": {
       "home_win": 1.71,
-      "draw": 3.94,
-      "away_win": 4.28,
+      "draw": 3.95,
+      "away_win": 4.3,
       "spread_away_point": 0.75,
-      "spread_away_cote": 1.85,
+      "spread_away_cote": 1.86,
       "spread_home_point": -0.75,
-      "spread_home_cote": 1.95,
+      "spread_home_cote": 1.94,
       "over_2.5": 2.01,
       "under_2.5": 1.79,
       "totals_line": 2.5
@@ -692,17 +692,17 @@
     "away_team": "Haiti",
     "date": "2026-06-20T01:00:00Z",
     "betclic": {
-      "home_win": 1.06,
-      "draw": 10.5,
-      "away_win": 25.0
+      "home_win": 1.07,
+      "draw": 11.5,
+      "away_win": 29.0
     },
     "pinnacle": {
       "spread_home_point": -2.75,
-      "spread_home_cote": 1.9,
+      "spread_home_cote": 1.85,
       "spread_away_point": 2.75,
-      "spread_away_cote": 1.9,
-      "over_2.5": 1.97,
-      "under_2.5": 1.82,
+      "spread_away_cote": 1.94,
+      "over_2.5": 1.95,
+      "under_2.5": 1.84,
       "totals_line": 3.75
     }
   },
@@ -712,9 +712,9 @@
     "away_team": "Paraguay",
     "date": "2026-06-20T03:00:00Z",
     "betclic": {
-      "home_win": 2.15,
-      "draw": 3.15,
-      "away_win": 3.37
+      "home_win": 2.2,
+      "draw": 3.2,
+      "away_win": 3.43
     },
     "pinnacle": {
       "home_win": 2.2,
@@ -735,8 +735,8 @@
     "away_team": "Sweden",
     "date": "2026-06-20T17:00:00Z",
     "betclic": {
-      "home_win": 1.6,
-      "draw": 3.9,
+      "home_win": 1.63,
+      "draw": 3.98,
       "away_win": 5.1
     },
     "pinnacle": {
@@ -758,19 +758,19 @@
     "away_team": "Ivory Coast",
     "date": "2026-06-20T20:00:00Z",
     "betclic": {
-      "home_win": 1.52,
-      "draw": 4.15,
-      "away_win": 5.5
+      "home_win": 1.54,
+      "draw": 4.25,
+      "away_win": 5.6
     },
     "pinnacle": {
-      "home_win": 1.53,
-      "draw": 4.29,
+      "home_win": 1.54,
+      "draw": 4.27,
       "away_win": 5.29,
       "spread_home_point": -1.0,
       "spread_home_cote": 1.94,
       "spread_away_point": 1.0,
-      "spread_away_cote": 1.86,
-      "over_2.5": 1.96,
+      "spread_away_cote": 1.85,
+      "over_2.5": 1.97,
       "under_2.5": 1.83,
       "totals_line": 2.75
     }
@@ -781,20 +781,20 @@
     "away_team": "Curaçao",
     "date": "2026-06-21T00:00:00Z",
     "betclic": {
-      "home_win": 1.18,
-      "draw": 6.4,
+      "home_win": 1.17,
+      "draw": 6.6,
       "away_win": 13.75
     },
     "pinnacle": {
-      "home_win": 1.18,
-      "draw": 7.07,
-      "away_win": 11.52,
-      "spread_away_point": 2.0,
-      "spread_away_cote": 1.77,
-      "spread_home_point": -2.0,
-      "spread_home_cote": 2.05,
-      "over_2.5": 1.83,
-      "under_2.5": 1.97,
+      "home_win": 1.19,
+      "draw": 6.96,
+      "away_win": 11.21,
+      "spread_away_point": 1.75,
+      "spread_away_cote": 2.02,
+      "spread_home_point": -1.75,
+      "spread_home_cote": 1.79,
+      "over_2.5": 1.84,
+      "under_2.5": 1.95,
       "totals_line": 2.75
     }
   },
@@ -833,8 +833,8 @@
     },
     "pinnacle": {
       "home_win": 1.09,
-      "draw": 10.21,
-      "away_win": 21.53,
+      "draw": 10.22,
+      "away_win": 21.55,
       "spread_away_point": 2.5,
       "spread_away_cote": 1.81,
       "spread_home_point": -2.5,
@@ -856,13 +856,13 @@
     },
     "pinnacle": {
       "home_win": 1.37,
-      "draw": 4.59,
-      "away_win": 7.65,
+      "draw": 4.61,
+      "away_win": 7.67,
       "spread_home_point": -1.25,
-      "spread_home_cote": 1.91,
+      "spread_home_cote": 1.9,
       "spread_away_point": 1.25,
-      "spread_away_cote": 1.89,
-      "over_2.5": 1.84,
+      "spread_away_cote": 1.9,
+      "over_2.5": 1.83,
       "under_2.5": 1.95,
       "totals_line": 2.5
     }
@@ -873,20 +873,20 @@
     "away_team": "Cape Verde",
     "date": "2026-06-21T22:00:00Z",
     "betclic": {
-      "home_win": 1.4,
-      "draw": 4.45,
-      "away_win": 7.25
+      "home_win": 1.41,
+      "draw": 4.4,
+      "away_win": 6.9
     },
     "pinnacle": {
-      "home_win": 1.39,
-      "draw": 4.5,
-      "away_win": 7.53,
+      "home_win": 1.4,
+      "draw": 4.47,
+      "away_win": 7.28,
       "spread_away_point": 1.25,
-      "spread_away_cote": 1.8,
+      "spread_away_cote": 1.77,
       "spread_home_point": -1.25,
-      "spread_home_cote": 2.02,
-      "over_2.5": 1.88,
-      "under_2.5": 1.9,
+      "spread_home_cote": 2.05,
+      "over_2.5": 1.86,
+      "under_2.5": 1.93,
       "totals_line": 2.5
     }
   },
@@ -901,14 +901,14 @@
       "away_win": 1.68
     },
     "pinnacle": {
-      "home_win": 4.32,
-      "draw": 3.8,
-      "away_win": 1.74,
+      "home_win": 4.33,
+      "draw": 3.81,
+      "away_win": 1.73,
       "spread_away_point": -0.75,
-      "spread_away_cote": 1.98,
+      "spread_away_cote": 1.97,
       "spread_home_point": 0.75,
       "spread_home_cote": 1.83,
-      "over_2.5": 1.96,
+      "over_2.5": 1.95,
       "under_2.5": 1.83,
       "totals_line": 2.25
     }
@@ -942,21 +942,21 @@
     "away_team": "Iraq",
     "date": "2026-06-22T21:00:00Z",
     "betclic": {
-      "home_win": 1.1,
-      "draw": 8.0,
-      "away_win": 21.0
+      "home_win": 1.09,
+      "draw": 8.25,
+      "away_win": 22.0
     },
     "pinnacle": {
-      "home_win": 1.12,
-      "draw": 7.78,
-      "away_win": 22.99,
+      "home_win": 1.11,
+      "draw": 7.99,
+      "away_win": 23.64,
       "spread_home_point": -2.25,
-      "spread_home_cote": 1.84,
+      "spread_home_cote": 1.81,
       "spread_away_point": 2.25,
-      "spread_away_cote": 1.97,
-      "over_2.5": 1.79,
-      "under_2.5": 2.01,
-      "totals_line": 3.0
+      "spread_away_cote": 2.01,
+      "over_2.5": 1.99,
+      "under_2.5": 1.81,
+      "totals_line": 3.25
     }
   },
   {
@@ -965,9 +965,9 @@
     "away_team": "Senegal",
     "date": "2026-06-23T00:00:00Z",
     "betclic": {
-      "home_win": 2.02,
+      "home_win": 2.07,
       "draw": 3.38,
-      "away_win": 3.45
+      "away_win": 3.33
     },
     "pinnacle": {
       "home_win": 2.09,
@@ -988,18 +988,18 @@
     "away_team": "Algeria",
     "date": "2026-06-23T03:00:00Z",
     "betclic": {
-      "home_win": 6.1,
-      "draw": 4.05,
-      "away_win": 1.5
+      "home_win": 6.4,
+      "draw": 4.1,
+      "away_win": 1.47
     },
     "pinnacle": {
-      "home_win": 6.12,
-      "draw": 4.15,
-      "away_win": 1.49,
+      "home_win": 6.2,
+      "draw": 4.17,
+      "away_win": 1.48,
       "spread_away_point": -1.0,
-      "spread_away_cote": 1.86,
+      "spread_away_cote": 1.84,
       "spread_home_point": 1.0,
-      "spread_home_cote": 1.94,
+      "spread_home_cote": 1.96,
       "over_2.5": 1.88,
       "under_2.5": 1.9,
       "totals_line": 2.5
@@ -1062,15 +1062,15 @@
       "away_win": 1.51
     },
     "pinnacle": {
-      "home_win": 6.23,
-      "draw": 3.66,
+      "home_win": 6.28,
+      "draw": 3.68,
       "away_win": 1.56,
       "spread_away_point": -1.0,
-      "spread_away_cote": 1.96,
+      "spread_away_cote": 1.95,
       "spread_home_point": 1.0,
-      "spread_home_cote": 1.84,
+      "spread_home_cote": 1.85,
       "over_2.5": 1.8,
-      "under_2.5": 1.99,
+      "under_2.5": 2.0,
       "totals_line": 2.25
     }
   },
@@ -1131,15 +1131,15 @@
       "away_win": 3.5
     },
     "pinnacle": {
-      "home_win": 2.09,
-      "draw": 3.35,
-      "away_win": 3.45,
+      "home_win": 2.1,
+      "draw": 3.33,
+      "away_win": 3.44,
       "spread_away_point": 0.25,
-      "spread_away_cote": 2.0,
+      "spread_away_cote": 1.99,
       "spread_home_point": -0.25,
-      "spread_home_cote": 1.81,
+      "spread_home_cote": 1.82,
       "over_2.5": 1.83,
-      "under_2.5": 1.96,
+      "under_2.5": 1.95,
       "totals_line": 2.25
     }
   },
@@ -1177,13 +1177,13 @@
       "away_win": 8.5
     },
     "pinnacle": {
-      "home_win": 1.32,
-      "draw": 4.95,
-      "away_win": 8.8,
+      "home_win": 1.31,
+      "draw": 4.98,
+      "away_win": 8.92,
       "spread_away_point": 1.5,
       "spread_away_cote": 1.83,
       "spread_home_point": -1.5,
-      "spread_home_cote": 1.98,
+      "spread_home_cote": 1.97,
       "over_2.5": 1.9,
       "under_2.5": 1.88,
       "totals_line": 2.75
@@ -1195,9 +1195,9 @@
     "away_team": "Mexico",
     "date": "2026-06-25T01:00:00Z",
     "betclic": {
-      "home_win": 4.35,
-      "draw": 3.38,
-      "away_win": 1.74
+      "home_win": 4.5,
+      "draw": 3.47,
+      "away_win": 1.76
     },
     "pinnacle": {
       "home_win": 4.54,
@@ -1218,9 +1218,9 @@
     "away_team": "South Korea",
     "date": "2026-06-25T01:00:00Z",
     "betclic": {
-      "home_win": 3.75,
-      "draw": 3.27,
-      "away_win": 1.9
+      "home_win": 3.95,
+      "draw": 3.35,
+      "away_win": 1.89
     },
     "pinnacle": {
       "home_win": 4.03,
@@ -1241,9 +1241,9 @@
     "away_team": "Ivory Coast",
     "date": "2026-06-25T20:00:00Z",
     "betclic": {
-      "home_win": 10.5,
-      "draw": 5.75,
-      "away_win": 1.19
+      "home_win": 11.0,
+      "draw": 6.1,
+      "away_win": 1.2
     },
     "pinnacle": {
       "home_win": 10.8,
@@ -1264,9 +1264,9 @@
     "away_team": "Germany",
     "date": "2026-06-25T20:00:00Z",
     "betclic": {
-      "home_win": 4.6,
-      "draw": 3.6,
-      "away_win": 1.65
+      "home_win": 4.75,
+      "draw": 3.7,
+      "away_win": 1.67
     },
     "pinnacle": {
       "home_win": 4.5,
@@ -1384,13 +1384,13 @@
       "away_win": 1.75
     },
     "pinnacle": {
-      "home_win": 4.2,
-      "draw": 3.56,
-      "away_win": 1.81,
+      "home_win": 4.16,
+      "draw": 3.54,
+      "away_win": 1.83,
       "spread_away_point": -0.5,
-      "spread_away_cote": 1.82,
+      "spread_away_cote": 1.83,
       "spread_home_point": 0.5,
-      "spread_home_cote": 1.99,
+      "spread_home_cote": 1.97,
       "over_2.5": 1.97,
       "under_2.5": 1.82,
       "totals_line": 2.5
@@ -1402,20 +1402,20 @@
     "away_team": "Iraq",
     "date": "2026-06-26T19:00:00Z",
     "betclic": {
-      "home_win": 1.39,
-      "draw": 4.25,
-      "away_win": 6.75
+      "home_win": 1.38,
+      "draw": 4.3,
+      "away_win": 7.0
     },
     "pinnacle": {
-      "home_win": 1.39,
-      "draw": 4.48,
-      "away_win": 7.51,
+      "home_win": 1.38,
+      "draw": 4.55,
+      "away_win": 7.6,
       "spread_away_point": 1.25,
-      "spread_away_cote": 1.83,
+      "spread_away_cote": 1.85,
       "spread_home_point": -1.25,
-      "spread_home_cote": 1.97,
-      "over_2.5": 1.88,
-      "under_2.5": 1.91,
+      "spread_home_cote": 1.95,
+      "over_2.5": 1.87,
+      "under_2.5": 1.92,
       "totals_line": 2.5
     }
   },
@@ -1453,15 +1453,15 @@
       "away_win": 1.57
     },
     "pinnacle": {
-      "home_win": 5.22,
-      "draw": 3.89,
-      "away_win": 1.6,
+      "home_win": 5.15,
+      "draw": 3.86,
+      "away_win": 1.61,
       "spread_away_point": -0.75,
-      "spread_away_cote": 1.79,
+      "spread_away_cote": 1.8,
       "spread_home_point": 0.75,
-      "spread_home_cote": 2.03,
-      "over_2.5": 1.87,
-      "under_2.5": 1.92,
+      "spread_home_cote": 2.01,
+      "over_2.5": 1.88,
+      "under_2.5": 1.91,
       "totals_line": 2.5
     }
   },
