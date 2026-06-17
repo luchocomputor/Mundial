@@ -24,17 +24,53 @@ SOFT_FLAT = ROOT / "data" / "raw" / "betclic_odds_flat.json"
 CLOSING_LINES = ROOT / "data" / "closing_lines.json"
 
 
-def record_paper_bets(bets: list[dict]) -> None:
+def _logged_keys() -> set:
+    """(fixture_id, market, side) déjà présents dans le bets_log."""
+    if not BETS_LOG.exists():
+        return set()
+    try:
+        df = pd.read_csv(BETS_LOG)
+    except Exception:
+        return set()
+    keys = set()
+    for _, r in df.iterrows():
+        fid = r.get("fixture_id")
+        if pd.isna(fid):
+            continue
+        keys.add((str(int(fid)), str(r.get("market")), str(r.get("side"))))
+    return keys
+
+
+def record_paper_bets(bets: list[dict]) -> int:
+    """Enregistre les paris paper en DÉDUPLIQUANT sur (fixture_id, market, side) :
+    on garde la première détection (odds_taken = le prix qu'on aurait pris), les
+    re-détections des refresh suivants sont ignorées — sinon le bets_log double à
+    chaque run et le CLV/ROI sont fausses. Retourne le nombre de nouveaux paris."""
+    seen = _logged_keys()
+    new = []
     for bet in bets:
+        fid = bet.get("fixture_id")
+        if fid is None:
+            continue
+        key = (str(int(fid)), str(bet.get("market")), str(bet.get("side")))
+        if key in seen:
+            continue
+        seen.add(key)
+        new.append(bet)
+    if not new:
+        return 0
+
+    for bet in new:
         bet["paper_trade"] = True
         bet["recorded_at"] = datetime.now().isoformat()
-    log_bets(bets)
+    log_bets(new)
 
     existing = []
     if PAPER_LOG.exists():
         existing = json.loads(PAPER_LOG.read_text())
-    existing.extend(bets)
+    existing.extend(new)
     PAPER_LOG.write_text(json.dumps(existing, indent=2, default=str))
+    return len(new)
 
 
 def _load_json(path: Path) -> dict:

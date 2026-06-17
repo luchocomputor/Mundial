@@ -133,7 +133,8 @@ def scan(paper: bool = False):
 
     if paper or cfg.model.production_mode == "paper_only":
         from monitoring.paper_trading import record_paper_bets
-        record_paper_bets(value_bets)
+        n_new = record_paper_bets(value_bets)
+        print(f"Paper : {n_new} nouveaux paris enregistrés ({len(value_bets) - n_new} déjà connus)")
     else:
         log_bets(value_bets)
 
