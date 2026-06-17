@@ -164,10 +164,11 @@ def main():
         refresh_predictions()
         from scan_now import scan
         bets = scan(paper=True)
-        from monitoring.paper_trading import fetch_and_update_clv
+        from monitoring.paper_trading import fetch_and_update_clv, snapshot_closing_lines
+        n_snap = snapshot_closing_lines()  # fige les lignes sharp des matchs à venir
         n_clv = fetch_and_update_clv()
-        if n_clv:
-            print(f"  CLV mis à jour pour {n_clv} paris")
+        if n_snap or n_clv:
+            print(f"  Lignes de clôture: {n_snap} figées · CLV mis à jour pour {n_clv} paris")
         if args.telegram and bets:
             asyncio.run(_send_alerts(bets))
 

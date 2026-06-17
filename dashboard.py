@@ -416,6 +416,15 @@ def refresh_all():
             msgs.append(f"✅ {res['resolved']} bet(s) résolu(s)")
     except Exception:
         msgs.append("⚠️ Sync scores échoué")
+    try:
+        # Fige les lignes sharp à l'approche du kickoff + remplit le CLV (KPI d'edge).
+        from monitoring.paper_trading import fetch_and_update_clv, snapshot_closing_lines
+        snapshot_closing_lines()
+        n_clv = fetch_and_update_clv()
+        if n_clv:
+            msgs.append(f"📈 CLV: {n_clv} pari(s)")
+    except Exception:
+        pass
     return " · ".join(msgs)
 
 

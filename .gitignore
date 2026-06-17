@@ -19,6 +19,8 @@ data/raw/*.parquet
 data/processed/
 data/bets_log.csv
 data/paper_trading.json
+data/closing_lines.json
+data/*_legacy_*
 
 # Caches de scraping/API (re-fetchables ; on garde les CSV/JSON produits)
 data/raw/transfermarkt/*.html
