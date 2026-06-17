@@ -67,11 +67,14 @@ def scan(paper: bool = False):
     wc2026 = wc[wc["date"].dt.year == cfg.seasons.get("live", 2026)]
     matches = filter_real_teams(wc2026).sort_values("date")
 
-    odds_path = ROOT / "data" / "raw" / "odds_wc2026.json"
-    odds = {}
-    if odds_path.exists():
-        odds_raw = json.loads(odds_path.read_text())
-        odds = {int(k): v for k, v in odds_raw.items()}
+    # Book de référence = Betclic (là où Louis parie réellement) ; ancre sharp =
+    # Pinnacle. Même source que le dashboard → loop cohérent, odds_taken = Betclic.
+    # NB : via The Odds API, Betclic n'expose que le 1X2 (O/U/BTTS Betclic = bloqué,
+    # cf. begmedia) → le scan ne parie que du 1X2 tant que ce n'est pas débloqué.
+    betclic_path = ROOT / "data" / "raw" / "betclic_odds_flat.json"
+    pinnacle_path = ROOT / "data" / "raw" / "pinnacle_odds_flat.json"
+    odds = {int(k): v for k, v in json.loads(betclic_path.read_text()).items()} if betclic_path.exists() else {}
+    sharp = {int(k): v for k, v in json.loads(pinnacle_path.read_text()).items()} if pinnacle_path.exists() else {}
 
     bzzo_map = {}
     preds_path = ROOT / "data" / "raw" / "predictions_wc2026.parquet"
@@ -100,7 +103,7 @@ def scan(paper: bool = False):
 
     value_bets, guard_stats = scan_value_bets(
         match_list, model, odds, cfg, bankroll, bzzo_map,
-        team_match_counts=team_counts,
+        team_match_counts=team_counts, sharp_odds=sharp,
     )
 
     print(

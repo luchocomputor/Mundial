@@ -61,22 +61,21 @@ def snapshot_closing_lines() -> int:
     Retourne le nombre de matchs (re)snapshotés."""
     kicks = _kickoffs()
     now = pd.Timestamp.now(tz="UTC")
-    sharp, soft = _load_json(SHARP_FLAT), _load_json(SOFT_FLAT)
+    pinn, betc = _load_json(SHARP_FLAT), _load_json(SOFT_FLAT)
     store = _load_json(CLOSING_LINES)
 
     n = 0
-    for fid in set(sharp) | set(soft):
+    for fid in set(pinn) | set(betc):
         if not str(fid).lstrip("-").isdigit():
             continue
         ko = kicks.get(int(fid))
         if ko is None or ko <= now:        # kickoff inconnu ou déjà passé → on ne touche pas (gel)
             continue
-        odds = sharp.get(fid) or soft.get(fid)
-        if not odds:
+        if not (pinn.get(fid) or betc.get(fid)):
             continue
         store[str(fid)] = {
-            "odds": odds,
-            "source": "pinnacle" if fid in sharp else "soft",
+            "pinnacle": pinn.get(fid),   # ancre sharp → CLV d'edge
+            "betclic": betc.get(fid),    # book de mise → CLV de ligne
             "captured_at": now.isoformat(),
             "kickoff": ko.isoformat(),
         }
@@ -117,11 +116,19 @@ def fetch_and_update_clv(fixture_ids: list[int] | None = None) -> int:
         return 0
     now = pd.Timestamp.now(tz="UTC")
 
-    pending = df[df["clv"].isna() | (df["clv"].astype(str).str.strip() == "")]
+    def _empty(col):
+        return df[col].isna() | (df[col].astype(str).str.strip() == "") if col in df.columns else True
+    # En attente tant qu'AUCUN des deux CLV (Pinnacle/Betclic) n'est rempli.
+    mask = _empty("clv") & _empty("clv_betclic")
+    pending = df[mask] if mask is not True else df
     if fixture_ids:
         pending = pending[pending["fixture_id"].isin(fixture_ids)]
     if pending.empty:
         return 0
+
+    def _close(entry, book, market, side):
+        o = ((entry.get(book) or {}).get(market) or {}).get(side)
+        return float(o) if o and float(o) > 1.0 else None
 
     updated = 0
     for idx in pending.index:
@@ -132,13 +139,19 @@ def fetch_and_update_clv(fixture_ids: list[int] | None = None) -> int:
         if not entry or pd.Timestamp(entry["kickoff"]) > now:  # close pas encore figée
             continue
         market, side = str(df.loc[idx, "market"]), str(df.loc[idx, "side"])
-        oc = (entry["odds"].get(market) or {}).get(side)
-        if not oc or float(oc) <= 1.0:
-            continue
         taken = df.loc[idx, "odds_taken"]
         taken = float(taken) if pd.notna(taken) and str(taken).strip() else float(df.loc[idx, "cote"])
-        df.loc[idx, "odds_close"] = float(oc)
-        df.loc[idx, "clv"] = clv(taken, float(oc))
+
+        pinn = _close(entry, "pinnacle", market, side)  # CLV d'edge (sharp)
+        betc = _close(entry, "betclic", market, side)   # CLV de ligne (book de mise)
+        if pinn is None and betc is None:
+            continue
+        if pinn is not None:
+            df.loc[idx, "odds_close"] = pinn
+            df.loc[idx, "clv"] = clv(taken, pinn)
+        if betc is not None:
+            df.loc[idx, "betclic_close"] = betc
+            df.loc[idx, "clv_betclic"] = clv(taken, betc)
         updated += 1
 
     if updated:
@@ -176,11 +189,17 @@ def paper_trading_report() -> dict:
         "clv_30d": _rolling_clv(paper, 30),
     }
 
+    # CLV vs Betclic (book de mise) — secondaire, mouvement de ligne au book.
+    betc_vals = pd.to_numeric(paper.get("clv_betclic", pd.Series()), errors="coerce").dropna()
+    if not betc_vals.empty:
+        result["clv_betclic_mean"] = round(float(betc_vals.mean()), 4)
+        result["clv_betclic_n"] = int(len(betc_vals))
+
     if clv_vals.empty:
         result["clv"] = "pending"
         return result
 
-    report = bootstrap_clv_significance(clv_vals)
+    report = bootstrap_clv_significance(clv_vals)  # CLV vs Pinnacle = edge réel
     result.update({
         "clv_mean": report.mean_clv,
         "beat_close_pct": report.beat_close_pct,
@@ -207,12 +226,15 @@ if __name__ == "__main__":
     print(f"CLV rempli pour          : {r.pop('_clv_updated', 0)} paris")
     n = r.get("n_bets", 0)
     cm = r.get("clv_mean")
+    bm = r.get("clv_betclic_mean")
     if cm is None:
         print(f"Paris paper : {n} · CLV : en attente (aucun match clôturé)")
     else:
         ci = r.get("ci", [None, None])
         verdict = "EDGE confirmé ✅" if r.get("significant") else "non significatif (échantillon ↑)"
         print(f"Paris paper : {n}")
-        print(f"CLV moyen   : {cm:+.4f}  ({r.get('beat_close_pct', 0)*100:.0f}% battent la clôture)")
-        print(f"IC 95%      : [{ci[0]:+.4f}, {ci[1]:+.4f}] → {verdict}")
-        print(f"CLV 7j      : {r['clv_7d']}  · 30j : {r['clv_30d']}")
+        print(f"CLV Pinnacle (edge) : {cm:+.4f}  ({r.get('beat_close_pct', 0)*100:.0f}% battent la clôture)")
+        print(f"IC 95%              : [{ci[0]:+.4f}, {ci[1]:+.4f}] → {verdict}")
+        if bm is not None:
+            print(f"CLV Betclic (ligne) : {bm:+.4f}  (n={r.get('clv_betclic_n', 0)})")
+        print(f"CLV 7j : {r['clv_7d']}  · 30j : {r['clv_30d']}")
