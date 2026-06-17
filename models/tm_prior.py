@@ -28,6 +28,11 @@ TM_ARTIFACT = ROOT / "models" / "artifacts" / "elo_tm.pkl"
 # (bassin plat 0.2-0.5) ; la CDM 2026 préfère encore plus de TM → 0.4 est prudent.
 W_ELO = 0.4
 TOP_N = 16  # on agrège la valeur des 16 joueurs les plus chers (cœur d'effectif)
+# Pondération par confiance : w_elo effectif = W_ELO · min(1, n_matchs/CONF_K).
+# Inchangé pour les équipes bien observées (n≥CONF_K) ; pour les data-starved
+# (DR Congo 0 match, Cabo Verde 1) l'Elo vaut ~1500 (l'initial, vide de sens) →
+# on s'appuie sur la TM au lieu de tirer leur rating vers la moyenne.
+CONF_K = 12
 
 
 def _team_logvalue() -> pd.Series:
@@ -56,26 +61,43 @@ class TMBlendedElo(EloRating):
     prédiction) est mélangé au prior TM. Le fit/update restent du pur Elo (ils
     écrivent `self.ratings` directement, sans passer par `_get`)."""
 
-    def __init__(self, elo: EloRating, tm_rating: dict[str, float], w_elo: float = W_ELO):
+    def __init__(self, elo: EloRating, tm_rating: dict[str, float],
+                 w_elo: float = W_ELO, match_counts: dict[str, int] | None = None):
         super().__init__(k=elo.k, home_advantage=elo.home_advantage,
                          initial_rating=elo.initial_rating)
         self.ratings = elo.ratings
         self._fitted = elo._fitted
         self.tm_rating = tm_rating
         self.w_elo = w_elo
+        self.match_counts = match_counts or {}
         self._source = "elo_tm"  # tag model_version
 
     def _get(self, team: str) -> float:
         n = _norm_team(team)
         e = self.ratings.get(n, self.initial_rating)
         t = self.tm_rating.get(n)
-        return e if t is None else self.w_elo * e + (1.0 - self.w_elo) * t
+        if t is None:
+            return e
+        # Poids Elo réduit pour les équipes peu observées (Elo ≈ initial → bruit).
+        # Comptes calculés → absent = 0 match (pure TM) ; comptes vides (vieux
+        # pickle) → repli sur le poids global.
+        cnts = getattr(self, "match_counts", {})
+        w = self.w_elo * min(1.0, cnts.get(n, 0) / CONF_K) if cnts else self.w_elo
+        return w * e + (1.0 - w) * t
+
+
+def _match_counts() -> dict[str, int]:
+    """Nb de matchs par équipe normalisée dans le training enrichi."""
+    from models.train_elo import build_training
+    tr = build_training()
+    c = pd.concat([tr["home_team"].map(_norm_team), tr["away_team"].map(_norm_team)]).value_counts()
+    return {t: int(n) for t, n in c.items()}
 
 
 def build_blended(elo: EloRating | None = None, w_elo: float = W_ELO) -> TMBlendedElo:
     if elo is None:
         elo = EloRating.load()
-    return TMBlendedElo(elo, build_tm_ratings(elo), w_elo)
+    return TMBlendedElo(elo, build_tm_ratings(elo), w_elo, _match_counts())
 
 
 def run():
