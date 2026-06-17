@@ -109,6 +109,22 @@ html, body {
 .kpi-sub { font-size:.73rem; font-weight:500; margin-top:6px; }
 .g { color:var(--green); } .r { color:var(--red); } .n { color:var(--m2); }
 
+/* ── CLV panel ── */
+.clv-wait {
+  background: linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,0) 30%), var(--s2);
+  border: 1px solid var(--bd); border-radius: var(--r);
+  padding: 15px 20px; font-size: .82rem; color: var(--m2); margin-bottom: 30px;
+}
+.clv-wait b { color: var(--t); font-weight: 700; }
+.clv-wait-i { margin-right: 8px; opacity:.8; }
+.clv-chips { display:flex; flex-wrap:wrap; gap:8px; margin: -20px 0 30px; }
+.clv-chip {
+  background: rgba(255,255,255,.03); border:1px solid var(--bd);
+  border-radius: 8px; padding: 5px 11px; font-size:.72rem; color: var(--m2);
+}
+.clv-chip b { color: var(--t); font-weight:700; margin-right:5px; }
+.clv-chip-n { color: var(--m3); margin-left:5px; }
+
 /* ── Section dividers ── */
 .sec {
   display: flex; align-items: center; gap: 14px;
@@ -531,6 +547,29 @@ def predictions():
     return out
 
 
+@st.cache_data(ttl=300, show_spinner=False)
+def clv_stats() -> dict:
+    """Fige les clôtures sharp/Betclic, remplit le CLV des paris clôturés, et
+    renvoie le verdict d'edge (CLV vs Pinnacle) + le détail par marché."""
+    from monitoring.paper_trading import run_clv_cycle, BETS_LOG
+    rep = run_clv_cycle()
+    out = {
+        "n_bets": rep.get("n_bets", 0), "mean": rep.get("clv_mean"),
+        "beat": rep.get("beat_close_pct"), "sig": rep.get("significant"),
+        "ci": rep.get("ci"), "betclic": rep.get("clv_betclic_mean"),
+        "n_clv": 0, "by_market": {},
+    }
+    try:
+        df = pd.read_csv(BETS_LOG)
+        clv = pd.to_numeric(df.get("clv"), errors="coerce")
+        out["n_clv"] = int(clv.notna().sum())
+        d2 = df.assign(_c=clv).dropna(subset=["_c"])
+        out["by_market"] = {m: (float(g._c.mean()), len(g)) for m, g in d2.groupby("market")}
+    except Exception:
+        pass
+    return out
+
+
 # ── Match card ─────────────────────────────────────────────────────────────────
 def render_match_card(home, away, match_date, score_info, advised_bets, log_df, bankroll, preds, min_edge, kickoff=""):
     fh, fa = flag(home), flag(away)
@@ -842,6 +881,51 @@ if page == "Tableau de bord":
     <div class="kpi-sub n">bets</div>
   </div>
 </div>""", unsafe_allow_html=True)
+
+    # ── Closing Line Value : le juge de l'edge (bat-on la clôture sharp ?) ──────
+    st.markdown('<div class="sec"><span>Closing Line Value · le juge de l\'edge</span></div>', unsafe_allow_html=True)
+    cv = clv_stats()
+    if cv["mean"] is None:
+        st.markdown(f"""
+<div class="clv-wait">
+  <span class="clv-wait-i">📈</span>CLV en attente — se remplit à mesure que les matchs sont joués.
+  <b>{cv['n_clv']}/{cv['n_bets']}</b> paris clôturés. Le CLV vs Pinnacle (sharp) dira si le modèle a un edge réel avant même les résultats.
+</div>""", unsafe_allow_html=True)
+    else:
+        mean = cv["mean"]; beat = cv["beat"] or 0; betc = cv["betclic"]
+        ci = cv["ci"] or [0, 0]
+        ec = "kpi-g" if mean >= 0 else "kpi-r"
+        verdict = "EDGE ✓" if cv["sig"] else "à confirmer"
+        vc = "g" if cv["sig"] else "n"
+        st.markdown(f"""
+<div class="kpi-grid">
+  <div class="kpi {ec}">
+    <div class="kpi-lbl">CLV vs Pinnacle</div>
+    <div class="kpi-val">{mean*100:+.2f}%</div>
+    <div class="kpi-sub {'g' if mean>=0 else 'r'}">{beat*100:.0f}% battent la clôture</div>
+  </div>
+  <div class="kpi kpi-b">
+    <div class="kpi-lbl">Verdict</div>
+    <div class="kpi-val {vc}" style="font-size:1.3rem">{verdict}</div>
+    <div class="kpi-sub n">IC95 [{ci[0]*100:+.1f}, {ci[1]*100:+.1f}]%</div>
+  </div>
+  <div class="kpi kpi-n">
+    <div class="kpi-lbl">CLV vs Betclic</div>
+    <div class="kpi-val">{(betc*100 if betc is not None else 0):+.2f}%</div>
+    <div class="kpi-sub n">ligne du book de mise</div>
+  </div>
+  <div class="kpi kpi-n">
+    <div class="kpi-lbl">Échantillon</div>
+    <div class="kpi-val">{cv['n_clv']}<span style="font-size:1rem;color:var(--m3)"> / {cv['n_bets']}</span></div>
+    <div class="kpi-sub n">paris clôturés</div>
+  </div>
+</div>""", unsafe_allow_html=True)
+        if cv["by_market"]:
+            chips = "".join(
+                f'<span class="clv-chip"><b>{m}</b><span class="{"g" if v>=0 else "r"}">{v*100:+.1f}%</span>'
+                f'<span class="clv-chip-n">{n}</span></span>'
+                for m, (v, n) in sorted(cv["by_market"].items(), key=lambda x: -x[1][1]))
+            st.markdown(f'<div class="clv-chips">{chips}</div>', unsafe_allow_html=True)
 
     # ── Matchs : TOUS les fixtures CDM 2026, datés en heure Montréal ───────────
     # Source autoritaire = predictions() : liste complète des matchs (parquet) avec
