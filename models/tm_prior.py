@@ -63,6 +63,7 @@ class TMBlendedElo(EloRating):
         self._fitted = elo._fitted
         self.tm_rating = tm_rating
         self.w_elo = w_elo
+        self._source = "elo_tm"  # tag model_version
 
     def _get(self, team: str) -> float:
         n = _norm_team(team)

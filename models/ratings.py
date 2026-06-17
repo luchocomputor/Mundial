@@ -53,6 +53,7 @@ class EloRating:
         self.initial_rating = initial_rating
         self.ratings: dict[str, float] = {}
         self._fitted = False
+        self._source = "elo"  # tag model_version (surchargé par les sous-classes)
 
     def _get(self, team: str) -> float:
         return self.ratings.get(_norm_team(team), self.initial_rating)
@@ -163,7 +164,7 @@ class EloRating:
             btts=btts,
             expected_home=mu,
             expected_away=nu,
-            source="elo",
+            source=getattr(self, "_source", "elo"),
         )
 
     def save(self, path: Path = ARTIFACT_PATH) -> None:
