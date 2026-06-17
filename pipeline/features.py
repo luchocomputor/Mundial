@@ -37,8 +37,27 @@ STADIUM_ALTITUDE = {
     "BC Place": 3,
 }
 
-# Coefficient altitude estimé (placeholder — remplacé par régression si assez de données)
 ALTITUDE_COEF = -0.15
+
+FIFA_RANKING_2026 = {
+    "Argentina": 1, "France": 2, "Spain": 3, "England": 4, "Brazil": 5,
+    "Portugal": 6, "Belgium": 7, "Netherlands": 8, "Germany": 9, "Colombia": 10,
+    "Italy": 11, "Croatia": 12, "Uruguay": 13, "Morocco": 14, "Japan": 15,
+    "Senegal": 16, "USA": 17, "Mexico": 18, "Switzerland": 19, "Denmark": 20,
+    "South Korea": 21, "Austria": 22, "Australia": 23, "Ecuador": 24,
+    "Turkey": 25, "Türkiye": 25, "Canada": 26, "Serbia": 27, "Poland": 28,
+    "Iran": 29, "Algeria": 30, "Egypt": 31, "Ghana": 32,
+    "Ivory Coast": 33, "Côte d'Ivoire": 33, "Saudi Arabia": 34, "Tunisia": 35,
+    "Paraguay": 36, "Sweden": 37, "Bosnia and Herzegovina": 38,
+    "Bosnia & Herzegovina": 38, "Czech Republic": 39, "Czechia": 39,
+    "New Zealand": 40, "Jordan": 41, "Uzbekistan": 42, "Iraq": 43,
+    "Qatar": 44, "South Africa": 45, "Cabo Verde": 46, "DR Congo": 47,
+    "Haiti": 48, "Curaçao": 49, "Panama": 50, "Scotland": 51, "Norway": 52,
+}
+
+
+def get_fifa_ranking(team: str) -> int:
+    return FIFA_RANKING_2026.get(team, 55)
 
 
 def get_altitude_adjustment(venue: str) -> float:

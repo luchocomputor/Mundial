@@ -50,7 +50,7 @@ def devig_shin(odds: dict[str, float], max_iter: int = 100, tol: float = 1e-8) -
     if n == 0:
         return {}
     if n == 1:
-        return {keys[0]: 1.0}
+        return {keys[0]: 1.0 / o[0]}
 
     inv = 1.0 / o
     overround = inv.sum()

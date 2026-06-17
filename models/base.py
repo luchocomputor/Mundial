@@ -26,6 +26,8 @@ class Prediction:
     btts: float
     expected_home: float = 0.0
     expected_away: float = 0.0
+    over_1_5: float = 0.0
+    over_3_5: float = 0.0
     uncertainty: dict[str, float] | None = None
     source: str = ""
 
@@ -34,7 +36,9 @@ class Prediction:
             "home_win": self.home_win,
             "draw": self.draw,
             "away_win": self.away_win,
+            "over_1.5": self.over_1_5,
             "over_2.5": self.over_2_5,
+            "over_3.5": self.over_3_5,
             "btts": self.btts,
             "expected_home": self.expected_home,
             "expected_away": self.expected_away,
@@ -48,7 +52,9 @@ class Prediction:
             home_win=d.get("home_win", 1 / 3),
             draw=d.get("draw", 1 / 3),
             away_win=d.get("away_win", 1 / 3),
+            over_1_5=d.get("over_1.5", 0.0),
             over_2_5=d.get("over_2.5", 0.5),
+            over_3_5=d.get("over_3.5", 0.0),
             btts=d.get("btts", 0.5),
             expected_home=d.get("expected_home", 0.0),
             expected_away=d.get("expected_away", 0.0),

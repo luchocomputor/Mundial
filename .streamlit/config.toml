@@ -1,0 +1,8 @@
+# Thème Emerald / Graphite — aligne les widgets natifs Streamlit (radio, slider,
+# inputs, sélection dataframe) sur la palette CSS du dashboard.
+[theme]
+base = "dark"
+primaryColor = "#34D399"            # emerald — accent des widgets (radio, slider…)
+backgroundColor = "#0A0B0D"         # graphite, = var(--bg)
+secondaryBackgroundColor = "#131517" # carte / widgets, = var(--s2)
+textColor = "#ECEDEE"               # = var(--t)
