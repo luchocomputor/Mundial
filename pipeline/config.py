@@ -26,6 +26,7 @@ class ModelConfig:
     sparse_match_threshold: int = 5
     sparse_anchor_weight: float = 0.5
     production_mode: str = "paper_only"
+    over_under_enabled: bool = False  # O/U sans résolution (total Elo constant) → off
 
 
 @dataclass
@@ -63,6 +64,7 @@ class AppConfig:
                 "sparse_match_threshold": self.model.sparse_match_threshold,
                 "sparse_anchor_weight": self.model.sparse_anchor_weight,
                 "production_mode": self.model.production_mode,
+                "over_under_enabled": self.model.over_under_enabled,
             },
             "bankroll": {"initial": self.bankroll_initial},
             "leagues": self.leagues,
@@ -112,6 +114,7 @@ def load_config(path: Path | None = None) -> AppConfig:
             sparse_match_threshold=model_raw.get("sparse_match_threshold", 5),
             sparse_anchor_weight=model_raw.get("sparse_anchor_weight", 0.5),
             production_mode=model_raw.get("production_mode", "paper_only"),
+            over_under_enabled=model_raw.get("over_under_enabled", False),
         ),
         bankroll_initial=raw.get("bankroll", {}).get("initial", 200),
         leagues=raw.get("leagues", {}),

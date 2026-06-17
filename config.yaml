@@ -21,6 +21,11 @@ model:
   sparse_match_threshold: 5
   sparse_anchor_weight: 0.5
   production_mode: paper_only
+  # O/U désactivé : l'Elo a un total de buts constant (mu+nu=BASE_GOALS) → aucune
+  # résolution O/U, et le Dixon-Coles actuel est biaisé under. On ne parie pas ce
+  # qu'on ne sait pas pricer. Réactiver quand un modèle buts attaque/défense est
+  # validé (1X2 et BTTS, eux, gardent leur résolution → restent actifs).
+  over_under_enabled: false
 
 odds_api:
   key: ""   # déplacé vers .env

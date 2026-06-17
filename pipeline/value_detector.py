@@ -117,6 +117,7 @@ def scan_value_bets(
     anchor_weight = mcfg.market_anchor_weight if hasattr(mcfg, "market_anchor_weight") else mcfg.get("market_anchor_weight", 0.3)
     sparse_threshold = mcfg.sparse_match_threshold if hasattr(mcfg, "sparse_match_threshold") else mcfg.get("sparse_match_threshold", 5)
     sparse_anchor = mcfg.sparse_anchor_weight if hasattr(mcfg, "sparse_anchor_weight") else mcfg.get("sparse_anchor_weight", 0.5)
+    ou_enabled = mcfg.over_under_enabled if hasattr(mcfg, "over_under_enabled") else mcfg.get("over_under_enabled", False)
     max_daily = cfg.risk.max_daily_exposure if hasattr(cfg, "risk") else cfg.get("risk", {}).get("max_daily_exposure", 0.15)
 
     value_bets = []
@@ -168,6 +169,10 @@ def scan_value_bets(
             ("over_3.5", "under", "under_3.5", 1 - preds.get("over_3.5", 0)),
             ("btts", "yes", "btts", preds.get("btts", 0)),
         ]
+        # O/U sans résolution tant qu'aucun modèle buts attaque/défense n'est validé
+        # (total Elo constant) → on ne les émet pas. 1X2 et BTTS restent.
+        if not ou_enabled:
+            market_map = [m for m in market_map if not m[0].startswith("over_")]
 
         for market, side, pred_key, p_raw in market_map:
             market_odds = odds_nested.get(market, {})
