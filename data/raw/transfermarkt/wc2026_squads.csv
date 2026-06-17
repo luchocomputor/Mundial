@@ -1,0 +1,1249 @@
+team,verein_id,player,player_id,position,age,club,caps,intl_goals,market_value_eur
+Algeria,3614,Luca Zidane,283489,Goalkeeper,28,Granada CF,7,-,1000000
+Algeria,3614,Oussama Benbout,437982,Goalkeeper,31,USM Alger,3,-,850000
+Algeria,3614,Melvin Mastil,534398,Goalkeeper,26,FC Stade Nyonnais,2,-,250000
+Algeria,3614,Ramy Bensebaini,284732,Centre-Back,31,Borussia Dortmund,81,7,7000000
+Algeria,3614,Samir Chergui,668167,Centre-Back,27,Paris FC,5,-,3000000
+Algeria,3614,Zineddine Belaid,625142,Centre-Back,27,JS Kabylie,17,1,1800000
+Algeria,3614,Mohamed Amine Tougai,592396,Centre-Back,26,Esperance Tunis,30,2,1300000
+Algeria,3614,Aïssa Mandi,80293,Centre-Back,34,LOSC Lille,118,8,1000000
+Algeria,3614,Achref Abada,949929,Centre-Back,27,USM Alger,10,1,1000000
+Algeria,3614,Rayan Aït-Nouri,578391,Left-Back,25,Manchester City,29,-,40000000
+Algeria,3614,Jaouen Hadjam,750903,Left-Back,23,BSC Young Boys,18,3,7000000
+Algeria,3614,Rafik Belghali,864306,Right-Back,24,Hellas Verona,13,1,7000000
+Algeria,3614,Ramiz Zerrouki,416660,Defensive Midfield,28,FC Twente Enschede,53,3,6500000
+Algeria,3614,Nabil Bentaleb,245537,Defensive Midfield,31,LOSC Lille,59,6,4500000
+Algeria,3614,Hicham Boudaoui,560593,Central Midfield,26,OGC Nice,33,-,12000000
+Algeria,3614,Yassine Titraoui,748445,Central Midfield,22,Royal Charleroi SC,5,-,7000000
+Algeria,3614,Ibrahim Maza,905011,Attacking Midfield,20,Bayer 04 Leverkusen,17,2,45000000
+Algeria,3614,Farès Chaïbi,855015,Attacking Midfield,23,Eintracht Frankfurt,30,3,15000000
+Algeria,3614,Houssem Aouar,395693,Attacking Midfield,27,Al-Ittihad Club,21,6,8000000
+Algeria,3614,Adil Boulbina,748443,Left Winger,23,Al-Duhail SC,11,5,3000000
+Algeria,3614,Anis Hadj Moussa,917911,Right Winger,24,Feyenoord Rotterdam,15,2,23000000
+Algeria,3614,Farès Ghedjemis,888738,Right Winger,23,Frosinone Calcio,1,1,7500000
+Algeria,3614,Riyad Mahrez,171424,Right Winger,35,Al-Ahli SFC,115,38,5000000
+Algeria,3614,Amine Gouiri,418659,Centre-Forward,26,Olympique Marseille,23,10,28000000
+Algeria,3614,Mohamed Amoura,746910,Centre-Forward,26,VfL Wolfsburg,46,19,20000000
+Algeria,3614,Nadhir Benbouali,840254,Centre-Forward,26,ETO FC,4,1,1200000
+Argentina,3437,Emiliano Martínez,111873,Goalkeeper,33,Aston Villa,59,-,12000000
+Argentina,3437,Gerónimo Rulli,229604,Goalkeeper,34,Olympique Marseille,8,-,6000000
+Argentina,3437,Juan Musso,242359,Goalkeeper,32,Atlético de Madrid,4,-,3000000
+Argentina,3437,Cristian Romero,355915,Centre-Back,28,Tottenham Hotspur,51,3,45000000
+Argentina,3437,Lisandro Martínez,480762,Centre-Back,28,Manchester United,28,1,40000000
+Argentina,3437,Marcos Senesi,469781,Centre-Back,29,AFC Bournemouth,3,-,25000000
+Argentina,3437,Facundo Medina,474800,Centre-Back,27,Olympique Marseille,9,-,18000000
+Argentina,3437,Nicolás Otamendi,54781,Centre-Back,38,SL Benfica,132,8,1000000
+Argentina,3437,Nicolás Tagliafico,131225,Left-Back,33,Olympique Lyon,76,1,4000000
+Argentina,3437,Nahuel Molina,424042,Right-Back,28,Atlético de Madrid,58,1,15000000
+Argentina,3437,Gonzalo Montiel,402733,Right-Back,29,CA River Plate,39,2,4500000
+Argentina,3437,Leandro Paredes,166237,Defensive Midfield,31,CA Boca Juniors,77,5,5000000
+Argentina,3437,Enzo Fernández,648195,Central Midfield,25,Chelsea FC,42,6,90000000
+Argentina,3437,Alexis Mac Allister,534033,Central Midfield,27,Liverpool FC,46,6,70000000
+Argentina,3437,Valentín Barco,849410,Central Midfield,21,RC Strasbourg Alsace,4,2,40000000
+Argentina,3437,Exequiel Palacios,401578,Central Midfield,27,Bayer 04 Leverkusen,40,-,25000000
+Argentina,3437,Rodrigo De Paul,255901,Central Midfield,32,Inter Miami CF,87,2,14000000
+Argentina,3437,Nico Paz,948294,Attacking Midfield,21,Como 1907,9,1,80000000
+Argentina,3437,Giovani Lo Celso,348795,Attacking Midfield,30,Real Betis Balompié,67,4,8000000
+Argentina,3437,Nico González,486031,Left Winger,28,Atlético de Madrid,51,6,22000000
+Argentina,3437,Thiago Almada,576028,Left Winger,25,Atlético de Madrid,16,5,15000000
+Argentina,3437,Giuliano Simeone,742201,Right Winger,23,Atlético de Madrid,13,2,40000000
+Argentina,3437,Lionel Messi,28003,Right Winger,38,Inter Miami CF,199,117,15000000
+Argentina,3437,Julián Alvarez,576024,Centre-Forward,26,Atlético de Madrid,51,14,100000000
+Argentina,3437,Lautaro Martínez,406625,Centre-Forward,28,Inter Milan,77,37,85000000
+Argentina,3437,José Manuel López,844797,Centre-Forward,25,Sociedade Esportiva Palmeiras,5,-,25000000
+Australia,3433,Mathew Ryan,128969,Goalkeeper,34,Levante UD,104,-,1800000
+Australia,3433,Patrick Beach,983578,Goalkeeper,22,Melbourne City FC,3,-,1000000
+Australia,3433,Paul Izzo,181921,Goalkeeper,31,Randers FC,4,-,500000
+Australia,3433,Alessandro Circati,867137,Centre-Back,22,Parma Calcio 1913,14,1,12000000
+Australia,3433,Lucas Herrington,1279984,Centre-Back,18,Colorado Rapids,4,-,4500000
+Australia,3433,Harry Souttar,298091,Centre-Back,27,Leicester City,39,11,3500000
+Australia,3433,Cameron Burgess,255788,Centre-Back,30,Swansea City,28,-,1500000
+Australia,3433,Milos Degenek,187353,Centre-Back,32,APOEL Nicosia,57,1,450000
+Australia,3433,Jordan Bos,855731,Left-Back,23,Feyenoord Rotterdam,28,4,12000000
+Australia,3433,Aziz Behich,136834,Left-Back,35,Melbourne City FC,85,3,250000
+Australia,3433,Jacob Italiano,545810,Right-Back,24,Grazer AK 1902,6,-,600000
+Australia,3433,Jason Geria,185175,Right-Back,33,Albirex Niigata,15,-,350000
+Australia,3433,Aiden O'Neill,385918,Defensive Midfield,27,New York City FC,32,-,3000000
+Australia,3433,Kai Trewin,691326,Defensive Midfield,25,New York City FC,6,-,1800000
+Australia,3433,Paul Okon-Engstler,1064377,Defensive Midfield,21,Sydney FC,7,-,1200000
+Australia,3433,Cammy Devlin,399162,Central Midfield,28,Heart of Midlothian FC,5,-,2000000
+Australia,3433,Connor Metcalfe,522223,Central Midfield,26,FC St. Pauli,37,2,1500000
+Australia,3433,Jackson Irvine,192557,Central Midfield,33,FC St. Pauli,83,14,1000000
+Australia,3433,Ajdin Hrustic,265625,Central Midfield,29,Heracles Almelo,37,4,600000
+Australia,3433,Cristian Volpato,746891,Attacking Midfield,22,US Sassuolo,1,-,10000000
+Australia,3433,Nishan Velupillay,888140,Left Winger,25,Melbourne Victory,8,3,650000
+Australia,3433,Awer Mabil,255729,Left Winger,30,CD Castellón,38,10,500000
+Australia,3433,Mathew Leckie,126214,Left Winger,35,Melbourne City FC,81,14,300000
+Australia,3433,Nestory Irankunda,956920,Right Winger,20,Watford FC,16,6,8000000
+Australia,3433,Mohamed Touré,742770,Centre-Forward,22,Norwich City,11,2,8000000
+Australia,3433,Tete Yengi,849429,Centre-Forward,25,Machida Zelvia,2,1,450000
+Austria,3383,Florian Wiegele,393999,Goalkeeper,25,FC Viktoria Plzen,1,-,2200000
+Austria,3383,Patrick Pentz,223972,Goalkeeper,29,Bröndby IF,18,-,2200000
+Austria,3383,Alexander Schlager,186374,Goalkeeper,30,Red Bull Salzburg,26,-,2000000
+Austria,3383,David Affengruber,452483,Centre-Back,25,Elche CF,1,-,20000000
+Austria,3383,Kevin Danso,263236,Centre-Back,27,Tottenham Hotspur,32,-,20000000
+Austria,3383,Philipp Lienhart,225657,Centre-Back,29,SC Freiburg,41,3,10000000
+Austria,3383,Marco Friedl,156990,Centre-Back,28,SV Werder Bremen,11,-,10000000
+Austria,3383,Stefan Posch,223974,Centre-Back,29,1.FSV Mainz 05,52,5,6000000
+Austria,3383,Michael Svoboda,438961,Centre-Back,27,Venezia FC,4,-,3500000
+Austria,3383,David Alaba,59016,Centre-Back,33,Real Madrid,113,15,3000000
+Austria,3383,Phillipp Mwene,127573,Left-Back,32,1.FSV Mainz 05,30,-,1500000
+Austria,3383,Konrad Laimer,223967,Right-Back,29,Bayern Munich,57,7,32000000
+Austria,3383,Nicolas Seiwald,404950,Defensive Midfield,25,RB Leipzig,47,1,25000000
+Austria,3383,Dejan Ljubicic,287188,Defensive Midfield,28,FC Schalke 04,9,1,3000000
+Austria,3383,Florian Grillitsch,195736,Defensive Midfield,30,SC Braga,59,1,2500000
+Austria,3383,Paul Wanner,900909,Central Midfield,20,PSV Eindhoven,3,-,22000000
+Austria,3383,Carney Chukwuemeka,659459,Central Midfield,22,Borussia Dortmund,3,1,20000000
+Austria,3383,Xaver Schlager,223979,Central Midfield,28,RB Leipzig,51,4,10000000
+Austria,3383,Marcel Sabitzer,106987,Central Midfield,32,Borussia Dortmund,98,26,6000000
+Austria,3383,Alessandro Schöpf,118397,Central Midfield,32,Wolfsberger AC,35,6,800000
+Austria,3383,Alexander Prass,434116,Left Midfield,25,TSG 1899 Hoffenheim,19,-,9000000
+Austria,3383,Romano Schmid,346853,Attacking Midfield,26,SV Werder Bremen,34,3,15000000
+Austria,3383,Patrick Wimmer,533295,Right Winger,25,VfL Wolfsburg,30,1,12000000
+Austria,3383,Sasa Kalajdzic,369567,Centre-Forward,28,LASK,22,4,4000000
+Austria,3383,Marko Arnautovic,41384,Centre-Forward,37,Red Star Belgrade,133,47,2000000
+Austria,3383,Michael Gregoritsch,120205,Centre-Forward,32,FC Augsburg,75,24,1500000
+Belgium,3382,Senne Lammens,503883,Goalkeeper,23,Manchester United,2,-,35000000
+Belgium,3382,Mike Penders,834397,Goalkeeper,20,RC Strasbourg Alsace,-,-,25000000
+Belgium,3382,Thibaut Courtois,108390,Goalkeeper,34,Real Madrid,110,-,15000000
+Belgium,3382,Zeno Debast,548193,Centre-Back,22,Sporting CP,26,1,28000000
+Belgium,3382,Nathan Ngoy,548254,Centre-Back,23,LOSC Lille,5,-,25000000
+Belgium,3382,Koni De Winter,490384,Centre-Back,24,AC Milan,8,-,23000000
+Belgium,3382,Arthur Theate,368891,Centre-Back,26,Eintracht Frankfurt,33,1,17000000
+Belgium,3382,Brandon Mechele,236168,Centre-Back,33,Club Brugge KV,10,1,2800000
+Belgium,3382,Maxim De Cuyper,429915,Left-Back,25,Brighton & Hove Albion,20,4,22000000
+Belgium,3382,Joaquin Seys,981196,Left-Back,21,Club Brugge KV,5,-,20000000
+Belgium,3382,Timothy Castagne,262226,Right-Back,30,Fulham FC,64,2,8000000
+Belgium,3382,Thomas Meunier,100986,Right-Back,34,LOSC Lille,81,10,1500000
+Belgium,3382,Amadou Onana,485706,Defensive Midfield,24,Aston Villa,30,1,45000000
+Belgium,3382,Nicolas Raskin,422763,Defensive Midfield,25,Rangers FC,14,2,12000000
+Belgium,3382,Axel Witsel,35047,Defensive Midfield,37,Girona FC,138,12,1200000
+Belgium,3382,Youri Tielemans,249565,Central Midfield,29,Aston Villa,86,13,30000000
+Belgium,3382,Alexis Saelemaekers,381950,Right Midfield,26,AC Milan,24,2,20000000
+Belgium,3382,Diego Moreira,655006,Left Midfield,21,RC Strasbourg Alsace,3,-,25000000
+Belgium,3382,Charles De Ketelaere,435772,Attacking Midfield,25,Atalanta BC,31,6,30000000
+Belgium,3382,Kevin De Bruyne,88755,Attacking Midfield,34,SSC Napoli,120,37,8000000
+Belgium,3382,Hans Vanaken,137576,Attacking Midfield,33,Club Brugge KV,35,7,5000000
+Belgium,3382,Jérémy Doku,486049,Left Winger,24,Manchester City,44,7,75000000
+Belgium,3382,Leandro Trossard,144028,Left Winger,31,Arsenal FC,52,12,18000000
+Belgium,3382,Dodi Lukébakio,303259,Right Winger,28,SL Benfica,30,6,15000000
+Belgium,3382,Matias Fernandez-Pardo,724129,Centre-Forward,21,LOSC Lille,3,-,35000000
+Belgium,3382,Romelu Lukaku,96341,Centre-Forward,33,SSC Napoli,127,90,6000000
+Bosnia & Herzegovina,3446,Nikola Vasilj,248454,Goalkeeper,30,FC St. Pauli,27,-,4500000
+Bosnia & Herzegovina,3446,Martin Zlomislic,495320,Goalkeeper,27,HNK Rijeka,3,-,2000000
+Bosnia & Herzegovina,3446,Mladen Jurkas,952692,Goalkeeper,18,FK Borac Banja Luka,-,-,700000
+Bosnia & Herzegovina,3446,Tarik Muharemović,679423,Centre-Back,23,US Sassuolo,15,1,25000000
+Bosnia & Herzegovina,3446,Sead Kolasinac,94005,Centre-Back,32,Atalanta BC,66,-,4000000
+Bosnia & Herzegovina,3446,Stjepan Radeljic,384568,Centre-Back,28,HNK Rijeka,5,-,2800000
+Bosnia & Herzegovina,3446,Nikola Katic,422051,Centre-Back,29,FC Schalke 04,18,2,1800000
+Bosnia & Herzegovina,3446,Nihad Mujakic,380919,Centre-Back,28,Gaziantep FK,12,1,1200000
+Bosnia & Herzegovina,3446,Dennis Hadzikadunic,322065,Centre-Back,27,UC Sampdoria,32,-,1200000
+Bosnia & Herzegovina,3446,Amar Dedić,519184,Right-Back,23,SL Benfica,29,1,16000000
+Bosnia & Herzegovina,3446,Arjan Malic,805534,Right-Back,20,SK Sturm Graz,8,-,1800000
+Bosnia & Herzegovina,3446,Amir Hadziahmetovic,293213,Defensive Midfield,29,Hull City,36,-,4000000
+Bosnia & Herzegovina,3446,Ivan Šunjić,226097,Defensive Midfield,29,Pafos FC,12,-,2000000
+Bosnia & Herzegovina,3446,Dzenis Burnic,251295,Defensive Midfield,28,Karlsruher SC,21,-,1200000
+Bosnia & Herzegovina,3446,Benjamin Tahirović,787907,Central Midfield,23,Bröndby IF,29,2,4500000
+Bosnia & Herzegovina,3446,Armin Gigovic,651269,Central Midfield,24,BSC Young Boys,21,1,2500000
+Bosnia & Herzegovina,3446,Ivan Basic,620560,Central Midfield,24,FC Astana,18,-,1500000
+Bosnia & Herzegovina,3446,Amar Memić,638990,Right Midfield,25,FC Viktoria Plzen,14,1,4500000
+Bosnia & Herzegovina,3446,Ermin Mahmic,803049,Attacking Midfield,21,FC Slovan Liberec,2,-,5000000
+Bosnia & Herzegovina,3446,Kerim Alajbegovic,929994,Left Winger,18,Red Bull Salzburg,11,1,22000000
+Bosnia & Herzegovina,3446,Esmir Bajraktarevic,925862,Right Winger,21,PSV Eindhoven,17,1,8000000
+Bosnia & Herzegovina,3446,Ermedin Demirovic,335457,Centre-Forward,28,VfB Stuttgart,41,4,22000000
+Bosnia & Herzegovina,3446,Haris Tabakovic,203123,Centre-Forward,31,Borussia Mönchengladbach,10,4,3500000
+Bosnia & Herzegovina,3446,Jovo Lukić,457738,Centre-Forward,27,FC Universitatea Cluj,4,1,2200000
+Bosnia & Herzegovina,3446,Samed Bazdar,710969,Centre-Forward,22,Jagiellonia Bialystok,14,1,1500000
+Bosnia & Herzegovina,3446,Edin Dzeko,28396,Centre-Forward,40,FC Schalke 04,148,73,1000000
+Brazil,3439,Alisson,105470,Goalkeeper,33,Liverpool FC,79,-,15000000
+Brazil,3439,Ederson,238223,Goalkeeper,32,Fenerbahce,32,-,10000000
+Brazil,3439,Weverton,69400,Goalkeeper,38,Grêmio Foot-Ball Porto Alegrense,11,-,700000
+Brazil,3439,Gabriel,435338,Centre-Back,28,Arsenal FC,18,1,75000000
+Brazil,3439,Bremer,516716,Centre-Back,29,Juventus FC,8,1,35000000
+Brazil,3439,Marquinhos,181767,Centre-Back,32,Paris Saint-Germain,106,7,28000000
+Brazil,3439,Roger Ibañez,524481,Centre-Back,27,Al-Ahli SFC,8,-,18000000
+Brazil,3439,Léo Pereira,288431,Centre-Back,30,CR Flamengo,4,-,12000000
+Brazil,3439,Danilo,145707,Centre-Back,34,CR Flamengo,71,1,2000000
+Brazil,3439,Douglas Santos,220793,Left-Back,32,Zenit St. Petersburg,8,-,7500000
+Brazil,3439,Alex Sandro,79960,Left-Back,35,CR Flamengo,45,2,1000000
+Brazil,3439,Fabinho,225693,Defensive Midfield,32,Al-Ittihad Club,34,-,12000000
+Brazil,3439,Casemiro,16306,Defensive Midfield,34,Manchester United,87,9,6000000
+Brazil,3439,Bruno Guimarães,520624,Central Midfield,28,Newcastle United,44,3,70000000
+Brazil,3439,Éderson,607854,Central Midfield,26,Atalanta BC,3,-,45000000
+Brazil,3439,Danilo,808509,Central Midfield,25,Botafogo de Futebol e Regatas,5,2,32000000
+Brazil,3439,Lucas Paquetá,444523,Attacking Midfield,28,CR Flamengo,64,13,32000000
+Brazil,3439,Neymar,68290,Attacking Midfield,34,Santos FC,128,79,8000000
+Brazil,3439,Vinicius Junior,371998,Left Winger,25,Real Madrid,50,10,140000000
+Brazil,3439,Raphinha,411295,Left Winger,29,FC Barcelona,40,11,70000000
+Brazil,3439,Gabriel Martinelli,655488,Left Winger,24,Arsenal FC,23,4,45000000
+Brazil,3439,Rayan,1012564,Right Winger,19,AFC Bournemouth,2,1,60000000
+Brazil,3439,Luiz Henrique,800175,Right Winger,25,Zenit St. Petersburg,16,2,24000000
+Brazil,3439,Matheus Cunha,517894,Centre-Forward,27,Manchester United,24,1,75000000
+Brazil,3439,Igor Thiago,739443,Centre-Forward,24,Brentford FC,5,2,65000000
+Brazil,3439,Endrick,971570,Centre-Forward,19,Olympique Lyon,17,4,40000000
+Cabo Verde,4311,CJ dos Santos,532096,Goalkeeper,25,San Diego FC,1,-,1000000
+Cabo Verde,4311,Márcio Rosa,398048,Goalkeeper,29,Montana,10,-,350000
+Cabo Verde,4311,Vozinha,242277,Goalkeeper,40,GD Chaves,89,-,50000
+Cabo Verde,4311,Logan Costa,484988,Centre-Back,25,Villarreal CF,28,-,15000000
+Cabo Verde,4311,Diney Borges,349570,Centre-Back,31,Al-Bataeh CSC,32,2,900000
+Cabo Verde,4311,Kelvin Pires,662119,Centre-Back,26,SJK Seinäjoki,5,1,400000
+Cabo Verde,4311,Roberto Lopes,166158,Centre-Back,33,Shamrock Rovers,46,-,250000
+Cabo Verde,4311,Stopira,80486,Centre-Back,38,SC União Torreense,59,4,50000
+Cabo Verde,4311,Sidny Lopes Cabral,611855,Left-Back,23,SL Benfica,10,2,4000000
+Cabo Verde,4311,Wagner Pina,1072017,Right-Back,23,Trabzonspor,13,-,11000000
+Cabo Verde,4311,Steven Moreira,203517,Right-Back,31,Columbus Crew,21,-,1500000
+Cabo Verde,4311,Kevin Lenini,544586,Defensive Midfield,29,FC Krasnodar,32,3,5000000
+Cabo Verde,4311,Laros Duarte,258513,Defensive Midfield,29,Puskás Akadémia FC,18,-,1000000
+Cabo Verde,4311,João Paulo,623965,Defensive Midfield,28,FCSB,42,1,900000
+Cabo Verde,4311,Deroy Duarte,432852,Central Midfield,26,Ludogorets Razgrad,32,-,1800000
+Cabo Verde,4311,Jamiro Monteiro,272930,Central Midfield,32,PEC Zwolle,54,5,650000
+Cabo Verde,4311,Yannick Semedo,620307,Central Midfield,30,SC Farense,10,1,250000
+Cabo Verde,4311,Hélio Varela,840836,Left Winger,24,Maccabi Tel Aviv,20,-,2500000
+Cabo Verde,4311,Jovane Cabral,448466,Left Winger,28,CF Estrela Amadora,29,3,1000000
+Cabo Verde,4311,Willy Semedo,531450,Left Winger,32,Omonia Nicosia,38,3,1000000
+Cabo Verde,4311,Ryan Mendes,111627,Left Winger,36,Igdir FK,97,22,200000
+Cabo Verde,4311,Telmo Arcanjo,791528,Right Winger,24,Vitória Guimarães SC,17,1,3000000
+Cabo Verde,4311,Garry Rodrigues,170895,Right Winger,35,Apollon Limassol,60,9,300000
+Cabo Verde,4311,Benchimol,820252,Centre-Forward,24,Akron Tolyatti,21,6,1200000
+Cabo Verde,4311,Dailon Livramento,676411,Centre-Forward,25,Casa Pia AC,22,5,800000
+Cabo Verde,4311,Nuno Da Costa,306166,Centre-Forward,35,Basaksehir FK,9,1,400000
+Canada,3510,Dayne St. Clair,439750,Goalkeeper,29,Inter Miami CF,20,-,3500000
+Canada,3510,Maxime Crépeau,189014,Goalkeeper,32,Orlando City SC,33,-,1800000
+Canada,3510,Owen Goodman,814848,Goalkeeper,22,Barnsley FC,-,-,550000
+Canada,3510,Moïse Bombito,1089202,Centre-Back,26,OGC Nice,20,-,7000000
+Canada,3510,Alfie Jones,340990,Centre-Back,28,Middlesbrough FC,2,-,6000000
+Canada,3510,Derek Cornelius,328609,Centre-Back,28,Olympique Marseille,45,1,2500000
+Canada,3510,Joel Waterman,441738,Centre-Back,30,Chicago Fire FC,17,-,2000000
+Canada,3510,Luc De Fougerolles,921995,Centre-Back,20,FCV Dender EH,14,-,1000000
+Canada,3510,Alphonso Davies,424204,Left-Back,25,Bayern Munich,58,15,40000000
+Canada,3510,Alistair Johnston,637446,Right-Back,27,Celtic FC,59,1,8000000
+Canada,3510,Richie Laryea,417348,Right-Back,31,Toronto FC,77,1,1000000
+Canada,3510,Niko Sigur,1045375,Defensive Midfield,22,HNK Hajduk Split,19,2,4000000
+Canada,3510,Ismaël Koné,921655,Central Midfield,24,US Sassuolo,41,4,25000000
+Canada,3510,Nathan-Dylan Saliba,842420,Central Midfield,22,RSC Anderlecht,15,2,7500000
+Canada,3510,Stephen Eustaquio,512913,Central Midfield,29,Los Angeles FC,57,4,6000000
+Canada,3510,Jonathan Osorio,260807,Central Midfield,34,Toronto FC,92,10,1000000
+Canada,3510,Mathieu Choinière,589006,Central Midfield,27,Los Angeles FC,24,-,800000
+Canada,3510,Ali Ahmed,995642,Left Midfield,25,Norwich City,25,1,5000000
+Canada,3510,Liam Millar,487417,Left Winger,26,Hull City,42,1,3000000
+Canada,3510,Jacob Shaffelburg,637632,Left Winger,26,Los Angeles FC,32,6,2500000
+Canada,3510,Jayden Nelson,635445,Left Winger,23,Austin FC,15,3,2000000
+Canada,3510,Tajon Buchanan,638793,Right Winger,27,Villarreal CF,61,8,12000000
+Canada,3510,Jonathan David,533738,Centre-Forward,26,Juventus FC,78,39,30000000
+Canada,3510,Promise David,888785,Centre-Forward,24,Union Saint-Gilloise,11,3,17000000
+Canada,3510,Tani Oluwaseyi,972465,Centre-Forward,26,Villarreal CF,25,2,7000000
+Canada,3510,Cyle Larin,343463,Centre-Forward,31,Southampton FC,91,31,2500000
+Colombia,3816,Álvaro Montero,292985,Goalkeeper,31,CA Vélez Sarsfield,11,-,2500000
+Colombia,3816,Camilo Vargas,74113,Goalkeeper,37,Atlas Guadalajara,42,-,450000
+Colombia,3816,David Ospina,73396,Goalkeeper,37,Atlético Nacional,131,-,100000
+Colombia,3816,Jhon Lucumí,413565,Centre-Back,27,Bologna FC 1909,37,1,22000000
+Colombia,3816,Davinson Sánchez,341429,Centre-Back,30,Galatasaray,79,4,16000000
+Colombia,3816,Willer Ditta,609255,Centre-Back,28,CD Cruz Azul,5,-,5500000
+Colombia,3816,Yerry Mina,289446,Centre-Back,31,Cagliari Calcio,54,8,2500000
+Colombia,3816,Deiver Machado,332560,Left-Back,32,FC Nantes,15,-,1800000
+Colombia,3816,Johan Mojica,262939,Left-Back,33,RCD Mallorca,45,1,1500000
+Colombia,3816,Daniel Muñoz,493003,Right-Back,30,Crystal Palace,46,3,22000000
+Colombia,3816,Santiago Arias,120443,Right-Back,34,CA Independiente,68,-,1200000
+Colombia,3816,Richard Ríos,735573,Defensive Midfield,26,SL Benfica,32,2,25000000
+Colombia,3816,Jefferson Lerma,262980,Defensive Midfield,31,Crystal Palace,65,5,6000000
+Colombia,3816,Kevin Castaño,857948,Defensive Midfield,25,CA River Plate,25,-,5000000
+Colombia,3816,Gustavo Puerta,936981,Central Midfield,22,Racing Santander,6,1,10000000
+Colombia,3816,Juan Portilla,585747,Central Midfield,27,Club Athletico Paranaense,10,-,5000000
+Colombia,3816,Jorge Carrascal,354145,Attacking Midfield,28,CR Flamengo,24,2,13000000
+Colombia,3816,Juan Fernando Quintero,122582,Attacking Midfield,33,CA River Plate,49,6,1800000
+Colombia,3816,James Rodríguez,88103,Attacking Midfield,34,Minnesota United FC,126,31,1500000
+Colombia,3816,Luis Díaz,480692,Left Winger,29,Bayern Munich,74,22,70000000
+Colombia,3816,Andrés Gómez,957461,Left Winger,23,Clube de Regatas Vasco da Gama,8,2,11000000
+Colombia,3816,Jáminton Campaz,491553,Left Winger,26,CA Rosario Central,10,1,5500000
+Colombia,3816,Jhon Arias,588989,Right Winger,28,Sociedade Esportiva Palmeiras,38,6,15000000
+Colombia,3816,Luis Suárez,424784,Centre-Forward,28,Sporting CP,12,5,30000000
+Colombia,3816,Cucho Hernández,459463,Centre-Forward,27,Real Betis Balompié,9,2,18000000
+Colombia,3816,Jhon Córdoba,185245,Centre-Forward,33,FC Krasnodar,21,6,10000000
+Croatia,3556,Dominik Kotarski,370997,Goalkeeper,26,FC Copenhagen,4,-,5000000
+Croatia,3556,Ivor Pandur,371013,Goalkeeper,26,Hull City,-,-,4500000
+Croatia,3556,Dominik Livakovic,205927,Goalkeeper,31,GNK Dinamo Zagreb,75,-,4000000
+Croatia,3556,Josko Gvardiol,475959,Centre-Back,24,Manchester City,48,4,70000000
+Croatia,3556,Luka Vuskovic,892160,Centre-Back,19,Hamburger SV,5,1,60000000
+Croatia,3556,Josip Sutalo,371001,Centre-Back,26,Ajax Amsterdam,33,-,12000000
+Croatia,3556,Marin Pongracic,282144,Centre-Back,28,ACF Fiorentina,20,-,6500000
+Croatia,3556,Martin Erlić,357003,Centre-Back,28,FC Midtjylland,13,1,4000000
+Croatia,3556,Duje Caleta-Car,238266,Centre-Back,29,Real Sociedad,38,1,2800000
+Croatia,3556,Josip Stanisic,483046,Right-Back,26,Bayern Munich,31,-,40000000
+Croatia,3556,Nikola Moro,316934,Defensive Midfield,28,Bologna FC 1909,10,-,7000000
+Croatia,3556,Kristijan Jakic,374954,Defensive Midfield,29,FC Augsburg,17,2,6000000
+Croatia,3556,Petar Sučić,668207,Central Midfield,22,Inter Milan,17,1,40000000
+Croatia,3556,Mateo Kovacic,51471,Central Midfield,32,Manchester City,113,5,10000000
+Croatia,3556,Luka Sucic,502722,Central Midfield,23,Real Sociedad,21,1,10000000
+Croatia,3556,Mario Pašalić,205938,Central Midfield,31,Atalanta BC,85,12,6000000
+Croatia,3556,Luka Modrić,27992,Central Midfield,40,AC Milan,198,29,3500000
+Croatia,3556,Martin Baturina,580451,Attacking Midfield,23,Como 1907,19,1,30000000
+Croatia,3556,Nikola Vlašić,293200,Attacking Midfield,28,Torino FC,63,10,10000000
+Croatia,3556,Toni Fruk,432758,Attacking Midfield,25,HNK Rijeka,7,1,9000000
+Croatia,3556,Andrej Kramaric,46580,Attacking Midfield,34,TSG 1899 Hoffenheim,116,36,2500000
+Croatia,3556,Ivan Perišić,42460,Left Winger,37,PSV Eindhoven,154,38,1200000
+Croatia,3556,Marco Pašalić,395928,Right Winger,25,Orlando City SC,15,1,6500000
+Croatia,3556,Igor Matanovic,605268,Centre-Forward,23,SC Freiburg,9,2,22000000
+Croatia,3556,Petar Musa,387110,Centre-Forward,28,FC Dallas,11,1,12000000
+Croatia,3556,Ante Budimir,46413,Centre-Forward,34,CA Osasuna,38,6,2800000
+Curaçao,32364,Eloy Room,79294,Goalkeeper,37,Miami FC,71,-,150000
+Curaçao,32364,Trevor Doornbusch,390814,Goalkeeper,26,VVV-Venlo,8,-,50000
+Curaçao,32364,Tyrick Bodak,663961,Goalkeeper,24,SC Telstar,4,-,25000
+Curaçao,32364,Armando Obispo,339337,Centre-Back,27,PSV Eindhoven,7,-,4000000
+Curaçao,32364,Riechedly Bazoer,216443,Centre-Back,29,Konyaspor,6,-,1500000
+Curaçao,32364,Deveron Fonville,708989,Centre-Back,23,NEC Nijmegen,3,-,1500000
+Curaçao,32364,Roshon van Eijma,401029,Centre-Back,28,RKC Waalwijk,27,1,375000
+Curaçao,32364,Juriën Gaari,328455,Centre-Back,32,Abha Club,59,1,350000
+Curaçao,32364,Sherel Floranus,315211,Left-Back,27,PEC Zwolle,27,-,800000
+Curaçao,32364,Shurandy Sambo,412937,Right-Back,24,Sparta Rotterdam,8,-,1300000
+Curaçao,32364,Joshua Brenet,207006,Right-Back,32,Kayserispor,17,2,1000000
+Curaçao,32364,Livano Comenencia,626764,Right-Back,22,FC Zürich,20,3,500000
+Curaçao,32364,Kevin Felida,433933,Defensive Midfield,26,FC Den Bosch,19,1,400000
+Curaçao,32364,Godfried Roemeratoe,393241,Defensive Midfield,26,RKC Waalwijk,28,1,350000
+Curaçao,32364,Juninho Bacuna,348863,Central Midfield,28,FC Volendam,50,14,1700000
+Curaçao,32364,Leandro Bacuna,126014,Central Midfield,34,Igdir FK,72,16,250000
+Curaçao,32364,Tyrese Noslin,708005,Right Midfield,23,SC Telstar,7,1,750000
+Curaçao,32364,Tahith Chong,344830,Attacking Midfield,26,Sheffield United,7,3,3500000
+Curaçao,32364,Jearl Margaritha,538958,Left Winger,26,SK Beveren,23,5,1000000
+Curaçao,32364,Jeremy Antonisse,594273,Left Winger,24,AE Kifisia,27,4,800000
+Curaçao,32364,Kenji Gorré,374889,Left Winger,31,Maccabi Haifa,37,6,600000
+Curaçao,32364,Sontje Hansen,485582,Right Winger,24,Middlesbrough FC,7,1,3500000
+Curaçao,32364,Ar'jany Martha,572519,Right Winger,22,Rotherham United,8,2,700000
+Curaçao,32364,Brandley Kuwas,232219,Right Winger,33,FC Volendam,35,2,250000
+Curaçao,32364,Gervane Kastaneer,240752,Centre-Forward,30,Terengganu FC,30,9,225000
+Curaçao,32364,Jürgen Locadia,166240,Centre-Forward,32,Miami FC,14,1,200000
+Czechia,3445,Lukas Hornicek,629773,Goalkeeper,23,SC Braga,1,-,18000000
+Czechia,3445,Matej Kovar,550829,Goalkeeper,26,PSV Eindhoven,21,-,8000000
+Czechia,3445,Jindrich Stanek,242089,Goalkeeper,30,SK Slavia Prague,14,-,2000000
+Czechia,3445,Ladislav Krejčí,345911,Centre-Back,27,Wolverhampton Wanderers,28,6,22000000
+Czechia,3445,Robin Hranac,620217,Centre-Back,26,TSG 1899 Hoffenheim,15,1,10000000
+Czechia,3445,Stepan Chaloupek,944827,Centre-Back,23,SK Slavia Prague,6,-,10000000
+Czechia,3445,David Zima,544149,Centre-Back,25,SK Slavia Prague,25,1,7000000
+Czechia,3445,Tomas Holes,216278,Centre-Back,33,SK Slavia Prague,41,2,1000000
+Czechia,3445,Jaroslav Zelený,142219,Centre-Back,33,AC Sparta Prague,24,-,600000
+Czechia,3445,David Jurásek,500054,Left-Back,25,SK Slavia Prague,18,1,5000000
+Czechia,3445,Vladimír Coufal,157672,Right-Back,33,TSG 1899 Hoffenheim,63,2,2500000
+Czechia,3445,Tomáš Souček,283628,Defensive Midfield,31,West Ham United,91,17,10000000
+Czechia,3445,Michal Sadílek,321204,Central Midfield,27,SK Slavia Prague,36,1,8000000
+Czechia,3445,Lukas Cerv,611049,Central Midfield,25,FC Viktoria Plzen,17,2,6000000
+Czechia,3445,Hugo Sochurek,1206877,Central Midfield,18,AC Sparta Prague,1,-,3500000
+Czechia,3445,Alexandr Sojka,826103,Central Midfield,23,FC Viktoria Plzen,3,-,2300000
+Czechia,3445,Vladimír Darida,179643,Central Midfield,35,FC Hradec Kralove,79,8,375000
+Czechia,3445,David Doudera,493758,Right Midfield,28,SK Slavia Prague,17,2,3500000
+Czechia,3445,Pavel Sulc,500053,Attacking Midfield,25,Olympique Lyon,22,5,20000000
+Czechia,3445,Denis Visinsky,652060,Attacking Midfield,23,FC Viktoria Plzen,2,1,3000000
+Czechia,3445,Lukas Provod,292779,Left Winger,29,SK Slavia Prague,39,3,8000000
+Czechia,3445,Patrik Schick,242086,Centre-Forward,30,Bayer 04 Leverkusen,54,26,18000000
+Czechia,3445,Adam Hlozek,552057,Centre-Forward,23,TSG 1899 Hoffenheim,44,5,10000000
+Czechia,3445,Mojmír Chytil,405855,Centre-Forward,27,SK Slavia Prague,23,6,4000000
+Czechia,3445,Jan Kuchta,334802,Centre-Forward,29,AC Sparta Prague,31,3,2700000
+Czechia,3445,Tomas Chory,198614,Centre-Forward,31,SK Slavia Prague,23,7,2700000
+Côte d'Ivoire,3591,Yahia Fofana,418651,Goalkeeper,25,Caykur Rizespor,35,-,5000000
+Côte d'Ivoire,3591,Alban Lafont,357117,Goalkeeper,27,Panathinaikos,4,-,3000000
+Côte d'Ivoire,3591,Mohamed Koné,911985,Goalkeeper,24,Royal Charleroi SC,-,-,2000000
+Côte d'Ivoire,3591,Ousmane Diomande,974982,Centre-Back,22,Sporting CP,14,-,42000000
+Côte d'Ivoire,3591,Evan Ndicka,371149,Centre-Back,26,AS Roma,27,-,35000000
+Côte d'Ivoire,3591,Wilfried Singo,648779,Centre-Back,25,Galatasaray,34,1,23000000
+Côte d'Ivoire,3591,Emmanuel Agbadou,683895,Centre-Back,28,Besiktas JK,22,2,16000000
+Côte d'Ivoire,3591,Odilon Kossounou,644771,Centre-Back,25,Atalanta BC,36,-,15000000
+Côte d'Ivoire,3591,Christopher Operi,469976,Left-Back,29,Basaksehir FK,12,-,4000000
+Côte d'Ivoire,3591,Ghislain Konan,422850,Left-Back,30,Gil Vicente FC,54,-,3000000
+Côte d'Ivoire,3591,Guéla Doué,711980,Right-Back,23,RC Strasbourg Alsace,21,3,20000000
+Côte d'Ivoire,3591,Ibrahim Sangaré,375885,Defensive Midfield,28,Nottingham Forest,55,11,20000000
+Côte d'Ivoire,3591,Jean Michaël Seri,178614,Defensive Midfield,34,NK Maribor,63,4,100000
+Côte d'Ivoire,3591,Christ Inao Oulaï,1279526,Central Midfield,20,Trabzonspor,10,-,23000000
+Côte d'Ivoire,3591,Franck Kessié,294808,Central Midfield,29,Al-Ahli SFC,101,14,12000000
+Côte d'Ivoire,3591,Seko Fofana,182893,Central Midfield,31,FC Porto,33,7,8000000
+Côte d'Ivoire,3591,Yan Diomande,1390649,Left Winger,19,RB Leipzig,11,3,90000000
+Côte d'Ivoire,3591,Bazoumana Touré,1067904,Left Winger,20,TSG 1899 Hoffenheim,7,2,40000000
+Côte d'Ivoire,3591,Simon Adingra,658536,Left Winger,24,AS Monaco,29,5,22000000
+Côte d'Ivoire,3591,Parfait Guiagon,624913,Left Winger,25,Royal Charleroi SC,5,-,5000000
+Côte d'Ivoire,3591,Amad Diallo,536835,Right Winger,23,Manchester United,20,7,45000000
+Côte d'Ivoire,3591,Evann Guessand,500689,Right Winger,24,Crystal Palace,21,4,25000000
+Côte d'Ivoire,3591,Nicolas Pépé,343052,Right Winger,31,Villarreal CF,54,12,6000000
+Côte d'Ivoire,3591,Ange-Yoan Bonny,827734,Centre-Forward,22,Inter Milan,2,-,35000000
+Côte d'Ivoire,3591,Elye Wahi,659542,Centre-Forward,23,OGC Nice,3,-,18000000
+Côte d'Ivoire,3591,Oumar Diakité,847279,Centre-Forward,22,Cercle Brugge ,29,6,5000000
+DR Congo,3854,Matthieu Epolo,680218,Goalkeeper,21,Standard Liège,1,-,8000000
+DR Congo,3854,Timothy Fayulu,541420,Goalkeeper,26,FC Noah Yerevan,3,-,800000
+DR Congo,3854,Lionel Mpasi-Nzau,164915,Goalkeeper,31,Le Havre AC,28,-,400000
+DR Congo,3854,Axel Tuanzebe,342046,Centre-Back,28,Burnley FC,13,1,5000000
+DR Congo,3854,Steve Kapuadi,679709,Centre-Back,28,Widzew Lodz,3,-,2500000
+DR Congo,3854,Chancel Mbemba,203348,Centre-Back,31,LOSC Lille,107,7,2000000
+DR Congo,3854,Dylan Batubinsika,289432,Centre-Back,30,AE Larisa,15,1,600000
+DR Congo,3854,Joris Kayembe,129586,Left-Back,31,KRC Genk,26,1,2000000
+DR Congo,3854,Arthur Masuaku,181380,Left-Back,32,RC Lens,44,4,2000000
+DR Congo,3854,Aaron Wan-Bissaka,477758,Right-Back,28,West Ham United,12,-,15000000
+DR Congo,3854,Gédéon Kalulu,395685,Right-Back,28,Aris Limassol,28,-,1000000
+DR Congo,3854,Ngal'ayel Mukau,1016015,Defensive Midfield,21,LOSC Lille,14,-,15000000
+DR Congo,3854,Charles Pickel,243879,Defensive Midfield,29,RCD Espanyol Barcelona,34,1,2500000
+DR Congo,3854,Noah Sadiki,727089,Central Midfield,21,Sunderland AFC,20,-,35000000
+DR Congo,3854,Edo Kayembe,486477,Central Midfield,28,Watford FC,42,2,4000000
+DR Congo,3854,Samuel Moutoussamy,353403,Central Midfield,29,Atromitos Athens,58,-,1200000
+DR Congo,3854,Aaron Tshibola,243633,Central Midfield,31,Kilmarnock FC,17,1,150000
+DR Congo,3854,Meschack Elia,423678,Attacking Midfield,28,Alanyaspor,66,12,1500000
+DR Congo,3854,Gaël Kakuta,74297,Attacking Midfield,34,AE Larisa,31,5,250000
+DR Congo,3854,Nathanaël Mbuku,557614,Left Winger,24,Montpellier HSC,19,2,2000000
+DR Congo,3854,Brian Cipenga,700565,Left Winger,28,CD Castellón,8,-,2000000
+DR Congo,3854,Théo Bongonda,280701,Right Winger,30,Spartak Moscow,38,7,3000000
+DR Congo,3854,Yoane Wissa,388165,Centre-Forward,29,Newcastle United,38,8,25000000
+DR Congo,3854,Simon Banza,344869,Centre-Forward,29,Al-Jazira Club,15,2,10000000
+DR Congo,3854,Fiston Mayele,727157,Centre-Forward,31,Pyramids FC,36,5,1800000
+DR Congo,3854,Cédric Bakambu,127048,Centre-Forward,35,Real Betis Balompié,69,21,1200000
+Ecuador,5750,Gonzalo Valle,351941,Goalkeeper,30,LDU Quito,4,-,1800000
+Ecuador,5750,Moisés Ramírez,450233,Goalkeeper,25,AE Kifisia,7,-,800000
+Ecuador,5750,Hernán Galíndez,77127,Goalkeeper,39,CA Huracán,36,-,300000
+Ecuador,5750,Willian Pacho,661171,Centre-Back,24,Paris Saint-Germain,35,2,80000000
+Ecuador,5750,Piero Hincapié,659813,Centre-Back,24,Arsenal FC,53,3,50000000
+Ecuador,5750,Joel Ordóñez,893661,Centre-Back,22,Club Brugge KV,18,-,33000000
+Ecuador,5750,Jackson Porozo,491616,Centre-Back,25,Club Tijuana,11,1,2500000
+Ecuador,5750,Félix Torres,468174,Centre-Back,29,Sport Club Internacional,49,5,1000000
+Ecuador,5750,Pervis Estupiñán,349599,Left-Back,28,AC Milan,54,5,12000000
+Ecuador,5750,Yaimar Medina,893659,Left-Back,21,KRC Genk,6,-,4000000
+Ecuador,5750,Angelo Preciado,450241,Right-Back,28,Clube Atlético Mineiro,57,-,3500000
+Ecuador,5750,Moisés Caicedo,687626,Defensive Midfield,24,Chelsea FC,62,3,100000000
+Ecuador,5750,Jordy Alcívar,598145,Defensive Midfield,26,Independiente del Valle,11,1,2000000
+Ecuador,5750,Denil Castillo,941418,Central Midfield,22,FC Midtjylland,5,-,7000000
+Ecuador,5750,Alan Franco,400960,Central Midfield,27,Clube Atlético Mineiro,59,1,4500000
+Ecuador,5750,Kendry Páez,1052439,Attacking Midfield,19,CA River Plate,26,2,8000000
+Ecuador,5750,Pedro Vite,659806,Attacking Midfield,24,UNAM Pumas,18,1,6000000
+Ecuador,5750,Nilson Angulo,903611,Left Winger,22,Sunderland AFC,15,2,17000000
+Ecuador,5750,Gonzalo Plata,592735,Right Winger,25,CR Flamengo,51,8,9000000
+Ecuador,5750,Alan Minda,897051,Right Winger,23,Clube Atlético Mineiro,21,2,3000000
+Ecuador,5750,Anthony Valencia,974374,Right Winger,22,Royal Antwerp FC,3,1,1800000
+Ecuador,5750,John Yeboah,439914,Second Striker,25,Venezia FC,24,3,5500000
+Ecuador,5750,Jeremy Arévalo,971663,Centre-Forward,21,VfB Stuttgart,4,-,7000000
+Ecuador,5750,Kevin Rodríguez,684159,Centre-Forward,26,Union Saint-Gilloise,32,2,6000000
+Ecuador,5750,Jordy Caicedo,360412,Centre-Forward,28,CA Huracán,20,4,2000000
+Ecuador,5750,Enner Valencia,139503,Centre-Forward,36,CF Pachuca,106,49,1000000
+Egypt,3672,Oufa Shobeir,661455,Goalkeeper,26,Al Ahly FC,11,-,1200000
+Egypt,3672,Mohamed Alaa,1307898,Goalkeeper,26,El Gouna FC,-,-,1200000
+Egypt,3672,Mohamed El Shenawy,134573,Goalkeeper,37,Al Ahly FC,76,-,500000
+Egypt,3672,El Mahdi Soliman,104951,Goalkeeper,39,Zamalek SC,-,-,150000
+Egypt,3672,Mohamed Abdelmonem,566025,Centre-Back,27,OGC Nice,36,3,2500000
+Egypt,3672,Hossam Abdelmaguid,737524,Centre-Back,25,Zamalek SC,13,-,2000000
+Egypt,3672,Ramy Rabia,172623,Centre-Back,33,Al-Ain FC,45,5,600000
+Egypt,3672,Yasser Ibrahim,237425,Centre-Back,33,Al Ahly FC,19,1,275000
+Egypt,3672,Ahmed Fatouh,465966,Left-Back,28,Zamalek SC,40,1,1000000
+Egypt,3672,Karim Hafez,333004,Left-Back,30,Pyramids FC,10,-,700000
+Egypt,3672,Mohamed Hany,343974,Right-Back,30,Al Ahly FC,43,-,1500000
+Egypt,3672,Tarek Alaa,1087789,Right-Back,24,Zed FC,3,-,250000
+Egypt,3672,Marwan Ateya,734542,Defensive Midfield,27,Al Ahly FC,36,1,4000000
+Egypt,3672,Mohanad Lasheen,479682,Defensive Midfield,30,Pyramids FC,24,-,3000000
+Egypt,3672,Hamdy Fathy,340303,Defensive Midfield,31,Al-Wakrah SC,64,3,1800000
+Egypt,3672,Nabil Dunga,479683,Defensive Midfield,30,Al-Najma SC,12,-,1000000
+Egypt,3672,Emam Ashour,604008,Central Midfield,28,Al Ahly FC,30,1,4000000
+Egypt,3672,Mahmoud Saber,729390,Central Midfield,24,Zed FC,15,1,1500000
+Egypt,3672,Trezeguet,234189,Left Winger,31,Al Ahly FC,96,23,4500000
+Egypt,3672,Ibrahim Adel,677278,Left Winger,25,FC Nordsjaelland,25,3,2500000
+Egypt,3672,Mostafa Ziko,896616,Left Winger,29,Pyramids FC,3,2,1800000
+Egypt,3672,Mohamed Salah,148455,Right Winger,34,Liverpool FC,115,65,22000000
+Egypt,3672,Haissem Hassan,620164,Right Winger,24,Real Oviedo,4,-,3500000
+Egypt,3672,Zizo,320722,Right Winger,30,Al Ahly FC,64,5,3500000
+Egypt,3672,Omar Marmoush,445939,Centre-Forward,27,Manchester City,51,11,50000000
+Egypt,3672,Hamza Abdelkarim,1259085,Centre-Forward,18,FC Barcelona U19,3,-,1500000
+England,3299,Dean Henderson,258919,Goalkeeper,29,Crystal Palace,5,-,28000000
+England,3299,James Trafford,566799,Goalkeeper,23,Manchester City,2,-,25000000
+England,3299,Jordan Pickford,130164,Goalkeeper,32,Everton FC,84,-,13000000
+England,3299,Marc Guéhi,392757,Centre-Back,25,Manchester City,29,1,70000000
+England,3299,Jarell Quansah,632349,Centre-Back,23,Bayer 04 Leverkusen,3,-,45000000
+England,3299,Ezri Konsa,413403,Centre-Back,28,Aston Villa,20,1,40000000
+England,3299,Trevoh Chalobah,346314,Centre-Back,26,Chelsea FC,1,-,40000000
+England,3299,John Stones,186590,Centre-Back,32,Manchester City,89,3,12000000
+England,3299,Dan Burn,134270,Centre-Back,34,Newcastle United,8,-,4000000
+England,3299,Nico O'Reilly,743413,Left-Back,21,Manchester City,5,-,70000000
+England,3299,Djed Spence,483348,Left-Back,25,Tottenham Hotspur,6,-,30000000
+England,3299,Reece James,472423,Right-Back,26,Chelsea FC,24,1,60000000
+England,3299,Jordan Henderson,61651,Defensive Midfield,35,Brentford FC,89,3,1200000
+England,3299,Declan Rice,357662,Central Midfield,27,Arsenal FC,73,7,120000000
+England,3299,Elliot Anderson,567576,Central Midfield,23,Nottingham Forest,9,-,75000000
+England,3299,Kobbie Mainoo,820374,Central Midfield,21,Manchester United,14,-,70000000
+England,3299,Jude Bellingham,581678,Attacking Midfield,22,Real Madrid,48,6,130000000
+England,3299,Morgan Rogers,503743,Attacking Midfield,23,Aston Villa,15,1,90000000
+England,3299,Eberechi Eze,479999,Attacking Midfield,27,Arsenal FC,17,3,65000000
+England,3299,Anthony Gordon,503733,Left Winger,25,Newcastle United,19,3,65000000
+England,3299,Marcus Rashford,258923,Left Winger,28,FC Barcelona,72,18,40000000
+England,3299,Bukayo Saka,433177,Right Winger,24,Arsenal FC,49,14,110000000
+England,3299,Noni Madueke,503987,Right Winger,24,Arsenal FC,11,1,50000000
+England,3299,Harry Kane,132098,Centre-Forward,32,Bayern Munich,114,79,60000000
+England,3299,Ollie Watkins,324358,Centre-Forward,30,Aston Villa,22,7,25000000
+England,3299,Ivan Toney,251664,Centre-Forward,30,Al-Ahli SFC,8,1,20000000
+France,3377,Robin Risser,743515,Goalkeeper,21,RC Lens,-,-,30000000
+France,3377,Mike Maignan,182906,Goalkeeper,30,AC Milan,41,-,20000000
+France,3377,Brice Samba,191056,Goalkeeper,32,Stade Rennais FC,4,-,7000000
+France,3377,William Saliba,495666,Centre-Back,25,Arsenal FC,33,-,100000000
+France,3377,Dayot Upamecano,344695,Centre-Back,27,Bayern Munich,39,2,70000000
+France,3377,Maxence Lacroix,434224,Centre-Back,26,Crystal Palace,4,-,50000000
+France,3377,Ibrahima Konaté,357119,Centre-Back,27,Liverpool FC,28,-,45000000
+France,3377,Theo Hernández,339808,Left-Back,28,Al-Hilal SFC,45,2,20000000
+France,3377,Lucas Hernández,281963,Left-Back,30,Paris Saint-Germain,42,-,18000000
+France,3377,Lucas Digne,126664,Left-Back,32,Aston Villa,58,-,6000000
+France,3377,Jules Koundé,411975,Right-Back,27,FC Barcelona,49,-,60000000
+France,3377,Malo Gusto,620322,Right-Back,23,Chelsea FC,11,-,35000000
+France,3377,Aurélien Tchouaméni,413112,Defensive Midfield,26,Real Madrid,47,3,70000000
+France,3377,N'Golo Kanté,225083,Defensive Midfield,35,Fenerbahce,69,2,4000000
+France,3377,Warren Zaïre-Emery,810092,Central Midfield,20,Paris Saint-Germain,11,1,80000000
+France,3377,Manu Koné,624690,Central Midfield,25,AS Roma,14,-,50000000
+France,3377,Adrien Rabiot,182913,Central Midfield,31,AC Milan,60,7,18000000
+France,3377,Rayan Cherki,607223,Attacking Midfield,22,Manchester City,7,2,90000000
+France,3377,Bradley Barcola,708265,Left Winger,23,Paris Saint-Germain,20,3,70000000
+France,3377,Michael Olise,566723,Right Winger,24,Bayern Munich,18,7,150000000
+France,3377,Désiré Doué,914562,Right Winger,21,Paris Saint-Germain,8,2,120000000
+France,3377,Maghnes Akliouche,745200,Right Winger,24,AS Monaco,9,1,50000000
+France,3377,Kylian Mbappé,342229,Centre-Forward,27,Real Madrid,99,56,180000000
+France,3377,Ousmane Dembélé,288230,Centre-Forward,29,Paris Saint-Germain,60,7,100000000
+France,3377,Marcus Thuram,318528,Centre-Forward,28,Inter Milan,34,3,50000000
+France,3377,Jean-Philippe Mateta,420002,Centre-Forward,28,Crystal Palace,4,2,30000000
+Germany,3262,Alexander Nübel,195778,Goalkeeper,29,VfB Stuttgart,3,-,12000000
+Germany,3262,Manuel Neuer,17259,Goalkeeper,40,Bayern Munich,125,-,4000000
+Germany,3262,Oliver Baumann,55089,Goalkeeper,36,TSG 1899 Hoffenheim,13,-,2500000
+Germany,3262,Nico Schlotterbeck,388198,Centre-Back,26,Borussia Dortmund,28,1,55000000
+Germany,3262,Malick Thiaw,521964,Centre-Back,24,Newcastle United,5,-,45000000
+Germany,3262,Jonathan Tah,196357,Centre-Back,30,Bayern Munich,48,1,28000000
+Germany,3262,Waldemar Anton,193004,Centre-Back,29,Borussia Dortmund,14,-,18000000
+Germany,3262,Antonio Rüdiger,86202,Centre-Back,33,Real Madrid,83,3,6000000
+Germany,3262,Nathaniel Brown,691892,Left-Back,23,Eintracht Frankfurt,6,1,40000000
+Germany,3262,David Raum,318204,Left-Back,28,RB Leipzig,38,1,25000000
+Germany,3262,Aleksandar Pavlovic,792380,Defensive Midfield,22,Bayern Munich,12,1,90000000
+Germany,3262,Angelo Stiller,443710,Defensive Midfield,25,VfB Stuttgart,8,-,45000000
+Germany,3262,Joshua Kimmich,161056,Defensive Midfield,31,Bayern Munich,111,10,35000000
+Germany,3262,Felix Nmecha,406640,Central Midfield,25,Borussia Dortmund,9,2,50000000
+Germany,3262,Assan Ouédraogo,897424,Central Midfield,20,RB Leipzig,1,1,28000000
+Germany,3262,Nadiem Amiri,232454,Central Midfield,29,1.FSV Mainz 05,11,1,17000000
+Germany,3262,Leon Goretzka,153084,Central Midfield,31,Bayern Munich,71,15,12000000
+Germany,3262,Pascal Groß,82873,Central Midfield,35,Brighton & Hove Albion,18,1,2500000
+Germany,3262,Jamal Musiala,580195,Attacking Midfield,23,Bayern Munich,43,10,100000000
+Germany,3262,Florian Wirtz,598577,Attacking Midfield,23,Liverpool FC,42,11,100000000
+Germany,3262,Jamie Leweling,518505,Right Winger,25,VfB Stuttgart,5,1,40000000
+Germany,3262,Leroy Sané,192565,Right Winger,30,Galatasaray,77,17,20000000
+Germany,3262,Kai Havertz,309400,Centre-Forward,27,Arsenal FC,59,24,55000000
+Germany,3262,Nick Woltemade,455661,Centre-Forward,24,Newcastle United,11,4,55000000
+Germany,3262,Maximilian Beier,578392,Centre-Forward,23,Borussia Dortmund,9,-,40000000
+Germany,3262,Deniz Undav,339314,Centre-Forward,29,VfB Stuttgart,10,7,22000000
+Ghana,3441,Lawrence Ati Zigi,254285,Goalkeeper,29,FC St. Gallen 1879,29,-,1500000
+Ghana,3441,Joseph Anang,576099,Goalkeeper,26,St. Patrick's Athletic,1,-,350000
+Ghana,3441,Benjamin Asare,837368,Goalkeeper,33,Hearts of Oak,11,-,100000
+Ghana,3441,Kojo Peprah Oppong,1113451,Centre-Back,22,OGC Nice,4,-,10000000
+Ghana,3441,Alidu Seidu,798404,Centre-Back,26,Stade Rennais FC,24,1,6000000
+Ghana,3441,Jonas Adjetey,734676,Centre-Back,22,VfL Wolfsburg,10,-,6000000
+Ghana,3441,Jerome Opoku,408563,Centre-Back,27,Basaksehir FK,11,1,5000000
+Ghana,3441,Abdul Mumin,451801,Centre-Back,28,Rayo Vallecano,5,-,3000000
+Ghana,3441,Derrick Luckassen,241457,Centre-Back,30,Pafos FC,1,-,1000000
+Ghana,3441,Gideon Mensah,397171,Left-Back,27,AJ Auxerre,40,-,4000000
+Ghana,3441,Abdul Rahman Baba,224884,Left-Back,31,PAOK Thessaloniki,51,1,2000000
+Ghana,3441,Marvin Senaya,830890,Right-Back,25,AJ Auxerre,2,-,3000000
+Ghana,3441,Elisha Owusu,395695,Defensive Midfield,28,AJ Auxerre,20,-,4000000
+Ghana,3441,Thomas Partey,230784,Defensive Midfield,33,Villarreal CF,57,15,2000000
+Ghana,3441,Caleb Yirenkyi,1240763,Central Midfield,20,FC Nordsjaelland,11,1,10000000
+Ghana,3441,Kwasi Sibo,538006,Central Midfield,27,Real Oviedo,8,-,1400000
+Ghana,3441,Augustine Boakye,579263,Attacking Midfield,25,AS Saint-Étienne,-,-,6000000
+Ghana,3441,Kamaldeen Sulemana,746695,Left Winger,24,Atalanta BC,28,1,17000000
+Ghana,3441,Christopher Bonsu Baah,1119447,Left Winger,21,Al-Qadsiah FC,9,-,14000000
+Ghana,3441,Antoine Semenyo,583255,Right Winger,26,Manchester City,34,3,80000000
+Ghana,3441,Abdul Fatawu,864121,Right Winger,22,Leicester City,28,3,20000000
+Ghana,3441,Ernest Nuamah,955070,Right Winger,22,Olympique Lyon,19,4,10000000
+Ghana,3441,Iñaki Williams,255508,Right Winger,32,Athletic Bilbao,26,2,8000000
+Ghana,3441,Brandon Thomas-Asante,451747,Centre-Forward,27,Coventry City,8,1,16000000
+Ghana,3441,Prince Adu,734799,Centre-Forward,22,FC Viktoria Plzen,5,-,3000000
+Ghana,3441,Jordan Ayew,108354,Centre-Forward,34,Leicester City,118,33,1000000
+Haiti,14161,Alexandre Pierre,838947,Goalkeeper,25,FC Sochaux-Montbéliard,15,-,700000
+Haiti,14161,Johny Placide,51035,Goalkeeper,38,SC Bastia,82,-,150000
+Haiti,14161,Josué Duverger,490369,Goalkeeper,26,FC Cosmos Koblenz,6,-,50000
+Haiti,14161,Hannes Delcroix,338635,Centre-Back,27,FC Lugano,8,-,2000000
+Haiti,14161,Jean-Kévin Duverne,344864,Centre-Back,28,KAA Gent,17,1,2000000
+Haiti,14161,Ricardo Adé,278145,Centre-Back,36,LDU Quito,60,2,300000
+Haiti,14161,Keeto Thermoncy,1061046,Centre-Back,20,BSC Young Boys U21,1,-,100000
+Haiti,14161,Martin Expérience,804885,Left-Back,27,AS Nancy-Lorraine,22,-,350000
+Haiti,14161,Duke Lacroix,375472,Left-Back,32,Colorado Springs Switchbacks FC,16,3,125000
+Haiti,14161,Carlens Arcus,371686,Right-Back,29,Angers SCO,54,1,1800000
+Haiti,14161,Wilguens Paugain,609691,Right-Back,24,Zulte Waregem,8,-,800000
+Haiti,14161,Danley Jean Jacques,628834,Defensive Midfield,26,Philadelphia Union,31,6,3000000
+Haiti,14161,Leverton Pierre,552467,Defensive Midfield,28,FC Vizela,33,-,200000
+Haiti,14161,Dominique Simon,988188,Defensive Midfield,25,FC Tatran Presov,2,-,200000
+Haiti,14161,Carl Sainté,718244,Defensive Midfield,23,El Paso Locomotive FC,26,-,125000
+Haiti,14161,Woodensky Pierre,1017735,Defensive Midfield,21,Violette Athletic Club,1,-,100000
+Haiti,14161,Jean-Ricner Bellegarde,450050,Central Midfield,27,Wolverhampton Wanderers,11,-,16000000
+Haiti,14161,Derrick Etienne Jr.,354763,Left Winger,29,Toronto FC,48,8,800000
+Haiti,14161,Ruben Providence,536520,Left Winger,24,Almere City FC,16,3,300000
+Haiti,14161,Josué Casimir,763182,Right Winger,24,AJ Auxerre,8,-,3000000
+Haiti,14161,Louicius Deedson,646108,Right Winger,25,FC Dallas,33,10,1200000
+Haiti,14161,Wilson Isidor,494237,Centre-Forward,25,Sunderland AFC,5,2,18000000
+Haiti,14161,Lenny Joseph,815359,Centre-Forward,25,Ferencvárosi TC,3,1,2000000
+Haiti,14161,Frantzdy Pierrot,492955,Centre-Forward,31,Caykur Rizespor,52,34,1500000
+Haiti,14161,Duckens Nazon,345763,Centre-Forward,32,Esteghlal FC,78,44,800000
+Haiti,14161,Yassin Fortuné,342878,Centre-Forward,27,FC Vizela,5,-,300000
+Iran,3582,Payam Niazmand,343044,Goalkeeper,31,Persepolis FC,13,-,700000
+Iran,3582,Alireza Beiranvand,229081,Goalkeeper,33,Tractor FC,87,-,650000
+Iran,3582,Seyed Hossein Hosseini,132561,Goalkeeper,33,Sepahan FC,13,-,500000
+Iran,3582,Hossein Kanaani,249400,Centre-Back,32,Persepolis FC,64,6,1600000
+Iran,3582,Danial Eiri,1080301,Centre-Back,22,Malavan Bandar Anzali,-,-,1000000
+Iran,3582,Ali Nemati,527092,Centre-Back,30,Foolad FC,19,-,550000
+Iran,3582,Shoja Khalilzadeh,213715,Centre-Back,37,Tractor FC,58,2,100000
+Iran,3582,Milad Mohammadi,333355,Left-Back,32,Persepolis FC,76,1,900000
+Iran,3582,Ehsan Hajsafi,77547,Left-Back,36,Sepahan FC,144,7,250000
+Iran,3582,Arya Yousefi,932724,Right-Back,24,Sepahan FC,13,1,1500000
+Iran,3582,Saleh Hardani,697155,Right-Back,27,Esteghlal FC,18,1,800000
+Iran,3582,Ramin Rezaeian,188312,Right-Back,36,Foolad FC,76,9,250000
+Iran,3582,Saeed Ezatolahi,249271,Defensive Midfield,29,Shabab Al-Ahli Club,83,2,1800000
+Iran,3582,Mohammad Ghorbani,856087,Defensive Midfield,25,Al-Wahda FC,16,-,1200000
+Iran,3582,Roozbeh Cheshmi,273879,Defensive Midfield,32,Esteghlal FC,39,2,450000
+Iran,3582,Amirmohammad Razzaghinia,1051591,Central Midfield,20,Esteghlal FC,4,-,1200000
+Iran,3582,Saman Ghoddos,204294,Attacking Midfield,32,Kalba FC,68,2,1200000
+Iran,3582,Mehdi Ghayedi,478192,Left Winger,27,Al-Nasr SC (UAE),29,8,4500000
+Iran,3582,Mohammad Mohebi,603149,Left Winger,27,FC Rostov,36,14,2500000
+Iran,3582,Mehdi Torabi,283833,Left Winger,31,Tractor FC,51,7,1200000
+Iran,3582,Alireza Jahanbakhsh,213268,Right Winger,32,FCV Dender EH,97,17,500000
+Iran,3582,Amirhossein Hosseinzadeh,542380,Centre-Forward,25,Tractor FC,19,5,2200000
+Iran,3582,Mehdi Taremi,307058,Centre-Forward,33,Olympiacos Piraeus,105,58,2000000
+Iran,3582,Dennis Eckert Ayensa,249303,Centre-Forward,29,Standard Liège,-,-,2000000
+Iran,3582,Ali Alipour,249360,Centre-Forward,30,Persepolis FC,15,1,1700000
+Iran,3582,Shahriar Moghanlou,357125,Centre-Forward,31,Kalba FC,20,1,800000
+Iraq,3560,Ahmed Basil Fadhil,560952,Goalkeeper,29,Al-Shorta SC,15,-,450000
+Iraq,3560,Fahad Talib,377268,Goalkeeper,31,Al-Talaba SC,20,-,375000
+Iraq,3560,Jalal Hassan,206782,Goalkeeper,35,Al-Zawraa SC,98,-,250000
+Iraq,3560,Akam Hashem,933541,Centre-Back,27,Al-Zawraa SC,14,1,700000
+Iraq,3560,Zaid Tahseen,931147,Centre-Back,25,Pakhtakor Tashkent,27,1,600000
+Iraq,3560,Frans Putros,166460,Centre-Back,32,PERSIB Bandung,28,-,325000
+Iraq,3560,Manaf Younis,945266,Centre-Back,29,Al-Shorta SC,33,1,300000
+Iraq,3560,Rebin Sulaka,217073,Centre-Back,34,Port FC,54,1,100000
+Iraq,3560,Merchas Doski,530527,Left-Back,26,FC Viktoria Plzen,31,1,1700000
+Iraq,3560,Ahmed Maknzi,881506,Left-Back,24,Al-Karma,7,-,450000
+Iraq,3560,Hussein Ali,585325,Right-Back,24,Pogon Szczecin,27,1,400000
+Iraq,3560,Mustafa Saadoon,952341,Right-Back,25,Al-Shorta SC,17,-,350000
+Iraq,3560,Amir Al-Ammari,303766,Defensive Midfield,28,Cracovia,50,3,1000000
+Iraq,3560,Zaid Ismail,1132850,Defensive Midfield,24,Al-Talaba SC,6,-,500000
+Iraq,3560,Aimar Sher,579294,Central Midfield,23,Sarpsborg 08 FF,7,-,1500000
+Iraq,3560,Zidane Iqbal,686845,Central Midfield,23,FC Utrecht U21,25,2,1000000
+Iraq,3560,Kevin Yakob,413268,Central Midfield,25,Aarhus GF,9,-,850000
+Iraq,3560,Ibrahim Bayesh,560957,Attacking Midfield,26,Al-Dhafra FC,74,8,800000
+Iraq,3560,Marko Farji,663153,Left Winger,22,Venezia FC,12,-,1700000
+Iraq,3560,Youssef Amyn,684307,Left Winger,22,AEK Larnaca,27,2,550000
+Iraq,3560,Ali Jasim,877672,Left Winger,22,Al-Najma SC,36,2,500000
+Iraq,3560,Ahmed Qasem,833817,Right Winger,22,Nashville SC,3,-,3500000
+Iraq,3560,Ali Al-Hamadi,610581,Centre-Forward,24,Luton Town,20,5,1500000
+Iraq,3560,Mohanad Ali,589646,Centre-Forward,25,Dibba SCC,70,26,1200000
+Iraq,3560,Aymen Hussein,401054,Centre-Forward,30,Al-Karma,91,32,400000
+Iraq,3560,Ali Yousif,576265,Centre-Forward,30,Al-Talaba SC,7,1,200000
+Japan,3435,Zion Suzuki,432298,Goalkeeper,23,Parma Calcio 1913,25,-,20000000
+Japan,3435,Keisuke Osako,415521,Goalkeeper,26,Sanfrecce Hiroshima,11,-,2000000
+Japan,3435,Tomoki Hayakawa,683271,Goalkeeper,27,Kashima Antlers,4,-,2000000
+Japan,3435,Hiroki Ito,353892,Centre-Back,27,Bayern Munich,25,1,18000000
+Japan,3435,Tsuyoshi Watanabe,598791,Centre-Back,29,Feyenoord Rotterdam,12,-,10000000
+Japan,3435,Ko Itakura,355816,Centre-Back,29,Ajax Amsterdam,40,2,8000000
+Japan,3435,Ayumu Seko,405389,Centre-Back,26,Le Havre AC,14,-,5000000
+Japan,3435,Takehiro Tomiyasu,331560,Centre-Back,27,Ajax Amsterdam,44,1,5000000
+Japan,3435,Junnosuke Suzuki,848856,Centre-Back,22,FC Copenhagen,6,-,3500000
+Japan,3435,Shogo Taniguchi,307870,Centre-Back,34,Sint-Truidense VV,39,1,750000
+Japan,3435,Yuto Nagatomo,79522,Left-Back,39,FC Tokyo,145,4,100000
+Japan,3435,Yukinari Sugawara,405385,Right-Back,25,SV Werder Bremen,22,2,5500000
+Japan,3435,Kaishu Sano,643574,Defensive Midfield,25,1.FSV Mainz 05,14,-,40000000
+Japan,3435,Ao Tanaka,489359,Central Midfield,27,Leeds United,38,8,13000000
+Japan,3435,Daichi Kamada,356141,Attacking Midfield,29,Crystal Palace,50,13,10000000
+Japan,3435,Daizen Maeda,420931,Left Winger,28,Celtic FC,28,4,13000000
+Japan,3435,Keito Nakamura,405397,Left Winger,25,Stade Reims,26,11,10000000
+Japan,3435,Takefusa Kubo,405398,Right Winger,25,Real Sociedad,50,7,20000000
+Japan,3435,Ritsu Doan,358504,Right Winger,28,Eintracht Frankfurt,66,11,17000000
+Japan,3435,Junya Ito,348791,Right Winger,33,KRC Genk,70,15,3000000
+Japan,3435,Yuito Suzuki,668606,Second Striker,24,SC Freiburg,6,-,24000000
+Japan,3435,Ayase Ueda,589128,Centre-Forward,27,Feyenoord Rotterdam,40,16,17000000
+Japan,3435,Keisuke Goto,916623,Centre-Forward,21,Sint-Truidense VV,4,-,10000000
+Japan,3435,Kento Shiogai,1144627,Centre-Forward,21,VfL Wolfsburg,3,-,8000000
+Japan,3435,Shuto Machino,550580,Centre-Forward,26,Borussia Mönchengladbach,14,5,4000000
+Japan,3435,Koki Ogawa,351567,Centre-Forward,28,NEC Nijmegen,16,11,2000000
+Jordan,15737,Yazeed Abulaila,261850,Goalkeeper,33,Al-Hussein SC (Irbid),64,-,300000
+Jordan,15737,Noor Bane Ataya,261837,Goalkeeper,33,Al-Faisaly SC,3,-,250000
+Jordan,15737,Abdallah Al-Fakhouri,658805,Goalkeeper,26,Al-Wehdat SC,10,-,250000
+Jordan,15737,Yazan Al-Arab,539961,Centre-Back,30,FC Seoul,70,3,1000000
+Jordan,15737,Saed Al-Rousan,561481,Centre-Back,29,Al-Hussein SC (Irbid),17,2,450000
+Jordan,15737,Abdallah Nasib,882197,Centre-Back,32,Al-Zawraa SC,55,2,400000
+Jordan,15737,Husam Abu Dahab,895291,Centre-Back,26,Al-Faisaly SC,13,-,350000
+Jordan,15737,Mohammad Abualnadi,658052,Centre-Back,25,Selangor FC,14,-,350000
+Jordan,15737,Saleem Obaid,658807,Centre-Back,34,Al-Hussein SC (Irbid),11,-,100000
+Jordan,15737,Mohannad Abu Taha,883111,Left-Back,23,Al-Quwa Al-Jawiya,25,1,550000
+Jordan,15737,Mohammad Abu Hasheesh,895249,Left-Back,31,Al-Karma,47,1,400000
+Jordan,15737,Mohammad Abu Ghoush,1252806,Left-Back,20,Al-Hussein SC (Irbid),-,-,300000
+Jordan,15737,Ehsan Haddad,310943,Right-Back,32,Al-Hussein SC (Irbid),76,1,300000
+Jordan,15737,Anas Badawi,1378902,Right-Back,28,Al-Faisaly SC,1,-,200000
+Jordan,15737,Nizar Al-Rashdan,734751,Defensive Midfield,27,Qatar SC,40,4,600000
+Jordan,15737,Amer Jamous,744040,Central Midfield,23,Al-Zawraa SC,15,1,500000
+Jordan,15737,Noor Al-Rawabdeh,561485,Central Midfield,29,Selangor FC,58,3,500000
+Jordan,15737,Ibrahim Saadeh,709974,Central Midfield,26,Al-Karma,45,3,500000
+Jordan,15737,Rajaei Ayed,261842,Central Midfield,32,Al-Hussein SC (Irbid),57,-,325000
+Jordan,15737,Mohammad Al-Dawoud,310801,Central Midfield,33,Al-Wehdat SC,7,1,150000
+Jordan,15737,Odeh Fakhoury,1252820,Left Winger,20,Pyramids FC,10,1,350000
+Jordan,15737,Mahmoud Al-Mardi,401086,Left Winger,32,Al-Hussein SC (Irbid),71,7,350000
+Jordan,15737,Mousa Tamari,551505,Right Winger,29,Stade Rennais FC,77,23,10000000
+Jordan,15737,Shararh,677986,Right Winger,28,Raja Club Athletic,34,5,700000
+Jordan,15737,Ali Azaizeh,1059056,Right Winger,22,Al-Shabab FC,4,-,325000
+Jordan,15737,Ali Olwan,664057,Centre-Forward,26,Al-Sailiya SC,59,27,800000
+Mexico,6303,Raúl Rangel,802855,Goalkeeper,26,Deportivo Guadalajara,15,-,6500000
+Mexico,6303,Carlos Acevedo,356042,Goalkeeper,30,Santos Laguna,7,-,2800000
+Mexico,6303,Guillermo Ochoa,29559,Goalkeeper,40,AEL Limassol,153,-,250000
+Mexico,6303,Johan Vásquez,532937,Centre-Back,27,Genoa CFC,47,3,12000000
+Mexico,6303,César Montes,387687,Centre-Back,29,Lokomotiv Moscow,69,4,7500000
+Mexico,6303,Luis Romo,532938,Centre-Back,31,Deportivo Guadalajara,63,4,3000000
+Mexico,6303,Mateo Chávez,1066953,Left-Back,22,AZ Alkmaar,10,-,4000000
+Mexico,6303,Jesús Gallardo,344854,Left-Back,31,Deportivo Toluca,123,3,2800000
+Mexico,6303,Israel Reyes,687558,Right-Back,26,CF América,35,2,6500000
+Mexico,6303,Jorge Sánchez,356044,Right-Back,28,PAOK Thessaloniki,59,3,2000000
+Mexico,6303,Edson Álvarez,401356,Defensive Midfield,28,Fenerbahce,100,7,15000000
+Mexico,6303,Érik Lira,602324,Defensive Midfield,26,CD Cruz Azul,26,-,12000000
+Mexico,6303,Luis Chávez,331059,Defensive Midfield,30,Dynamo Moscow,46,5,6000000
+Mexico,6303,Obed Vargas,889435,Central Midfield,20,Atlético de Madrid,6,-,10000000
+Mexico,6303,Orbelín Pineda,334042,Central Midfield,30,AEK Athens,92,12,7000000
+Mexico,6303,Álvaro Fidalgo,261503,Central Midfield,29,Real Betis Balompié,5,-,6000000
+Mexico,6303,Gilberto Mora,1155723,Attacking Midfield,17,Club Tijuana,9,-,10000000
+Mexico,6303,Brian Gutiérrez,724443,Attacking Midfield,22,Deportivo Guadalajara,8,2,8000000
+Mexico,6303,Alexis Vega,424689,Left Winger,28,Deportivo Toluca,54,7,8000000
+Mexico,6303,César Huerta,540315,Left Winger,25,RSC Anderlecht,26,3,3500000
+Mexico,6303,Roberto Alvarado,353583,Right Winger,27,Deportivo Guadalajara,69,5,7500000
+Mexico,6303,Santiago Gimenez,552955,Centre-Forward,25,AC Milan,47,6,18000000
+Mexico,6303,Armando González,837619,Centre-Forward,23,Deportivo Guadalajara,8,1,15000000
+Mexico,6303,Julián Quiñones,416090,Centre-Forward,29,Al-Qadsiah FC,23,3,14000000
+Mexico,6303,Raúl Jiménez,206040,Centre-Forward,35,Fulham FC,127,46,3000000
+Mexico,6303,Guillermo Martínez,347932,Centre-Forward,31,UNAM Pumas,12,3,1500000
+Morocco,3575,Yassine Bounou,207834,Goalkeeper,35,Al-Hilal SFC,91,-,3000000
+Morocco,3575,Ahmed Reda Tagnaouti,238997,Goalkeeper,30,AS FAR Rabat,3,-,1000000
+Morocco,3575,Munir El Kajoui,97925,Goalkeeper,37,Renaissance de Berkane,52,-,600000
+Morocco,3575,Chadi Riad,689637,Centre-Back,22,Crystal Palace,7,1,15000000
+Morocco,3575,Issa Diop,272622,Centre-Back,29,Fulham FC,5,-,8000000
+Morocco,3575,Redouane Halhal,913660,Centre-Back,23,KV Mechelen,3,-,5000000
+Morocco,3575,Marwane Saadane,210009,Centre-Back,34,Al-Fateh SC,17,1,400000
+Morocco,3575,Anass Salah-Eddine,485584,Left-Back,24,PSV Eindhoven,10,-,12000000
+Morocco,3575,Youssef Belammari,518804,Left-Back,27,Al Ahly FC,18,-,1200000
+Morocco,3575,Achraf Hakimi,398073,Right-Back,27,Paris Saint-Germain,97,11,80000000
+Morocco,3575,Noussair Mazraoui,340456,Right-Back,28,Manchester United,46,2,18000000
+Morocco,3575,Zakaria El Ouahdi,820474,Right-Back,24,KRC Genk,3,-,17000000
+Morocco,3575,Sofyan Amrabat,287579,Defensive Midfield,29,Real Betis Balompié,75,-,10000000
+Morocco,3575,Ayyoub Bouaddi,1097139,Central Midfield,18,LOSC Lille,4,-,50000000
+Morocco,3575,Neil El Aynaoui,901019,Central Midfield,24,AS Roma,17,2,23000000
+Morocco,3575,Samir El Mourabet,1130514,Central Midfield,20,RC Strasbourg Alsace,5,-,22000000
+Morocco,3575,Azzedine Ounahi,593482,Central Midfield,26,Girona FC,50,9,10000000
+Morocco,3575,Ismael Saibari,702869,Attacking Midfield,25,PSV Eindhoven,31,10,40000000
+Morocco,3575,Bilal El Khannouss,654982,Attacking Midfield,22,VfB Stuttgart,38,3,35000000
+Morocco,3575,Soufiane Rahimi,598506,Left Winger,30,Al-Ain FC,38,12,6000000
+Morocco,3575,Amine Sbaï,851220,Left Winger,25,Angers SCO,2,-,4000000
+Morocco,3575,Brahim Díaz,314678,Right Winger,26,Real Madrid,27,14,35000000
+Morocco,3575,Chemsdine Talbi,743384,Right Winger,21,Sunderland AFC,6,-,25000000
+Morocco,3575,Gessime Yassine,1151929,Right Winger,20,RC Strasbourg Alsace,4,-,12000000
+Morocco,3575,Ayoube Amaimouni-Echghouyab,799993,Right Winger,21,Eintracht Frankfurt,3,-,10000000
+Morocco,3575,Ayoub El Kaabi,521127,Centre-Forward,32,Olympiacos Piraeus,71,35,4500000
+Netherlands,3379,Bart Verbruggen,565093,Goalkeeper,23,Brighton & Hove Albion,30,-,40000000
+Netherlands,3379,Robin Roefs,646991,Goalkeeper,23,Sunderland AFC,1,-,28000000
+Netherlands,3379,Mark Flekken,125714,Goalkeeper,33,Bayer 04 Leverkusen,12,-,6000000
+Netherlands,3379,Micky van de Ven,557459,Centre-Back,25,Tottenham Hotspur,22,1,50000000
+Netherlands,3379,Jan Paul van Hecke,576314,Centre-Back,26,Brighton & Hove Albion,13,-,45000000
+Netherlands,3379,Virgil van Dijk,139208,Centre-Back,34,Liverpool FC,93,13,15000000
+Netherlands,3379,Nathan Aké,177476,Centre-Back,31,Manchester City,60,5,12000000
+Netherlands,3379,Jorrel Hato,904802,Left-Back,20,Chelsea FC,8,-,40000000
+Netherlands,3379,Mats Wieffer,415381,Right-Back,26,Brighton & Hove Albion,15,1,25000000
+Netherlands,3379,Denzel Dumfries,321528,Right-Back,30,Inter Milan,73,11,25000000
+Netherlands,3379,Lutsharel Geertruida,420210,Right-Back,25,Sunderland AFC,21,-,20000000
+Netherlands,3379,Ryan Gravenberch,478573,Defensive Midfield,24,Liverpool FC,28,1,80000000
+Netherlands,3379,Teun Koopmeiners,360518,Defensive Midfield,28,Juventus FC,29,3,14000000
+Netherlands,3379,Marten de Roon,133179,Defensive Midfield,35,Atalanta BC,43,1,3200000
+Netherlands,3379,Tijjani Reijnders,460939,Central Midfield,27,Manchester City,33,7,50000000
+Netherlands,3379,Frenkie de Jong,326330,Central Midfield,29,FC Barcelona,67,2,35000000
+Netherlands,3379,Quinten Timber,420213,Central Midfield,24,Olympique Marseille,12,1,25000000
+Netherlands,3379,Justin Kluivert,330659,Attacking Midfield,27,AFC Bournemouth,12,-,25000000
+Netherlands,3379,Guus Til,372267,Attacking Midfield,28,PSV Eindhoven,7,1,15000000
+Netherlands,3379,Cody Gakpo,434675,Left Winger,27,Liverpool FC,51,21,60000000
+Netherlands,3379,Crysencio Summerville,474701,Left Winger,24,West Ham United,3,1,35000000
+Netherlands,3379,Noa Lang,339332,Left Winger,26,Galatasaray,15,3,22000000
+Netherlands,3379,Donyell Malen,326029,Centre-Forward,27,AS Roma,54,13,45000000
+Netherlands,3379,Brian Brobbey,473169,Centre-Forward,24,Sunderland AFC,13,1,30000000
+Netherlands,3379,Memphis Depay,167850,Centre-Forward,32,Sport Club Corinthians Paulista,110,55,7000000
+Netherlands,3379,Wout Weghorst,228645,Centre-Forward,33,Ajax Amsterdam,52,14,2000000
+New Zealand,9171,Max Crocombe,207843,Goalkeeper,32,Millwall FC,25,-,1000000
+New Zealand,9171,Alex Paulsen,617009,Goalkeeper,23,Lechia Gdansk,8,-,500000
+New Zealand,9171,Michael Woud,350347,Goalkeeper,27,Auckland FC,6,-,400000
+New Zealand,9171,Tyler Bindon,1007720,Centre-Back,21,Sheffield United,26,2,3500000
+New Zealand,9171,Finn Surman,724809,Centre-Back,22,Portland Timbers,20,2,1800000
+New Zealand,9171,Nando Pijnaker,455425,Centre-Back,27,Auckland FC,25,-,400000
+New Zealand,9171,Michael Boxall,81723,Centre-Back,37,Minnesota United FC,64,1,150000
+New Zealand,9171,Tommy Smith,54381,Centre-Back,36,Braintree Town,56,2,50000
+New Zealand,9171,Liberato Cacace,469211,Left-Back,25,Wrexham AFC,38,1,2500000
+New Zealand,9171,Ben Old,617021,Left-Back,23,AS Saint-Étienne,25,2,1800000
+New Zealand,9171,Francis de Vries,207061,Left-Back,31,Auckland FC,19,1,600000
+New Zealand,9171,Callan Elliot,482204,Right-Back,26,Auckland FC,12,-,450000
+New Zealand,9171,Tim Payne,149901,Right-Back,32,Wellington Phoenix,53,3,350000
+New Zealand,9171,Joe Bell,345700,Defensive Midfield,27,Viking FK,33,1,3500000
+New Zealand,9171,Ryan Thomas,203357,Defensive Midfield,31,PEC Zwolle,26,3,650000
+New Zealand,9171,Alex Rufer,256019,Defensive Midfield,30,Wellington Phoenix,26,-,600000
+New Zealand,9171,Marko Stamenić,617018,Central Midfield,24,Swansea City,40,3,3000000
+New Zealand,9171,Lachlan Bayliss,1109358,Central Midfield,23,Newcastle United Jets,4,-,550000
+New Zealand,9171,Callum McCowatt,400797,Attacking Midfield,27,Silkeborg IF,33,4,2500000
+New Zealand,9171,Sarpreet Singh,350357,Attacking Midfield,27,Wellington Phoenix,29,3,500000
+New Zealand,9171,Jesse Randall,677509,Left Winger,23,Auckland FC,12,2,900000
+New Zealand,9171,Elijah Just,485672,Right Winger,26,Motherwell FC,45,11,2500000
+New Zealand,9171,Logan Rogerson,312317,Right Winger,28,Auckland FC,18,2,400000
+New Zealand,9171,Chris Wood,108725,Centre-Forward,34,Nottingham Forest,91,45,5000000
+New Zealand,9171,Ben Waine,539502,Centre-Forward,25,Port Vale FC,31,9,400000
+New Zealand,9171,Kosta Barbarouses,50200,Centre-Forward,36,Western Sydney Wanderers,76,10,300000
+Norway,3440,Sander Tangvik,549378,Goalkeeper,23,Hamburger SV,-,-,3000000
+Norway,3440,Egil Selvik,380744,Goalkeeper,28,Watford FC,7,-,1500000
+Norway,3440,Ørjan Nyland,73517,Goalkeeper,35,Sevilla FC,71,-,800000
+Norway,3440,Kristoffer Ajer,328658,Centre-Back,28,Brentford FC,52,2,18000000
+Norway,3440,Leo Østigård,367284,Centre-Back,26,Genoa CFC,38,1,13000000
+Norway,3440,Torbjørn Heggem,464469,Centre-Back,27,Bologna FC 1909,15,-,13000000
+Norway,3440,Henrik Falchener,743088,Centre-Back,23,Viking FK,1,-,6000000
+Norway,3440,Sondre Langås,737837,Centre-Back,25,Derby County,3,-,4000000
+Norway,3440,David Møller Wolfe,661427,Left-Back,24,Wolverhampton Wanderers,22,1,8000000
+Norway,3440,Fredrik Bjørkan,364938,Left-Back,27,FK Bodø/Glimt,21,1,3500000
+Norway,3440,Julian Ryerson,370789,Right-Back,28,Borussia Dortmund,43,1,25000000
+Norway,3440,Marcus Pedersen,583404,Right-Back,25,Torino FC,32,-,3500000
+Norway,3440,Sander Berge,333014,Defensive Midfield,28,Fulham FC,66,1,25000000
+Norway,3440,Patrick Berg,308439,Defensive Midfield,28,FK Bodø/Glimt,43,-,8000000
+Norway,3440,Fredrik Aursnes,223367,Central Midfield,30,SL Benfica,22,1,15000000
+Norway,3440,Kristian Thorstvedt,564785,Central Midfield,27,US Sassuolo,37,4,12000000
+Norway,3440,Morten Thorsby,226524,Central Midfield,30,US Cremonese,31,-,2800000
+Norway,3440,Martin Ødegaard,316264,Attacking Midfield,27,Arsenal FC,68,5,65000000
+Norway,3440,Thelo Aasgaard,647384,Attacking Midfield,24,Rangers FC,8,5,2800000
+Norway,3440,Antonio Nusa,894914,Left Winger,21,RB Leipzig,24,8,32000000
+Norway,3440,Andreas Schjelderup,670103,Left Winger,22,SL Benfica,12,1,30000000
+Norway,3440,Jens Petter Hauge,422355,Left Winger,26,FK Bodø/Glimt,15,1,12000000
+Norway,3440,Oscar Bobb,661207,Right Winger,22,Fulham FC,20,2,28000000
+Norway,3440,Erling Haaland,418560,Centre-Forward,25,Manchester City,50,55,200000000
+Norway,3440,Jørgen Strand Larsen,429983,Centre-Forward,26,Crystal Palace,28,6,40000000
+Norway,3440,Alexander Sørloth,238407,Centre-Forward,30,Atlético de Madrid,72,26,18000000
+Panama,3577,Orlando Mosquera,402979,Goalkeeper,31,Al-Fayha FC,48,-,700000
+Panama,3577,César Samudio,865550,Goalkeeper,32,CD Marathón,5,-,250000
+Panama,3577,Luis Mejía,76715,Goalkeeper,35,Club Nacional,56,-,150000
+Panama,3577,José Córdoba,698415,Centre-Back,25,Norwich City,32,1,5000000
+Panama,3577,Andrés Andrade,403808,Centre-Back,27,LASK,50,1,2500000
+Panama,3577,Edgardo Fariña,923177,Centre-Back,24,FC Pari Nizhniy Novgorod,18,-,900000
+Panama,3577,Jiovany Ramos,403809,Centre-Back,29,Academia Puerto Cabello,23,2,450000
+Panama,3577,Fidel Escobar,345716,Centre-Back,31,Deportivo Saprissa,99,4,350000
+Panama,3577,Roderick Miller,157154,Centre-Back,34,Turan-Tovuz IK,49,2,175000
+Panama,3577,Jorge Gutiérrez,443379,Left-Back,27,Deportivo La Guaira,18,-,800000
+Panama,3577,Éric Davis,121791,Left-Back,35,CD Plaza Amador,107,9,50000
+Panama,3577,Amir Murillo,354482,Right-Back,30,Besiktas JK,94,9,7000000
+Panama,3577,César Blackman,440383,Right-Back,28,Slovan Bratislava,40,3,2500000
+Panama,3577,Cristian Martínez,419247,Defensive Midfield,29,Ironi Kiryat Shmona,66,2,800000
+Panama,3577,Carlos Harvey,628806,Defensive Midfield,26,Minnesota United FC,28,3,600000
+Panama,3577,Aníbal Godoy,161671,Defensive Midfield,36,San Diego FC,157,4,100000
+Panama,3577,Adalberto Carrasquilla,375300,Central Midfield,27,UNAM Pumas,72,3,4000000
+Panama,3577,José Luis Rodríguez,425028,Left Winger,27,FC Juárez,70,8,2500000
+Panama,3577,Ismael Díaz,243298,Left Winger,29,Club León FC,56,17,1800000
+Panama,3577,Yoel Bárcenas,283473,Right Winger,32,Mazatlán FC,103,9,650000
+Panama,3577,César Yanis,741098,Right Winger,30,CD Cobresal,54,5,400000
+Panama,3577,Alberto Quintero,126019,Right Winger,38,CD Plaza Amador,140,7,75000
+Panama,3577,Tomás Rodríguez,569205,Centre-Forward,27,Deportivo Saprissa,13,4,1000000
+Panama,3577,Azarías Londoño,860998,Centre-Forward,24,CD Universidad Católica,12,1,1000000
+Panama,3577,José Fajardo,546803,Centre-Forward,32,CD Universidad Católica,68,17,550000
+Panama,3577,Cecilio Waterman,177064,Centre-Forward,35,Universidad de Concepción,55,15,250000
+Paraguay,3581,Orlando Gill,643259,Goalkeeper,26,CA San Lorenzo de Almagro,7,-,6000000
+Paraguay,3581,Gastón Olveira,301722,Goalkeeper,33,Club Olimpia,1,-,500000
+Paraguay,3581,Roberto Fernández,107318,Goalkeeper,38,Club Cerro Porteño,30,-,100000
+Paraguay,3581,Omar Alderete,353032,Centre-Back,29,Sunderland AFC,37,3,13000000
+Paraguay,3581,Gustavo Gómez,215390,Centre-Back,33,Sociedade Esportiva Palmeiras,90,4,3500000
+Paraguay,3581,José Canale,402627,Centre-Back,29,CA Lanús,2,-,2200000
+Paraguay,3581,Júnior Alonso,273000,Centre-Back,33,Clube Atlético Mineiro,72,3,1500000
+Paraguay,3581,Fabián Balbuena,285548,Centre-Back,34,Grêmio Foot-Ball Porto Alegrense,47,2,900000
+Paraguay,3581,Gustavo Velázquez,389399,Centre-Back,35,Club Cerro Porteño,14,1,400000
+Paraguay,3581,Alexandro Maidana,1371519,Left-Back,20,CA Talleres,2,1,2500000
+Paraguay,3581,Juan José Cáceres,756494,Right-Back,26,Dynamo Moscow,18,-,5000000
+Paraguay,3581,Andrés Cubas,323872,Defensive Midfield,30,Vancouver Whitecaps FC,34,-,4500000
+Paraguay,3581,Braian Ojeda,491596,Defensive Midfield,25,Orlando City SC,17,-,3500000
+Paraguay,3581,Diego Gómez,996897,Central Midfield,23,Brighton & Hove Albion,25,3,25000000
+Paraguay,3581,Damián Bobadilla,861852,Central Midfield,24,São Paulo Futebol Clube,20,1,6000000
+Paraguay,3581,Matías Galarza,661269,Central Midfield,24,Atlanta United FC,15,3,3000000
+Paraguay,3581,Julio Enciso,660867,Attacking Midfield,22,RC Strasbourg Alsace,33,4,25000000
+Paraguay,3581,Mauricio,678439,Attacking Midfield,24,Sociedade Esportiva Palmeiras,4,1,15000000
+Paraguay,3581,Kaku,355817,Attacking Midfield,31,Al-Ain FC,35,6,4500000
+Paraguay,3581,Gustavo Caballero,891672,Left Winger,24,Portsmouth FC,2,1,1000000
+Paraguay,3581,Miguel Almirón,272999,Right Winger,32,Atlanta United FC,77,10,7000000
+Paraguay,3581,Ramón Sosa,745191,Second Striker,26,Sociedade Esportiva Palmeiras,30,1,10000000
+Paraguay,3581,Isidro Pitta,675178,Centre-Forward,26,Red Bull Bragantino,5,-,7500000
+Paraguay,3581,Álex Arce,970518,Centre-Forward,31,CS Independiente Rivadavia,16,1,3500000
+Paraguay,3581,Antonio Sanabria,234523,Centre-Forward,30,US Cremonese,49,7,1800000
+Paraguay,3581,Gabriel Ávalos,358418,Centre-Forward,35,CA Independiente,23,2,750000
+Portugal,3300,Diogo Costa,357153,Goalkeeper,26,FC Porto,43,-,40000000
+Portugal,3300,Rui Silva,234811,Goalkeeper,32,Sporting CP,3,-,7000000
+Portugal,3300,José Sá,249994,Goalkeeper,33,Wolverhampton Wanderers,5,-,3500000
+Portugal,3300,Rúben Dias,258004,Centre-Back,29,Manchester City,76,3,55000000
+Portugal,3300,Gonçalo Inácio,549006,Centre-Back,24,Sporting CP,22,2,40000000
+Portugal,3300,Tomás Araújo,504087,Centre-Back,24,SL Benfica,5,-,30000000
+Portugal,3300,Renato Veiga,805714,Centre-Back,22,Villarreal CF,13,1,25000000
+Portugal,3300,Nuno Mendes,616341,Left-Back,23,Paris Saint-Germain,44,1,80000000
+Portugal,3300,Matheus Nunes,601883,Right-Back,27,Manchester City,20,2,50000000
+Portugal,3300,Diogo Dalot,357147,Right-Back,27,Manchester United,35,3,30000000
+Portugal,3300,João Cancelo,182712,Right-Back,32,FC Barcelona,68,12,8000000
+Portugal,3300,Nélson Semedo,231572,Right-Back,32,Fenerbahce,50,-,6000000
+Portugal,3300,Vitinha,487469,Defensive Midfield,26,Paris Saint-Germain,38,-,140000000
+Portugal,3300,Rúben Neves,225161,Defensive Midfield,29,Al-Hilal SFC,67,1,25000000
+Portugal,3300,Samú Costa,657430,Defensive Midfield,25,RCD Mallorca,6,-,15000000
+Portugal,3300,João Neves,670681,Central Midfield,21,Paris Saint-Germain,22,3,140000000
+Portugal,3300,Francisco Trincão,412669,Attacking Midfield,26,Sporting CP,18,3,40000000
+Portugal,3300,Bruno Fernandes,240306,Attacking Midfield,31,Manchester United,89,29,35000000
+Portugal,3300,Bernardo Silva,241641,Attacking Midfield,31,Manchester City,109,14,22000000
+Portugal,3300,Rafael Leão,357164,Left Winger,27,AC Milan,44,5,50000000
+Portugal,3300,Gonçalo Guedes,225122,Left Winger,29,Real Sociedad,34,8,6000000
+Portugal,3300,Pedro Neto,487465,Right Winger,26,Chelsea FC,25,3,60000000
+Portugal,3300,Francisco Conceição,487474,Right Winger,23,Juventus FC,17,4,30000000
+Portugal,3300,João Félix,462250,Second Striker,26,Al-Nassr FC,54,12,28000000
+Portugal,3300,Gonçalo Ramos,550550,Centre-Forward,24,Paris Saint-Germain,25,10,30000000
+Portugal,3300,Cristiano Ronaldo,8198,Centre-Forward,41,Al-Nassr FC,228,143,10000000
+Qatar,14162,Meshaal Barsham,560423,Goalkeeper,28,Al-Sadd SC,54,-,700000
+Qatar,14162,Mahmoud Abunada,669629,Goalkeeper,26,Al-Rayyan SC,7,-,400000
+Qatar,14162,Salah Zakaria,632912,Goalkeeper,27,Al-Duhail SC,8,-,400000
+Qatar,14162,Lucas Mendes,83983,Centre-Back,35,Al-Wakrah SC,26,2,350000
+Qatar,14162,Al-Hashmi Al-Hussain,943150,Centre-Back,22,Al-Arabi SC,9,-,250000
+Qatar,14162,Issa Laye,1264176,Centre-Back,28,Al-Arabi SC,5,-,200000
+Qatar,14162,Boualem Khoukhi,222669,Centre-Back,35,Al-Sadd SC,123,21,200000
+Qatar,14162,Pedro Miguel,228727,Centre-Back,35,Al-Sadd SC,102,3,150000
+Qatar,14162,Homam Al-Amin,556713,Left-Back,26,Cultural Leonesa,70,3,500000
+Qatar,14162,Sultan Al-Brake,336665,Left-Back,30,Al-Duhail SC,18,-,300000
+Qatar,14162,Ayoub Al-Oui,1054631,Right-Back,21,Al-Gharafa SC,8,-,375000
+Qatar,14162,Jassem Gaber,735813,Defensive Midfield,24,Al-Rayyan SC,35,1,500000
+Qatar,14162,Assim Madibo,336667,Defensive Midfield,29,Al-Wakrah SC,63,-,350000
+Qatar,14162,Ahmed Fathi,251183,Defensive Midfield,33,Al-Arabi SC,47,-,250000
+Qatar,14162,Karim Boudiaf,222385,Defensive Midfield,35,Al-Duhail SC,123,6,175000
+Qatar,14162,Mohamed Manai,822935,Central Midfield,23,Al-Shamal SC,12,-,500000
+Qatar,14162,Abdulaziz Hatim,113915,Central Midfield,35,Al-Rayyan SC,121,11,250000
+Qatar,14162,Hasan Al-Haydos,86286,Attacking Midfield,35,Al-Sadd SC,168,39,300000
+Qatar,14162,Akram Afif,336646,Left Winger,29,Al-Sadd SC,129,40,8000000
+Qatar,14162,Edmílson Junior,237846,Left Winger,31,Al-Duhail SC,17,-,1800000
+Qatar,14162,Yusuf Abdurisag,589099,Left Winger,26,Al-Wakrah SC,40,3,275000
+Qatar,14162,Tahsin Mohammed Jamshid,1143849,Left Winger,20,Al-Duhail SC,4,-,200000
+Qatar,14162,Ahmed Al-Ganehi,670659,Right Winger,25,Al-Gharafa SC,13,1,500000
+Qatar,14162,Almoez Ali,345095,Centre-Forward,29,Al-Duhail SC,119,55,2500000
+Qatar,14162,Ahmed Alaaeldin,187987,Centre-Forward,33,Al-Rayyan SC,70,8,300000
+Qatar,14162,Mohammed Muntari,266935,Centre-Forward,32,Al-Gharafa SC,70,16,200000
+Saudi Arabia,3807,Nawaf Al-Aqidi,886183,Goalkeeper,26,Al-Nassr FC,22,-,650000
+Saudi Arabia,3807,Mohammed Al-Owais,262845,Goalkeeper,34,Al-Ula FC,62,-,275000
+Saudi Arabia,3807,Ahmed Al-Kassar,177956,Goalkeeper,35,Al-Qadsiah FC,9,-,175000
+Saudi Arabia,3807,Hassan Tambakti,509897,Centre-Back,27,Al-Hilal SFC,51,-,1800000
+Saudi Arabia,3807,Abdulelah Al-Amri,509894,Centre-Back,29,Al-Nassr FC,42,2,1400000
+Saudi Arabia,3807,Jehad Thakri,901334,Centre-Back,24,Al-Qadsiah FC,8,-,1200000
+Saudi Arabia,3807,Ali Lajami,264909,Centre-Back,30,Al-Hilal SFC,23,1,750000
+Saudi Arabia,3807,Moteb Al-Harbi,869509,Left-Back,26,Al-Hilal SFC,14,-,1400000
+Saudi Arabia,3807,Ayman Yahya,735815,Left-Back,25,Al-Nassr FC,24,-,1200000
+Saudi Arabia,3807,Hassan Kadesh,260859,Left-Back,33,Al-Ittihad Club,20,2,275000
+Saudi Arabia,3807,Saud Abdulhamid,631927,Right-Back,26,RC Lens,53,1,9000000
+Saudi Arabia,3807,Mohammed Abu Al-Shamat,1181852,Right-Back,23,Al-Qadsiah FC,8,-,1800000
+Saudi Arabia,3807,Ali Majrashi,672391,Right-Back,26,Al-Ahli SFC,21,-,1400000
+Saudi Arabia,3807,Nawaf Boushal,821377,Right-Back,26,Al-Nassr FC,27,-,1400000
+Saudi Arabia,3807,Ziyad Al-Johani,901079,Defensive Midfield,24,Al-Ahli SFC,12,-,800000
+Saudi Arabia,3807,Abdullah Al-Khaibari,437903,Defensive Midfield,29,Al-Nassr FC,39,-,750000
+Saudi Arabia,3807,Musab Al-Juwayr,901181,Central Midfield,22,Al-Qadsiah FC,37,6,6000000
+Saudi Arabia,3807,Nasser Al-Dawsari,509911,Central Midfield,27,Al-Hilal SFC,46,-,900000
+Saudi Arabia,3807,Mohamed Kanno,308120,Central Midfield,31,Al-Hilal SFC,76,8,800000
+Saudi Arabia,3807,Alaa Hejji,443937,Central Midfield,30,NEOM SC,4,-,300000
+Saudi Arabia,3807,Khalid Al-Ghannam,631923,Left Winger,25,Al-Ettifaq FC,7,-,2500000
+Saudi Arabia,3807,Salem Al-Dawsari,195332,Left Winger,34,Al-Hilal SFC,108,26,1200000
+Saudi Arabia,3807,Sultan Mandash,210349,Right Winger,31,Al-Hilal SFC,7,2,350000
+Saudi Arabia,3807,Firas Al-Buraikan,631922,Centre-Forward,26,Al-Ahli SFC,72,15,3500000
+Saudi Arabia,3807,Saleh Al-Shehri,242267,Centre-Forward,32,Al-Ittihad Club,54,16,500000
+Saudi Arabia,3807,Abdullah Al-Hamdan,68626,Centre-Forward,26,Al-Nassr FC,50,12,350000
+Scotland,3380,Angus Gunn,201574,Goalkeeper,30,Nottingham Forest,23,-,1000000
+Scotland,3380,Liam Kelly,208772,Goalkeeper,30,Rangers FC,3,-,800000
+Scotland,3380,Craig Gordon,12589,Goalkeeper,43,Heart of Midlothian FC,84,-,50000
+Scotland,3380,Scott McKenna,255906,Centre-Back,29,GNK Dinamo Zagreb,50,1,4000000
+Scotland,3380,Jack Hendry,363223,Centre-Back,31,Al-Ettifaq FC,39,3,2500000
+Scotland,3380,John Souttar,235767,Centre-Back,29,Rangers FC,24,2,2000000
+Scotland,3380,Dominic Hyam,263268,Centre-Back,30,Wrexham AFC,4,-,2000000
+Scotland,3380,Grant Hanley,121385,Centre-Back,34,Hibernian FC,69,2,200000
+Scotland,3380,Kieran Tierney,300716,Left-Back,29,Celtic FC,56,2,8000000
+Scotland,3380,Andrew Robertson,234803,Left-Back,32,Liverpool FC,95,4,7000000
+Scotland,3380,Aaron Hickey,591949,Right-Back,24,Brentford FC,22,-,16000000
+Scotland,3380,Nathan Patterson,424015,Right-Back,24,Everton FC,27,1,10000000
+Scotland,3380,Anthony Ralston,388171,Right-Back,27,Celtic FC,27,1,1500000
+Scotland,3380,Scott McTominay,315969,Central Midfield,29,SSC Napoli,71,15,40000000
+Scotland,3380,Lewis Ferguson,428563,Central Midfield,26,Bologna FC 1909,25,1,14000000
+Scotland,3380,John McGinn,193116,Central Midfield,31,Aston Villa,87,21,13000000
+Scotland,3380,Ryan Christie,188077,Central Midfield,31,AFC Bournemouth,69,10,8000000
+Scotland,3380,Tyler Fletcher,1049911,Central Midfield,19,Manchester United U21,2,-,1500000
+Scotland,3380,Kenny McLean,126600,Central Midfield,34,Norwich City,58,3,400000
+Scotland,3380,Findlay Curtis,1082993,Left Winger,20,Rangers FC,4,1,2000000
+Scotland,3380,Ben Gannon-Doak,719673,Right Winger,20,AFC Bournemouth,15,1,15000000
+Scotland,3380,George Hirst,420808,Centre-Forward,27,Ipswich Town,10,1,10000000
+Scotland,3380,Ché Adams,346779,Centre-Forward,29,Torino FC,48,13,5000000
+Scotland,3380,Lawrence Shankland,225744,Centre-Forward,30,Heart of Midlothian FC,21,7,3000000
+Scotland,3380,Ross Stewart,447995,Centre-Forward,29,Southampton FC,3,-,2500000
+Scotland,3380,Lyndon Dykes,347138,Centre-Forward,30,Charlton Athletic,52,10,800000
+Senegal,3499,Yehvann Diouf,448632,Goalkeeper,26,OGC Nice,2,-,7000000
+Senegal,3499,Edouard Mendy,442531,Goalkeeper,34,Al-Ahli SFC,58,-,4000000
+Senegal,3499,Mory Diaw,164904,Goalkeeper,32,Le Havre AC,5,-,900000
+Senegal,3499,Mamadou Sarr,910905,Centre-Back,20,Chelsea FC,8,-,22000000
+Senegal,3499,Moussa Niakhaté,291200,Centre-Back,30,Olympique Lyon,32,-,15000000
+Senegal,3499,Antoine Mendy,891998,Centre-Back,22,OGC Nice,7,-,10000000
+Senegal,3499,Kalidou Koulibaly,93128,Centre-Back,34,Al-Hilal SFC,104,2,4500000
+Senegal,3499,Abdoulaye Seck,265383,Centre-Back,34,Maccabi Haifa,22,4,400000
+Senegal,3499,El Hadji Malick Diouf,1111589,Left-Back,21,West Ham United,21,1,28000000
+Senegal,3499,Ismail Jakobs,375137,Left-Back,26,Galatasaray,30,-,8000000
+Senegal,3499,Idrissa Gueye,126665,Defensive Midfield,36,Everton FC,132,7,500000
+Senegal,3499,Lamine Camara,918969,Central Midfield,22,AS Monaco,34,5,40000000
+Senegal,3499,Pape Gueye,485963,Central Midfield,27,Villarreal CF,42,5,40000000
+Senegal,3499,Habib Diarra,876631,Central Midfield,22,Sunderland AFC,21,4,35000000
+Senegal,3499,Pape Matar Sarr,568693,Central Midfield,23,Tottenham Hotspur,40,4,30000000
+Senegal,3499,Bara Sapoko Ndiaye,1497653,Central Midfield,18,Bayern Munich,1,-,4000000
+Senegal,3499,Pathé Ciss,525578,Central Midfield,32,Rayo Vallecano,30,-,1800000
+Senegal,3499,Krépin Diatta,490426,Right Midfield,27,AS Monaco,62,2,6000000
+Senegal,3499,Assane Diao,1061282,Left Winger,20,Como 1907,5,-,30000000
+Senegal,3499,Sadio Mané,200512,Left Winger,34,Al-Nassr FC,127,54,6000000
+Senegal,3499,Iliman Ndiaye,623570,Right Winger,26,Everton FC,40,4,55000000
+Senegal,3499,Ismaïla Sarr,410225,Right Winger,28,Crystal Palace,84,19,40000000
+Senegal,3499,Ibrahim Mbaye,1185888,Right Winger,18,Paris Saint-Germain,11,3,30000000
+Senegal,3499,Nicolas Jackson,776890,Centre-Forward,24,Bayern Munich,34,8,40000000
+Senegal,3499,Bamba Dieng,822458,Centre-Forward,26,FC Lorient,23,2,15000000
+Senegal,3499,Cherif Ndiaye,480705,Centre-Forward,30,Samsunspor,19,4,5000000
+South Africa,3806,Sipho Chaine,453370,Goalkeeper,29,Orlando Pirates,4,-,1600000
+South Africa,3806,Ronwen Williams,175577,Goalkeeper,34,Mamelodi Sundowns FC,63,-,800000
+South Africa,3806,Ricardo Goss,258304,Goalkeeper,32,Siwelele Football Club ,5,-,350000
+South Africa,3806,Mbekezeli Mbokazi,1378320,Centre-Back,20,Chicago Fire FC,11,1,3500000
+South Africa,3806,Ime Okon,1107265,Centre-Back,22,Hannover 96,4,-,2000000
+South Africa,3806,Olwethu Makhanya,1069801,Centre-Back,22,Philadelphia Union,1,-,2000000
+South Africa,3806,Nkosinathi Sibisi,399068,Centre-Back,30,Orlando Pirates,21,-,1600000
+South Africa,3806,Khulumani Ndamane,1283140,Centre-Back,22,Mamelodi Sundowns FC,5,-,1200000
+South Africa,3806,Samukele Kabini,1175086,Left-Back,22,Molde FK,6,-,2500000
+South Africa,3806,Aubrey Modiba,353432,Left-Back,30,Mamelodi Sundowns FC,42,1,1800000
+South Africa,3806,Bradley Cross,555209,Left-Back,25,Kaizer Chiefs,1,-,1000000
+South Africa,3806,Thabang Matuludi,1109254,Right-Back,27,Polokwane City FC,3,-,1200000
+South Africa,3806,Khuliso Mudau,450806,Right-Back,31,Mamelodi Sundowns FC,33,1,1200000
+South Africa,3806,Kamogelo Sebelebele,994370,Right-Back,23,Orlando Pirates,3,-,1200000
+South Africa,3806,Teboho Mokoena,436372,Defensive Midfield,29,Mamelodi Sundowns FC,52,9,2800000
+South Africa,3806,Thalente Mbatha,735697,Central Midfield,26,Orlando Pirates,16,3,2000000
+South Africa,3806,Jayden Adams,804472,Central Midfield,25,Mamelodi Sundowns FC,7,1,1800000
+South Africa,3806,Yaya Sithole,401736,Central Midfield,27,CD Tondela,29,1,600000
+South Africa,3806,Themba Zwane,176578,Attacking Midfield,36,Mamelodi Sundowns FC,55,12,250000
+South Africa,3806,Relebohile Mofokeng,1125037,Left Winger,21,Orlando Pirates,13,-,3000000
+South Africa,3806,Oswin Appollis,673381,Left Winger,24,Orlando Pirates,27,8,2500000
+South Africa,3806,Tshepang Moremi,844485,Left Winger,25,Orlando Pirates,10,1,1400000
+South Africa,3806,Thapelo Maseko,983330,Left Winger,22,AEL Limassol,7,1,750000
+South Africa,3806,Lyle Foster,467623,Centre-Forward,25,Burnley FC,28,10,8000000
+South Africa,3806,Iqraam Rayners,337884,Centre-Forward,30,Mamelodi Sundowns FC,15,4,2800000
+South Africa,3806,Evidence Makgopa,746781,Centre-Forward,26,Orlando Pirates,27,6,1400000
+South Korea,3589,Bum-keun Song,508237,Goalkeeper,28,Jeonbuk Hyundai Motors,3,-,1000000
+South Korea,3589,Hyeon-woo Jo,260171,Goalkeeper,34,Ulsan HD FC,48,-,650000
+South Korea,3589,Seung-gyu Kim,92076,Goalkeeper,35,FC Tokyo,88,-,500000
+South Korea,3589,Min-jae Kim,503482,Centre-Back,29,Bayern Munich,80,4,20000000
+South Korea,3589,Han-beom Lee,706963,Centre-Back,23,FC Midtjylland,9,-,3000000
+South Korea,3589,Tae-hyeon Kim,645847,Centre-Back,25,Kashima Antlers,7,-,1200000
+South Korea,3589,Gi-hyuk Lee,763349,Centre-Back,25,Gangwon FC,4,-,800000
+South Korea,3589,Wi-je Cho,550978,Centre-Back,24,Jeonbuk Hyundai Motors,1,-,550000
+South Korea,3589,Tae-seok Lee,639027,Left-Back,23,Austria Vienna,16,1,2000000
+South Korea,3589,Young-woo Seol,639414,Right-Back,27,Red Star Belgrade,35,-,6500000
+South Korea,3589,Moon-hwan Kim,524592,Right-Back,30,Daejeon Hana Citizen,35,-,750000
+South Korea,3589,In-beom Hwang,365394,Defensive Midfield,29,Feyenoord Rotterdam,74,7,7000000
+South Korea,3589,Jin-seob Park,557469,Defensive Midfield,30,Zhejiang FC,15,1,1000000
+South Korea,3589,Jens Castrop,613192,Central Midfield,22,Borussia Mönchengladbach,7,-,10000000
+South Korea,3589,Seung-ho Paik,282689,Central Midfield,29,Birmingham City,28,3,2000000
+South Korea,3589,Jin-gyu Kim,365377,Central Midfield,29,Jeonbuk Hyundai Motors,23,3,1200000
+South Korea,3589,Kang-in Lee,557149,Attacking Midfield,25,Paris Saint-Germain,48,11,28000000
+South Korea,3589,Jun-ho Bae,912081,Attacking Midfield,22,Stoke City,13,2,4000000
+South Korea,3589,Jae-sung Lee,314398,Attacking Midfield,33,1.FSV Mainz 05,106,15,2000000
+South Korea,3589,Dong-gyeong Lee,558086,Attacking Midfield,28,Ulsan HD FC,18,4,1600000
+South Korea,3589,Heung-min Son,91845,Left Winger,33,Los Angeles FC,146,56,15000000
+South Korea,3589,Ji-sung Eom,706968,Left Winger,24,Swansea City,10,2,1800000
+South Korea,3589,Hyun-jun Yang,853110,Right Winger,24,Celtic FC,9,-,5000000
+South Korea,3589,Hyeon-gyu Oh,639246,Centre-Forward,25,Besiktas JK,28,7,15000000
+South Korea,3589,Hee-chan Hwang,292246,Centre-Forward,30,Wolverhampton Wanderers,80,17,6000000
+South Korea,3589,Gue-sung Cho,652537,Centre-Forward,28,FC Midtjylland,44,12,2500000
+Spain,3375,Joan García,561613,Goalkeeper,25,FC Barcelona,2,-,45000000
+Spain,3375,David Raya,262749,Goalkeeper,30,Arsenal FC,13,-,30000000
+Spain,3375,Unai Simón,262396,Goalkeeper,29,Athletic Bilbao,59,-,22000000
+Spain,3375,Pau Cubarsí,962110,Centre-Back,19,FC Barcelona,13,-,80000000
+Spain,3375,Eric García,466794,Centre-Back,25,FC Barcelona,21,-,40000000
+Spain,3375,Marc Pubill,844637,Centre-Back,22,Atlético de Madrid,2,-,35000000
+Spain,3375,Aymeric Laporte,176553,Centre-Back,32,Athletic Bilbao,47,2,8000000
+Spain,3375,Marc Cucurella,284857,Left-Back,27,Chelsea FC,25,1,50000000
+Spain,3375,Alejandro Grimaldo,193082,Left-Back,30,Bayer 04 Leverkusen,14,-,20000000
+Spain,3375,Pedro Porro,553875,Right-Back,26,Tottenham Hotspur,18,-,35000000
+Spain,3375,Marcos Llorente,282411,Right-Back,31,Atlético de Madrid,25,-,20000000
+Spain,3375,Martín Zubimendi,423440,Defensive Midfield,27,Arsenal FC,26,3,75000000
+Spain,3375,Rodri,357565,Defensive Midfield,29,Manchester City,63,4,50000000
+Spain,3375,Pedri,683840,Central Midfield,23,FC Barcelona,42,6,150000000
+Spain,3375,Fabián Ruiz,350219,Central Midfield,30,Paris Saint-Germain,43,6,30000000
+Spain,3375,Gavi,646740,Central Midfield,21,FC Barcelona,31,5,30000000
+Spain,3375,Mikel Merino,338424,Central Midfield,29,Arsenal FC,44,10,25000000
+Spain,3375,Dani Olmo,293385,Attacking Midfield,28,FC Barcelona,51,12,60000000
+Spain,3375,Álex Baena,548111,Left Winger,24,Atlético de Madrid,17,2,40000000
+Spain,3375,Nico Williams,709187,Left Winger,23,Athletic Bilbao,31,6,40000000
+Spain,3375,Víctor Muñoz,935231,Left Winger,22,CA Osasuna,2,1,30000000
+Spain,3375,Lamine Yamal,937958,Right Winger,18,FC Barcelona,26,6,200000000
+Spain,3375,Yéremy Pino,568157,Right Winger,23,Crystal Palace,23,4,30000000
+Spain,3375,Ferran Torres,398184,Centre-Forward,26,FC Barcelona,58,24,50000000
+Spain,3375,Mikel Oyarzabal,351478,Centre-Forward,29,Real Sociedad,54,25,25000000
+Spain,3375,Borja Iglesias,278359,Centre-Forward,33,Celta de Vigo,8,-,2800000
+Sweden,3557,Viktor Johansson,273742,Goalkeeper,27,Stoke City,12,-,12000000
+Sweden,3557,Jacob Widell Zetterström,549440,Goalkeeper,27,Derby County,3,-,2500000
+Sweden,3557,Kristoffer Nordfeldt,75890,Goalkeeper,36,AIK,22,-,175000
+Sweden,3557,Isak Hien,503075,Centre-Back,27,Atalanta BC,30,-,22000000
+Sweden,3557,Gustaf Lagerbielke,485395,Centre-Back,26,SC Braga,12,2,10000000
+Sweden,3557,Victor Lindelöf,184573,Centre-Back,31,Aston Villa,77,3,5000000
+Sweden,3557,Hjalmar Ekdal,392179,Centre-Back,27,Burnley FC,13,-,5000000
+Sweden,3557,Eric Smith,292534,Centre-Back,29,FC St. Pauli,2,-,5000000
+Sweden,3557,Carl Starfelt,258987,Centre-Back,31,Celta de Vigo,18,-,4500000
+Sweden,3557,Daniel Svensson,579287,Left-Back,24,Borussia Dortmund,14,-,22000000
+Sweden,3557,Gabriel Gudmundsson,362108,Left-Back,27,Leeds United,25,-,20000000
+Sweden,3557,Ken Sema,252345,Left-Back,32,Pafos FC,33,5,800000
+Sweden,3557,Jesper Karlström,222855,Defensive Midfield,30,Udinese Calcio,26,-,4000000
+Sweden,3557,Lucas Bergvall,866246,Central Midfield,20,Tottenham Hotspur,11,-,35000000
+Sweden,3557,Yasin Ayari,667287,Central Midfield,22,Brighton & Hove Albion,22,5,35000000
+Sweden,3557,Mattias Svanberg,342405,Central Midfield,27,VfL Wolfsburg,41,3,8000000
+Sweden,3557,Besfort Zeneli,715653,Central Midfield,23,Union Saint-Gilloise,8,-,6000000
+Sweden,3557,Herman Johansson,744853,Right Midfield,28,FC Dallas,3,-,1800000
+Sweden,3557,Elliot Stroud,687622,Left Midfield,23,Mjällby AIF,2,-,5000000
+Sweden,3557,Benjamin Nygren,475949,Attacking Midfield,24,Celtic FC,12,3,14000000
+Sweden,3557,Taha Ali,731771,Left Winger,27,Malmö FF,2,-,1500000
+Sweden,3557,Anthony Elanga,583189,Right Winger,24,Newcastle United,31,6,32000000
+Sweden,3557,Alexander Bernhardsson,633454,Right Winger,27,Holstein Kiel,12,-,3000000
+Sweden,3557,Alexander Isak,349066,Centre-Forward,26,Liverpool FC,59,18,85000000
+Sweden,3557,Viktor Gyökeres,325443,Centre-Forward,28,Arsenal FC,34,21,65000000
+Sweden,3557,Gustaf Nilsson,320440,Centre-Forward,29,Club Brugge KV,10,4,1800000
+Switzerland,3384,Gregor Kobel,257814,Goalkeeper,28,Borussia Dortmund,22,-,40000000
+Switzerland,3384,Marvin Keller,500763,Goalkeeper,23,BSC Young Boys,1,-,6000000
+Switzerland,3384,Yvon Mvogo,147051,Goalkeeper,32,FC Lorient,13,-,2500000
+Switzerland,3384,Manuel Akanji,284730,Centre-Back,30,Inter Milan,82,4,17000000
+Switzerland,3384,Aurèle Amenda,635645,Centre-Back,22,Eintracht Frankfurt,7,-,10000000
+Switzerland,3384,Luca Jaquez,539798,Centre-Back,23,VfB Stuttgart,3,-,10000000
+Switzerland,3384,Nico Elvedi,192635,Centre-Back,29,Borussia Mönchengladbach,68,3,8000000
+Switzerland,3384,Eray Cömert,298583,Centre-Back,28,Valencia CF,22,-,2500000
+Switzerland,3384,Miro Muheim,298603,Left-Back,28,Hamburger SV,11,-,5000000
+Switzerland,3384,Ricardo Rodríguez,86784,Left-Back,33,Real Betis Balompié,139,9,1400000
+Switzerland,3384,Silvan Widmer,168989,Right-Back,33,1.FSV Mainz 05,60,5,800000
+Switzerland,3384,Denis Zakaria,334526,Defensive Midfield,29,AS Monaco,66,3,25000000
+Switzerland,3384,Ardon Jashari,608172,Defensive Midfield,23,AC Milan,9,-,25000000
+Switzerland,3384,Granit Xhaka,111455,Defensive Midfield,33,Sunderland AFC,147,17,8000000
+Switzerland,3384,Johan Manzambi,927353,Central Midfield,20,SC Freiburg,13,3,50000000
+Switzerland,3384,Djibril Sow,212723,Central Midfield,29,Sevilla FC,52,-,7500000
+Switzerland,3384,Michel Aebischer,237658,Central Midfield,29,Pisa Sporting Club,41,2,4000000
+Switzerland,3384,Remo Freuler,148252,Central Midfield,34,Bologna FC 1909,89,11,3000000
+Switzerland,3384,Fabian Rieder,507341,Attacking Midfield,24,FC Augsburg,29,1,12000000
+Switzerland,3384,Christian Fassnacht,250490,Attacking Midfield,32,BSC Young Boys,23,5,2000000
+Switzerland,3384,Noah Okafor,346890,Left Winger,26,Leeds United,25,2,25000000
+Switzerland,3384,Rubén Vargas,345886,Left Winger,27,Sevilla FC,62,11,12000000
+Switzerland,3384,Dan Ndoye,365108,Right Winger,25,Nottingham Forest,32,8,32000000
+Switzerland,3384,Breel Embolo,237662,Centre-Forward,29,Stade Rennais FC,87,25,15000000
+Switzerland,3384,Zeki Amdouni,548729,Centre-Forward,25,Burnley FC,30,11,7000000
+Switzerland,3384,Cedric Itten,243856,Centre-Forward,29,Fortuna Düsseldorf,15,5,1800000
+Tunisia,3670,Abdelmouhib Chamakh,584250,Goalkeeper,24,Club Africain,4,-,800000
+Tunisia,3670,Aymen Dahmen,569433,Goalkeeper,29,CS Sfaxien,37,-,800000
+Tunisia,3670,Sabri Ben Hessen,295381,Goalkeeper,30,Etoile Sportive du Sahel,1,-,550000
+Tunisia,3670,Montassar Talbi,496706,Centre-Back,28,FC Lorient,65,4,8000000
+Tunisia,3670,Adem Arous,1071742,Centre-Back,21,Kasimpasa,2,-,4000000
+Tunisia,3670,Dylan Bronn,450417,Centre-Back,30,Servette FC,52,2,600000
+Tunisia,3670,Raed Chikhaoui,1075790,Centre-Back,22,US Monastir,-,-,600000
+Tunisia,3670,Omar Rekik,578292,Centre-Back,24,NK Maribor,7,1,500000
+Tunisia,3670,Ali Abdi,211474,Left-Back,32,OGC Nice,47,7,2000000
+Tunisia,3670,Mohamed Amine Ben Hamida,454495,Left-Back,30,Esperance Tunis,14,-,1000000
+Tunisia,3670,Yan Valery,406008,Right-Back,27,BSC Young Boys,23,-,1500000
+Tunisia,3670,Moutaz Neffati,1034598,Right-Back,21,IFK Norrköping,5,-,1200000
+Tunisia,3670,Ellyes Skhiri,290587,Defensive Midfield,31,Eintracht Frankfurt,84,4,5000000
+Tunisia,3670,Rani Khedira,124410,Defensive Midfield,32,1.FC Union Berlin,4,-,2000000
+Tunisia,3670,Mohamed Belhadj Mahmoud,673513,Central Midfield,26,FC Lugano,10,-,2000000
+Tunisia,3670,Hannibal,607224,Attacking Midfield,23,Burnley FC,46,1,15000000
+Tunisia,3670,Anis Ben Slimane,546712,Attacking Midfield,25,Norwich City,42,4,4000000
+Tunisia,3670,Ismaël Gharbi,810096,Left Winger,22,FC Augsburg,18,2,5000000
+Tunisia,3670,Sebastian Tounekti,539677,Left Winger,23,Celtic FC,13,1,5000000
+Tunisia,3670,Elias Achouri,645589,Left Winger,27,FC Copenhagen,31,5,3000000
+Tunisia,3670,Elias Saad,526466,Left Winger,26,Hannover 96,16,3,2000000
+Tunisia,3670,Mortadha Ben Ouanes,230921,Left Winger,31,Kasimpasa,18,-,1500000
+Tunisia,3670,Khalil Ayari,1198342,Right Winger,21,Paris Saint-Germain Espoirs,4,-,1000000
+Tunisia,3670,Firas Chaouat,402087,Centre-Forward,30,Club Africain,31,6,1200000
+Tunisia,3670,Hazem Mastouri,953150,Centre-Forward,28,Dinamo Makhachkala,19,4,900000
+Tunisia,3670,Rayan Elloumi,1273985,Centre-Forward,18,Vancouver Whitecaps FC,4,-,800000
+Türkiye,3381,Uğurcan Çakır,292199,Goalkeeper,30,Galatasaray,40,-,15000000
+Türkiye,3381,Altay Bayındır,336077,Goalkeeper,28,Manchester United,12,-,5000000
+Türkiye,3381,Mert Günok,51894,Goalkeeper,37,Fenerbahce,37,-,500000
+Türkiye,3381,Ozan Kabak,361260,Centre-Back,26,TSG 1899 Hoffenheim,30,2,15000000
+Türkiye,3381,Merih Demiral,340879,Centre-Back,28,Al-Ahli SFC,64,6,12000000
+Türkiye,3381,Abdülkerim Bardakcı,199316,Centre-Back,31,Galatasaray,28,2,6500000
+Türkiye,3381,Çağlar Söyüncü,320141,Centre-Back,30,Fenerbahce,60,2,3500000
+Türkiye,3381,Samet Akaydin,295024,Centre-Back,32,Caykur Rizespor,19,1,1200000
+Türkiye,3381,Ferdi Kadıoğlu,369316,Left-Back,26,Brighton & Hove Albion,31,2,35000000
+Türkiye,3381,Eren Elmalı,616894,Left-Back,25,Galatasaray,23,-,5000000
+Türkiye,3381,Zeki Çelik,251075,Right-Back,29,AS Roma,62,3,14000000
+Türkiye,3381,Mert Müldür,353922,Right-Back,27,Fenerbahce,46,3,7000000
+Türkiye,3381,Hakan Çalhanoğlu,126414,Defensive Midfield,32,Inter Milan,107,22,16000000
+Türkiye,3381,İsmail Yüksek,613725,Defensive Midfield,27,Fenerbahce,33,1,15000000
+Türkiye,3381,Salih Özcan,244940,Defensive Midfield,28,Borussia Dortmund,31,1,3500000
+Türkiye,3381,Kaan Ayhan,119031,Defensive Midfield,31,Galatasaray,73,5,1500000
+Türkiye,3381,Orkun Kökçü,454567,Central Midfield,25,Besiktas JK,51,4,25000000
+Türkiye,3381,Arda Güler,861410,Attacking Midfield,21,Real Madrid,31,6,90000000
+Türkiye,3381,Can Uzun,816585,Attacking Midfield,20,Eintracht Frankfurt,6,1,45000000
+Türkiye,3381,Kenan Yıldız,845654,Left Winger,21,Juventus FC,29,5,75000000
+Türkiye,3381,Barış Alper Yılmaz,541537,Left Winger,26,Galatasaray,36,4,30000000
+Türkiye,3381,Kerem Aktürkoğlu,382528,Left Winger,27,Fenerbahce,53,15,20000000
+Türkiye,3381,Yunus Akgün,396908,Right Winger,25,Galatasaray,20,4,18000000
+Türkiye,3381,Oğuz Aydın,563749,Right Winger,25,Fenerbahce,11,-,7000000
+Türkiye,3381,İrfan Can Kahveci,216603,Right Winger,30,Kasimpasa,47,6,3000000
+Türkiye,3381,Deniz Gül,1063292,Centre-Forward,21,FC Porto,9,2,5000000
+USA,3505,Matt Turner,425306,Goalkeeper,31,New England Revolution,54,-,2500000
+USA,3505,Chris Brady,765504,Goalkeeper,22,Chicago Fire FC,1,-,2500000
+USA,3505,Matt Freese,500309,Goalkeeper,27,New York City FC,16,-,2000000
+USA,3505,Chris Richards,578539,Centre-Back,26,Crystal Palace,37,3,28000000
+USA,3505,Mark McKenzie,429259,Centre-Back,27,FC Toulouse,29,-,7000000
+USA,3505,Auston Trusty,389253,Centre-Back,27,Celtic FC,8,-,6000000
+USA,3505,Miles Robinson,468022,Centre-Back,29,FC Cincinnati,40,3,3500000
+USA,3505,Tim Ream,145466,Centre-Back,38,Charlotte FC,83,1,150000
+USA,3505,Antonee Robinson,349701,Left-Back,28,Fulham FC,55,5,22000000
+USA,3505,Sergiño Dest,361104,Right-Back,25,PSV Eindhoven,40,3,18000000
+USA,3505,Joe Scally,504153,Right-Back,23,Borussia Mönchengladbach,26,-,7000000
+USA,3505,Alex Freeman,985806,Right-Back,21,Villarreal CF,18,2,3500000
+USA,3505,Tyler Adams,332705,Defensive Midfield,27,AFC Bournemouth,55,2,25000000
+USA,3505,Weston McKennie,332697,Central Midfield,27,Juventus FC,67,12,30000000
+USA,3505,Sebastian Berhalter,734761,Central Midfield,25,Vancouver Whitecaps FC,14,1,8000000
+USA,3505,Cristian Roldán,354792,Central Midfield,31,Seattle Sounders FC,47,-,3500000
+USA,3505,Timothy Weah,370846,Right Midfield,26,Olympique Marseille,52,7,20000000
+USA,3505,Malik Tillman,467437,Attacking Midfield,24,Bayer 04 Leverkusen,31,3,30000000
+USA,3505,Brenden Aaronson,393323,Attacking Midfield,25,Leeds United,58,9,22000000
+USA,3505,Giovanni Reyna,504215,Attacking Midfield,23,Borussia Mönchengladbach,39,10,4000000
+USA,3505,Max Arfsten,993063,Left Winger,25,Columbus Crew,20,1,5000000
+USA,3505,Christian Pulisic,315779,Right Winger,27,AC Milan,87,33,40000000
+USA,3505,Álex Zendejas,351505,Right Winger,28,CF América,14,2,10000000
+USA,3505,Folarin Balogun,503770,Centre-Forward,24,AS Monaco,28,11,40000000
+USA,3505,Ricardo Pepi,627207,Centre-Forward,23,PSV Eindhoven,38,13,30000000
+USA,3505,Haji Wright,315291,Centre-Forward,28,Coventry City,20,7,16000000
+Uruguay,3449,Santiago Mele,320739,Goalkeeper,28,CF Monterrey,8,-,2000000
+Uruguay,3449,Sergio Rochet,264014,Goalkeeper,33,Sport Club Internacional,35,-,1800000
+Uruguay,3449,Fernando Muslera,58088,Goalkeeper,40,Club Estudiantes de La Plata,135,-,700000
+Uruguay,3449,Ronald Araujo,480267,Centre-Back,27,FC Barcelona,27,1,20000000
+Uruguay,3449,Santiago Bueno,438001,Centre-Back,27,Wolverhampton Wanderers,8,-,10000000
+Uruguay,3449,José María Giménez,250845,Centre-Back,31,Atlético de Madrid,99,8,9000000
+Uruguay,3449,Sebastián Cáceres,532389,Centre-Back,26,CF América,24,-,4500000
+Uruguay,3449,Maxi Araújo,572675,Left-Back,26,Sporting CP,29,4,35000000
+Uruguay,3449,Mathías Olivera,376514,Left-Back,28,SSC Napoli,36,2,15000000
+Uruguay,3449,Joaquín Piquerez,496268,Left-Back,27,Sociedade Esportiva Palmeiras,19,-,12000000
+Uruguay,3449,Juan Manuel Sanabria,446106,Left-Back,26,Real Salt Lake City,6,1,4000000
+Uruguay,3449,Matías Viña,439072,Left-Back,28,CA River Plate,44,1,3500000
+Uruguay,3449,Guillermo Varela,188862,Right-Back,33,CR Flamengo,28,-,1000000
+Uruguay,3449,Manuel Ugarte,476701,Defensive Midfield,25,Manchester United,36,1,25000000
+Uruguay,3449,Rodrigo Bentancur,354362,Defensive Midfield,28,Tottenham Hotspur,74,3,20000000
+Uruguay,3449,Emiliano Martínez,707447,Defensive Midfield,26,Sociedade Esportiva Palmeiras,10,-,6500000
+Uruguay,3449,Federico Valverde,369081,Central Midfield,27,Real Madrid,74,9,90000000
+Uruguay,3449,Nicolás de la Cruz,397458,Central Midfield,29,CR Flamengo,35,5,8000000
+Uruguay,3449,Rodrigo Zalazar,606752,Attacking Midfield,26,SC Braga,7,2,30000000
+Uruguay,3449,Giorgian de Arrascaeta,248410,Attacking Midfield,32,CR Flamengo,59,13,14000000
+Uruguay,3449,Brian Rodríguez,465818,Left Winger,26,CF América,34,4,8000000
+Uruguay,3449,Agustín Canobbio,457533,Right Winger,27,Fluminense Football Club,15,1,8000000
+Uruguay,3449,Facundo Pellistri,676318,Right Winger,24,Panathinaikos,39,2,5000000
+Uruguay,3449,Darwin Núñez,546543,Centre-Forward,26,Al-Hilal SFC,39,13,20000000
+Uruguay,3449,Federico Viñas,578419,Centre-Forward,27,Real Oviedo,12,2,4000000
+Uruguay,3449,Rodrigo Aguirre,189410,Centre-Forward,31,Tigres UANL,11,3,2300000
+Uzbekistan,3563,Abduvokhid Nematov,527866,Goalkeeper,25,Nasaf Qarshi,14,-,1500000
+Uzbekistan,3563,Utkir Yusupov,311958,Goalkeeper,35,Navbahor Namangan,45,-,500000
+Uzbekistan,3563,Botirali Ergashev,312690,Goalkeeper,30,Neftchi Fergana,4,-,500000
+Uzbekistan,3563,Abdukodir Khusanov,763079,Centre-Back,22,Manchester City,27,-,50000000
+Uzbekistan,3563,Rustam Ashurmatov,288883,Centre-Back,29,Esteghlal FC,51,1,750000
+Uzbekistan,3563,Jakhongir Urozov,989069,Centre-Back,22,Dinamo Samarqand,4,1,600000
+Uzbekistan,3563,Avazbek Ulmasaliev,538764,Centre-Back,26,FC OKMK Olmaliq,-,-,500000
+Uzbekistan,3563,Umar Eshmurodov,493725,Centre-Back,33,Nasaf Qarshi,39,-,450000
+Uzbekistan,3563,Sherzod Nasrullaev,608537,Left-Back,27,Pakhtakor Tashkent,39,2,1200000
+Uzbekistan,3563,Farrukh Sayfiev,212499,Left-Back,35,Neftchi Fergana,68,1,225000
+Uzbekistan,3563,Khozhiakbar Alizhonov,492558,Right-Back,29,Pakhtakor Tashkent,52,3,1300000
+Uzbekistan,3563,Bekhruz Karimov,1106187,Right-Back,18,Surkhon Termiz,2,-,350000
+Uzbekistan,3563,Odildzhon Khamrobekov,288915,Defensive Midfield,30,Tractor FC,74,1,1000000
+Uzbekistan,3563,Abdulla Abdullaev,570272,Defensive Midfield,28,Dibba SCC,29,-,500000
+Uzbekistan,3563,Aziz Ganiev,431911,Central Midfield,28,Al-Bataeh CSC,23,-,2000000
+Uzbekistan,3563,Otabek Shukurov,294525,Central Midfield,29,FC Baniyas,89,9,1500000
+Uzbekistan,3563,Akmal Mozgovoy,562022,Central Midfield,27,Pakhtakor Tashkent,25,1,1400000
+Uzbekistan,3563,Sherzod Esanov,989068,Central Midfield,23,FC Buxoro,1,-,450000
+Uzbekistan,3563,Jamshid Iskanderov,260857,Attacking Midfield,32,Neftchi Fergana,45,4,1000000
+Uzbekistan,3563,Oston Urunov,492556,Left Winger,25,Persepolis FC,43,10,2000000
+Uzbekistan,3563,Jaloliddin Masharipov,274536,Left Winger,32,Esteghlal FC,74,13,1000000
+Uzbekistan,3563,Abbosbek Fayzullaev,754037,Right Winger,22,Basaksehir FK,32,8,7000000
+Uzbekistan,3563,Dostonbek Khamdamov,294502,Right Winger,29,Pakhtakor Tashkent,37,5,900000
+Uzbekistan,3563,Eldor Shomurodov,358166,Centre-Forward,30,Basaksehir FK,92,44,7000000
+Uzbekistan,3563,Igor Sergeev,185372,Centre-Forward,33,Persepolis FC,84,25,1200000
+Uzbekistan,3563,Azizbek Amanov,517918,Centre-Forward,28,Dinamo Samarqand,12,2,500000

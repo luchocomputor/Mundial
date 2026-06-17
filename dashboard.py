@@ -25,17 +25,19 @@ st.set_page_config(page_title="CDM 2026", page_icon="⚽", layout="wide")
 
 st.markdown("""<style>
 :root {
-  --bg:     #060912;
-  --s1:     #0A0F1C;
-  --s2:     #0F1624;
-  --s3:     #16203A;
-  --bd:     rgba(80,105,200,.12);
-  --bd2:    rgba(80,105,200,.26);
-  --t:      #E2E8F8;
-  --m1:     rgba(226,232,248,.58);
-  --m2:     rgba(226,232,248,.32);
-  --m3:     rgba(226,232,248,.16);
-  --indigo: #818CF8;
+  --bg:     #0A0B0D;   /* graphite, neutre — zéro teinte bleue */
+  --s1:     #0E0F12;   /* sidebar */
+  --s2:     #131517;   /* carte */
+  --s3:     #1A1D21;   /* surface élevée */
+  --bd:     rgba(255,255,255,.07);
+  --bd2:    rgba(255,255,255,.15);
+  --t:      #ECEDEE;
+  --m1:     rgba(236,237,238,.60);
+  --m2:     rgba(236,237,238,.38);
+  --m3:     rgba(236,237,238,.20);
+  --accent: #34D399;   /* emerald — marque + signal value/positif */
+  --accent2:#6E8BB7;   /* steel discret — secondaire (extérieur) */
+  --indigo: #34D399;   /* alias historique → emerald */
   --green:  #34D399;
   --red:    #F87171;
   --amber:  #FBBF24;
@@ -74,7 +76,7 @@ html, body {
 }
 .stButton > button:hover {
   background: rgba(255,255,255,.1) !important;
-  border-color: rgba(100,130,240,.4) !important;
+  border-color: rgba(52,211,153,.4) !important;
 }
 
 /* ── KPI grid ── */
@@ -85,7 +87,7 @@ html, body {
   margin-bottom: 30px;
 }
 .kpi {
-  background: var(--s2);
+  background: linear-gradient(180deg, rgba(255,255,255,.022), rgba(255,255,255,0) 42%), var(--s2);
   border: 1px solid var(--bd);
   border-radius: var(--r);
   padding: 18px 20px 16px;
@@ -100,9 +102,9 @@ html, body {
 }
 .kpi-g::after { background: linear-gradient(90deg, var(--green)  70%, transparent); }
 .kpi-r::after { background: linear-gradient(90deg, var(--red)    70%, transparent); }
-.kpi-b::after { background: linear-gradient(90deg, var(--indigo) 70%, transparent); }
+.kpi-b::after { background: linear-gradient(90deg, var(--accent2) 70%, transparent); }
 .kpi-n::after { background: linear-gradient(90deg, var(--m3)     70%, transparent); }
-.kpi-lbl { font-size:.58rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(226,232,248,.5); margin-bottom:8px; }
+.kpi-lbl { font-size:.58rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:rgba(236,237,238,.5); margin-bottom:8px; }
 .kpi-val { font-size:1.72rem; font-weight:800; color:var(--t); line-height:1.05; letter-spacing:-.01em; }
 .kpi-sub { font-size:.73rem; font-weight:500; margin-top:6px; }
 .g { color:var(--green); } .r { color:var(--red); } .n { color:var(--m2); }
@@ -122,13 +124,13 @@ html, body {
 .sec-past  span { color:var(--m3); }
 /* Today: bright */
 .sec-today span { color:var(--t); letter-spacing:.12em; }
-.sec-today::before, .sec-today::after { background: rgba(129,140,248,.25); }
+.sec-today::before, .sec-today::after { background: rgba(52,211,153,.25); }
 /* Future: mid */
 .sec-future span { color:var(--m2); }
 
 /* ── Match card base ── */
 .mc {
-  background: var(--s2);
+  background: linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,0) 30%), var(--s2);
   border: 1px solid var(--bd);
   border-radius: var(--r);
   margin-bottom: 8px;
@@ -159,12 +161,12 @@ html, body {
 
 /* Upcoming → indigo accent */
 .mc.mc-ns {
-  border-left: 3px solid rgba(129,140,248,.45);
-  border-color: rgba(129,140,248,.18);
+  border-left: 3px solid rgba(52,211,153,.45);
+  border-color: rgba(52,211,153,.18);
 }
 .mc.mc-ns .mc-strip {
-  background: rgba(129,140,248,.04);
-  border-bottom-color: rgba(129,140,248,.14);
+  background: rgba(52,211,153,.04);
+  border-bottom-color: rgba(52,211,153,.14);
 }
 
 /* Card strip */
@@ -186,7 +188,7 @@ html, body {
 }
 .sb-ft   { background:rgba(255,255,255,.06); color:var(--m2); }
 .sb-live { background:rgba(251,146,60,.16); color:#FCA96E; border:1px solid rgba(251,146,60,.25); }
-.sb-ns   { background:rgba(129,140,248,.14); color:#A5B4FC; }
+.sb-ns   { background:rgba(52,211,153,.14); color:#6EE7B7; }
 .ldot {
   display:inline-block; width:5px; height:5px; border-radius:50%;
   background:#FCA96E; margin-right:4px; vertical-align:middle;
@@ -217,27 +219,27 @@ html, body {
   transition: opacity .15s;
 }
 .mc-sc-n.loser  { opacity:.35; background:rgba(255,255,255,.03); border-color:rgba(255,255,255,.06); }
-.mc-sc-sep { font-size:.88rem; color:rgba(226,232,248,.18); font-weight:700; padding:0 1px; }
+.mc-sc-sep { font-size:.88rem; color:rgba(236,237,238,.18); font-weight:700; padding:0 1px; }
 .mc-sc-lbl { font-size:.57rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-top:6px; }
 .mc-ft   .mc-sc-lbl { color:var(--m3); }
 .mc-live .mc-sc-lbl { color:#FCA96E; }
 /* Upcoming: VS + date */
-.mc-vs    { font-size:1.05rem; font-weight:800; color:rgba(226,232,248,.18); letter-spacing:.1em; }
+.mc-vs    { font-size:1.05rem; font-weight:800; color:rgba(236,237,238,.18); letter-spacing:.1em; }
 .mc-vs-dt { font-size:.63rem; color:var(--m3); margin-top:5px; letter-spacing:.04em; }
 
 /* Proba bar */
 .mc-pb { display:flex; height:3px; margin:8px 18px 0; border-radius:2px; overflow:hidden; gap:1px; }
-.mc-pb-h { background:var(--indigo); }
+.mc-pb-h { background:var(--accent); }
 .mc-pb-d { background:rgba(255,255,255,.1); }
-.mc-pb-a { background:var(--amber); }
+.mc-pb-a { background:var(--accent2); }
 .mc-pct  {
   display:flex; justify-content:space-between;
   padding:4px 18px 8px;
   font-size:.65rem; font-weight:600; color:var(--m2);
 }
 .pdot { display:inline-block; width:6px; height:6px; border-radius:50%; vertical-align:middle; }
-.pdot-h { background:var(--indigo); margin-right:5px; }
-.pdot-a { background:var(--amber);  margin-left:5px; }
+.pdot-h { background:var(--accent);  margin-right:5px; }
+.pdot-a { background:var(--accent2); margin-left:5px; }
 
 /* Bet pills */
 .mc-bets { display:flex; flex-wrap:wrap; gap:5px; padding:2px 16px 13px; }
@@ -249,7 +251,7 @@ html, body {
 .bt-w   { background:rgba(52,211,153,.07);  border-color:rgba(52,211,153,.22);  color:var(--green); }
 .bt-l   { background:rgba(248,113,113,.07); border-color:rgba(248,113,113,.22); color:var(--red); }
 .bt-p   { color:var(--m1); }
-.bt-adv { background:rgba(129,140,248,.07); border-color:rgba(129,140,248,.22); color:#A5B4FC; }
+.bt-adv { background:rgba(52,211,153,.07); border-color:rgba(52,211,153,.22); color:#6EE7B7; }
 
 /* ── Expander ── */
 [data-testid="stExpander"] {
@@ -477,7 +479,7 @@ def fetch_live_scores() -> dict:
 # ── Scan + prédictions ─────────────────────────────────────────────────────────
 @st.cache_data(ttl=300, show_spinner="Analyse en cours…")
 def scan():
-    from models.ratings import EloRating
+    from pipeline.model_loader import load_production_model
     from pipeline.value_detector import scan_value_bets
     from pipeline.config import load_config
     with open(ODDS_PATH) as f: odds = json.load(f)
@@ -485,14 +487,14 @@ def scan():
     sharp = json.loads(sharp_path.read_text()) if sharp_path.exists() else None
     wc = pd.read_parquet(ROOT/"data/raw/wc_all.parquet")
     wc26 = wc[wc["date"].dt.year==2026].copy()
-    ok = lambda n: bool(re.match(r"^[A-Za-zÀ-ÿ\s\-\'\\.]+$", n)) and len(n)>2
+    ok = lambda n: bool(re.match(r"^[A-Za-zÀ-ÿ\s\-\'\\.&]+$", n)) and len(n)>2
     wc26 = wc26[wc26.home_team.apply(ok) & wc26.away_team.apply(ok)].sort_values("date")
     wc26["fid"] = wc26.fixture_id.apply(lambda x: str(int(x)) if pd.notna(x) else None)
     matches = [{"home_team":r.home_team,"away_team":r.away_team,"date":mtl_date(r.date),
                 "venue":"","is_friendly":False,"is_neutral":True,"fixture_id":r.fid}
                for _,r in wc26.iterrows()]
     kickoff = {r.fid: mtl_time(r.date) for _, r in wc26.iterrows() if r.fid}
-    model = EloRating.load()
+    model = load_production_model()
     bets, _ = scan_value_bets(matches, model, odds, load_config(), bankroll=BANKROLL_INIT,
                               calibrator=None, sharp_odds=sharp)
     for b in bets:
@@ -501,19 +503,15 @@ def scan():
 
 @st.cache_data(ttl=300, show_spinner=False)
 def predictions():
-    from models.ratings import EloRating
+    from pipeline.model_loader import load_production_model
     from models.base import MatchContext
-    with open(ODDS_PATH) as f: odds = json.load(f)
-    odds_keys = set(odds.keys())
     wc = pd.read_parquet(ROOT/"data/raw/wc_all.parquet")
     wc26 = wc[wc["date"].dt.year==2026].copy()
-    ok = lambda n: bool(re.match(r"^[A-Za-zÀ-ÿ\s\-\'\\.]+$", n)) and len(n)>2
+    ok = lambda n: bool(re.match(r"^[A-Za-zÀ-ÿ\s\-\'\\.&]+$", n)) and len(n)>2
     wc26 = wc26[wc26.home_team.apply(ok) & wc26.away_team.apply(ok)].sort_values("date")
-    model = EloRating.load()
+    model = load_production_model()
     out = {}
     for _, r in wc26.iterrows():
-        fid = str(int(r.fixture_id)) if pd.notna(r.fixture_id) else None
-        if fid not in odds_keys: continue
         p = model.predict_outcomes(r.home_team, r.away_team, MatchContext(is_neutral=True))
         out[(r.home_team, r.away_team)] = dict(
             home_win=p.home_win, draw=p.draw, away_win=p.away_win,
@@ -528,8 +526,8 @@ def predictions():
 def render_match_card(home, away, match_date, score_info, advised_bets, log_df, bankroll, preds, min_edge, kickoff=""):
     fh, fa = flag(home), flag(away)
     placed = log_df[
-        (log_df.home_team==home) & (log_df.away_team==away) &
-        (log_df.date.astype(str).str[:10]==match_date)
+        log_df.home_team.apply(_norm).eq(_norm(home)) &
+        log_df.away_team.apply(_norm).eq(_norm(away))
     ] if not log_df.empty else pd.DataFrame()
 
     # Determine status
@@ -743,8 +741,8 @@ with st.sidebar:
 <div style="display:flex;align-items:center;gap:10px;margin-bottom:22px">
   <span style="font-size:1.5rem;line-height:1">⚽</span>
   <div>
-    <div style="font-size:.96rem;font-weight:800;color:#E2E8F8;letter-spacing:.005em">CDM 2026</div>
-    <div style="font-size:.64rem;color:rgba(226,232,248,.22);margin-top:1px">Value betting · Elo model</div>
+    <div style="font-size:.96rem;font-weight:800;color:#ECEDEE;letter-spacing:.005em">CDM 2026</div>
+    <div style="font-size:.64rem;color:rgba(236,237,238,.22);margin-top:1px">Value betting · Elo model</div>
   </div>
 </div>""", unsafe_allow_html=True)
 
@@ -752,7 +750,7 @@ with st.sidebar:
                     label_visibility="collapsed")
     st.divider()
 
-    st.markdown('<div style="font-size:.59rem;font-weight:700;color:rgba(226,232,248,.2);text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px">Paramètres</div>', unsafe_allow_html=True)
+    st.markdown('<div style="font-size:.59rem;font-weight:700;color:rgba(236,237,238,.2);text-transform:uppercase;letter-spacing:.13em;margin-bottom:8px">Paramètres</div>', unsafe_allow_html=True)
     bankroll = st.number_input("Bankroll (€)", value=BANKROLL_INIT, step=10.0)
     min_edge = st.slider("Edge min (%)", 0, 20, 5) / 100
 
@@ -768,14 +766,14 @@ with st.sidebar:
     dc_s  = "var(--green)" if br_s >= bankroll else "var(--red)"
     _fr   = odds_freshness()
     _fr_c = {"fresh": "var(--green)", "ok": "var(--amber)", "stale": "var(--red)"}.get(
-        _fr[0] if _fr else "", "rgba(226,232,248,.3)")
+        _fr[0] if _fr else "", "rgba(236,237,238,.3)")
     _fr_t = f"Cotes {_fr[1]}" if _fr else "Cotes absentes"
     st.markdown(f"""
 <div style="display:flex;justify-content:space-between;align-items:baseline">
-  <span style="font-size:.76rem;color:rgba(226,232,248,.3)">Bankroll</span>
+  <span style="font-size:.76rem;color:rgba(236,237,238,.3)">Bankroll</span>
   <span style="font-size:.94rem;font-weight:800;color:{dc_s}">{br_s:.0f}€</span>
 </div>
-<div style="font-size:.63rem;margin-top:6px"><span style="color:rgba(226,232,248,.3)">{TODAY} · </span><span style="color:{_fr_c}">{_fr_t}</span></div>
+<div style="font-size:.63rem;margin-top:6px"><span style="color:rgba(236,237,238,.3)">{TODAY} · </span><span style="color:{_fr_c}">{_fr_t}</span></div>
 """, unsafe_allow_html=True)
 
 
@@ -836,50 +834,57 @@ if page == "Tableau de bord":
   </div>
 </div>""", unsafe_allow_html=True)
 
-    # Construire la liste des matchs
-    all_match_days: dict[str, set] = defaultdict(set)
-    for b in all_bets:
-        d = b["date"]
-        if (date.today()-timedelta(4)).isoformat() <= d <= (date.today()+timedelta(5)).isoformat():
-            all_match_days[d].add((b["home_team"], b["away_team"]))
+    # ── Matchs : TOUS les fixtures CDM 2026, datés en heure Montréal ───────────
+    # Source autoritaire = predictions() : liste complète des matchs (parquet) avec
+    # proba Elo + date/heure MTL — indépendante des cotes/bets. Une seule entrée
+    # par affiche (clé = paire normalisée) → aucun doublon, aucun match manquant,
+    # tout regroupé/ordonné en heure de Montréal (un 22h MTL reste le dernier match
+    # de SA soirée même s'il est à 03h Paris / le lendemain en UTC).
+    match_reg: dict[tuple, dict] = {}
+    def _register(home, away, d, kickoff=""):
+        if not d:
+            return
+        key = (_norm(home), _norm(away))
+        e = match_reg.get(key)
+        if e is None:
+            match_reg[key] = {"home": home, "away": away, "date": d, "kickoff": kickoff or ""}
+        elif kickoff and not e["kickoff"]:
+            e["kickoff"] = kickoff
+
+    # 1) preds = liste complète, date/heure MTL fiables → fixe nom + jour affichés
+    for (h, a), pp in preds.items():
+        _register(h, a, pp.get("date", ""), pp.get("time", ""))
+    # 2) live = matchs joués/en cours (knockouts dès qu'ils ont de vraies équipes)
+    for (hn, an, d), info in live_scores.items():
+        _register(info["home_team"], info["away_team"], d, info.get("time", ""))
+    # 3) repli : bet loggé sur une affiche absente des sources ci-dessus
     if not log_df.empty:
         for _, row in log_df.iterrows():
-            d = str(row.date)[:10]
-            if (date.today()-timedelta(6)).isoformat() <= d <= (date.today()+timedelta(5)).isoformat():
-                all_match_days[d].add((str(row.home_team), str(row.away_team)))
-    for (hn, an, d), info in live_scores.items():
-        all_match_days[d].add((info["home_team"], info["away_team"]))
+            _register(str(row.home_team), str(row.away_team), str(row.date)[:10], "")
 
+    # Index value bets par clé normalisée
     bets_by_match: dict[tuple, list] = defaultdict(list)
     for b in all_bets:
-        bets_by_match[(b["home_team"], b["away_team"], b["date"])].append(b)
+        bets_by_match[(_norm(b["home_team"]), _norm(b["away_team"]))].append(b)
 
-    # Coup d'envoi (heure Montréal) par match — pour ordonner dans la journée
-    kickoff_map: dict[tuple, str] = {}
-    for b in all_bets:
-        if b.get("kickoff"):
-            kickoff_map[(b["home_team"], b["away_team"], b["date"])] = b["kickoff"]
-    for (h, a), pp in preds.items():
-        if pp.get("time"):
-            kickoff_map.setdefault((h, a, pp["date"]), pp["time"])
-    for (hn, an, d), info in live_scores.items():
-        if info.get("time"):
-            kickoff_map.setdefault((info["home_team"], info["away_team"], d), info["time"])
-
-    all_days = sorted(all_match_days.keys())  # chronological
+    # Regroupement par jour
+    days_map: dict[str, list] = defaultdict(list)
+    for e in match_reg.values():
+        days_map[e["date"]].append(e)
+    all_days = sorted(days_map.keys())  # chronologique
 
     if not all_days:
         st.markdown("""
-<div style="text-align:center;padding:72px 0;color:rgba(226,232,248,.18)">
+<div style="text-align:center;padding:72px 0;color:rgba(236,237,238,.18)">
   <div style="font-size:2.4rem;margin-bottom:12px">⚽</div>
   <div style="font-size:.9rem;font-weight:600">Aucun match à afficher</div>
   <div style="font-size:.78rem;margin-top:6px">Rafraîchis pour charger les données</div>
 </div>""", unsafe_allow_html=True)
 
     for d in all_days:
-        matches = sorted(all_match_days.get(d, []),
-                         key=lambda ha: (kickoff_map.get((ha[0], ha[1], d), "99:99"), ha[0]))
-        if not matches: continue
+        # Tri chronologique intra-jour par coup d'envoi (heure Montréal)
+        entries = sorted(days_map[d], key=lambda e: (e["kickoff"] or "99:99", e["home"]))
+        if not entries: continue
 
         # Section header — color-coded by era
         try:
@@ -899,13 +904,14 @@ if page == "Tableau de bord":
         except Exception:
             _sec(d)
 
-        for home, away in matches:
+        for e in entries:
+            home, away = e["home"], e["away"]
             sk = (_norm(home), _norm(away), d)
             render_match_card(
                 home, away, d, live_scores.get(sk),
-                bets_by_match.get((home,away,d),[]),
+                bets_by_match.get((_norm(home), _norm(away)), []),
                 log_df, bankroll, preds, min_edge,
-                kickoff=kickoff_map.get((home, away, d), ""),
+                kickoff=e["kickoff"],
             )
 
 
@@ -929,7 +935,7 @@ elif page == "Mes bets":
                 h_col, score_col = st.columns([2, 3])
                 h_col.markdown(
                     f"**{flag(home)} {home}** vs **{away} {flag(away)}**  \n"
-                    f"<span style='color:rgba(226,232,248,.28);font-size:.76rem'>{match_date}</span>",
+                    f"<span style='color:rgba(236,237,238,.28);font-size:.76rem'>{match_date}</span>",
                     unsafe_allow_html=True)
                 auto_mkts = grp[grp.market.isin(["1X2","1x2","btts","over_2.5","over_1.5","over_3.5"])]
                 if not auto_mkts.empty:
@@ -937,7 +943,7 @@ elif page == "Mes bets":
                         sc1, sc2, sc3, sc4 = st.columns([1,1,1,1])
                         sh = sc1.number_input("Dom.", min_value=0, max_value=20, value=0,
                                               key=f"sh_{home}_{away}_{match_date}")
-                        sc2.markdown("<br><center style='color:rgba(226,232,248,.2)'>–</center>",
+                        sc2.markdown("<br><center style='color:rgba(236,237,238,.2)'>–</center>",
                                      unsafe_allow_html=True)
                         sa = sc3.number_input("Ext.", min_value=0, max_value=20, value=0,
                                               key=f"sa_{home}_{away}_{match_date}")
@@ -954,7 +960,7 @@ elif page == "Mes bets":
                                     changed = True
                             if changed:
                                 save_log(log_df); st.rerun()
-                st.markdown("<hr style='border:none;border-top:1px solid rgba(80,105,200,.1);margin:8px 0'>",
+                st.markdown("<hr style='border:none;border-top:1px solid rgba(255,255,255,.06);margin:8px 0'>",
                             unsafe_allow_html=True)
                 for i, row in grp.iterrows():
                     mkt = fmt_mkt(str(row.market), str(row.side), home, away)
@@ -1011,7 +1017,7 @@ elif page == "Mes bets":
         fig = go.Figure()
         fig.add_trace(go.Scatter(
             x=list(range(len(cum))), y=cum.values, mode="lines+markers",
-            line=dict(color="#818CF8", width=2),
+            line=dict(color="#34D399", width=2),
             marker=dict(size=9, color=["#34D399" if r=="W" else "#F87171" for r in rs.result],
                         line=dict(width=0)),
             hovertemplate="Bet #%{x}<br>Bankroll : %{y:.2f}€<extra></extra>",
@@ -1020,8 +1026,8 @@ elif page == "Mes bets":
         fig.update_layout(
             paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
             height=210, margin=dict(l=0,r=0,t=8,b=0), showlegend=False,
-            xaxis=dict(color="rgba(226,232,248,.2)", gridcolor="rgba(255,255,255,.04)", title=""),
-            yaxis=dict(color="rgba(226,232,248,.2)", gridcolor="rgba(255,255,255,.04)", title=""),
+            xaxis=dict(color="rgba(236,237,238,.2)", gridcolor="rgba(255,255,255,.04)", title=""),
+            yaxis=dict(color="rgba(236,237,238,.2)", gridcolor="rgba(255,255,255,.04)", title=""),
         )
         st.plotly_chart(fig, use_container_width=True)
 

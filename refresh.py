@@ -40,7 +40,7 @@ def refresh_odds():
     from pipeline.placeholder import filter_real_teams
 
     wc = pd.read_parquet(path)
-    wc2026 = wc[(wc["date"].dt.year == 2026) & (wc["status"] == "upcoming")]
+    wc2026 = wc[(wc["date"].dt.year == 2026) & (wc["status"].isin(["upcoming", "notstarted"]))]
     real = filter_real_teams(wc2026)
 
     existing_path = ROOT / "data" / "raw" / "odds_wc2026.json"
@@ -147,8 +147,17 @@ def main():
         build_master_dataset()
 
     if args.train:
+        # Pipeline gated : Dixon-Coles, ensemble, rapport de gates sur l'historique.
         from scripts.train_pipeline import run_train_pipeline
         run_train_pipeline()
+        # Elo + calibrateur de PROD : source enrichie (internationaux récents +
+        # CDM 2026 en cours via scores_cache). En dernier → c'est le modèle que
+        # charge le value detector ; il intègre les résultats du tournoi au lieu
+        # d'être écrasé par la version ≤2025 du pipeline gated.
+        from models.train_elo import run as train_elo
+        from models.train_calibrator import run as train_calibrator
+        train_elo()
+        train_calibrator()
 
     refresh_odds()
     if not args.odds_only:
