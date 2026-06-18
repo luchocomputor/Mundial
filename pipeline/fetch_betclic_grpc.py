@@ -28,6 +28,36 @@ PATH = "/web/offering.access.api/offering.access.api.MatchService/GetMatchWithNo
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
       "(KHTML, like Gecko) Version/26.3.1 Safari/605.1.15")
 
+# Noms d'équipes Betclic (français) → forme canonique du projet (pipeline.teams).
+FR_TEAMS = {
+    "france": "France", "espagne": "Spain", "angleterre": "England",
+    "allemagne": "Germany", "portugal": "Portugal", "pays-bas": "Netherlands",
+    "belgique": "Belgium", "croatie": "Croatia", "autriche": "Austria",
+    "suisse": "Switzerland", "danemark": "Denmark", "pologne": "Poland",
+    "serbie": "Serbia", "turquie": "Turkey", "bosnie-herzégovine": "Bosnia & Herzegovina",
+    "suède": "Sweden", "tchéquie": "Czechia", "norvège": "Norway",
+    "argentine": "Argentina", "brésil": "Brazil", "colombie": "Colombia",
+    "uruguay": "Uruguay", "équateur": "Ecuador", "paraguay": "Paraguay",
+    "japon": "Japan", "corée du sud": "South Korea", "australie": "Australia",
+    "iran": "Iran", "arabie saoudite": "Saudi Arabia", "qatar": "Qatar",
+    "jordanie": "Jordan", "ouzbékistan": "Uzbekistan", "irak": "Iraq",
+    "maroc": "Morocco", "sénégal": "Senegal", "égypte": "Egypt", "algérie": "Algeria",
+    "ghana": "Ghana", "côte d'ivoire": "Côte d'Ivoire", "tunisie": "Tunisia",
+    "afrique du sud": "South Africa", "cap-vert": "Cabo Verde", "rd congo": "DR Congo",
+    "états-unis": "USA", "mexique": "Mexico", "canada": "Canada", "panama": "Panama",
+    "haïti": "Haiti", "curaçao": "Curaçao", "nouvelle-zélande": "New Zealand",
+}
+
+# Noms de marchés Betclic (français) → clé bot.
+MK_1X2 = "Résultat du match (tps rég.)"
+MK_BTTS = "Les 2 équipes marquent"
+MK_OU = "Nombre total de buts"
+MK_SCORER = "Buteur (tps rég.)"
+
+
+def fr_team(name: str) -> str:
+    return FR_TEAMS.get((name or "").strip().lower(), name)
+
 
 def _headers(user_id: str) -> dict:
     return {
@@ -156,6 +186,41 @@ class BetclicMarkets:
                         out.setdefault(line, {})[side] = o
         return out
 
+    def _by_name(self, name: str):
+        for m in self.markets:
+            if (m.get("name") or "") == name:
+                return m
+        return None
+
+    def extract(self) -> dict:
+        """Cotes structurées + équipes CANONIQUES, par nom de marché Betclic.
+        → {teams, teams_fr, "1X2", "btts", "over_X.5"…, "scorers": {joueur: cote}}."""
+        out: dict = {}
+        m1 = self._by_name(MK_1X2)
+        if m1:
+            labs = [l for l, _ in m1["outcomes"]]          # ordre Betclic : [home, Nul, away]
+            od = dict(m1["outcomes"])
+            home_fr, away_fr = labs[0], labs[-1]
+            out["teams_fr"] = (home_fr, away_fr)
+            out["teams"] = (fr_team(home_fr), fr_team(away_fr))
+            out["1X2"] = {"home": od[home_fr], "draw": od.get("Nul"), "away": od[away_fr]}
+        mb = self._by_name(MK_BTTS)
+        if mb:
+            od = dict(mb["outcomes"])
+            if "Oui" in od and "Non" in od:
+                out["btts"] = {"yes": od["Oui"], "no": od["Non"]}
+        mou = self._by_name(MK_OU)
+        if mou:
+            for l, o in mou["outcomes"]:
+                mo = re.match(r"([+-]) de (\d+),5", l)
+                if mo:
+                    out.setdefault(f"over_{mo.group(2)}.5", {})["over" if mo.group(1) == "+" else "under"] = o
+        ms = self._by_name(MK_SCORER)
+        if ms:
+            out["scorers"] = {l: o for l, o in ms["outcomes"]
+                              if " " in l and not any(c.isdigit() for c in l) and l != "Nul"}
+        return out
+
 
 def parse_markets(snapshot: bytes) -> BetclicMarkets:
     res = BetclicMarkets()
@@ -201,6 +266,12 @@ def fetch_match_snapshot(match_id: int, user_id: str, timeout: float = 30) -> by
 
 def fetch_match_markets(match_id: int, user_id: str) -> BetclicMarkets:
     return parse_markets(fetch_match_snapshot(match_id, user_id))
+
+
+def match_odds(match_id: int, user_id: str) -> dict:
+    """Cotes structurées d'un match (équipes canoniques + 1X2/BTTS/O-U/buteurs).
+    Vide si le match a commencé (snapshot live = pas de marchés pré-match)."""
+    return fetch_match_markets(match_id, user_id).extract()
 
 
 if __name__ == "__main__":
