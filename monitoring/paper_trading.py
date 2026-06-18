@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pandas as pd
 
-from evaluation.clv import bootstrap_clv_significance, clv
+from evaluation.clv import bootstrap_clv_significance, clv, clv_novig
 from pipeline.value_detector import BETS_LOG, log_bets
 
 ROOT = Path(__file__).parent.parent
@@ -162,9 +162,17 @@ def fetch_and_update_clv(fixture_ids: list[int] | None = None) -> int:
     if pending.empty:
         return 0
 
-    def _close(entry, book, market, side):
-        o = ((entry.get(book) or {}).get(market) or {}).get(side)
-        return float(o) if o and float(o) > 1.0 else None
+    def _novig(entry, book, market, side):
+        """(proba no-vig du side, cote brute) en de-vigant le marché complet de
+        la clôture — sinon la marge du book pollue le CLV (surtout sur outsiders)."""
+        m = (entry.get(book) or {}).get(market)
+        if not m:
+            return None, None
+        inv = {k: 1.0 / v for k, v in m.items() if v and v > 1.0}
+        s = sum(inv.values())
+        if not s or side not in inv:
+            return None, None
+        return inv[side] / s, m.get(side)
 
     updated = 0
     for idx in pending.index:
@@ -178,16 +186,16 @@ def fetch_and_update_clv(fixture_ids: list[int] | None = None) -> int:
         taken = df.loc[idx, "odds_taken"]
         taken = float(taken) if pd.notna(taken) and str(taken).strip() else float(df.loc[idx, "cote"])
 
-        pinn = _close(entry, "pinnacle", market, side)  # CLV d'edge (sharp)
-        betc = _close(entry, "betclic", market, side)   # CLV de ligne (book de mise)
-        if pinn is None and betc is None:
+        pnv, praw = _novig(entry, "pinnacle", market, side)  # edge vs clôture sharp FAIR
+        bnv, braw = _novig(entry, "betclic", market, side)   # vs clôture book de mise FAIR
+        if pnv is None and bnv is None:
             continue
-        if pinn is not None:
-            df.loc[idx, "odds_close"] = pinn
-            df.loc[idx, "clv"] = clv(taken, pinn)
-        if betc is not None:
-            df.loc[idx, "betclic_close"] = betc
-            df.loc[idx, "clv_betclic"] = clv(taken, betc)
+        if pnv is not None:
+            df.loc[idx, "odds_close"] = praw
+            df.loc[idx, "clv"] = clv_novig(taken, pnv)
+        if bnv is not None:
+            df.loc[idx, "betclic_close"] = braw
+            df.loc[idx, "clv_betclic"] = clv_novig(taken, bnv)
         updated += 1
 
     if updated:
