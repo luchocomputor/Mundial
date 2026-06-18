@@ -164,6 +164,12 @@ def main():
         refresh_predictions()
         from scan_now import scan
         bets = scan(paper=True)
+        # Auto-résolution riche (score + buteurs) des paris dont le match est joué.
+        from pipeline.resolve_scores import run as resolve_scores
+        rr = resolve_scores(dry_run=False)
+        if rr["resolved"]:
+            print(f"  Résolus: {rr['resolved']} paris auto-résolus")
+
         from monitoring.paper_trading import fetch_and_update_clv, snapshot_closing_lines
         n_snap = snapshot_closing_lines()  # fige les lignes sharp des matchs à venir
         n_clv = fetch_and_update_clv()

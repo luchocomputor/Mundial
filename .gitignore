@@ -37,3 +37,4 @@ models/artifacts/
 # Jupyter checkpoints
 .ipynb_checkpoints/
 data/*.bak
+data/match_facts.json
