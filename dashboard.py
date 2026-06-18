@@ -393,6 +393,13 @@ def cur_br(log_df, base):
     if log_df.empty: return base
     return base + pd.to_numeric(log_df.profit_eur, errors="coerce").fillna(0).sum()
 
+def is_paper_mask(df: pd.DataFrame) -> pd.Series:
+    """True = pari paper du MODÈLE (auto-loggé) ; False = pari réel placé par Louis.
+    Discriminé par la colonne paper_trade (modèle=True, manuel/réel=vide/False)."""
+    if df.empty or "paper_trade" not in df.columns:
+        return pd.Series(False, index=df.index)
+    return df["paper_trade"].astype(str).str.strip().isin(["True", "true", "1"])
+
 def odds_freshness():
     """Renvoie (severity, label_court, label_long) depuis le mtime du fichier de
     cotes — None si absent. fresh <1h · ok <12h · stale au-delà."""
@@ -810,6 +817,7 @@ with st.sidebar:
 
     st.divider()
     _log  = load_log()
+    _log  = _log[~is_paper_mask(_log)] if not _log.empty else _log  # vraie bankroll = mes paris
     br_s  = cur_br(_log, bankroll)
     dc_s  = "var(--green)" if br_s >= bankroll else "var(--red)"
     _fr   = odds_freshness()
@@ -831,8 +839,13 @@ with st.sidebar:
 if page == "Tableau de bord":
     all_bets    = scan()
     preds       = predictions()
-    log_df      = load_log()
+    full_log    = load_log()
     live_scores = fetch_live_scores()
+
+    # Dissociation : MES paris (placés, vrai argent) vs paris du MODÈLE (paper).
+    paper_m = is_paper_mask(full_log)
+    log_df  = full_log[~paper_m].copy()   # mes paris réels → KPI bankroll/ROI
+    paper_df = full_log[paper_m].copy()    # paris paper du modèle → suivi CLV séparé
 
     br    = cur_br(log_df, bankroll)
     delta = br - bankroll
@@ -858,6 +871,7 @@ if page == "Tableau de bord":
 
     kc = "kpi-g" if delta >= 0 else "kpi-r"
     rc = "kpi-g" if roi   >= 0 else "kpi-r"
+    st.markdown('<div class="sec"><span>Mes paris · vrai argent</span></div>', unsafe_allow_html=True)
     st.markdown(f"""
 <div class="kpi-grid">
   <div class="kpi {kc}">
@@ -882,8 +896,20 @@ if page == "Tableau de bord":
   </div>
 </div>""", unsafe_allow_html=True)
 
-    # ── Closing Line Value : le juge de l'edge (bat-on la clôture sharp ?) ──────
-    st.markdown('<div class="sec"><span>Closing Line Value · le juge de l\'edge</span></div>', unsafe_allow_html=True)
+    # ── Modèle · paper : ce que le bot AURAIT misé (non placé) — CLV = le juge ──
+    pres = paper_df[paper_df.result.isin(["W", "L"])] if not paper_df.empty else pd.DataFrame()
+    p_nw = int((pres.result == "W").sum()) if not pres.empty else 0
+    p_nl = int((pres.result == "L").sum()) if not pres.empty else 0
+    p_stake = pd.to_numeric(pres.get("stake_eur"), errors="coerce").sum() if not pres.empty else 0
+    p_profit = pd.to_numeric(pres.get("profit_eur"), errors="coerce").sum() if not pres.empty else 0
+    p_roi = (p_profit / p_stake * 100) if p_stake else 0
+    p_pend = int(len(paper_df) - len(pres))
+    st.markdown(f'<div class="sec"><span>Modèle · paper — {len(paper_df)} suggestions, non placées</span></div>', unsafe_allow_html=True)
+    rcol = "g" if p_roi >= 0 else "r"
+    st.markdown(f"""<div class="clv-chips" style="margin:-4px 0 14px">
+  <span class="clv-chip"><b>Résultats paper</b> {p_nw}W {p_nl}L · <span class="{rcol}">ROI {p_roi:+.0f}%</span></span>
+  <span class="clv-chip"><b>{p_pend}</b><span class="clv-chip-n">en attente</span></span>
+</div>""", unsafe_allow_html=True)
     cv = clv_stats()
     if cv["mean"] is None:
         st.markdown(f"""
@@ -1012,14 +1038,16 @@ if page == "Tableau de bord":
 # MES BETS
 # ══════════════════════════════════════════════════════════════════════════════
 elif page == "Mes bets":
-    log_df = load_log()
+    log_df = load_log()  # complet : nécessaire pour save_log (ne pas écraser le paper)
+    # Vue MES paris réels (indices préservés → les resolve modifient log_df complet).
+    real_df = log_df[~is_paper_mask(log_df)] if not log_df.empty else log_df
 
     if "resolve_msg" in st.session_state:
         st.success(st.session_state.pop("resolve_msg"))
 
     pending = pd.DataFrame()
-    if not log_df.empty:
-        pending = log_df[log_df.result.apply(lambda x: str(x).strip()=="")].copy()
+    if not real_df.empty:
+        pending = real_df[real_df.result.apply(lambda x: str(x).strip()=="")].copy()
 
     if not pending.empty:
         _sec("Résultats à renseigner", "future")
@@ -1071,8 +1099,8 @@ elif page == "Mes bets":
                             log_df.at[i,"stake_eur"]  = mise_e
                             save_log(log_df); st.rerun()
 
-    resolved = log_df[log_df.result.isin(["W","L","V"])] if not log_df.empty else pd.DataFrame()
-    br = cur_br(log_df, bankroll); delta = br - bankroll
+    resolved = real_df[real_df.result.isin(["W","L","V"])] if not real_df.empty else pd.DataFrame()
+    br = cur_br(real_df, bankroll); delta = br - bankroll
 
     if not resolved.empty:
         profits = pd.to_numeric(resolved.profit_eur, errors="coerce").fillna(0)
@@ -1124,10 +1152,10 @@ elif page == "Mes bets":
         )
         st.plotly_chart(fig, use_container_width=True)
 
-    if not log_df.empty:
+    if not real_df.empty:
         _sec("Historique", "past")
         rows = []
-        for _, r in log_df.sort_values("detected_at", ascending=False).iterrows():
+        for _, r in real_df.sort_values("detected_at", ascending=False).iterrows():
             mkt = fmt_mkt(str(r.market), str(r.side), str(r.home_team), str(r.away_team))
             res = str(r.result or ""); pnl = float(r.profit_eur or 0)
             rows.append({
@@ -1140,14 +1168,14 @@ elif page == "Mes bets":
         st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True,
                      column_config={"Cote": st.column_config.NumberColumn(format="%.2f")})
 
-    if not log_df.empty:
+    if not real_df.empty:
         with st.expander("Modifier ou supprimer un bet"):
             def _lbl(i):
                 r = log_df.loc[i]
                 m = fmt_mkt(str(r.market), str(r.side), str(r.home_team), str(r.away_team))
                 res = str(r.result or "").strip() or "—"
                 return f"{str(r.date)[:10]} · {r.home_team} v {r.away_team} · {m} @{float(r.cote or 1):.2f} · {res}"
-            sel_i = st.selectbox("Bet", list(log_df.index), format_func=_lbl, key="ed_sel")
+            sel_i = st.selectbox("Bet", list(real_df.index), format_func=_lbl, key="ed_sel")
             row = log_df.loc[sel_i]
             c1, c2, c3 = st.columns(3)
             e_mise = c1.number_input("Mise €", min_value=0.0, value=float(row.stake_eur or 0), step=0.5, key="ed_mise")
@@ -1176,9 +1204,10 @@ elif page == "Mes bets":
 # ══════════════════════════════════════════════════════════════════════════════
 elif page == "Planning":
     all_bets = scan(); log_df = load_log()
+    real_log = log_df[~is_paper_mask(log_df)] if not log_df.empty else log_df  # placé = par moi
     placed_ids = set()
-    if not log_df.empty:
-        for _, r in log_df.iterrows():
+    if not real_log.empty:
+        for _, r in real_log.iterrows():
             placed_ids.add((str(r.date), str(r.home_team), str(r.away_team), str(r.market), str(r.side)))
 
     f1, f2 = st.columns(2)

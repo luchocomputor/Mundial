@@ -268,9 +268,17 @@ def log_bets(bets: list[dict]) -> None:
     if not bets:
         return
     BETS_LOG.parent.mkdir(parents=True, exist_ok=True)
-    write_header = not BETS_LOG.exists()
     extra = ["detected_at", "result", "profit_eur"]
-    fieldnames = list(dict.fromkeys(list(bets[0].keys()) + extra))
+    # Append aligné sur l'en-tête EXISTANT (sinon, si l'ordre des colonnes diffère
+    # — ex. log fusionné — les lignes se désalignent et le CSV est corrompu).
+    if BETS_LOG.exists():
+        with open(BETS_LOG, newline="") as f:
+            existing = next(csv.reader(f), None)
+        fieldnames = existing or list(dict.fromkeys(list(bets[0].keys()) + extra))
+        write_header = False
+    else:
+        fieldnames = list(dict.fromkeys(list(bets[0].keys()) + extra))
+        write_header = True
     with open(BETS_LOG, "a", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         if write_header:
