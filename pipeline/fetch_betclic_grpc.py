@@ -25,6 +25,7 @@ import requests
 
 HOST = "https://offering.begmedia.com"
 PATH = "/web/offering.access.api/offering.access.api.MatchService/GetMatchWithNotification"
+LIST_PATH = "/web/offering.access.api/offering.access.api.MatchService/GetMatchesByCompetitionWithNotifications"
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 "
       "(KHTML, like Gecko) Version/26.3.1 Safari/605.1.15")
 
@@ -44,8 +45,9 @@ FR_TEAMS = {
     "maroc": "Morocco", "sénégal": "Senegal", "égypte": "Egypt", "algérie": "Algeria",
     "ghana": "Ghana", "côte d'ivoire": "Côte d'Ivoire", "tunisie": "Tunisia",
     "afrique du sud": "South Africa", "cap-vert": "Cabo Verde", "rd congo": "DR Congo",
-    "états-unis": "USA", "mexique": "Mexico", "canada": "Canada", "panama": "Panama",
-    "haïti": "Haiti", "curaçao": "Curaçao", "nouvelle-zélande": "New Zealand",
+    "états-unis": "USA", "usa": "USA", "mexique": "Mexico", "canada": "Canada",
+    "panama": "Panama", "haïti": "Haiti", "curaçao": "Curaçao",
+    "nouvelle-zélande": "New Zealand", "écosse": "Scotland",
 }
 
 # Noms de marchés Betclic (français) → clé bot.
@@ -272,6 +274,55 @@ def match_odds(match_id: int, user_id: str) -> dict:
     """Cotes structurées d'un match (équipes canoniques + 1X2/BTTS/O-U/buteurs).
     Vide si le match a commencé (snapshot live = pas de marchés pré-match)."""
     return fetch_match_markets(match_id, user_id).extract()
+
+
+# ── Liste des matchs d'une compétition (endpoint anonyme) ───────────────────
+def fetch_match_list(timeout: float = 30) -> bytes:
+    """Snapshot de la liste des matchs CDM (1ère trame). Pas d'auth nécessaire."""
+    payload = bytes([0x08, 0x01, 0x1a, 0x02]) + b"fr"   # field1=1 (CDM), field3='fr'
+    frame = b"\x00" + len(payload).to_bytes(4, "big") + payload
+    h = _headers("")
+    h.pop("x-bg-user", None)
+    r = requests.post(HOST + LIST_PATH, data=frame, headers=h, stream=True, timeout=(10, timeout))
+    r.raise_for_status()
+    raw = b""
+    msglen = None
+    try:
+        for chunk in r.iter_content(8192):
+            raw += chunk
+            if msglen is None and len(raw) >= 5:
+                msglen = int.from_bytes(raw[1:5], "big")
+            if msglen is not None and len(raw) >= 5 + msglen:
+                break
+    finally:
+        r.close()
+    return raw[5:5 + (msglen or 0)]
+
+
+def parse_match_list(snapshot: bytes) -> list[dict]:
+    """→ [{match_id, label, date, teams_fr, teams}] pour chaque match de la liste."""
+    out = []
+    f1 = next((v for fn, wt, v in _parse(snapshot) if fn == 1 and wt == 2), None)
+    if f1 is None:
+        return out
+    for fn, wt, v in _parse(f1):
+        if fn != 3 or wt != 2:
+            continue
+        flds = _parse(v)
+        mid = next((x for f, w, x in flds if f == 1 and w == 0), None)
+        label = next((_as_str(x) for f, w, x in flds if f == 2 and w == 2 and _as_str(x)), "")
+        date = next((_as_str(x) for f, w, x in flds if f == 3 and w == 2 and _as_str(x)), "")
+        parts = [p.strip() for p in label.split(" - ")]
+        if mid is None or len(parts) != 2:
+            continue
+        out.append({"match_id": int(mid), "label": label, "date": date,
+                    "teams_fr": tuple(parts),
+                    "teams": (fr_team(parts[0]), fr_team(parts[1]))})
+    return out
+
+
+def list_matches() -> list[dict]:
+    return parse_match_list(fetch_match_list())
 
 
 if __name__ == "__main__":
