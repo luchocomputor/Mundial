@@ -38,3 +38,4 @@ models/artifacts/
 .ipynb_checkpoints/
 data/*.bak
 data/match_facts.json
+data/eye_closing.json

@@ -175,6 +175,13 @@ def main():
         n_clv = fetch_and_update_clv()
         if n_snap or n_clv:
             print(f"  Lignes de clôture: {n_snap} figées · CLV mis à jour pour {n_clv} paris")
+
+        # Mode Œil : cotes buteur des pronos à l'œil + leur CLV.
+        from pipeline.eye import fetch_eye_clv, snapshot_eye_closing
+        snapshot_eye_closing()
+        n_eye = fetch_eye_clv()
+        if n_eye:
+            print(f"  CLV œil: {n_eye} pronos")
         if args.telegram and bets:
             asyncio.run(_send_alerts(bets))
 

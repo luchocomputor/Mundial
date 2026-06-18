@@ -448,6 +448,15 @@ def refresh_all():
             msgs.append(f"📈 CLV: {n_clv} pari(s)")
     except Exception:
         pass
+    try:
+        # Mode Œil : fige les cotes buteur des pronos à l'œil + remplit leur CLV.
+        from pipeline.eye import fetch_eye_clv, snapshot_eye_closing
+        snapshot_eye_closing()
+        ne = fetch_eye_clv()
+        if ne:
+            msgs.append(f"🎯 CLV œil: {ne}")
+    except Exception:
+        pass
     return " · ".join(msgs)
 
 
@@ -575,6 +584,38 @@ def clv_stats() -> dict:
     except Exception:
         pass
     return out
+
+
+@st.cache_data(ttl=1800, show_spinner=False)
+def betclic_list() -> list:
+    """Matchs CDM Betclic (gRPC) — pour le mode Œil. [] si indispo."""
+    try:
+        from pipeline.fetch_betclic_grpc import list_matches
+        return list_matches()
+    except Exception:
+        return []
+
+
+def eye_model_prob(teams: tuple, player: str) -> float | None:
+    """Proba buteur du modèle pour ce joueur (comparaison œil vs modèle)."""
+    try:
+        from models.goalscorer import compute_player_probas, load_rosters, load_player_rates, _nlast
+        from pipeline.model_loader import load_production_model
+        from models.base import MatchContext
+        ros, rates = load_rosters(), load_player_rates()
+        m = load_production_model()
+        q = _nlast(player)
+        for team, neu in [(teams[0], True), (teams[1], True)]:
+            if team not in ros:
+                continue
+            tmu = m.predict_outcomes(teams[0], teams[1], MatchContext(is_neutral=True))
+            mu = tmu.expected_home if team == teams[0] else tmu.expected_away
+            for pp in compute_player_probas(team, mu, ros, rates):
+                if _nlast(pp.name) == q:
+                    return pp.p_anytime
+    except Exception:
+        pass
+    return None
 
 
 # ── Match card ─────────────────────────────────────────────────────────────────
@@ -801,7 +842,7 @@ with st.sidebar:
   </div>
 </div>""", unsafe_allow_html=True)
 
-    page = st.radio("Nav", ["Tableau de bord", "Mes bets", "Planning"],
+    page = st.radio("Nav", ["Tableau de bord", "Mes bets", "Planning", "Œil"],
                     label_visibility="collapsed")
     st.divider()
 
@@ -1248,4 +1289,81 @@ elif page == "Planning":
                     "Kelly": f"{k:.2f}€",
                 })
         st.dataframe(pd.DataFrame(rows), use_container_width=True, hide_index=True,
+                     column_config={"Cote": st.column_config.NumberColumn(format="%.2f")})
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# BUTEUR À L'ŒIL — ton flair vs le marché
+# ══════════════════════════════════════════════════════════════════════════════
+elif page == "Œil":
+    st.markdown('<div class="sec"><span>Buteur à l\'œil · ton flair vs le marché</span></div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="clv-wait"><span class="clv-wait-i">🎯</span>Tu repères une <b>mobylette</b> '
+        "(un joueur mobile/technique que le marché sous-cote) → logge-la ici. Le bot la <b>résout</b> "
+        "(a-t-il marqué ?) et le <b>CLV</b> dit si la cote a bougé vers ton pari. Sur 20-30 pronos, "
+        "on saura si <b>ton œil bat le marché</b> là où le modèle est aveugle.</div>",
+        unsafe_allow_html=True)
+
+    _matches = betclic_list()
+    _now = pd.Timestamp.now(tz="UTC")
+    _up = [m for m in _matches if pd.Timestamp(m["date"]) > _now]
+    if not _up:
+        st.warning("Liste Betclic indisponible (réseau). Réessaie dans un moment.")
+    else:
+        _labels = [f"{m['teams'][0]} - {m['teams'][1]} · {m['date'][:10]}" for m in _up]
+        with st.form("eye_form", clear_on_submit=True):
+            _sel = st.selectbox("Match", _labels)
+            _player = st.text_input("Joueur (ta mobylette)", placeholder="ex : Abdukodir Khusanov")
+            _c1, _c2 = st.columns(2)
+            _cote = _c1.number_input("Cote buteur (Betclic)", min_value=1.01, value=5.0, step=0.5)
+            _mise = _c2.number_input("Mise €", min_value=0.5, value=2.0, step=0.5)
+            if st.form_submit_button("🎯 Logger mon prono") and _player.strip():
+                _m = _up[_labels.index(_sel)]
+                _pm = eye_model_prob(_m["teams"], _player)
+                from pipeline.eye import log_eye_pick
+                _ok = log_eye_pick(_m["teams"][0], _m["teams"][1], _m["date"][:10],
+                                   _player.strip(), _cote, _mise, _m["match_id"], _pm)
+                _msg = f"Logué : {_player.strip()} buteur @ {_cote:.2f}"
+                if _pm is not None:
+                    _msg += f" · modèle {_pm*100:.0f}% vs implicite {100/_cote:.0f}%"
+                st.session_state["eye_msg"] = _msg if _ok else "Déjà logué."
+                st.rerun()
+    if "eye_msg" in st.session_state:
+        st.success(st.session_state.pop("eye_msg"))
+
+    _log = load_log()
+    _eye = _log[_log.get("model_version") == "oeil"] if "model_version" in _log.columns else _log.iloc[0:0]
+    if _eye.empty:
+        st.caption("Aucun prono à l'œil encore. Logge ta première mobylette ci-dessus.")
+    else:
+        _res = _eye[_eye.result.isin(["W", "L"])]
+        _nw, _nl = int((_res.result == "W").sum()), int((_res.result == "L").sum())
+        _stk = pd.to_numeric(_res.stake_eur, errors="coerce").sum()
+        _prf = pd.to_numeric(_res.profit_eur, errors="coerce").sum()
+        _roi = _prf / _stk * 100 if _stk else 0
+        _clvv = pd.to_numeric(_eye.get("clv", pd.Series()), errors="coerce").dropna()
+        _clvm = _clvv.mean() * 100 if len(_clvv) else None
+        _hit = _nw / (_nw + _nl) * 100 if (_nw + _nl) else 0
+        _rc = "kpi-g" if _roi >= 0 else "kpi-r"
+        _cc = "g" if (_clvm or 0) >= 0 else "r"
+        st.markdown(f"""<div class="kpi-grid">
+  <div class="kpi {_rc}"><div class="kpi-lbl">ROI œil</div><div class="kpi-val">{_roi:+.0f}%</div><div class="kpi-sub {'g' if _roi>=0 else 'r'}">{_prf:+.2f}€</div></div>
+  <div class="kpi kpi-b"><div class="kpi-lbl">Hit rate</div><div class="kpi-val">{_hit:.0f}%</div><div class="kpi-sub n">{_nw}W {_nl}L</div></div>
+  <div class="kpi kpi-n"><div class="kpi-lbl">CLV (mouvement cote)</div><div class="kpi-val {_cc if _clvm is not None else 'n'}">{(f'{_clvm:+.1f}%' if _clvm is not None else '—')}</div><div class="kpi-sub n">{len(_clvv)} clôturés</div></div>
+  <div class="kpi kpi-n"><div class="kpi-lbl">Pronos</div><div class="kpi-val">{len(_eye)}</div><div class="kpi-sub n">à l'œil</div></div>
+</div>""", unsafe_allow_html=True)
+        _rows = []
+        for _, r in _eye.sort_values("detected_at", ascending=False).iterrows():
+            _rr = str(r.result or "")
+            _pms = str(r.get("p_model", "")).strip()
+            _clvs = str(r.get("clv", "")).strip()
+            _rows.append({
+                "Date": str(r.date)[:10], "Match": f"{r.home_team} v {r.away_team}",
+                "Joueur": str(r.side), "Cote": float(r.cote or 0),
+                "Modèle": (f"{float(_pms)*100:.0f}%" if _pms not in ("", "nan") else "—"),
+                "Résultat": {"W": "✅", "L": "❌"}.get(_rr, "⏳"),
+                "CLV": (f"{float(_clvs)*100:+.0f}%" if _clvs not in ("", "nan") else "—"),
+                "P&L": (f"{float(r.profit_eur):+.2f}€" if _rr in ("W", "L") else "—"),
+            })
+        st.dataframe(pd.DataFrame(_rows), use_container_width=True, hide_index=True,
                      column_config={"Cote": st.column_config.NumberColumn(format="%.2f")})

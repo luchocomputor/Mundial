@@ -225,6 +225,10 @@ def paper_trading_report() -> dict:
         paper = df[df["paper_trade"] == True]
     else:
         paper = df
+    # Les pronos "à l'œil" ont leur propre page + un CLV calculé autrement → exclus
+    # du CLV MODÈLE pour ne pas mélanger.
+    if "model_version" in paper.columns:
+        paper = paper[paper["model_version"] != "oeil"]
 
     clv_vals = pd.to_numeric(paper.get("clv", pd.Series()), errors="coerce").dropna()
     result: dict = {
