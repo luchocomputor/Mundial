@@ -30,6 +30,32 @@ FORM_PATH = ROOT / "data" / "raw" / "transfermarkt" / "wc2026_player_form.csv"
 # Repli pour les joueurs SANS données de forme (poids buts/match faute de mieux).
 POSITION_FALLBACK = {"F": 0.18, "M": 0.06, "D": 0.012, "G": 0.001}
 
+# Force de championnat (multiplie les buts du joueur) : un but en ligue faible
+# vaut moins pour prédire un but en CDM. Sinon le modèle sur-cote les joueurs de
+# ligues à buts gonflés (Qatar, MLS, Liga MX…). Défaut 0.45 pour les ligues non
+# listées (les fortes sont toutes nommées). Accents : "Serie A" (Italie) ≠
+# "Série A" (Brésil).
+LEAGUE_STRENGTH = {
+    "Premier League": 1.0, "LaLiga": 1.0, "Bundesliga": 1.0, "UEFA Champions League": 1.0,
+    "Serie A": 0.95, "Ligue 1": 0.92,
+    "Europa League": 0.82, "Eredivisie": 0.78, "Liga Portugal": 0.78,
+    "Conference League": 0.70, "Championship": 0.72, "Jupiler Pro League": 0.72,
+    "2. Bundesliga": 0.62, "Süper Lig": 0.62, "Premiership": 0.62, "Série A": 0.62,
+    "Chance Liga": 0.60, "Super League 1": 0.58, "Premier Liga": 0.58, "Superliga": 0.55,
+    "Super League": 0.55, "Serie B": 0.55, "Ligue 2": 0.55,
+    "FA Cup": 0.75, "DFB-Pokal": 0.75, "EFL Cup": 0.70, "Coupe de France": 0.65,
+    "AFC Champions League": 0.55, "Série A Apertura": 0.55, "Torneo Apertura": 0.55,
+    "Liga MX Apertura": 0.52, "Liga MX Clausura": 0.52, "Cyprus League": 0.50,
+    "MLS": 0.50, "Saudi Pro League": 0.48, "A-League Men": 0.45, "Betway Premiership": 0.42,
+    "Stars League": 0.35, "UAE Pro League": 0.35, "Persian Gulf League": 0.35,
+    "Iraq Stars League": 0.32,
+}
+DEFAULT_LEAGUE = 0.45
+
+
+def league_strength(comp: str) -> float:
+    return LEAGUE_STRENGTH.get(str(comp).strip(), DEFAULT_LEAGUE)
+
 
 def _nfull(s: str) -> str:
     s = unicodedata.normalize("NFKD", str(s)).encode("ascii", "ignore").decode().lower()
@@ -45,19 +71,21 @@ import pandas as pd
 
 
 def load_player_rates(path: Path = FORM_PATH) -> tuple[dict, dict]:
-    """Agrège player_form (toutes compétitions) → buts par match (lissés) par
-    joueur. Retourne (par_nom_complet, par_nom_de_famille) pour le matching."""
+    """Agrège player_form → buts/match (lissés) par joueur, PONDÉRÉS par la force
+    de la ligue (un but au Qatar < un but en Premier League). Retourne
+    (par_nom_complet, par_nom_de_famille) pour le matching."""
     if not path.exists():
         return {}, {}
     pf = pd.read_csv(path)
+    pf["wgoals"] = pf["goals"].fillna(0) * pf["competition"].map(league_strength)
     agg = pf.groupby("player").agg(
-        goals=("goals", "sum"), games=("games", "sum"), pos=("position", "first")
+        wgoals=("wgoals", "sum"), games=("games", "sum"), pos=("position", "first")
     ).reset_index()
     by_full: dict[str, float] = {}
     by_last: dict[str, tuple[float, float]] = {}  # last -> (games, gpg) le + joué
     for _, r in agg.iterrows():
         games = float(r.games or 0)
-        gpg = float(r.goals or 0) / (games + 3.0)  # lissage bayésien vers 0
+        gpg = float(r.wgoals or 0) / (games + 3.0)  # buts pondérés ligue / matchs
         by_full[_nfull(r.player)] = gpg
         last = _nlast(r.player)
         if last not in by_last or games > by_last[last][0]:
