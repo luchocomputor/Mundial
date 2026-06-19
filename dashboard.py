@@ -618,6 +618,16 @@ def eye_model_prob(teams: tuple, player: str) -> float | None:
     return None
 
 
+@st.cache_data(ttl=1800, show_spinner=False)
+def gems_screen() -> pd.DataFrame:
+    """Screener pépites (output sous le radar), caché 30 min. Vide si data absente."""
+    try:
+        from models.gems import screen_players
+        return screen_players()
+    except Exception:
+        return pd.DataFrame()
+
+
 # ── Match card ─────────────────────────────────────────────────────────────────
 def render_match_card(home, away, match_date, score_info, advised_bets, log_df, bankroll, preds, min_edge, kickoff=""):
     fh, fa = flag(home), flag(away)
@@ -842,7 +852,7 @@ with st.sidebar:
   </div>
 </div>""", unsafe_allow_html=True)
 
-    page = st.radio("Nav", ["Tableau de bord", "Mes bets", "Planning", "Œil"],
+    page = st.radio("Nav", ["Tableau de bord", "Mes bets", "Planning", "Pépites", "Œil"],
                     label_visibility="collapsed")
     st.divider()
 
@@ -1295,6 +1305,58 @@ elif page == "Planning":
 # ══════════════════════════════════════════════════════════════════════════════
 # BUTEUR À L'ŒIL — ton flair vs le marché
 # ══════════════════════════════════════════════════════════════════════════════
+elif page == "Pépites":
+    st.markdown('<div class="sec"><span>Pépites · output offensif sous le radar</span></div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="clv-wait"><span class="clv-wait-i">💎</span>Classement par <b>gem_score</b> = '
+        "<b>agrégat de tous les signaux</b> (output réel + attendu xOut npxG/xA, volume de tirs, dribbles, "
+        "passes clés, buteur en sélection — chacun en rang-percentile, pondéré force-de-ligue), escompté "
+        "par âge et régularité. <b>xOut/90</b> = output ATTENDU (plus soutenable que les buts). "
+        "<b>🔥</b> = sur-performe son xG (régression probable, à fader) · <b>🧊</b> = sous-performe "
+        "(crée mais les buts ne tombent pas → <i>dû</i>, value possible). <b>🚀</b> = breakout. "
+        "<b>Pré-filtre</b> du mode <b>Œil</b>.<br><i>xOut « — » = ligue sans xG (output TM seul).</i></div>",
+        unsafe_allow_html=True)
+
+    _screen = gems_screen()
+    if _screen.empty:
+        st.warning("Données joueurs indisponibles (wc2026_player_form.csv). Lance les scrapers Transfermarkt.")
+    else:
+        _matches = betclic_list()
+        _now = pd.Timestamp.now(tz="UTC")
+        _up = [m for m in _matches if pd.Timestamp(m["date"]) > _now]
+        _cc = st.columns(2)
+        _maxmv = _cc[0].slider("Valeur marchande plafond (M€)", 1, 200, 25)
+        _maxage = _cc[1].slider("Âge plafond (jeune-pépite vs vétéran décoté)", 18, 40, 40)
+        from models.gems import gems_for_match
+        if not _up:
+            st.warning("Liste Betclic indisponible (réseau). Réessaie dans un moment.")
+        else:
+            _labels = [f"{m['teams'][0]} - {m['teams'][1]} · {m['date'][:10]}" for m in _up]
+            _sel = st.selectbox("Match", _labels)
+            _m = _up[_labels.index(_sel)]
+            _gems = gems_for_match(_m["teams"][0], _m["teams"][1], screen=_screen,
+                                   top_n=6, max_mv=_maxmv * 1e6,
+                                   max_age=_maxage if _maxage < 40 else None)
+            _cols = st.columns(2)
+            for _col, _team in zip(_cols, _m["teams"]):
+                with _col:
+                    st.markdown(f'<div class="sec"><span>{_team}</span></div>', unsafe_allow_html=True)
+                    _df = _gems.get(_team, pd.DataFrame())
+                    if _df.empty:
+                        st.caption("Aucune pépite sous ces filtres.")
+                        continue
+                    _fin = {"chaud": "🔥", "froid": "🧊"}
+                    _rows = [{
+                        "Joueur": (("🚀 " if bool(r.breakout) else "")
+                                   + _fin.get(str(r.get("finishing", "")), "") + str(r.player)),
+                        "Âge": (int(r.age) if pd.notna(r.age) else None),
+                        "Out/90": round(float(r.out90), 2),
+                        "xOut/90": (round(float(r.xout90), 2) if pd.notna(r.xout90) else None),
+                        "Titu%": int(round(r.start_share * 100)),
+                        "Gem": round(float(r.gem_score), 2), "VM": f"{r.mv/1e6:.0f}M",
+                    } for _, r in _df.iterrows()]
+                    st.dataframe(pd.DataFrame(_rows), use_container_width=True, hide_index=True)
+
 elif page == "Œil":
     st.markdown('<div class="sec"><span>Buteur à l\'œil · ton flair vs le marché</span></div>', unsafe_allow_html=True)
     st.markdown(

@@ -29,6 +29,10 @@ FIELDS = {
     "goals": "goalsScored", "assists": "assists", "minutes": "minutesPlayed",
     "start11_pct": "startElevenPercent", "yellow": "yellowCards",
     "red": "redCards", "clean_sheets": "cleanSheets", "conceded": "concededGoals",
+    # — champs étendus (consommés par models.gems si présents) —
+    "minutes_pct": "minutesPlayedPercent", "second_yellow": "secondYellowCards",
+    "gc_pct": "goalsContributedPercent",
+    "gc_pct_nopen": "goalsContributedPercentWithoutPenalty",
 }
 
 
