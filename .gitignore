@@ -25,6 +25,8 @@ data/*_legacy_*
 # Caches de scraping/API (re-fetchables ; on garde les CSV/JSON produits)
 data/raw/transfermarkt/*.html
 data/raw/apifootball/
+# xlsx tennis-data.co.uk / CSV Sackmann, re-fetchables
+data/raw/tennis/
 
 # Modèle entraîné (re-générable)
 models/*.pkl

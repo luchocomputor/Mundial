@@ -852,7 +852,7 @@ with st.sidebar:
   </div>
 </div>""", unsafe_allow_html=True)
 
-    page = st.radio("Nav", ["Tableau de bord", "Mes bets", "Planning", "Pépites", "Œil"],
+    page = st.radio("Nav", ["Tableau de bord", "Mes bets", "Planning", "Pépites", "Œil", "Tennis"],
                     label_visibility="collapsed")
     st.divider()
 
@@ -1323,7 +1323,10 @@ elif page == "Pépites":
     else:
         _matches = betclic_list()
         _now = pd.Timestamp.now(tz="UTC")
-        _up = [m for m in _matches if pd.Timestamp(m["date"]) > _now]
+        # Garde aussi les matchs en cours : un coup d'envoi jusqu'à 2h30 dans le
+        # passé peut encore être en jeu (90' + mi-temps + prolongations/tab).
+        _live_floor = _now - pd.Timedelta(hours=2.5)
+        _up = [m for m in _matches if pd.Timestamp(m["date"]) > _live_floor]
         _cc = st.columns(2)
         _maxmv = _cc[0].slider("Valeur marchande plafond (M€)", 1, 200, 25)
         _maxage = _cc[1].slider("Âge plafond (jeune-pépite vs vétéran décoté)", 18, 40, 40)
@@ -1429,3 +1432,56 @@ elif page == "Œil":
             })
         st.dataframe(pd.DataFrame(_rows), use_container_width=True, hide_index=True,
                      column_config={"Cote": st.column_config.NumberColumn(format="%.2f")})
+
+elif page == "Tennis":
+    st.markdown('<div class="sec"><span>Tennis · Elo surface vs Betclic</span></div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="clv-wait"><span class="clv-wait-i">🎾</span>Proba <b>Elo surface-ajusté</b> '
+        "(ATP+WTA, données tennis-data.co.uk) confrontée à la cote <b>« Vainqueur du match »</b> Betclic. "
+        "<b>Honnêteté backtest</b> : sur le tour principal l'Elo ne bat <b>pas</b> Pinnacle (Brier 0.26 vs 0.21, "
+        "ROI ≈ −0.5%) — marché efficace, comme la CDM. Le filon plausible = <b>qualifs / bas-classés</b> "
+        "(lignes plus molles), mais data fine → un <b>n</b> bas ou <b>0 match surface</b> = proba peu fiable, "
+        "<b>ne pas miser</b>.</div>",
+        unsafe_allow_html=True)
+    try:
+        from pipeline.fetch_tennis_odds import list_tennis_matches
+        from pipeline.tennis_value import _devig_2way, _load_models, _pick_tour
+
+        _surf = st.selectbox("Surface", ["Grass", "Hard", "Clay"], index=0)
+        _models = _load_models()
+        if not _models:
+            st.warning("Aucun artefact Elo tennis. Lance `python -m models.tennis_elo --tour atp` (et `wta`).")
+        else:
+            _tm = list_tennis_matches()
+            if not _tm:
+                st.info("Aucun match tennis listé (compétitions tennis terminées ou cid à rafraîchir "
+                        "via `python -m pipeline.fetch_tennis_odds --discover 160 260`).")
+            _rows = []
+            for _m in _tm:
+                _od = _m.get("winner_odds")
+                if not _od or len(_od) != 2:
+                    continue
+                (_a, _oa), (_b, _ob) = list(_od.items())
+                _tour, _model = _pick_tour(_models, _a, _b)
+                if not _model:
+                    continue
+                _pr = _model.predict(_a, _b, surface=_surf)
+                _fa, _fb = _devig_2way(_oa, _ob)
+                _edge_a, _edge_b = _pr["p_a"] - _fa, _pr["p_b"] - _fb
+                _best = _a if _edge_a >= _edge_b else _b
+                _bedge = max(_edge_a, _edge_b)
+                _conf = "⚠" if (min(_pr["n_a"], _pr["n_b"]) < 15) else ""
+                _rows.append({
+                    "Tour": _tour.upper(), "Match": _m["label"], "Quand": _m["date"][:16],
+                    f"{_a[:14]}": f"{_pr['p_a']:.0%}/{_fa:.0%}",
+                    f"{_b[:14]}": f"{_pr['p_b']:.0%}/{_fb:.0%}",
+                    "Edge": f"{_best.split()[-1]} {_bedge:+.1%}",
+                    "n": f"{_pr['n_a']}/{_pr['n_b']}{_conf}",
+                })
+            if _rows:
+                st.caption("Cellules = **proba modèle / proba marché de-viggée**. Edge = meilleur côté.")
+                st.dataframe(pd.DataFrame(_rows), use_container_width=True, hide_index=True)
+            elif _tm:
+                st.caption("Matchs listés mais joueurs hors couverture Elo (bas-classés sans historique).")
+    except Exception as _e:
+        st.warning(f"Tennis indisponible (réseau Betclic ou data) : {_e}")
